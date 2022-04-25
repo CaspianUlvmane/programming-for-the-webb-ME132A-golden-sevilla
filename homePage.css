@@ -1,0 +1,131 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    background-color: gray;
+    height: 812px;
+}
+
+#nav {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hamburger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: rgb(83, 81, 81);
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.title-Name {
+    text-align: center;
+    width: 100%;
+}
+
+.search {
+    padding: 18px;
+    background-color: bisque;
+}
+
+.myLikes {
+    padding: 18px;
+    background-color: rgb(218, 42, 42);
+}
+
+.header-info {
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text {
+    border: 2px solid black;
+    width: 60%;
+    height: 50%;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.all-about {
+    width: 200px;
+    height: 30px;
+}
+
+.scroll-down {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.img-slide {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 10px;
+    height: 250px;
+    width: 50vw;
+
+    max-width: 300px;
+    background-color: gray;
+}
+
+.slide-show {
+    display: flex;
+    position: absolute;
+    top: 650;
+    right: 0;
+    height: 50px;
+}
+
+.slide-button {
+    margin-right: 10px;
+}
+
+.info-text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.text-info {
+    border: 2px solid gray;
+    width: 80%;
+    padding: 5px;
+    max-width: 800px;
+}
+
+
+footer {
+    
+    align-items: center;
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
