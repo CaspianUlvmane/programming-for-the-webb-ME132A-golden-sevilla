@@ -6,40 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="homePage.css">
+    <script src="https://kit.fontawesome.com/af88015189.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
 
-    <header> 
+    <div id="nav">
 
-        <div id="nav">
+        <div class="buger-menu">
 
-            <div class="buger-menu">
-                <button type="button" class="hamburger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </button>
-            </div>
-
-            <div class="title-Name"> TITLENAME </div>
-            
-            <div class="search"> S </div>
-
-            <div class="myLikes"> H </div>
+            <button type="button" class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
 
         </div>
 
+        <div class="title-name"> <h2> TITLENAME </h3> </div>
+        
+        <div class="search-icon"> <i class="fa-solid fa-magnifying-glass"> </i> </div>
+
+        <div class="my-likes"> <i class="fa-solid fa-heart"> </i> </div>
+
+    </div>
+
+    <header> 
 
         <div class="header-info">
 
-            <div class="text"> </div>
-            <button class="all-about"> h </button>
+            <div class="header-text"> 
+                Förverkliga drömmen om att studera eller praktisera utomlands.
+                Öppna världen genom språk, utbildning, kulturella utbyten och resor. 
+                Ta steget nu!
+            </div>
+
+            <button class="all-about-button"> Read more! </button>
     
         </div>
 
         <div class="scroll-down"> 
-            <button> down </button>
+
+            <button class="fa-solid fa-arrow-down down-button">  </button>
+
         </div>
         
     </header>
@@ -50,15 +59,15 @@
             
             <div class="slide-show"> 
                 <div>
-                    <button class="slide-button"> 1 </button>
+                    <button class="slide-button"> <i class="fa-solid fa-arrow-left-long"> </i> </button>
                 </div>
                 <div>
-                    <button class="slide-button"> 2 </button>
+                    <button class="slide-button"> <i class="fa-solid fa-arrow-right"> </i> </button>
                 </div>
             </div>
 
-            <div class="img"><h3> Country </h3></div>
-            <div class="img"><h3> Country </h3></div>
+            <div class="img"><button> Country </button></div>
+            <div class="img"><button> Country </button></div>
 
         </div>  
 
@@ -71,20 +80,43 @@
             </div>
         </div>
 
+
+        <div class="ressencioner">
+
+            <div class="comment-box">
+                <p> Rating </p>
+                <h4>Advanced Studies In Sociology</h4>
+                <p> Bästa tiden i mitt liv var att studera och besöka Paris. Staden har så mycket att erbjuda inom både kultur, mat, shopping, mötta människor och få minnen för livet! </p>
+                <p class="comment-name"> Carla Stenlund </p>
+            </div>
+
+            <div class="comment-box">
+                <p> Rating </p>
+                <h4>Advanced Studies In Sociology</h4>
+                <p> Bästa tiden i mitt liv var att studera och besöka Paris. Staden har så mycket att erbjuda inom både kultur, mat, shopping, mötta människor och få minnen för livet! </p>
+                <p class="comment-name"> Carla Stenlund </p>
+            </div>
+
+        </div>
+
     </main>
 
 
     <footer> 
-        
-        <div class="footer-box">
             
-            <h3>TITLE NAME</h3>
-            <h4>info@företaget.com</h4>
-            <h4>Utbytesstudier</h4>
-            <h4>Världsdelar & länder</h4>
-            <h4>Ämnen</h4>
-            <h4>Om oss</h4>
-            
+        <div class="footer-content">
+            <h3>TITLENAME</h3>
+
+            <ul class="links">
+                <li><a href="#">info@företaget.com</a></li>
+                <li><a href="#">Utbytesstudier</a></li>
+                <li><a href="#">Världsdelar & länder</a></li>
+                <li><a href="#">Ämnen</a></li>
+                <li><a href="#">Om oss</a></li>
+            </ul>
+
+            <p> Copyright </p>
+
         </div>
 
     </footer> 

@@ -1,14 +1,14 @@
-body {
+*{
     padding: 0px;
     margin: 0px;
 }
 
-header {
-    background-color: gray;
-    height: 812px;
-}
-
 #nav {
+    padding-top: 10px;
+    background-color: rgb(216, 212, 212);
+    position: sticky;
+    top: 0px;
+    z-index: 1;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -19,30 +19,38 @@ header {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    margin-left: 10px;
+    text-align: center;
 }
 
 .hamburger .line {
     display: block;
-    width: 40px;
-    height: 3px;
+    width: 30px;
+    height: 4px;
     background-color: rgb(83, 81, 81);
-    margin: 10px;
+    margin: 5px;
     border-radius: 4px;
 }
 
-.title-Name {
-    text-align: center;
-    width: 100%;
+.title-name {
+        position: relative;
+        left: 15px;
+        margin: auto;
+        text-align: center;
 }
 
-.search {
-    padding: 18px;
-    background-color: bisque;
+.search-icon {
+    margin-right: 20px;
 }
 
-.myLikes {
-    padding: 18px;
-    background-color: rgb(218, 42, 42);
+.my-likes {
+    margin-right: 20px;
+}
+
+header {
+    padding-top: 20px;
+    background-color: rgb(216, 212, 212);
+    height: 640px;
 }
 
 .header-info {
@@ -53,7 +61,7 @@ header {
     flex-direction: column;
 }
 
-.text {
+.header-text {
     border: 2px solid black;
     width: 60%;
     height: 50%;
@@ -61,23 +69,47 @@ header {
     margin-bottom: 30px;
 }
 
-.all-about {
-    width: 200px;
-    height: 30px;
+.all-about-button, .down-button, .img > button, .slide-button {
+    display: inline-block;
+    color: #fff;
+    background-color: rgb(83, 81, 81);
+    text-decoration: none;
+    padding: 20px 40px;
+    border: 3px solid #bcc0ca;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .scroll-down {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+}
+
+.down-button {
+    padding: 10px;
+    font-size: 20px;
 }
 
 .img-slide {
     display: flex;
     justify-content: center;
     margin: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.slide-show {
+    display: flex;
+    position: absolute;
+    top: 650;
+    right: 0;
+}
+
+.slide-button {
+    margin-right: 10px;
+    padding: 5px;
 }
 
 .img {
@@ -89,43 +121,92 @@ header {
     width: 50vw;
 
     max-width: 300px;
-    background-color: gray;
+    background-color: rgb(216, 212, 212);
 }
 
-.slide-show {
-    display: flex;
-    position: absolute;
-    top: 650;
-    right: 0;
-    height: 50px;
-}
-
-.slide-button {
-    margin-right: 10px;
+.img > button {
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
 .info-text-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 50px 0px;
 }
 
 .text-info {
     border: 2px solid gray;
     width: 80%;
-    padding: 5px;
+    padding: 10px;
     max-width: 800px;
 }
 
-
-footer {
-    
+.ressencioner {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
-.footer-box {
+.comment-box {
     display: flex;
     flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+
+    max-width: 800px;
+    width: 80%;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+.comment-box > p {
+    margin: 5px 0px;
+}
+
+footer {
+    background-color: rgb(216, 212, 212);
+    margin-top: 20px;
+    padding: 20px;
+
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content > h3 {
+    margin: -5px;
+}
+
+.footer-content > p {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.links {
+    margin-top: 10px;
+    list-style: none;
+    /* margin: 1rem 0 3rem 0; */
+}
+
+
+.links li {
+    padding: 5px;
+}
+
+.links li:nth-child(1) {
+    padding: 15px;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
 }
