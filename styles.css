@@ -2,30 +2,40 @@ body {
   margin: 0px;
 }
 
-header {
-  border: 1px solid black;
+#nav {
+  width: 100vw;
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-header > div {
-      border: 1px solid black;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+.hamburger {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  text-align: center;
 }
 
-#burger {
-  flex-basis: 20vw;
+.hamburger .line {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: rgb(83, 81, 81);
+  margin: 5px;
+  border-radius: 4px;
 }
 
-#logo {
-  flex-grow: 1;
+.title-name {
+      position: relative;
+      left: 15px;
+      margin: auto;
+      text-align: center;
 }
 
-#search, #like {
-  flex-basis: 10vw;
+.search-icon, .my-likes {
+  font-size: 20px;
+  margin-right: 20px;
 }
 
 .wrapper {
