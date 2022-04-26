@@ -1,0 +1,9 @@
+Version 2
+
+Strukturen är lagd, vår html är på plats, allt ser bra ut.
+Börja planera vår JS.
+- Vilka funktioner kommer vi att behöva?
+- Vilka kan vi återanvända på fler ställen?
+- Finns det grejer vi har tänkt göra som vi inte riktigt kan än?
+När planen är satt och allt känns solklart - då börjar vi göra funktioner.
+Vi kan i detta steget även implementera vår grafiska profil.
