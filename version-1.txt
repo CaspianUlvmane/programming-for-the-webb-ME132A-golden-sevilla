@@ -1,1 +1,25 @@
 Version 1: 
+
+Rules:
+- Make rules for files
+- Make rules for using class and ID - names and language 
+- Make rules for using functions and variables - names and language
+- Make rules for comments in code - when, language, legnth
+- Decide on graphic design / colors, size
+- Write rules for Github
+
+Document: 
+- Create text files for versions
+- Write text to the different versions
+- Create HTML files
+- Name HTML files
+- Create CSS file 
+- Add database to folder 
+
+Github: 
+- Create issues on github 
+- Create milstones  
+
+Code: 
+- Link HTML to CSS
+- Create wireframes to pages 
