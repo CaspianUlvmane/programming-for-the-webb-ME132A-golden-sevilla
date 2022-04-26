@@ -1,1 +1,10 @@
 // VERSION 3
+
+Delar från övriga versioner
+Justeringar för funktioner så att allt fungerar som det ska!
+Allt ser ut som det ska!
+Se över så att det inte finns bugar!
+
+Extra
+Göra extra funktioner  
+Göra styling för transistions och övriga styling för att få en bättre "upplevelse" på sida
