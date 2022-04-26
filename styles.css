@@ -27,10 +27,11 @@ body {
 }
 
 .title-name {
-      position: relative;
-      left: 15px;
-      margin: auto;
-      text-align: center;
+  position: relative;
+  left: 15px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 .search-icon, .my-likes {
