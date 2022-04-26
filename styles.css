@@ -1,0 +1,21 @@
+.wrapper {
+  width: 100vw;
+}
+h1 {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.top-img {
+  height: 50vw;
+  background-color: grey;
+}
+
+p {
+  margin-left: 10px;
+  margin-right: 10px;
+  /* text-align: justify; */
+}
