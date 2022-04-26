@@ -90,18 +90,20 @@ header {
 #img-slide-box {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px 10px;
 }
 
 #slide-show {
-    display: flex;
     position: absolute;
-    top: 650;
-    right: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+    max-width: 1000px;
 }
 
 .slide-button {
+    box-sizing: border-box;
     margin-right: 10px;
     padding: 5px;
     font-size: 15px;
@@ -119,20 +121,23 @@ header {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
     margin: 10px;
     height: 250px;
     width: 50vw;
-
-    min-width: 200px;
     max-width: 250px;
+    min-width: 200px;
+
     background-color: rgb(216, 212, 212);
 }
 
 .img-slide-button {
+    box-sizing: border-box;
     padding: 5px;
     margin-bottom: 10px;
-    width: 80px;
-    height: 40px;
+    min-width: 80px;
+    width: 40%;
+    height: 50px;
 }
 
 #info-text-box {
@@ -178,8 +183,8 @@ header {
 
 footer {
     background-color: rgb(216, 212, 212);
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 50px;
+    padding: 50px;
 
     display: flex;
     align-items: center;
@@ -189,7 +194,7 @@ footer {
 }
 
 footer > h3 {
-    margin: -5px;
+    height: 5px;
 }
 
 footer > p {
@@ -208,7 +213,7 @@ footer > p {
 }
 
 .footer-link:nth-child(1) {
-    padding: 15px;
+    padding: 25px;
 }
 
 .footer-link a {
