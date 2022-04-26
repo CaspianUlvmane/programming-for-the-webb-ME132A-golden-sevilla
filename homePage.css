@@ -62,6 +62,7 @@ header {
     max-width: 500px;
     border: 2px solid black;
     margin-bottom: 30px;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
 .all-about-button, .down-button, .slide-button, .img-slide-button {
