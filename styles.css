@@ -1,3 +1,11 @@
+:root {
+  --beigeColor: #EDE7DF
+  --lightColor: #EAEAEA
+  --darkColor: #425664;
+  --whiteColor: white;
+  --blackColor: black;
+}
+
 body {
   margin: 0px;
 }
