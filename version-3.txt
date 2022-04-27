@@ -7,6 +7,9 @@ Se över så att allt ser ut som det ska
 
 Extra
 Göra extra funktioner vi har diskuterat 
+	- Tema 
+	- Tillback knapp 
+	- 
 Göra styling för transistion
 Göra styling för att få bättre och "smooth" känsla på hemsidan 
 
