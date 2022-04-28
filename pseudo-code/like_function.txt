@@ -20,3 +20,25 @@ function removeLike (liked){
     find this likedItem
     remove likedItem from liked
 }
+
+Alternativt
+function likedPrograms (liked){
+    createDiv container
+    container class hidden
+    if (liked)
+    loop through liked
+            createDiv likedItem
+            likedItem nameOfProgram, field, country, level, heart
+            heart addEventListener (click, removeLike(liked))
+            append likedItem to container
+    else
+        text "you have no likes"
+        append text to container
+}
+
+function chooseClass (){
+    if (class show){
+        remove classShow
+    }else 
+        add classShow
+}
