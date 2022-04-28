@@ -9,15 +9,16 @@ function like (liked){
     return _likeHTML
 }
 
-function openPopUp (liked){
-    if (closed)
+function PopUp (liked){
+    if (parentEmpty) =
         create popUpDiv
+        append popUpDiv to parentDiv
         loop through liked
+            likedItem
             addEventListener (click, removeLike(liked))
             append likedItem to popUpDiv
-        render popUpDiv
     else
-        empty popUpDiv
+        empty parentDiv
 }
 
 function removeLike (liked){
@@ -25,3 +26,5 @@ function removeLike (liked){
     find this likedItem
     remove likedItem from liked
 }
+
+function renderPopUp
