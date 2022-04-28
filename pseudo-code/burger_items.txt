@@ -1,0 +1,15 @@
+function burgerItemsHTML ()
+    array burgerArray
+        buttonText_uLivet, buttonURL_uLivet
+        buttonText_continent, buttonURL_continent
+        buttonText_fields, buttonURL_fields
+        buttonText_programs, buttonURL_programs
+        buttonText_about, buttonURL_about
+
+    createDiv burgerContainerHTML
+    loop through burgerArray
+        createDiv burgerItem
+        innerHTML buttonText, buttonURL
+        append burgerItem to _burgerHTML
+        
+    return burgerContainerHTML
