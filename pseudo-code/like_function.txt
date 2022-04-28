@@ -1,0 +1,27 @@
+function like (liked){
+    create _likeHTML
+    if (liked){
+        _likeHTML dark heart
+    } else {
+        _likeHTML light heart
+    }
+    addEventListener (click, PopUp(liked))
+    return _likeHTML
+}
+
+function openPopUp (liked){
+    if (closed)
+        create popUpDiv
+        loop through liked
+            addEventListener (click, removeLike(liked))
+            append likedItem to popUpDiv
+        render popUpDiv
+    else
+        empty popUpDiv
+}
+
+function removeLike (liked){
+    preventDefault
+    find this likedItem
+    remove likedItem from liked
+}
