@@ -1,0 +1,31 @@
+function searchBar () 
+	createDiv_searchBar 
+	innerHTML 
+		searchInput
+		class added to searchInput
+		div iconImg_class_searchIcon	
+
+
+
+function searchingInSearch () 
+	valueOfSearchInput 
+	create divSearchBox
+	append divSearchBox to search 
+
+	clearResult()
+
+	let All = DB.COUNTRIES.concat(DB.FIELDS, DB.CITIES)
+	
+	if (search > 0)
+		loopThrough (All) 
+			if ( ArryElement.includes(searchInput) ) 
+			createDiv 
+			innerHTML 
+					Title, textInfo 
+			append createDiv to divSearchBox
+
+
+
+function serachKeyUp () 
+	searchInput eventListener(keyup, searchingInSearch)
+		
