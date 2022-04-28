@@ -1,0 +1,13 @@
+function buildFooter ()
+    createDiv footerHTML
+    innerHTML 
+        buttonText_titleName, buttonURL_index
+        text_mail
+        buttonText_uLivet, buttonURL_uLivet
+        buttonText_continent, buttonURL_continent
+        buttonText_fields, buttonURL_fields
+        buttonText_about, buttonURL_about
+        img_src_copyright
+    return footerHTML
+
+Är det okej att köra såhär? Allt i samma, genom innerHTML.
