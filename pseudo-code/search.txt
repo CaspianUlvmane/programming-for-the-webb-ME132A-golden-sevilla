@@ -1,5 +1,6 @@
 function searchBar () 
 	createDiv_searchBar 
+	classAdd("searchBar") (has display none in css)
 	innerHTML 
 		searchInput
 		class added to searchInput
