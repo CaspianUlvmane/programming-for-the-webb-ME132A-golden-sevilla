@@ -1,22 +1,16 @@
-function like (liked){
-    create _likeHTML
-    if (liked){
-        _likeHTML dark heart
-    } else {
-        _likeHTML light heart
-    }
-    addEventListener (click, PopUp(liked))
-    return _likeHTML
-}
-
-function PopUp (liked){
-    if (parentEmpty) =
+function likedPrograms (liked){
+    if (unactive)
         create popUpDiv
         append popUpDiv to parentDiv
+        if (liked)
         loop through liked
-            likedItem
-            addEventListener (click, removeLike(liked))
+            createDiv likedItem
+            likedItem nameOfProgram, field, country, level, heart
+            heart addEventListener (click, removeLike(liked))
             append likedItem to popUpDiv
+        else
+            text "you have no likes"
+        
     else
         empty parentDiv
 }
@@ -26,5 +20,3 @@ function removeLike (liked){
     find this likedItem
     remove likedItem from liked
 }
-
-function renderPopUp
