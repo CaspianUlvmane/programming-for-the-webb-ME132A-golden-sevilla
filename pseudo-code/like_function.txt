@@ -1,0 +1,22 @@
+function likedPrograms (liked){
+    if (unactive)
+        create popUpDiv
+        append popUpDiv to parentDiv
+        if (liked)
+        loop through liked
+            createDiv likedItem
+            likedItem nameOfProgram, field, country, level, heart
+            heart addEventListener (click, removeLike(liked))
+            append likedItem to popUpDiv
+        else
+            text "you have no likes"
+        
+    else
+        empty parentDiv
+}
+
+function removeLike (liked){
+    preventDefault
+    find this likedItem
+    remove likedItem from liked
+}
