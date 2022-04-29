@@ -1,0 +1,17 @@
+append buildTopMenu(liked) to Body 
+
+function createFieldDiv(){
+    createDiv fieldContainer
+    appendToBody
+
+    loop DB.fields
+        createDiv field
+        field.innerHTML
+            div img 
+            div title
+            div text
+            buttonText URL
+        append to fieldContainer
+}
+
+append buildFooter() to body
