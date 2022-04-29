@@ -6,6 +6,7 @@ function renderResults (arrayOfPrograms){
         programItem inner html
             -name
             -field -country -level
+            -heart
+        heart addEventListener (click, addLike)
         append programItem to container
-    
 }
