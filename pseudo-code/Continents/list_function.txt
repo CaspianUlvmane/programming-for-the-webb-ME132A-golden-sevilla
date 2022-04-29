@@ -1,0 +1,30 @@
+appenda buildTopMenu to body? or in continenMap_view? 
+
+appenda view_function to body? or in continentMap view?
+
+
+function createContinentList ()
+    createDiv listContainer
+
+    loop through continents
+        createDiv continenContainer
+        append continenContainer to listContainer
+
+        createDiv continentDiv 
+        append continentDiv to continenContainer
+        innerHTML continentName
+        eventListener("click", toggle or if-sats)??
+        filter continentCountrys
+
+        createDiv countryContainer
+        loop through continentCountrys
+            createDiv contryDiv
+            append countryDiv to countryContainer
+            innerHTML countryname/url 
+        
+        append countryContainer to continenContainer
+
+
+appenda footer to body
+
+
