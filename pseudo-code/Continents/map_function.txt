@@ -4,45 +4,45 @@ check localStorage, set likedExists to true or false
 append buildTopMenu(false, likedExists) to body
 
 
-function continetsButtonsBar () {
-    createDiv containerButtons 
-    append containerButtons to body 
+function continentMap () { 
+    createDiv map
+    add class worldMap to map
+    map innerHTML VäljContinent 
 
-    append buttonsMapVy(active) to containerButtons
-    append buttonListVy() to containerButtons
+    loop to create buttons fro DB.CONTINETS
+        createDiv button 
+        button add ID DB.CONTINETS.name // placeras genom css 
+        button eventListener (click, getContinentMap())
+        append button to map 
 
-    if (buttonsMapVy == active) 
-        
-    else if (buttonListVy == active)
-
-
-    return containerButtons
+    return map
 }
 
 
-function buttonsMapVy (parameterActive) 
-    createDiv _divButtonMapVy
-    add class to _divButtonMapVy
-    add class parameterActive to _divButtonMapVy
-     _divButtonVy.innerHTML mapvy
-    _divButtonMapVy.addEventListener("click", function ()
-        changeClass(_divButtonMapVy)
-    ) 
+function getContinentMap (event) 
+    let continentName = event.target.id 
+    createDiv continentContainer  
+    innerHTML chooseCountry 
+    add class continentName to continentContainer
+    find DB.Continents.continentId 
+    filter.DB.Countrys to get array of contrys with continentId 
+    loop fro array of countrys 
+        create button 
+        button add id as country.name 
+        append button to continentContainer // placeras genom css  
 
 
-function buttonListVy () 
-    createDiv _divButtonListVy
-    add class to _divButtonListVy
-    _divButtonVy.innerHTML listVy
-        _divButtonVy.addEventListener("click", function ()
-        changeClass(_divButtonListVy)
-    ) 
+/// MÅSTE GÖRAS TILLBACKA PIL 
+/// MÅSTE LÄNKA LAND TILL CONTRY.HTML 
+         
+        
+    
+    
 
 
-function AcctiveInnactive (elementSelected)
-    if (elementSelected class contains("active"){
-        remove class("active")
-    } else add class("active")
+
+
+
 
 
 
