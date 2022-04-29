@@ -30,8 +30,9 @@ function logoHTML ()
 function searchHTML()
     createDiv _searchHTML
     class search(img css)
+    serachBar()
     _searchHTML eventListner("click", function())
-        serachBar()
+        serachBar().classList.Toggle("serachBar")
         changeClass(_searchHTML)
     
     return _searchHTML
