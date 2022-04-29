@@ -1,0 +1,16 @@
+#top {
+    top: 8px;
+    z-index: 1;
+    transition: top 450ms, transform 450ms, opacity 700ms 550ms;
+    background-image: url(/img/världsdelar.png);
+}
+
+#bottom {
+    background-image: url(/img/);
+}
+
+#top:active {
+    transform: scale(3);
+    top: 400px;
+    opacity: 0;
+}
