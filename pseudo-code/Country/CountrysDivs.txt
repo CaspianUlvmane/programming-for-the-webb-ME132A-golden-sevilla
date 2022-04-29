@@ -1,0 +1,31 @@
+INFO
+Gör div x2 i html, div img + infoDiv
+
+function buildCountry (id)
+    let country = DB.COUNTRIES.find((country)=> country.id == id)
+    setCountryBackground(id)
+    get element infoDiv
+    h2 studera i country.name
+    p country.text
+    append h2 + p to infoDiv
+    append findCities(id) to body
+
+function findCities (id)
+   let cityArray = DB.CITIES.filter((city)=> city.countryID == id)
+    return createCityDiv(cityArray)
+
+function createCityDiv (cityArray)
+    createDiv cityContainer
+    loop city of cities = cityArray
+        createDiv cityDivs
+        cityDivs .style.backgroundImage = `url(/images/${city.name.toLocaleLowerCase()}_big_1.jpg)`
+        innerHTML h3, p, button/link
+        append cityDivs to cityContainer
+    return cityContainer
+        
+function setCountryBackground (id)
+    let country = DB.COUNTRIES.find((country)=> country.id == id)
+    let div = document.getElementById("img")
+    div.style.backgroundImage = `url(/images/${country.name.toLocaleLowerCase()}_big_1.jpg)`
+
+
