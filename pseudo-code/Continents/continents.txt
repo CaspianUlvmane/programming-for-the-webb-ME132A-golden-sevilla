@@ -1,0 +1,4 @@
+check localStorage, set likedExists to true or false
+
+
+append buildTopMenu(false, likedExists) to body
