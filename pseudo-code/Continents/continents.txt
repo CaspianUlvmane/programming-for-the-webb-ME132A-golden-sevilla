@@ -1,4 +1,48 @@
 check localStorage, set likedExists to true or false
 
-appen buildTopMenu(false, likedExists) to body
+
+append buildTopMenu(false, likedExists) to body
+
+
+function continetsButtonsBar () {
+    createDiv containerButtons 
+    append containerButtons to body 
+
+    append buttonsMapVy(active) to containerButtons
+    append buttonListVy() to containerButtons
+
+    if (buttonsMapVy == active) 
+        
+    else if (buttonListVy == active)
+
+
+    return containerButtons
+}
+
+
+function buttonsMapVy (parameterActive) 
+    createDiv _divButtonMapVy
+    add class to _divButtonMapVy
+    add class parameterActive to _divButtonMapVy
+     _divButtonVy.innerHTML mapvy
+    _divButtonMapVy.addEventListener("click", function ()
+        changeClass()
+    ) 
+
+
+function buttonListVy () 
+    createDiv _divButtonListVy
+    add class to _divButtonListVy
+    _divButtonVy.innerHTML listVy
+        _divButtonVy.addEventListener("click", function ()
+        changeClass()
+    ) 
+
+
+function changeClass (element)
+    if (element class contains("inactive"){
+        remove class("inactive")
+    } else add class("inactive")
+
+
 
