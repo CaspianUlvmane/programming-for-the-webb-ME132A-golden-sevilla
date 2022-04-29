@@ -1,0 +1,19 @@
+function renderResults (arrayOfPrograms){
+    selectDiv container
+    empty container
+    loop through arrayOfPrograms
+        createDiv programItem
+        programItem inner html
+            -name
+            -field -country -level
+            -heart
+        heart addEventListener (click, addLike)
+        append programItem to container
+}
+
+function addLike (){
+    preventDefault
+    this heart - dark
+    push this parentElement to likedArray'
+    this heart addEventListener (click, removeLike)
+}
