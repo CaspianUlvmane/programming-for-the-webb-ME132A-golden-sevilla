@@ -1,0 +1,11 @@
+function renderResults (arrayOfPrograms){
+    selectDiv container
+    empty container
+    loop through arrayOfPrograms
+        createDiv programItem
+        programItem inner html
+            -name
+            -field -country -level
+        append programItem to container
+    
+}
