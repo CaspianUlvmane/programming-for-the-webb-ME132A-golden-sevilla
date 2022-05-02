@@ -1,0 +1,36 @@
+function popUpProgram (event) 
+    let programName = event.target.innerHTML  
+    find program, program.name = programName    
+    createDiv Container 
+
+function interactWithPop () 
+    createDiv BarContainer 
+    append icon_heart & icon_cross 
+    add eventListener icon_heart
+    add eventListener icon_cross 
+
+    return BarContainer
+
+function addInfoProgram (program) 
+    createDiv infoContainer 
+    innerHTML allInfo 
+    
+    return infoContainer
+
+
+function commentsProgram (program) 
+    createDiv commentContainer 
+    find programID 
+    filter comments.programId == programID 
+    loop fro commentsProgram 
+        creatediv commentBox 
+        studentRatingProgram (comment)
+        innerHTML commentText & namn  
+
+
+function studentRatingProgram (comment)
+    let sumOfRrating = 0
+    loop fro comment.stars  
+    sumOfRrating += stars.teacher + stars.students + stars.courses / 3 
+
+    return math.round(sumOfRrating)
