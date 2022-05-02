@@ -21,8 +21,14 @@ function createContinentList ()
             createDiv contryDiv
             append countryDiv to countryContainer
             innerHTML countryname/url 
+            add eventListener to countryDiv ("click" getClickedCountryId)
         
         append countryContainer to continenContainer
+
+
+function getClickedCountryId(event)
+    let countryName = event.target.innerHTML
+    return DB.COUNTRIES.find(country => country.name == countryName).id
 
 
 appenda footer to body
