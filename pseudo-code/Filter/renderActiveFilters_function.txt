@@ -1,0 +1,12 @@
+function activeFilters ()
+    loop through "all clicked"
+    create div
+    append div to "filter bar container"
+    innerHtml icon, name
+    add event listener ("click", removeActiveFilter ())
+
+
+function removeActiveFilter ()
+    splice (removes from a specific Array index)
+    hur vet vi index????
+    dubbelkolla så det försvinner från markerade på filtersidan.
