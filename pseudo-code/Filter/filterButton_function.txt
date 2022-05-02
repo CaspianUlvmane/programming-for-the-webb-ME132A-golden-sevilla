@@ -1,0 +1,109 @@
+button in html - within div
+
+button should change view
+
+button add event listener (click, showFilters)
+
+function showFilters (){
+    create div - wrapper
+    div innerHTML 
+        filterContainers ()
+        
+
+    append wrapper to body
+}
+
+function filterContainers () {
+    
+    create div
+        div innerHTML
+            languages container
+                text - language
+                languagesFunction()
+
+            levels container
+                text - level
+                levelsFunction()
+
+            fields container
+                text - fields
+                fieldsFunction()
+
+            countries container
+                text - countries
+                countriesFunction()
+
+            cities container
+                text cities
+                citiesFunction(countries)
+
+            text - language
+            div - loop through languages - function
+                language buttons
+    return div
+}
+
+function languagesFunction (){
+    createDiv languages
+        for (let language of DB.LANGUAGES){
+            createDiv languageItem
+                languageItem text content = language.name
+                languageItem add event listener (click, toggelActive)
+                languageItem add event listener (click, toggelFilter)
+                languageItem add event listener (click, toggelLanguageFilter)
+                append languageItem to languages
+        }
+    return languages
+}
+
+function levelsFunction (){
+    createDiv levels
+        for (let i = 0; i < DB.LEVELS.length; i++){
+            createDiv levelItem
+                levelItem text content = DB.LEVELS[i]
+                levelItem add event listener (click, toggelActive)
+                levelItem add event listener (click, toggelFilter)
+                levelItem add event listener (click, toggelLevelsFilter)
+                append levelItem to levels
+        }
+    return levels
+}
+
+function fieldsFunction (){
+    createDiv fields
+        for (let field of DB.FIELDS){
+            createDiv fieldItem
+                fieldItem text content = field.name
+                fieldItem add event listener (click, toggelActive)
+                fieldItem add event listener (click, toggelFilter)
+                fieldItem add event listener (click, toggelFieldsFilter)
+                append fieldItem to fields
+        }
+    return fields
+}
+
+function countriesFunction (){
+    createDiv countries
+        for (let country of DB.countries){
+            createDiv countryItem
+                countryItem text content = country.name
+                countryItem add event listener (click, toggelActive)
+                countryItem add event listener (click, toggelFilter)
+                countryItem add event listener (click, toggelCountryFilter)
+                append countryItem to countries
+        }
+    return countries
+}
+
+function citiesFunction (countriesArray){
+    createDiv cities
+    for (country of countriesArray)
+        for (let city of DB.cities)
+        if (city.countryID == country.id)
+            createDiv cityItem
+            cityItem add event listener (click, toggelActive)
+            cityItem add event listener (click, toggelFilter)
+            cityItem add event listener (click, toggelCityFilter)
+            append cityItem to cities
+    return cities
+}
