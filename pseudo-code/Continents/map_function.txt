@@ -4,7 +4,7 @@ check localStorage, set likedExists to true or false
 append buildTopMenu(false, likedExists) to body
 
 
-function continentMap () { 
+function continentMap () 
     createDiv map
     add class worldMap to map
     map innerHTML VäljContinent 
@@ -16,13 +16,12 @@ function continentMap () {
         append button to map 
 
     return map
-}
 
 
 function getContinentMap (event) 
     let continentName = event.target.id 
     createDiv continentContainer  
-    innerHTML chooseCountry 
+    innerHTML backArrow() chooseCountry  
     add class continentName to continentContainer
     find DB.Continents.continentId 
     filter.DB.Countrys to get array of contrys with continentId 
@@ -31,9 +30,21 @@ function getContinentMap (event)
         button add id as country.name 
         append button to continentContainer // placeras genom css  
 
+    return continentContainer
+
 
 /// MÅSTE GÖRAS TILLBACKA PIL 
+function backArrow ()
+    createDiv divArrow
+    divArrow add divArrowImg
+    divArrow eventListener go back to worldMap
+
+    return divArrow
+
+
 /// MÅSTE LÄNKA LAND TILL CONTRY.HTML 
+function pressCountryGoToCountryHTML () 
+    
          
         
     
