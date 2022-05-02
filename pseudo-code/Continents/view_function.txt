@@ -4,45 +4,53 @@ check localStorage, set likedExists to true or false
 append buildTopMenu(false, likedExists) to body
 
 
-function continetsButtonsBar () {
+function continetsButtonsBar () 
     createDiv containerButtons 
     append containerButtons to body 
 
-    append buttonsMapVy(active) to containerButtons
-    append buttonListVy() to containerButtons
+    append buttonsMapVy(element) to containerButtons
+    append buttonListVy(element) to containerButtons
 
-    if (buttonsMapVy == active) 
-        
-    else if (buttonListVy == active)
-
+    if (buttonsMapVy() == active) 
+        continentMap()
+    else if (buttonListVy() == active)
+        createContinentList()
 
     return containerButtons
-}
 
 
-function buttonsMapVy (parameterActive) 
-    createDiv _divButtonMapVy
-    add class to _divButtonMapVy
-    add class parameterActive to _divButtonMapVy
-     _divButtonVy.innerHTML mapvy
-    _divButtonMapVy.addEventListener("click", function ()
+
+function buttonsMapVy (element) 
+    createDiv element // parameter
+    add class to element
+    add class parameterActive to element
+    element.innerHTML mapvy
+    element.addEventListener("click", function ()
         changeClass()
     ) 
 
+    return element
 
-function buttonListVy () 
-    createDiv _divButtonListVy
-    add class to _divButtonListVy
-    _divButtonVy.innerHTML listVy
-        _divButtonVy.addEventListener("click", function ()
+
+function buttonListVy (element) 
+    createDiv element
+    add class to element
+    element.innerHTML listVy
+        element.addEventListener("click", function ()
         changeClass()
     ) 
+
+    return element
 
 
 function changeClass (element)
-    if (element class contains("inactive"){
-        remove class("inactive")
-    } else add class("inactive")
+    querySelectorAll allbuttons 
+
+    loop fro allbuttons
+        if (button.contains("active"))
+            button remove active
+        else 
+            button add active
 
 
-
+continetsButtonsBar()
