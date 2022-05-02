@@ -2,6 +2,16 @@ button in html - within div
 
 button should change view
 
+global arrays
+    -allFilters
+    -languageArray
+    -levelArray
+    -fieldsArray
+    -countryArray
+    -citiesArray
+
+-------
+
 button add event listener (click, showFilters)
 
 function showFilters (){
@@ -49,8 +59,8 @@ function languagesFunction (){
             createDiv languageItem
                 languageItem text content = language.name
                 languageItem add event listener (click, toggelActive)
-                languageItem add event listener (click, toggelFilter)
-                languageItem add event listener (click, toggelLanguageFilter)
+                languageItem add event listener (click, toggelFilter(language))
+                languageItem add event listener (click, toggelLanguageFilter(language))
                 append languageItem to languages
         }
     return languages
@@ -62,8 +72,8 @@ function levelsFunction (){
             createDiv levelItem
                 levelItem text content = DB.LEVELS[i]
                 levelItem add event listener (click, toggelActive)
-                levelItem add event listener (click, toggelFilter)
-                levelItem add event listener (click, toggelLevelsFilter)
+                levelItem add event listener (click, toggelFilter(DB.LEVELS[i]))
+                levelItem add event listener (click, toggelLevelsFilter(DB.LEVELS[i]))
                 append levelItem to levels
         }
     return levels
@@ -75,8 +85,8 @@ function fieldsFunction (){
             createDiv fieldItem
                 fieldItem text content = field.name
                 fieldItem add event listener (click, toggelActive)
-                fieldItem add event listener (click, toggelFilter)
-                fieldItem add event listener (click, toggelFieldsFilter)
+                fieldItem add event listener (click, toggelFilter(field))
+                fieldItem add event listener (click, toggelFieldsFilter(field))
                 append fieldItem to fields
         }
     return fields
@@ -88,8 +98,8 @@ function countriesFunction (){
             createDiv countryItem
                 countryItem text content = country.name
                 countryItem add event listener (click, toggelActive)
-                countryItem add event listener (click, toggelFilter)
-                countryItem add event listener (click, toggelCountryFilter)
+                countryItem add event listener (click, toggelFilter(country))
+                countryItem add event listener (click, toggelCountryFilter(country))
                 append countryItem to countries
         }
     return countries
@@ -101,9 +111,54 @@ function citiesFunction (countriesArray){
         for (let city of DB.cities)
         if (city.countryID == country.id)
             createDiv cityItem
+            cityItem text content = city.name
             cityItem add event listener (click, toggelActive)
-            cityItem add event listener (click, toggelFilter)
-            cityItem add event listener (click, toggelCityFilter)
+            cityItem add event listener (click, toggelFilter(city))
+            cityItem add event listener (click, toggelCityFilter(city))
             append cityItem to cities
     return cities
+}
+
+function toggelFilter (item){
+    if (allFilters.contains(item))
+        remove item from allFilters
+    else
+        allFilters.push(item)
+}
+
+function toggelLanguageFilter (language){
+    if (languageArray.contains(language))
+        remove langauge from languageArray
+    else
+        languageArray.push(language)
+}
+
+function toggelLevelsFilter (level){
+    if (levelArray.contains(level))
+        remove level from levelArray
+    else
+        levelArray.push(level)
+}
+
+function toggelFieldFilter (field){
+    if (fieldArray.contains(field))
+        remove field from fieldArray
+    else
+        fieldArray.push(field)
+}
+
+
+function toggelCountryFilter (country){
+    if (countryArray.contains(country))
+        remove country from countyrArray
+    else
+        countryArray.push(country)
+}
+
+
+function toggelCityFilter (city){
+    if (cityArray.contains(city))
+        remove city from citydArray
+    else
+        cityArray.push(city)
 }
