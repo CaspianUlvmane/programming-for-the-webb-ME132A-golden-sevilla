@@ -4,9 +4,19 @@ function activeFilters ()
     append div to "filter bar container"
     innerHtml icon, name
     add event listener ("click", removeActiveFilter ())
+    renderResults()
 
 
 function removeActiveFilter ()
-    splice (removes from a specific Array index)
-    hur vet vi index????
-    dubbelkolla så det försvinner från markerade på filtersidan.
+    event.target.textContent = paris
+    loop through array "all clicked"
+        find index of paris
+        splice allclicked(indexOfParis, 1)
+
+    if (languageArray.includes = paris)
+        find paris index
+        citiesArray.splice(parisIndex, 1)
+        
+    else if (citiesArray.name = paris)
+        find paris index
+        citiesArray.splice(parisIndex, 1)
