@@ -127,21 +127,21 @@ function toggelFilter (item){
 }
 
 function toggelLanguageFilter (language){
-    if (languageArray.contains(language))
+    if (languageArray.includes(language))
         remove langauge from languageArray
     else
         languageArray.push(language)
 }
 
 function toggelLevelsFilter (level){
-    if (levelArray.contains(level))
+    if (levelArray.includes(level))
         remove level from levelArray
     else
         levelArray.push(level)
 }
 
 function toggelFieldFilter (field){
-    if (fieldArray.contains(field))
+    if (fieldArray.includes(field))
         remove field from fieldArray
     else
         fieldArray.push(field)
@@ -149,7 +149,7 @@ function toggelFieldFilter (field){
 
 
 function toggelCountryFilter (country){
-    if (countryArray.contains(country))
+    if (countryArray.includes(country))
         remove country from countyrArray
     else
         countryArray.push(country)
@@ -157,7 +157,7 @@ function toggelCountryFilter (country){
 
 
 function toggelCityFilter (city){
-    if (cityArray.contains(city))
+    if (cityArray.includes(city))
         remove city from citydArray
     else
         cityArray.push(city)
