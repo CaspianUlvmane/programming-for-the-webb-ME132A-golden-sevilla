@@ -14,6 +14,6 @@ function renderResults (arrayOfPrograms){
 function addLike (){
     preventDefault
     this heart - dark
-    push this parentElement to likedArray'
+    push this programId to likedArray'
     this heart addEventListener (click, removeLike)
 }
