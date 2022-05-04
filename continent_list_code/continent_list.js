@@ -38,6 +38,6 @@ document.querySelector("body").appendChild(list)
 
 function getClickedCountryId(event){
     let clickedContry = event.target.innerHTML
-
     return DB.COUNTRIES.find(country => country.name == clickedContry).id
+    // this click should also call for country.html and activate funtion that create country.html info
 }
