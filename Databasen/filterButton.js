@@ -24,18 +24,26 @@ function buildFilterButton (text, key, value){
     button.textContent = text
     button.addEventListener("click", toggleActive)
     button.addEventListener("click", filter)
-    return button}
-
-function languageButtons(){
-    let body = document.querySelector("body")
-    for (let language of DB.LANGUAGES){
-        body.appendChild(buildFilterButton(language.name, "language", language.id))
-    }
+    return button
 }
-
-function toggleActive (){
-    if (this.classList.contains("active")){
-        this.classList.remove("active")
+    
+    function languageButtons(){
+        let body = document.querySelector("body")
+        for (let language of DB.LANGUAGES){
+            body.appendChild(buildFilterButton(language.name, "language", language.id))
+        }
     }
-    else this.classList.add("active")
-}
+
+    function languageButtons(){
+        let body = document.querySelector("body")
+        for (let language of DB.LANGUAGES){
+            body.appendChild(buildFilterButton(language.name, "language", language.id))
+        }
+    }
+    
+    function toggleActive (){
+        if (this.classList.contains("active")){
+            this.classList.remove("active")
+        }
+        else this.classList.add("active")
+    }
