@@ -16,21 +16,68 @@ function testDontKeep () {
 
 testDontKeep()
 
-
 function popUpProgram (event) {
     let programName = event.target.innerHTML
-    DB.PROGRAMMES.find(program => program.name == programName)
-    console.log(DB.PROGRAMMES.find(program => program.name == programName))
-    let container = createElement("div")
-    container.classList.add("container")
-    document.body.append(container)
+    let programsFound = DB.PROGRAMMES.find(program => program.name == programName)
+    
+    console.log(programsFound)
 
-    return container
-} 
+    if (programName == programsFound.name) {
+        let programPopUpContainer = createElement("div");
+        programPopUpContainer.classList.add("container")
+        document.body.append(programPopUpContainer)
+        programPopUpContainer.append(interactWithPop())
+        programPopUpContainer.append(addInfoProgram(programsFound))
+        programPopUpContainer.append(commentsProgram(programsFound))
+    } 
+}
 
 function interactWithPop () {
     let barContainer = createElement("div")
-    
+    barContainer.classList.add("barContainer")
+
+    let crossIconDiv = createElement("div")
+    crossIconDiv.classList.add("imgCross")
+    crossIconDiv.innerHTML = "Cross"
+    crossIconDiv.addEventListener("click", function (){})
+
+    let heartIconDiv = createElement("div")
+    heartIconDiv.classList.add("imgHearth")
+    heartIconDiv.innerHTML = "Hearth"
+    heartIconDiv.addEventListener("click", function (){})
+
+    barContainer.append(crossIconDiv, heartIconDiv)
+
+    return barContainer
 }
 
 
+function addInfoProgram (program) {
+    let infoContainer = createElement("div")
+    infoContainer.classList.add("infoContainer")
+    infoContainer.innerHTML = `
+        <h4 class="infoBoxHeader">${program.name}</h4>
+    <div class="programInfoBox">
+        <div> Land:   Stad: </div>
+        <div> Universitet: </div>
+        <div> Ämne: Nivå: Språk: </div>
+        <div> Medelvärde av Kursen </div>
+        <div> Kommentarer från studenter </div>
+    </div> 
+    `
+    return infoContainer
+}
+
+function commentsProgram (program) {
+    let commentContainer = createElement("div")
+    let programID = DB.COMMENTS_PROGRAMME.filter(program => COMMENTS_PROGRAMME.id == program)
+    console.log(programID)
+
+    return commentContainer
+
+}
+
+
+function findCountry (id) {
+    return DB.COUNTRIES.filter((country) => country.id == id)[0]
+}   
