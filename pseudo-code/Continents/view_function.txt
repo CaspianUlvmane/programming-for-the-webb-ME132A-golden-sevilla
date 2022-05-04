@@ -19,10 +19,9 @@ function continetsButtonsBar ()
     return containerButtons
 
 
-
 function buttonsMapVy (element) 
     createDiv element // parameter
-    add class to element
+    add classMapVy to element 
     add class parameterActive to element
     element.innerHTML mapvy
     element.addEventListener("click", function ()
@@ -34,7 +33,7 @@ function buttonsMapVy (element)
 
 function buttonListVy (element) 
     createDiv element
-    add class to element
+    add classListVy to element
     element.innerHTML listVy
         element.addEventListener("click", function ()
         changeClass()
@@ -47,10 +46,10 @@ function changeClass (element)
     querySelectorAll allbuttons 
 
     loop fro allbuttons
-        if (button.contains("active"))
-            button remove active
-        else 
-            button add active
+        if (button.contains("listVy"))
+            remove mapVy 
+        else if (button.contains("mapvy"))
+            remove listvy       
 
 
 continetsButtonsBar()
