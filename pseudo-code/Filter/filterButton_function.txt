@@ -63,6 +63,16 @@ function languagesFunction (){
     return languages
 }
 
+function buildFilterButton (text, key, value)
+    createDiv button
+    button.dataset = JSON.stringyfiy({key: key, value: value})
+    button.textContent = text
+    addEventListener(click, toggelActive)
+    addEventListener(click, filter)
+    return button
+
+after toggle look for all toggled
+
 function levelsFunction (){
     createDiv levels
         for (let i = 0; i < DB.LEVELS.length; i++){
