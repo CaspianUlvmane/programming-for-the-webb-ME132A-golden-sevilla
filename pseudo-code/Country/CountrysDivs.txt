@@ -1,5 +1,4 @@
-INFO
-Gör div x2 i html, div img + infoDiv
+Div för top-img och infoDiv skapas i Html. 
 
 function buildCountry (id)
     let country = DB.COUNTRIES.find((country)=> country.id == id)
