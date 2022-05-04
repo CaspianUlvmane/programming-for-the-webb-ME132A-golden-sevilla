@@ -47,9 +47,6 @@ function filterContainers () {
                 text cities
                 citiesFunction(countries)
 
-            text - language
-            div - loop through languages - function
-                language buttons
     return div
 }
 
@@ -59,12 +56,22 @@ function languagesFunction (){
             createDiv languageItem
                 languageItem text content = language.name
                 languageItem add event listener (click, toggelActive)
-                languageItem add event listener (click, toggelFilter(language))
-                languageItem add event listener (click, toggelLanguageFilter(language))
+                languageItem add event listener (click, toggelFilter(language.ID))
+                languageItem add event listener (click, toggelLanguageFilter(language.ID))
                 append languageItem to languages
         }
     return languages
 }
+
+function buildFilterButton (text, key, value)
+    createDiv button
+    button.dataset = JSON.stringyfiy({key: key, value: value})
+    button.textContent = text
+    addEventListener(click, toggelActive)
+    addEventListener(click, filter)
+    return button
+
+after toggle look for all toggled
 
 function levelsFunction (){
     createDiv levels
@@ -97,13 +104,14 @@ function countriesFunction (){
         for (let country of DB.countries){
             createDiv countryItem
                 countryItem text content = country.name
-                countryItem add event listener (click, toggelActive)
+                countryItem add event listener (click, toggelActiveBasedOnID)
                 countryItem add event listener (click, toggelFilter(country))
                 countryItem add event listener (click, toggelCountryFilter(country))
                 append countryItem to countries
         }
     return countries
 }
+
 
 function citiesFunction (countriesArray){
     createDiv cities
@@ -126,11 +134,21 @@ function toggelFilter (item){
         allFilters.push(item)
 }
 
+<<<<<<< Updated upstream
 function toggelLanguageFilter (language){
     if (languageArray.includes(language))
         remove langauge from languageArray
+        remove class active
     else
         languageArray.push(language)
+        add class active
+=======
+function toggelLanguageFilter (language.ID){
+    if (languageArray.includes(language.ID))
+        remove langauge.ID from languageArray
+    else
+        languageArray.push(language.ID)
+>>>>>>> Stashed changes
 }
 
 function toggelLevelsFilter (level){
