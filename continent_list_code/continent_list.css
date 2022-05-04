@@ -1,0 +1,40 @@
+:root{
+    --dark: #344450; 
+    --lightGrey: #eaeaee;
+    --lightBeige: #EDE7DF;
+}
+
+body{
+    margin: 0;
+    color: var(--dark);
+}
+
+#list-container{
+    background-color: var(--lightBeige);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.continent-div{
+    border-bottom: 1px solid #dad4cd;
+}
+
+.continent-div:hover{
+    cursor: pointer;
+}
+
+.country-div, .continent-div{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unactive{
+    display: none;
+}
+
+.country-container{
+    background-color: #e4ded7;
+}
