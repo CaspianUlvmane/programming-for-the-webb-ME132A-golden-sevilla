@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    color: #EDE7DF;
+}
+
+#list-container{
+    background-color: #425664;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.continent-div{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.349);
+}
+
+.continent-div:hover{
+    cursor: pointer;
+}
+
+.country-div, .continent-div{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unactive{
+    display: none;
+}
+
+.country-container{
+    background-color: #3a4c59;
+}
