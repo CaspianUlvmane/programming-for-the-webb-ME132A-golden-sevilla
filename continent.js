@@ -7,21 +7,22 @@ function createContinentList(){
         let continetContainer = document.createElement("div")
         let continentDiv = document.createElement("div")
         continentDiv.classList.add("continent-div")
-        continentDiv.innerHTML = continent.name
+        continentDiv.innerHTML = continent.name.toUpperCase()
         continetContainer.appendChild(continentDiv)
 
         let countrysInContinent = DB.COUNTRIES.filter(country => country.continentID == continent.id)
         let countryContainer = document.createElement("div")
-        countryContainer.classList.add("country-container")
+        countryContainer.classList.add("country-container", "unactive")
         
         for (let country of countrysInContinent){
             let countryDiv = document.createElement("div")
+            countryDiv.classList.add("country-div")
             countryDiv.innerHTML = country.name
             countryContainer.appendChild(countryDiv)
         }
         
         continentDiv.addEventListener("click", function(){
-            countryContainer.classList.toggle("country-container")
+            countryContainer.classList.toggle("unactive")
         })
 
         continetContainer.appendChild(countryContainer)
