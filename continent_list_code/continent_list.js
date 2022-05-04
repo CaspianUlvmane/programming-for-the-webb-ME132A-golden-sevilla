@@ -32,6 +32,7 @@ function createContinentList(){
     return listContainer
 }
 
+cotinentViewBar()
 let list = createContinentList()
 document.querySelector("body").appendChild(list)
 
@@ -40,4 +41,29 @@ function getClickedCountryId(event){
     let clickedContry = event.target.innerHTML
     return DB.COUNTRIES.find(country => country.name == clickedContry).id
     // this click should also call for country.html and activate funtion that create country.html info
+}
+
+
+function cotinentViewBar (){
+    let viewContainer = document.createElement("div")
+    viewContainer.appendChild(createDivMapView())
+    viewContainer.appendChild(createDivListView())
+
+    document.querySelector("body").appendChild(viewContainer)
+}
+
+function createDivMapView (){
+    let mapDiv = document.createElement("div")
+    mapDiv.classList.add("map-view")
+    mapDiv.innerHTML = "Kartvy"
+
+    return mapDiv
+}
+
+function createDivListView (){
+    let listDiv = document.createElement("div")
+    listDiv.classList.add("list-view")
+    listDiv.innerHTML = "Listvy"
+
+    return listDiv
 }
