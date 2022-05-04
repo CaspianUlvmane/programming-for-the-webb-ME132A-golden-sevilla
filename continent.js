@@ -1,39 +1,33 @@
+
 function createContinentList(){
     let listContainer = document.createElement("div")
 
     for (let continent of DB.CONTINENTS){
-        let continentContainer = continentDiv(continent)
+        let continetContainer = document.createElement("div")
+        let continentDiv = document.createElement("div")
+        continentDiv.classList.add("continent-div")
+        continentDiv.innerHTML = continent.name
+        continetContainer.appendChild(continentDiv)
 
         let countrysInContinent = DB.COUNTRIES.filter(country => country.continentID == continent.id)
-
         let countryContainer = document.createElement("div")
         countryContainer.classList.add("country-container")
-
+        
         for (let country of countrysInContinent){
-            let countryDiv = createCountryDiv(country)
+            let countryDiv = document.createElement("div")
+            countryDiv.innerHTML = country.name
             countryContainer.appendChild(countryDiv)
         }
+        
+        continentDiv.addEventListener("click", function(){
+            countryContainer.classList.toggle("country-container")
+        })
 
-        listContainer.appendChild(continentContainer)
+        continetContainer.appendChild(countryContainer)
+        listContainer.appendChild(continetContainer)
     }
+    return listContainer
 }
 
-function createContinentDiv (continent){
-    let continetContainer = document.createElement("div")
-    continetContainer.appendChild(continentDiv)
-
-    let continentDiv = document.createElement("div")
-    continentDiv.innerHTML = continent.name
-    continentDiv.addEventListener("click", toggleCountryView)
-
-    return continetContainer   
-}
-
-function createCountryDiv(country){
-    let countryDiv = document.createElement("div")
-    countryDiv.innerHTML = country.name
-    countryDiv.addEventListener("click", getClickedCountryId)
-
-    return countryDiv
-}
-
+let list = createContinentList()
+document.querySelector("body").appendChild(list)
