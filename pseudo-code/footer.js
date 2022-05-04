@@ -1,15 +1,16 @@
 function footer(){
     let footerDiv = document.createElement("div")
+    footerDiv.id = "footer-div"
 
     footerDiv.innerHTML = `
-        <h3> <a href = index.HTML> STUDERIENCE </a> </h3> 
-        <p> info.studerience.com</p>
-        <p><a href = info.html> Utbyteslivet </a></p>
-        <p><a href = continents.html> Världsdelar och länder </a></p>
-        <p><a href = fields.html> Ämnen </a></p>
-        <p><a href = about.html> Om oss </a></p>
-        <p> Copyright</p>`
+        <a class="footer-title" href = index.HTML> STUDERIENCE </a> </h3> 
+        <p class ="footer-item"> info.studerience.com</p>
+        <a class ="footer-item" href = info.html> Utbyteslivet </a>
+        <a class ="footer-item" href = continents.html> Världsdelar och länder </a>
+        <a class ="footer-item" href = fields.html> Ämnen </a>
+        <a class ="footer-item" href = about.html> Om oss </a>
+        <p class ="footer-copyright"> Copyright</p>`
+        // bild istället för p här?
     return footerDiv
 }
 
-document.querySelector("body").appendChild(footer())
