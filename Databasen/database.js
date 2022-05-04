@@ -13025,31 +13025,39 @@ const PROGRAMMES = [
 const FIELDS = [
     {
         "id": 0,
-        "name": "Matematik"
+        "name": "Matematik",
+        "text": "Matematiken är naturvetarnas och teknikernas internationella språk framför andra, i växande utsträckning också samhällsvetarnas och ekonomernas. Utvecklingen på datorområdet har gjort att matematikens praktiska användbarhet har ökat och därmed efterfrågan på personer med goda matematikkunskaper, det vill säga yrkesmatematiker."
     },
     {
         "id": 1,
-        "name": "Teknik"
+        "name": "Teknik",
+        "text": "Det finns massor av utbildningar inom teknikområdet att läsa på universitet och högskolor. Du hittar exempelvis ingenjörsutbildningar med en rad olika inriktningar. En högskole- eller universitetsutbildning ger dig en akademisk utbildning och du kan antingen läsa en kandidatexamen eller ta en magister/masterexamen"
     },
     {
         "id": 2,
-        "name": "Juridik"
+        "name": "Juridik",
+        "text": "Juridik är läran om rättsreglernas tolkning och tillämpning. När du är yrkesverksam inom området kallas du jurist. Som jurist får du lösa, analysera och tolka olika lagar och författningar. Mycket av en jurists dagliga arbetet handlar om att samla, läsa och bearbeta juridiskt material. Juristprogrammet ger dig breda kunskaper om hur samhället fungerar, och ger dig även verktyg för att logiskt och metodiskt lösa komplicerade problem. Dessa kunskaper behövs överallt i samhället, både i Sverige och internationellt."
+        
     },
     {
         "id": 3,
-        "name": "Medicin"
+        "name": "Medicin",
+        "text": "Den som har kunskap inom medicin ska kunna förebygga, bota och lindra mänskliga sjukdomar. Medicinsk vetenskap är något som sysselsätter forskare och vårdpersonal över hela världen. Medicin delas på akademisk nivå upp i klinisk medicin och teoretisk medicin.Teoretisk medicin handlar om människokroppen och sjukdomar som kan drabba dess konstruktion och funktioner. Läkare, sjukgymnaster, sjuksköterskor är exempel på yrken som arbetar med teoretisk medicin. Klinisk medicin kan även kallas för praktisk medicin och det är den del som berör patienterna. Här ingår bland annat gynekologi, kirurgi och psykiatri."
     },
     {
         "id": 4,
-        "name": "Sociologi"
+        "name": "Sociologi",
+        "text": "Sociologi är ett vetenskapligt läroämne som studerar samhällen och sociala handlingar. Det handlar mycket om att försöka förstå och förklara varför människor handlar som de gör. Sociologi studerar sociala sammanhang, relationen mellan människan och samhället på olika nivåer såsom individ-, grupp- och samhällsnivå. Sociologi handlar till stor del om ämnen som maktrelationer, social ojämlikhet, etniska relationer, massmedier, arbets- och familjeliv, för att nämna några. "
     },
     {
         "id": 5,
-        "name": "Filosofi"
+        "name": "Filosofi",
+        "text": "När du studerar filosofi får du en svårmatchad träning i ett grundläggande kritiskt tänkande. Ett tänkande som enkelt går att tillämpa inom de flesta områden. Filosofiska studier passar utmärkt som ett komplement till nästan alla studier och all slags forskning. Genom studier i filosofi övar du upp en förmåga att argumentera logiskt, du får förståelse för komplicerade resonemang samt en analytisk förmåga i filosofiska frågor och språkliga fällor."
     },
     {
         "id": 6,
-        "name": "Design"
+        "name": "Design",
+        "text": "Är du en kreativ person som gillar att skapa och förändra? Då kan en utbildning inom design passa dig! Designkurser och formgivningskurser är för den som vill lära sig mer om till exempel grafisk design, industriell design, ljusdesign eller textildesign. Utbildningar inom design kan leda fram till många olika jobb och faller under många olika utbildningsområden. Vi har ett brett utbud av program inom design vilket ger dig bra möjligheter att hitta programmet med den inriktning som passar dig. "
     }
 ];
 const LANGUAGES = [
