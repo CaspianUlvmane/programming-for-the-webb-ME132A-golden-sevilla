@@ -1,17 +1,23 @@
+:root{
+    --dark: #344450; 
+    --lightGrey: #eaeaee;
+    --lightBeige: #EDE7DF;
+}
+
 body{
     margin: 0;
-    color: #EDE7DF;
+    color: var(--dark);
 }
 
 #list-container{
-    background-color: #425664;
+    background-color: var(--lightBeige);
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
 .continent-div{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.349);
+    border-bottom: 1px solid #dad4cd;
 }
 
 .continent-div:hover{
@@ -30,5 +36,5 @@ body{
 }
 
 .country-container{
-    background-color: #3a4c59;
+    background-color: #e4ded7;
 }
