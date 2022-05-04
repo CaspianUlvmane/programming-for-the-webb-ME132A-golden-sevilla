@@ -4,7 +4,7 @@ function buildTopMenu (liked)
     append logoHTML() to menuHTML
     append searchHTML() to menuHTML
     
-    if (liked)
+    if ( something in array likedArray)
         append likedHTML() to menuHTML
     else
         append likeHTML() to menuHTML
