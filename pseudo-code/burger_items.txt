@@ -10,6 +10,7 @@ function burgerItemsHTML ()
     loop through burgerArray
         createDiv burgerItem
         innerHTML buttonText, buttonURL
-        append burgerItem to _burgerHTML
+        append burgerItem to burgerContainerHTML
         
+    // burgerContainerHTML appendas ? 
     return burgerContainerHTML
