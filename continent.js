@@ -1,6 +1,7 @@
 
 function createContinentList(){
     let listContainer = document.createElement("div")
+    listContainer.id = "list-container"
 
     for (let continent of DB.CONTINENTS){
         let continetContainer = document.createElement("div")
