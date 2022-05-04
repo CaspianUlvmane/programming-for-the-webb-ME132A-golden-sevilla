@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+}
+
+#footer-div{
+    background-color: #425664;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-title{
+    color: #EAEAEA;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 18pt;
+}
+
+.footer-item{
+    color: #EAEAEA;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.footer-copyright{
+    color: #EAEAEA;
+    margin-top: 20px;
+    text-decoration: none;
+}
