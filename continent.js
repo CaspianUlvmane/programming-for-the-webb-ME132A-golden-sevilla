@@ -19,6 +19,7 @@ function createContinentList(){
             countryDiv.classList.add("country-div")
             countryDiv.innerHTML = country.name
             countryContainer.appendChild(countryDiv)
+            countryDiv.addEventListener("click", getClickedCountryId)
         }
         
         continentDiv.addEventListener("click", function(){
@@ -33,3 +34,10 @@ function createContinentList(){
 
 let list = createContinentList()
 document.querySelector("body").appendChild(list)
+
+
+function getClickedCountryId(event){
+    let clickedContry = event.target.innerHTML
+
+    return DB.COUNTRIES.find(country => country.name == clickedContry).id
+}
