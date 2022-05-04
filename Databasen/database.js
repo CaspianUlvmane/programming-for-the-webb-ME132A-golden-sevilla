@@ -80,11 +80,30 @@ universitet.
 
 
 */
+const CONTINENTS = [
+    {
+        "id": 0,
+        "name": "Europa"
+    },
+    {
+        "id": 1,
+        "name": "Nordamerika"
+    },
+    {
+        "id": 2,
+        "name": "Sydamerika"
+    },
+    {
+        "id": 3,
+        "name": "Australien"
+    }
+]
 
 const COUNTRIES = [
     {
         "id": 0,
         "name": "Spain",
+        "continentID": 0,
         "visa": false,
         "languageID": 0,
         "flag": "spain.png",
@@ -106,6 +125,7 @@ const COUNTRIES = [
     {
         "id": 1,
         "name": "France",
+        "continentID": 0,
         "visa": false,
         "languageID": 2,
         "flag": "france.png",
@@ -127,6 +147,7 @@ const COUNTRIES = [
     {
         "id": 2,
         "name": "Australia",
+        "continentID": 3,
         "visa": false,
         "languageID": 1,
         "flag": "australia.png",
@@ -142,6 +163,7 @@ const COUNTRIES = [
     {
         "id": 3,
         "name": "United Kingdom",
+        "continentID": 0,
         "visa": false,
         "languageID": 1,
         "flag": "uk.png",
@@ -163,6 +185,7 @@ const COUNTRIES = [
     {
         "id": 4,
         "name": "Sweden",
+        "continentID": 0,
         "visa": false,
         "languageID": 3,
         "flag": "sweden.png",
@@ -184,6 +207,7 @@ const COUNTRIES = [
     {
         "id": 8,
         "name": "Chile",
+        "continentID": 2,
         "visa": true,
         "languageID": 0,
         "flag": "chile.png",
@@ -202,6 +226,7 @@ const COUNTRIES = [
     {
         "id": 5,
         "name": "Mexico",
+        "continentID": 2,
         "visa": true,
         "languageID": 0,
         "flag": "mexico.png",
@@ -223,6 +248,7 @@ const COUNTRIES = [
     {
         "id": 6,
         "name": "USA",
+        "continentID": 1,
         "visa": true,
         "languageID": 1,
         "flag": "usa.png",
@@ -241,6 +267,7 @@ const COUNTRIES = [
     {
         "id": 7,
         "name": "Argentina",
+        "continentID": 2,
         "visa": true,
         "languageID": 0,
         "flag": "argentina.png",
@@ -19649,6 +19676,7 @@ const COMMENTS_CITY = [
 
 
 const DB = {
+    CONTINENTS,
     COUNTRIES,
     CITIES,
     UNIVERSITIES,
