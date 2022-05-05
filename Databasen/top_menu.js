@@ -1,5 +1,11 @@
+//denna array ska sedan vara vår "likedArray".
+let array = ['hej']
+// alltså ska parametern array, vara "likedArray" sedan.
+document.querySelector('body').appendChild(buildTopMenu(array))
+
 function buildTopMenu (likedArray) {
   let topMenu = document.createElement('div')
+  topMenu.id = 'nav'
   topMenu.appendChild(createBurger())
   topMenu.appendChild(createLogo())
   topMenu.appendChild(createSearch())
@@ -14,27 +20,35 @@ function buildTopMenu (likedArray) {
 
 function createBurger () {
   let burgerDiv = document.createElement('div')
-  burgerDiv.innerHTML = 'Icon'
-  burgerDiv.addEventListener('click', createBurgerItems())
+  burgerDiv.classList.add('hamburger')
+  burgerDiv.innerHTML = `
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+  `
+  // burgerDiv.addEventListener('click', createBurgerItems())
   return burgerDiv
 }
 
 function createLogo () {
   let logoDiv = document.createElement('div')
-  logoDiv.innerHTML = 'Studerience'
-  // add link on studerience
+  logoDiv.classList.add('title-name')
+  logoDiv.innerHTML = `<a href = index.HTML><h2> STUDERIENCE </h2></a>`
   return logoDiv
 }
 
 function createSearch () {
   let searchDiv = document.createElement('div')
-  searchDiv.classList.add(search)
+  searchDiv.classList.add('search')
+  // Har icon-länk just nu, men ska sedan vara bild i css, som ändras vid byte av class.
+  searchDiv.innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
+  // behöver bygga searchBar(), innan dessa funkar.
   // add img to .search i css
-  searchBar()
-  searchDiv.addEventListener('click', function () {
-    searchBar().classList.toggle('searchBar')
-    changeClass(searchDiv)
-  })
+  // searchBar()
+  // searchDiv.addEventListener('click', function () {
+  //   searchBar().classList.toggle('searchBar')
+  //   changeClass(searchDiv)
+  // })
   return searchDiv
 }
 
@@ -48,14 +62,17 @@ function changeClass (element) {
 
 function createLightHeart () {
   let lightHeart = document.createElement('div')
-  lightHeart.innerHTML = 'icon'
-  lightHeart.addEventListener('click', likedPrograms())
+  lightHeart.classList.add('my-likes')
+  lightHeart.innerHTML = 'Icon'
+  // byt till tomt hjärta här, icon innerHTML
+  // lightHeart.addEventListener('click', likedPrograms())
   return lightHeart
 }
 
 function createDarkHeart () {
   let darkHeart = document.createElement('div')
-  darkHeart.innerHTML = 'icon'
-  darkHeart.addEventListener('click', likedPrograms())
+  darkHeart.classList.add('my-likes')
+  darkHeart.innerHTML = '<i class="fa-solid fa-heart"> </i>'
+  // darkHeart.addEventListener('click', likedPrograms())
   return darkHeart
 }

@@ -42,7 +42,7 @@ body {
   font-family: 'Barlow Condensed', sans-serif;
 }
 
-.search-icon, .my-likes {
+.search, .my-likes {
   font-size: 20px;
   margin-right: 20px;
 }
@@ -68,3 +68,18 @@ p {
   margin-right: 10px;
   /* text-align: justify; */
 }
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+/* .search {
+  //färger - bara för att testa om (byt icon - funktionen funkar)
+  background-color: palevioletred;
+}
+
+.close {
+    //färger - bara för att testa om (byt icon - funktionen funkar)
+  background-color: darkgoldenrod;
+} */
