@@ -1,4 +1,3 @@
-document.querySelector('body').appendChild(createBurgerItems())
 // OBS. uppdatera länkarna så de hittar vägen.
 
 function createBurgerItems () {
@@ -33,5 +32,6 @@ function createBurgerItems () {
     burgerItem.innerHTML = `<a href = "${item.url}">${item.text}</a> `
     burgerContainer.appendChild(burgerItem)
   }
-  return burgerContainer
+  document.querySelector('body').appendChild(burgerContainer)
+  // return burgerContainer
 }

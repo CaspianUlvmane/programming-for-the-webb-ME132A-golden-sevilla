@@ -26,7 +26,7 @@ function createBurger () {
   <span class="line"></span>
   <span class="line"></span>
   `
-  // burgerDiv.addEventListener('click', createBurgerItems())
+  burgerDiv.addEventListener('click', createBurgerItems)
   return burgerDiv
 }
 
