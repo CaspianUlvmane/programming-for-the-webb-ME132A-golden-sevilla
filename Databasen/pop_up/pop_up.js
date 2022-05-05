@@ -28,7 +28,6 @@ function popUpProgram (event) {
         document.body.append(programPopUpContainer)
         programPopUpContainer.append(interactWithPop())
         programPopUpContainer.append(addInfoProgram(programsFound))
-        // programPopUpContainer.append(commentsProgram(programsFound))
     } 
 }
 
@@ -72,7 +71,6 @@ function addInfoProgram (program) {
 
 
 function findUniversity (id) {
-    // console.log(DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID)[0])
     return DB.UNIVERSITIES.find((universitie) => universitie.id == id.universityID)
 }   
 
@@ -114,10 +112,12 @@ function commentsProgram (id) {
     commentContainer.classList.add("commentContainer")
     let programID = DB.COMMENTS_PROGRAMME.filter(comment => comment.programmeID == id.id)
     programID.forEach(comment => {
-        let commentBox =createElement("div")
-        commentBox.innerHTML =  ` <div class="commentDiv">
-         ${comment.text} </div>
-         <div class="commentName"> ${comment.alias}
+        let commentBox = createElement("div")
+        // commentBox.append(studentRatingProgram(programID))
+        commentBox.innerHTML =  ` 
+        <div> ${studentRatingProgram(programID)}</div>
+        <div class="commentDiv"> ${comment.text} </div>
+         <div class="commentName"> ${comment.alias} </div>
          `
          commentContainer.append(commentBox)
     });
@@ -128,3 +128,13 @@ function commentsProgram (id) {
 }
 
 
+function studentRatingProgram (comment) {
+    let sumOfRating = 0
+    let starRating = comment.map(rating => rating.stars)
+    console.log(starRating)
+    // starRating.forEach(rating => {
+    //     sumOfRating += rating.teachers + rating.students + rating.courses / 3
+    // });
+    
+    return Math.round(sumOfRating)
+}
