@@ -60,7 +60,7 @@ function addInfoProgram (program) {
     <div class="programInfoBox">
         <div class="info"> Land: ${getCountry(program)} <span> Stad: ${getCity(program)} </span> </div>
         <div class="info"> Universitet: ${getUniversity(program)}</div>
-        <div class="info"> Ämne: ${getFiled(program)}<span> Nivå: </span> Språk: </div>
+        <div class="info"> Ämne: ${getFiled(program)}<span> Nivå: </span> Språk: ${findLangauge(program)} </div>
         <div class="info"> Medelvärde av Kursen </div>
         <div class="info"> Kommentarer från studenter </div>
     </div> 
@@ -100,6 +100,10 @@ function findFiled (id) {
 
 function getFiled (id) {
     return findFiled(id).name
+}
+
+function findLangauge (id) {
+    return DB.LANGUAGES.find((language) => language.id == id.language).name
 }
 
 
