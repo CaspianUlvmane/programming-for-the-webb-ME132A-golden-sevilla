@@ -58,8 +58,8 @@ function addInfoProgram (program) {
     infoContainer.innerHTML = `
         <h4 class="infoBoxHeader">${program.name}</h4>
     <div class="programInfoBox">
-        <div> Land:   Stad: </div>
-        <div> Universitet: ${findUniversity(program)}</div>
+        <div> Land:  Stad: ${findCity(program)} </div>
+        <div> Universitet: ${getUniversity(program)}</div>
         <div> Ämne: Nivå: Språk: </div>
         <div> Medelvärde av Kursen </div>
         <div> Kommentarer från studenter </div>
@@ -70,7 +70,16 @@ function addInfoProgram (program) {
 
 
 function findUniversity (id) {
-    return DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID).map(universitie => universitie.name)
+    console.log(DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID)[0])
+    return DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID)[0]
+}   
+
+function getUniversity (id) {
+    return findUniversity(id).name
+}
+
+function findCity (id) {
+    return DB.CITIES.filter((city) => city.id == findUniversity(id).cityID).map(city => city.name)
 }   
 
 
