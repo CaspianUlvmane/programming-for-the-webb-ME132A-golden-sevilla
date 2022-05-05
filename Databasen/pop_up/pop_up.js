@@ -58,7 +58,7 @@ function addInfoProgram (program) {
     infoContainer.innerHTML = `
         <h4 class="infoBoxHeader">${program.name}</h4>
     <div class="programInfoBox">
-        <div> Land:  Stad: ${findCity(program)} </div>
+        <div> Land: ${getCountry(program)}  Stad: ${getCity(program)} </div>
         <div> Universitet: ${getUniversity(program)}</div>
         <div> Ämne: Nivå: Språk: </div>
         <div> Medelvärde av Kursen </div>
@@ -70,7 +70,7 @@ function addInfoProgram (program) {
 
 
 function findUniversity (id) {
-    console.log(DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID)[0])
+    // console.log(DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID)[0])
     return DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID)[0]
 }   
 
@@ -79,9 +79,21 @@ function getUniversity (id) {
 }
 
 function findCity (id) {
-    return DB.CITIES.filter((city) => city.id == findUniversity(id).cityID).map(city => city.name)
+    return DB.CITIES.filter((city) => city.id == findUniversity(id).cityID)[0]
 }   
 
+function getCity (id) {
+    return findCity(id).name
+}
+
+
+function findCountry (id) {
+    return DB.COUNTRIES.filter((country) => country.id == findCity(id).countryID)[0]
+}
+
+function getCountry (id) {
+    return findCountry(id).name
+}
 
 function commentsProgram (program) {
     let commentContainer = createElement("div")
