@@ -3,6 +3,27 @@ let languageArray = [1, 3]
 let filterResults = []
 // dataset
 
+function addCountryAndCity (){
+    for (let country of DB.COUNTRIES){
+        for (let city of DB.CITIES){
+            if (city.countryID == country.id){
+                for (let uni of DB.UNIVERSITIES){
+                    if (uni.cityID == city.id){
+                        for (let programme of DB.PROGRAMMES)
+                            if (programme.universityID == uni.id){
+                                programme.country = country.id
+                                programme.city = city.id
+                            }
+                        }
+                    }
+                }
+            }
+    
+    }
+}
+
+addCountryAndCity()
+
 function filter (){
     let activeArray = document.querySelectorAll(".active")
     let result = DB.PROGRAMMES
@@ -42,7 +63,7 @@ function buildFilterButton (text, key, value){
     }
 
     function levelButtons(){
-        let levels = document.getElementById("languages")
+        let levels = document.getElementById("levels")
         let i = 0
         for (let level of DB.LEVELS){
             levels.appendChild(buildFilterButton(level, "level", i))
@@ -57,8 +78,6 @@ function buildFilterButton (text, key, value){
             countryButton.addEventListener("click", function (){cityButtons()})
             countries.appendChild(countryButton)
         }
-        console.log(countries)
-        return countries.join(" ")
     }
 
     function cityButtons(){
@@ -82,22 +101,49 @@ function buildFilterButton (text, key, value){
         else this.classList.add("active")
     }
 
+    function filterDivEvent (){
+        let divs = document.querySelectorAll(".filterContainer div:nth-child(1)")
+        console.log(divs)
+        for (let div of divs)
+            div.addEventListener("click", showButtons)
+    }
+
+    function showButtons (){
+        if (this.classList.contains("showButtons")){
+            this.classList.remove("showButtons")
+        }
+        else this.classList.add("showButtons")
+    }
+
     function buildFilterButtons (){
         let body = document.querySelector("body")
         let div = document.createElement("div")
-        div.innerHTML = `<div>Språk</div>
-        <div id="languages"></div>
+        div.innerHTML = `<div class="filterContainer">
+        <div>Språk</div>
+        <div id="languages" class="filterButtons"></div>
+        </div>
+        <div class="filterContainer">
         <div>Nivåer</div>
-        <div id="levels"></div>
+        <div id="levels" class="filterButtons"></div>
+        </div>
+        <div class="filterContainer">
         <div>Ämnen</div>
-        <div id="fields"></div>
+        <div id="fields" class="filterButtons"></div>
+        </div>
+        <div class="filterContainer">
         <div>Länder</div>
-        <div id="countries"></div>
+        <div id="countries" class="filterButtons"></div>
+        </div>
+        <div class="filterContainer">
         <div>Städer</div>
-        <div id="cities"></div>`
+        <div id="cities" class="filterButtons"></div>
+        </div>`
         body.appendChild(div)
         languageButtons()
         levelButtons()
         fieldButtons()
         countryButtons()
+        filterDivEvent ()
     }
+
+    buildFilterButtons()
