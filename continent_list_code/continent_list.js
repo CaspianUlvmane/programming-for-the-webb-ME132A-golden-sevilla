@@ -1,7 +1,6 @@
 
 function createContinentList(){
-    let listContainer = document.createElement("div")
-    listContainer.classList.add("list-container")
+    let listContainer = document.getElementById("list-container")
 
     for (let continent of DB.CONTINENTS){
         let continetContainer = document.createElement("div")
@@ -33,7 +32,6 @@ function createContinentList(){
 }
 
 
-
 function getClickedCountryId(event){
     let clickedContry = event.target.innerHTML
     return DB.COUNTRIES.find(country => country.name == clickedContry).id
@@ -42,8 +40,7 @@ function getClickedCountryId(event){
 
 
 function cotinentViewBar (){
-    let viewContainer = document.createElement("div")
-    viewContainer.id = "view-container"
+    let viewContainer = document.getElementById("view-bar")
     let mapDiv= createDivMapView()
     let listDiv = createDivListView()
     mapDiv.addEventListener("click", function(){
@@ -53,9 +50,7 @@ function cotinentViewBar (){
         changeToListView(listDiv,mapDiv)
     })
     viewContainer.appendChild(mapDiv)
-    viewContainer.appendChild(listDiv)
-    
-    document.querySelector("body").appendChild(viewContainer)
+    viewContainer.appendChild(listDiv)   
 }
 
 function createDivMapView (){
@@ -74,17 +69,33 @@ function createDivListView (){
     return listDiv
 }
 
-// need to add code to change beetween continentListContainer and continerntMapContainer
 function changeToListView(listDiv, mapDiv){    
     listDiv.classList.add("active-view")
     mapDiv.classList.remove("active-view")
+
+    let mapContainer = document.getElementById("map-container")
+    let listContainer = document.getElementById("list-container")
+    mapContainer.style.display= "none"
+    listContainer.style.display = "flex" 
 }
 
 function changeToMapView(listDiv, mapDiv){  
     listDiv.classList.remove("active-view")
     mapDiv.classList.add("active-view")
+
+    let mapContainer = document.getElementById("map-container")
+    let listContainer = document.getElementById("list-container")
+    mapContainer.style.display = "flex"
+    listContainer.style.display = "none"  
+}
+
+function createContinentMap(){
+    let mapContainer = document.getElementById("map-container")
+    mapContainer.innerHTML = "MAP"
+    
+    return mapContainer
 }
 
 cotinentViewBar()
-let list = createContinentList()
-document.querySelector("body").appendChild(list)
+createContinentList()
+createContinentMap()
