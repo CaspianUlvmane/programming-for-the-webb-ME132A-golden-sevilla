@@ -1,4 +1,5 @@
 document.querySelector('body').appendChild(createBurgerItems())
+// OBS. uppdatera länkarna så de hittar vägen.
 
 function createBurgerItems () {
   let burgerItems = [
@@ -25,8 +26,10 @@ function createBurgerItems () {
   ]
   console.log(burgerItems)
   let burgerContainer = document.createElement('div')
+  burgerContainer.classList.add("burger-container")
   for (let item of burgerItems) {
     let burgerItem = document.createElement('div')
+    burgerItem.classList.add("burger-list")
     burgerItem.innerHTML = `<a href = "${item.url}">${item.text}</a> `
     burgerContainer.appendChild(burgerItem)
   }
