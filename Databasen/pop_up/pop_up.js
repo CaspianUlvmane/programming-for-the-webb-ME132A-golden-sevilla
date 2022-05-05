@@ -28,7 +28,7 @@ function popUpProgram (event) {
         document.body.append(programPopUpContainer)
         programPopUpContainer.append(interactWithPop())
         programPopUpContainer.append(addInfoProgram(programsFound))
-        programPopUpContainer.append(commentsProgram(programsFound))
+        // programPopUpContainer.append(commentsProgram(programsFound))
     } 
 }
 
@@ -59,7 +59,7 @@ function addInfoProgram (program) {
         <h4 class="infoBoxHeader">${program.name}</h4>
     <div class="programInfoBox">
         <div> Land:   Stad: </div>
-        <div> Universitet: </div>
+        <div> Universitet: ${findUniversity(program)}</div>
         <div> Ämne: Nivå: Språk: </div>
         <div> Medelvärde av Kursen </div>
         <div> Kommentarer från studenter </div>
@@ -67,6 +67,12 @@ function addInfoProgram (program) {
     `
     return infoContainer
 }
+
+
+function findUniversity (id) {
+    return DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID).map(universitie => universitie.name)
+}   
+
 
 function commentsProgram (program) {
     let commentContainer = createElement("div")
@@ -78,6 +84,3 @@ function commentsProgram (program) {
 }
 
 
-function findCountry (id) {
-    return DB.COUNTRIES.filter((country) => country.id == id)[0]
-}   
