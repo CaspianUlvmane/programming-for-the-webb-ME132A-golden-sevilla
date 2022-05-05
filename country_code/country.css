@@ -1,0 +1,42 @@
+:root{
+    --dark: #344450; 
+    --lightGrey: #eaeaee;
+    --lightBeige: #EDE7DF;
+}
+
+body{
+    margin: 0;
+}
+
+#top-img{
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.city-div{
+    border-bottom: 5px solid rgb(196, 196, 196);
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.city-info{
+    text-align: center;
+    background-color: #344450bd;
+    color: var(--lightGrey);
+    padding: 15px;
+    margin: 20px;
+}
+
+.country-info{
+    padding: 20px;
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.country-info > h2{
+    text-align: center;
+}
