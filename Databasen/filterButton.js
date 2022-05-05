@@ -3,6 +3,27 @@ let languageArray = [1, 3]
 let filterResults = []
 // dataset
 
+function addCountryAndCity (){
+    for (let country of DB.COUNTRIES){
+        for (let city of DB.CITIES){
+            if (city.countryID == country.id){
+                for (let uni of DB.UNIVERSITIES){
+                    if (uni.cityID == city.id){
+                        for (let programme of DB.PROGRAMMES)
+                            if (programme.universityID == uni.id){
+                                programme.country = country.id
+                                programme.city = city.id
+                            }
+                        }
+                    }
+                }
+            }
+    
+    }
+}
+
+addCountryAndCity()
+
 function filter (){
     let activeArray = document.querySelectorAll(".active")
     let result = DB.PROGRAMMES
@@ -42,7 +63,7 @@ function buildFilterButton (text, key, value){
     }
 
     function levelButtons(){
-        let levels = document.getElementById("languages")
+        let levels = document.getElementById("levels")
         let i = 0
         for (let level of DB.LEVELS){
             levels.appendChild(buildFilterButton(level, "level", i))
@@ -57,8 +78,6 @@ function buildFilterButton (text, key, value){
             countryButton.addEventListener("click", function (){cityButtons()})
             countries.appendChild(countryButton)
         }
-        console.log(countries)
-        return countries.join(" ")
     }
 
     function cityButtons(){
