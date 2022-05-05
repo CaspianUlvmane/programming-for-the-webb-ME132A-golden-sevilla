@@ -1,5 +1,37 @@
 .container {
-    height: 50px;
-    width: 50px;
-    background-color: black;
+    background-color: bisque;
+    width: 350px;
+}
+
+.barContainer {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.imgHearth {
+    margin: auto;
+    grid-column: 3 / span 1 ;
+}
+
+.imgCross {
+    margin: auto;
+}
+
+.infoBoxHeader {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.programInfoBox {
+    margin: 0px 20px;
+}
+
+.info {
+    margin: 10px;
+}
+
+span {
+    margin-left: 20px;
+    margin-right: 20px;
 }
