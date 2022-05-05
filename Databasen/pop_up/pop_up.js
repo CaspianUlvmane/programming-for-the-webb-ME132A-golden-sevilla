@@ -65,6 +65,8 @@ function addInfoProgram (program) {
         <div class="info"> Kommentarer från studenter </div>
     </div> 
     `
+    infoContainer.append(commentsProgram(program))
+
     return infoContainer
 }
 
@@ -107,9 +109,18 @@ function findLangauge (id) {
 }
 
 
-function commentsProgram (program) {
+function commentsProgram (id) {
     let commentContainer = createElement("div")
-    let programID = DB.COMMENTS_PROGRAMME.filter(program => COMMENTS_PROGRAMME.id == program)
+    commentContainer.classList.add("commentContainer")
+    let programID = DB.COMMENTS_PROGRAMME.filter(comment => comment.programmeID == id.id)
+    programID.forEach(comment => {
+        let commentBox =createElement("div")
+        commentBox.innerHTML =  ` <div class="commentDiv">
+         ${comment.text} </div>
+         <div class="commentName"> ${comment.alias}
+         `
+         commentContainer.append(commentBox)
+    });
     console.log(programID)
 
     return commentContainer
