@@ -33,15 +33,16 @@ function createBurger () {
 function createLogo () {
   let logoDiv = document.createElement('div')
   logoDiv.classList.add('title-name')
-  logoDiv.innerHTML = `<h2> STUDERIENCE </h2>`
-  // add link on studerience
+  logoDiv.innerHTML = `<a href = index.HTML><h2> STUDERIENCE </h2></a>`
   return logoDiv
 }
 
 function createSearch () {
   let searchDiv = document.createElement('div')
   searchDiv.classList.add('search')
+  // Har icon-länk just nu, men ska sedan vara bild i css, som ändras vid byte av class.
   searchDiv.innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
+  // behöver bygga searchBar(), innan dessa funkar.
   // add img to .search i css
   // searchBar()
   // searchDiv.addEventListener('click', function () {
@@ -63,6 +64,7 @@ function createLightHeart () {
   let lightHeart = document.createElement('div')
   lightHeart.classList.add('my-likes')
   lightHeart.innerHTML = 'Icon'
+  // byt till tomt hjärta här, icon innerHTML
   // lightHeart.addEventListener('click', likedPrograms())
   return lightHeart
 }
