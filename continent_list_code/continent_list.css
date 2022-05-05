@@ -9,19 +9,17 @@ body{
     color: var(--dark);
 }
 
-.list-container{
+#list-container{
     background-color: var(--lightBeige);
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-.unactive{
-    display: none;
-}
 
 .continent-div{
     border-bottom: 1px solid #dad4cd;
+    background-color: var(--lightBeige);
 }
 
 .continent-div:hover{
@@ -44,7 +42,7 @@ body{
     background-color: #e4ded7;
 }
 
-#view-container{
+#view-bar{
     display: flex;
     background-color: #344450d0;
     color: var(--lightGrey);
@@ -63,4 +61,12 @@ body{
 
 .active-view{
     background-color: #28343d;
+}
+
+#map-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--lightBeige);
 }
