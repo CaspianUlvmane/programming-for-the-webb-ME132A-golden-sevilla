@@ -58,11 +58,11 @@ function addInfoProgram (program) {
     infoContainer.innerHTML = `
         <h4 class="infoBoxHeader">${program.name}</h4>
     <div class="programInfoBox">
-        <div> Land: ${getCountry(program)}  Stad: ${getCity(program)} </div>
-        <div> Universitet: ${getUniversity(program)}</div>
-        <div> Ämne: Nivå: Språk: </div>
-        <div> Medelvärde av Kursen </div>
-        <div> Kommentarer från studenter </div>
+        <div class="info"> Land: ${getCountry(program)} <span> Stad: ${getCity(program)} </span> </div>
+        <div class="info"> Universitet: ${getUniversity(program)}</div>
+        <div class="info"> Ämne: ${getFiled(program)}<span> Nivå: </span> Språk: </div>
+        <div class="info"> Medelvärde av Kursen </div>
+        <div class="info"> Kommentarer från studenter </div>
     </div> 
     `
     return infoContainer
@@ -71,7 +71,7 @@ function addInfoProgram (program) {
 
 function findUniversity (id) {
     // console.log(DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID)[0])
-    return DB.UNIVERSITIES.filter((universitie) => universitie.id == id.universityID)[0]
+    return DB.UNIVERSITIES.find((universitie) => universitie.id == id.universityID)
 }   
 
 function getUniversity (id) {
@@ -79,21 +79,29 @@ function getUniversity (id) {
 }
 
 function findCity (id) {
-    return DB.CITIES.filter((city) => city.id == findUniversity(id).cityID)[0]
+    return DB.CITIES.find((city) => city.id == findUniversity(id).cityID)
 }   
 
 function getCity (id) {
     return findCity(id).name
 }
 
-
 function findCountry (id) {
-    return DB.COUNTRIES.filter((country) => country.id == findCity(id).countryID)[0]
+    return DB.COUNTRIES.find((country) => country.id == findCity(id).countryID)
 }
 
 function getCountry (id) {
     return findCountry(id).name
 }
+
+function findFiled (id) {
+    return DB.FIELDS.find((filed) => filed.id == id.subjectID)
+}
+
+function getFiled (id) {
+    return findFiled(id).name
+}
+
 
 function commentsProgram (program) {
     let commentContainer = createElement("div")

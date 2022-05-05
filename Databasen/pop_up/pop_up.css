@@ -1,6 +1,6 @@
 .container {
     background-color: bisque;
-    width: 300px;
+    width: 350px;
 }
 
 .barContainer {
@@ -20,14 +20,18 @@
 
 .infoBoxHeader {
     text-align: center;
-    margin: 20px;
+    margin-top: 20px;
 }
 
 .programInfoBox {
-    margin: 20px;
-    width: 100%;
+    margin: 0px 20px;
 }
 
-.programInfoBox > div {
-    margin: 15px 0px;
+.info {
+    margin: 10px;
+}
+
+span {
+    margin-left: 20px;
+    margin-right: 20px;
 }
