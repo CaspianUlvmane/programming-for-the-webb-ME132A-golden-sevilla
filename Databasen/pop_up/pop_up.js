@@ -20,9 +20,9 @@ function popUpProgram (event) {
     let programName = event.target.innerHTML
     let programsFound = DB.PROGRAMMES.find(program => program.name == programName)
     
-    console.log(programsFound)
+    // console.log(programsFound)
 
-    if (programName == programsFound.name) {
+    if (programName) {
         let programPopUpContainer = createElement("div");
         programPopUpContainer.classList.add("container")
         document.body.append(programPopUpContainer)
@@ -60,7 +60,7 @@ function addInfoProgram (program) {
         <div class="info"> Land: ${getCountry(program)} <span> Stad: ${getCity(program)} </span> </div>
         <div class="info"> Universitet: ${getUniversity(program)}</div>
         <div class="info"> Ämne: ${getFiled(program)}<span> Nivå: </span> Språk: ${findLangauge(program)} </div>
-        <div class="info"> Medelvärde av Kursen </div>
+        <div class="info"> Medelvärde av Kursen:  </div>
         <div class="info"> Kommentarer från studenter </div>
     </div> 
     `
@@ -106,35 +106,40 @@ function findLangauge (id) {
     return DB.LANGUAGES.find((language) => language.id == id.language).name
 }
 
+function findLevel (id) {
+    return DB.LEVELS[0]
+}
+
 
 function commentsProgram (id) {
     let commentContainer = createElement("div")
     commentContainer.classList.add("commentContainer")
-    let programID = DB.COMMENTS_PROGRAMME.filter(comment => comment.programmeID == id.id)
-    programID.forEach(comment => {
+
+    let programID = DB.PROGRAMMES.find(program => program.id == id.id)
+    console.log(programID)
+
+    let comments = DB.COMMENTS_PROGRAMME.filter(comment => comment.programmeID == programID.id)
+    console.log(comments)
+
+    for (let comment of comments) {
         let commentBox = createElement("div")
-        // commentBox.append(studentRatingProgram(programID))
         commentBox.innerHTML =  ` 
-        <div> ${studentRatingProgram(programID)}</div>
+        ${studentRatingProgram(comment)}
         <div class="commentDiv"> ${comment.text} </div>
-         <div class="commentName"> ${comment.alias} </div>
+        <div class="commentName"> ${comment.alias} </div>
          `
          commentContainer.append(commentBox)
-    });
-    console.log(programID)
+    }
 
     return commentContainer
 
 }
 
 
-function studentRatingProgram (comment) {
+function studentRatingProgram (comments) {
     let sumOfRating = 0
-    let starRating = comment.map(rating => rating.stars)
-    console.log(starRating)
-    // starRating.forEach(rating => {
-    //     sumOfRating += rating.teachers + rating.students + rating.courses / 3
-    // });
     
-    return Math.round(sumOfRating)
+    sumOfRating += comments.stars.teachers + comments.stars.students + comments.stars.courses 
+        
+    return Math.round(sumOfRating/3)
 }

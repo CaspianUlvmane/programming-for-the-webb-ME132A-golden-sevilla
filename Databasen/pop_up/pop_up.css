@@ -1,4 +1,5 @@
 .container {
+    margin: auto auto;
     background-color: bisque;
     width: 350px;
 }
@@ -40,10 +41,15 @@ span {
     padding: 0px 20px;
 }
 
+.commentDiv {
+    margin-top: 10px;
+}
+
 .commentContainer > div {
     padding: 10px;
 }
 
 .commentName {
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
