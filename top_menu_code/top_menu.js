@@ -2,6 +2,7 @@
 let array = ['hej']
 // alltså ska parametern array, vara "likedArray" sedan.
 document.querySelector('body').appendChild(buildTopMenu(array))
+document.querySelector("body").appendChild(createBurgerItems())
 
 function buildTopMenu (likedArray) {
   let topMenu = document.createElement('div')
@@ -26,9 +27,12 @@ function createBurger () {
   <span class="line"></span>
   <span class="line"></span>
   `
-  burgerDiv.addEventListener('click', createBurgerItems)
+  burgerDiv.addEventListener('click', function () {
+    document.querySelector(".burger-container").classList.toggle("burger-hidden")
+  })
   return burgerDiv
 }
+
 
 function createLogo () {
   let logoDiv = document.createElement('div')
@@ -75,4 +79,41 @@ function createDarkHeart () {
   darkHeart.innerHTML = '<i class="fa-solid fa-heart"> </i>'
   // darkHeart.addEventListener('click', likedPrograms())
   return darkHeart
+}
+
+// OBS. uppdatera länkarna så de hittar vägen.
+
+function createBurgerItems () {
+  let burgerItems = [
+    {
+      text: 'Utbyteslivet',
+      url: 'info.html'
+    },
+    {
+      text: 'Världsdelar och länder',
+      url: 'continets.html'
+    },
+    {
+      text: 'Ämnen',
+      url: 'fields.html'
+    },
+    {
+      text: 'Program',
+      url: 'filter.html'
+    },
+    {
+      text: 'Om oss',
+      url: 'about.html'
+    }
+  ]
+  let burgerContainer = document.createElement('div')
+  burgerContainer.classList.add("burger-container", "burger-hidden")
+  for (let item of burgerItems) {
+    let burgerItem = document.createElement('div')
+    burgerItem.classList.add("burger-list")
+    burgerItem.innerHTML = `<a href = "${item.url}">${item.text}</a> `
+    burgerContainer.appendChild(burgerItem)
+  }
+  document.querySelector('body').appendChild(burgerContainer)
+  return burgerContainer
 }
