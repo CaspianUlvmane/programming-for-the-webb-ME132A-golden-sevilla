@@ -1,0 +1,45 @@
+.active {
+    background-image: linear-gradient(gray, darkgrey);
+    color: white;
+}
+
+
+.filterButtons {
+    display: none;
+    flex-wrap: wrap;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterContainer > div:nth-child(1){
+    background-image: linear-gradient(whitesmoke, lightgray);
+    border: 2px solid gainsboro;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.filterContainer > div:nth-child(1):hover{
+    cursor: pointer;
+    background-image: none;
+    background-color: gainsboro;
+}
+
+.showButtons + .filterButtons{
+    display: flex;
+}
+
+.filterButtons {
+    flex-shrink: 1;
+}
+
+.filterButtons > button {
+    margin: 5px;
+}
+
+.filterContainer{
+    margin-bottom: 20px;
+}

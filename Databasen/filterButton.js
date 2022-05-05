@@ -101,22 +101,49 @@ function buildFilterButton (text, key, value){
         else this.classList.add("active")
     }
 
+    function filterDivEvent (){
+        let divs = document.querySelectorAll(".filterContainer div:nth-child(1)")
+        console.log(divs)
+        for (let div of divs)
+            div.addEventListener("click", showButtons)
+    }
+
+    function showButtons (){
+        if (this.classList.contains("showButtons")){
+            this.classList.remove("showButtons")
+        }
+        else this.classList.add("showButtons")
+    }
+
     function buildFilterButtons (){
         let body = document.querySelector("body")
         let div = document.createElement("div")
-        div.innerHTML = `<div>Språk</div>
-        <div id="languages"></div>
+        div.innerHTML = `<div class="filterContainer">
+        <div>Språk</div>
+        <div id="languages" class="filterButtons"></div>
+        </div>
+        <div class="filterContainer">
         <div>Nivåer</div>
-        <div id="levels"></div>
+        <div id="levels" class="filterButtons"></div>
+        </div>
+        <div class="filterContainer">
         <div>Ämnen</div>
-        <div id="fields"></div>
+        <div id="fields" class="filterButtons"></div>
+        </div>
+        <div class="filterContainer">
         <div>Länder</div>
-        <div id="countries"></div>
+        <div id="countries" class="filterButtons"></div>
+        </div>
+        <div class="filterContainer">
         <div>Städer</div>
-        <div id="cities"></div>`
+        <div id="cities" class="filterButtons"></div>
+        </div>`
         body.appendChild(div)
         languageButtons()
         levelButtons()
         fieldButtons()
         countryButtons()
+        filterDivEvent ()
     }
+
+    buildFilterButtons()
