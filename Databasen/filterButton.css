@@ -1,6 +1,22 @@
 .active {
     background-image: linear-gradient(gray, darkgrey);
     color: white;
+    border-radius: 4px;
+}
+
+#allFilters {
+    display: none;
+}
+
+#allFilters.showFilters{
+    display: block;
+}
+
+#filterToggle {
+    width: 54px;
+    border: 2px solid darkgray;
+    border-radius: 4px;
+    margin-bottom: 30px;
 }
 
 
@@ -16,10 +32,11 @@
 
 .filterContainer > div:nth-child(1){
     background-image: linear-gradient(whitesmoke, lightgray);
-    border: 2px solid gainsboro;
+    border: 2px solid darkgray;
     width: 50px;
     display: flex;
     justify-content: center;
+    border-radius: 4px;
 }
 
 .filterContainer > div:nth-child(1):hover{
