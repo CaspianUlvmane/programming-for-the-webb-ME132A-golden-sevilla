@@ -60,31 +60,31 @@ function searchingInSearch () {
     // Making a array of countrys, fields and cities
 	let All = DB.COUNTRIES.concat(DB.FIELDS, DB.CITIES)
 
+    // console.log(All)
     // Calling for the function to clean out resultBox before running again 
     clearResults(".search-result");
-
+    
     // if input value is more then 0
     if (valueOfSearchInput.length > 0) {
         // loop fro the array of all 
         for (let i = 0; i < All.length; i++) {
-
+        
             // if something from all.name(WILL BE CHANGE TO TEXT ?) is included in the search 
             // And get that info  
             if (All[i].text.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
+                console.log(All)
                 // select the searchresult box and place the info from the search in the box 
-                selectElement(".search-result").innerHTML += `<div class="result-box"> 
+                // Make function to go fro all links to get to right page 
+                selectElement(".search-result").innerHTML += `<a href=../country_code/country.html?country=${All[i].id}"> 
+                <div class="result-box"> 
                     <h4 class="title"> ${All[i].name} </h4> 
                     <div class="textInfo">${All[i].text}</div>
-                </div>`
-
-                let searchResultDiv = selectElement(".result-box")
-                searchResultDiv.addEventListener("click", function () {
-                    /// LOCATE TO COUNTRY, FILED OR CITY 
-                })
+                </div></a>`
             }
         }
     }
 }
+
 
 // eventListneter of the input that listen to the keyup and calls the function searching 
 document.querySelector("#searchInputBar").addEventListener("keyup", searchingInSearch)
