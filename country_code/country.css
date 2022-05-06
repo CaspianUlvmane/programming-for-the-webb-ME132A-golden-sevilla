@@ -15,7 +15,7 @@ body{
 }
 
 .city-div{
-    border-bottom: 5px solid rgb(196, 196, 196);
+    border-bottom: 10px solid var(--lightBeige);
     display: flex;
     justify-content: center;
     background-size: cover;
@@ -24,14 +24,23 @@ body{
 
 .city-info{
     text-align: center;
-    background-color: #344450bd;
+    background-color: #344450d4;
     color: var(--lightGrey);
     padding: 15px;
-    margin: 20px;
+    margin: 30px;
+}
+
+.city-info > button{
+    background-color: var(--lightBeige);
+    color: var(--dark);
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
 }
 
 .country-info{
     padding: 20px;
+    border-bottom: 8px solid var(--lightBeige);
     background-color: var(--dark);
     color: white;
     text-align: center;

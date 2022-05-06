@@ -16,9 +16,10 @@ function createContinentList(){
         for (let country of countrysInContinent){
             let countryDiv = document.createElement("div")
             countryDiv.classList.add("country-div")
-            countryDiv.innerHTML = country.name
+            countryDiv.innerHTML = `
+            <a href="../country_code/country.html?country=${country.id}">${country.name}</a>`
+            // gave link country.id to reach it when calling for function thar create country.html info
             countryContainer.appendChild(countryDiv)
-            countryDiv.addEventListener("click", getClickedCountryId)
         }
         
         continentDiv.addEventListener("click", function(){
@@ -30,14 +31,6 @@ function createContinentList(){
     }
     return listContainer
 }
-
-
-function getClickedCountryId(event){
-    let clickedContry = event.target.innerHTML
-    return DB.COUNTRIES.find(country => country.name == clickedContry).id
-    // this click should also call for country.html and activate funtion that create country.html info
-}
-
 
 function cotinentViewBar (){
     let viewContainer = document.getElementById("view-bar")

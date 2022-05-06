@@ -29,7 +29,9 @@ function createCityDiv (cityArray){
         cityDiv.classList.add("city-div")
         cityDiv.innerHTML = `<div class="city-info">
         <h3> ${city.name}</h3>
-        <p> ${city.text}</p></div>`
+        <p> ${city.text}</p>
+        <button> Studera i ${city.name}</button>
+        </div>`
     
         cityDiv.style.backgroundImage = `url(../Databasen/Images/${city.name.toLowerCase()}_normal_1.jpg)`
         cityContainer.appendChild(cityDiv)
@@ -43,4 +45,13 @@ function setCountryBackground (id){
     countryImgDiv.style.backgroundImage = `url(../Databasen/Images/${country.name.toLowerCase()}_normal_1.jpg)`
 }
 
-buildCountry (7)
+function getCountryFromUrl(){
+    // https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams
+    // used searchParams to get countryID through URL
+    let url = new URL(window.location);
+        let params = url.searchParams;
+        return parseInt(params.get("country"))
+}
+
+let country = getCountryFromUrl()
+buildCountry(country)

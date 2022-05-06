@@ -34,6 +34,11 @@ body{
     align-items: center;
 }
 
+.country-div > a{
+    text-decoration: none;
+    color: var(--dark);
+}
+
 .unactive{
     display: none;
 }
