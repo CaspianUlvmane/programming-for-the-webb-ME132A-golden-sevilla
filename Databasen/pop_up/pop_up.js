@@ -24,30 +24,33 @@ function testDontKeep () {
     let programPopUpContainer = createElement("div");
     programPopUpContainer.classList.add("containerPopUp")
     document.body.append(programPopUpContainer)
-    
+
+    let overLayDiv = createElement("div")
+    overLayDiv.classList.add("overLay")
+    document.body.append(overLayDiv)
+
 }
 
 testDontKeep()
 
 function popUpProgram (event) {
 
-    let program = event.target
     let programName = event.target.innerHTML
     let programsFound = DB.PROGRAMMES.find(program => program.name == programName)
-    
+    console.log(programsFound)
     let programPopUpContainer = selectElement(".containerPopUp");
     programPopUpContainer.classList.add("active")
-
+    selectElement(".overLay").classList.add("active")
     clearResults(".containerPopUp")
 
     document.body.append(programPopUpContainer)
-    programPopUpContainer.append(interactWithPop(program))
+    programPopUpContainer.append(interactWithPop())
     programPopUpContainer.append(addInfoProgram(programsFound))
 
     return programPopUpContainer
 }
 
-function interactWithPop (parent) {
+function interactWithPop () {
 
     let barContainer = createElement("div")
     barContainer.classList.add("barContainer")
@@ -56,6 +59,8 @@ function interactWithPop (parent) {
     crossIconDiv.classList.add("imgCross") // closeButton
     crossIconDiv.innerHTML = `<i class="fa-solid fa-xmark"></i>`
     crossIconDiv.addEventListener("click", function (){
+        selectElement(".overLay").classList.remove("active")
+        selectElement(".containerPopUp").classList.remove("active")
     })
 
     let heartIconDiv = createElement("div")
@@ -73,12 +78,13 @@ function addInfoProgram (program) {
     let infoContainer = createElement("div")
     infoContainer.classList.add("infoContainer")
     infoContainer.innerHTML = `
-        <h4 class="infoBoxHeader">${program.name}</h4>
+        <h3 class="infoBoxHeader">${program.name}</h3>
     <div class="programInfoBox">
         <div class="info"> Land: ${getCountry(program)} <span> Stad: ${getCity(program)} </span> </div>
         <div class="info"> Universitet: ${getUniversity(program)}</div>
         <div class="info"> Ämne: ${getFiled(program)}<span> Nivå: </span> Språk: ${findLangauge(program)} </div>
-        <div class="info"> Medelvärde av Kursen:  </div>
+        <div class="info"> Medelvärde av Kursen: ${getAllAverage(program)} </div>
+        <div class="info"> Teachers: ${getAverageTeachers(program)} <span> Students: ${getAverageStudents(program)} </span> Courses: ${getAverageCourses(program)} </div>
         <div class="info"> Kommentarer från studenter </div>
     </div> 
     `
@@ -124,8 +130,57 @@ function findLangauge (id) {
     return DB.LANGUAGES.find((language) => language.id == id.language).name
 }
 
-function findLevel (id) {
-    return DB.LEVELS[0]
+function getAverage (id) {
+   return DB.COMMENTS_PROGRAMME.filter(program => program.programmeID == id.id).map(rating => rating.stars)
+}
+
+function getAverageTeachers (id) {
+    let sumOfAverage = 0
+    let ratingStudents = getAverage(id)
+
+    ratingStudents.forEach(rating => {
+        sumOfAverage += rating.teachers
+    });
+
+    return Math.round(sumOfAverage / ratingStudents.length)
+}
+
+function getAverageTeachers (id) {
+    let sumOfAverage = 0
+    let ratingStudents = getAverage(id)
+
+    ratingStudents.forEach(rating => {
+        sumOfAverage += rating.teachers
+    });
+
+    return Math.round(sumOfAverage / ratingStudents.length)
+}
+
+function getAverageStudents(id) {
+    let sumOfAverage = 0
+    let ratingStudents = getAverage(id)
+
+    ratingStudents.forEach(rating => {
+        sumOfAverage += rating.students
+    });
+
+    return Math.round(sumOfAverage / ratingStudents.length)
+
+}
+
+function getAverageCourses (id) {
+    let sumOfAverage = 0
+    let ratingStudents = getAverage(id)
+
+    ratingStudents.forEach(rating => {
+        sumOfAverage += rating.courses
+    });
+
+    return Math.round(sumOfAverage / ratingStudents.length)
+}
+
+function getAllAverage (id) {
+    return Math.round(getAverageTeachers(id) + getAverageStudents(id) + getAverageCourses(id) / 3)
 }
 
 
@@ -134,10 +189,10 @@ function commentsProgram (id) {
     commentContainer.classList.add("commentContainer")
 
     let programID = DB.PROGRAMMES.find(program => program.id == id.id)
-    console.log(programID)
+    // console.log(programID)
 
     let comments = DB.COMMENTS_PROGRAMME.filter(comment => comment.programmeID == programID.id)
-    console.log(comments)
+    // console.log(comments)
 
     for (let comment of comments) {
         let commentBox = createElement("div")
