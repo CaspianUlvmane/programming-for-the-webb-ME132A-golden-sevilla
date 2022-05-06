@@ -1,6 +1,12 @@
+add-light-heart
+// denna array ska sedan vara vår "likedArray".
+let array = ['hej']
+// parametern array, ska vara "likedArray" sedan.
+
 //denna array ska sedan vara vår "likedArray".
 let array = ['hej']
 // alltså ska parametern array, vara "likedArray" sedan.
+main
 document.querySelector('body').appendChild(buildTopMenu(array))
 document.querySelector("body").appendChild(createBurgerItems())
 
@@ -67,8 +73,10 @@ function changeClass (element) {
 function createLightHeart () {
   let lightHeart = document.createElement('div')
   lightHeart.classList.add('my-likes')
+add-light-heart
+  lightHeart.innerHTML = '<i class="fa-thin fa-heart">'
   lightHeart.innerHTML = 'Icon'
-  // byt till tomt hjärta här, icon innerHTML
+  // byt till tomt hjärta här, icon innerHTML main
   // lightHeart.addEventListener('click', likedPrograms())
   return lightHeart
 }
