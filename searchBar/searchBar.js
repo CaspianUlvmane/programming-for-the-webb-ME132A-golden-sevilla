@@ -70,7 +70,7 @@ function searchingInSearch () {
 
             // if something from all.name(WILL BE CHANGE TO TEXT ?) is included in the search 
             // And get that info  
-            if (All[i].name.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
+            if (All[i].text.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
                 // select the searchresult box and place the info from the search in the box 
                 selectElement(".search-result").innerHTML += `<div class="result-box"> 
                     <h4 class="title"> ${All[i].name} </h4> 
