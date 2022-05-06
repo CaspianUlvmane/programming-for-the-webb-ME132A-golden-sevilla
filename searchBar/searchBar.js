@@ -5,20 +5,38 @@ let selectElement = (select) => document.querySelector(select);
 let createElement = (element) => document.createElement(element);
 
 // cleans out the filter 
-let clearResults = () => selectElement(".search-result").innerHTML = "";
+let clearResults = (element) => selectElement(element).innerHTML = "";
+
+// to try with interact with navbar
+let search_icon = document.querySelector(".search-icon"); 
+// listener to display search bar 
+search_icon.addEventListener("click", function () {
+    if (search_icon.classList.contains("active")){
+        search_icon.classList.remove("active")
+        selectElement(".containerBar").classList.remove("active")
+        clearResults(".search-result")
+        selectElement("#searchInputBar").value = ""
+    } else {
+    search_icon.classList.add("active")
+    selectElement(".containerBar").classList.add("active")
+    }
+})
+
+searchBar()
 
 // Creating the searchBar 
 function searchBar () {
     let searchBarContainer = createElement("div")
-    searchBarContainer.classList.add("containerBar") // displayNone
+    searchBarContainer.classList.add("containerBar")
     
     let searchBarBox = createElement("div")
     searchBarBox.classList.add("searchBar")
     
     searchBarBox.innerHTML = `
-    <input type="search" id="searchInputBar" placeholder="Search...">
-    <div class="fa-solid fa-magnifying-glass"></div>
-    `
+    <div class="searchDiv">
+        <input type="search" id="searchInputBar" placeholder="Search...">
+        <div class="fa-solid fa-magnifying-glass iconSearch"></div>
+    </div>`
 
     searchBarContainer.append(searchBarBox)
     document.body.append(searchBarContainer)
@@ -43,7 +61,7 @@ function searchingInSearch () {
 	let All = DB.COUNTRIES.concat(DB.FIELDS, DB.CITIES)
 
     // Calling for the function to clean out resultBox before running again 
-    clearResults();
+    clearResults(".search-result");
 
     // if input value is more then 0
     if (valueOfSearchInput.length > 0) {
@@ -54,17 +72,19 @@ function searchingInSearch () {
             // And get that info  
             if (All[i].name.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
                 // select the searchresult box and place the info from the search in the box 
-                selectElement(".search-result").innerHTML += `<div class="search-div"> 
-                <div class="title"> ${All[i].name} </div> 
-                <div class="textInfo">${All[i].text}</div>
-                </div
-                `
+                selectElement(".search-result").innerHTML += `<div class="result-box"> 
+                    <h4 class="title"> ${All[i].name} </h4> 
+                    <div class="textInfo">${All[i].text}</div>
+                </div>`
+
+                let searchResultDiv = selectElement(".result-box")
+                searchResultDiv.addEventListener("click", function () {
+                    /// LOCATE TO COUNTRY, FILED OR CITY 
+                })
             }
         }
     }
 }
-
-searchBar()
 
 // eventListneter of the input that listen to the keyup and calls the function searching 
 document.querySelector("#searchInputBar").addEventListener("keyup", searchingInSearch)

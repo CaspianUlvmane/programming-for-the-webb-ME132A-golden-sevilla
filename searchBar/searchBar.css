@@ -1,0 +1,59 @@
+.search-icon.active {
+    
+}
+
+.containerBar {
+    display: none;
+}
+
+.containerBar.active {
+    display: inline;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchDiv {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#searchInputBar {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.iconSearch {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.search-result {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+.result-box {
+    padding: 10px 20px;
+    margin: 5px 0px;
+    border: 2px solid black;
+}
+
+.title {
+    margin: 10px 0px;
+}
+
+.textInfo {
+    margin-bottom: 5px;
+}
+
+.ThisIsNotToKeep {
+    background-color: aqua;
+}
