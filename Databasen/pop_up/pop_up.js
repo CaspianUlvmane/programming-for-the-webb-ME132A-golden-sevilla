@@ -4,45 +4,63 @@ let selectElement = (select) => document.querySelector(select);
 // creates a element 
 let createElement = (element) => document.createElement(element);
 
+let clearResults = (element) => selectElement(element).innerHTML = "";
+
+
 function testDontKeep () {
     let programs = DB.PROGRAMMES
+    let buttonBox = createElement("div")
+    buttonBox.classList.add("buttonBox")
+    document.body.append(buttonBox)
+   
     programs.forEach(program => {
-        let button = createElement("button")
+        let button = createElement("div")
+        button.classList.add("buttonProgram")
         button.innerHTML = program.name
         button.addEventListener("click", popUpProgram)
-        document.body.append(button)
+        buttonBox.append(button)
     });
+
+    let programPopUpContainer = createElement("div");
+    programPopUpContainer.classList.add("containerPopUp")
+    document.body.append(programPopUpContainer)
+    
 }
 
 testDontKeep()
 
 function popUpProgram (event) {
+
+    let program = event.target
     let programName = event.target.innerHTML
     let programsFound = DB.PROGRAMMES.find(program => program.name == programName)
     
-    // console.log(programsFound)
+    let programPopUpContainer = selectElement(".containerPopUp");
+    programPopUpContainer.classList.add("active")
 
-    if (programName) {
-        let programPopUpContainer = createElement("div");
-        programPopUpContainer.classList.add("container")
-        document.body.append(programPopUpContainer)
-        programPopUpContainer.append(interactWithPop())
-        programPopUpContainer.append(addInfoProgram(programsFound))
-    } 
+    clearResults(".containerPopUp")
+
+    document.body.append(programPopUpContainer)
+    programPopUpContainer.append(interactWithPop(program))
+    programPopUpContainer.append(addInfoProgram(programsFound))
+
+    return programPopUpContainer
 }
 
-function interactWithPop () {
+function interactWithPop (parent) {
+
     let barContainer = createElement("div")
     barContainer.classList.add("barContainer")
 
     let crossIconDiv = createElement("div")
-    crossIconDiv.classList.add("imgCross")
-    crossIconDiv.innerHTML = "Cross"
-    crossIconDiv.addEventListener("click", function (){})
+    crossIconDiv.classList.add("imgCross") // closeButton
+    crossIconDiv.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+    crossIconDiv.addEventListener("click", function (){
+    })
 
     let heartIconDiv = createElement("div")
-    heartIconDiv.classList.add("imgHearth")
-    heartIconDiv.innerHTML = "Hearth"
+    heartIconDiv.classList.add("imgHearth") 
+    heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
     heartIconDiv.addEventListener("click", function (){})
 
     barContainer.append(crossIconDiv, heartIconDiv)

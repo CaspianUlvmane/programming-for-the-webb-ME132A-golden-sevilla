@@ -1,55 +1,95 @@
-.container {
-    margin: auto auto;
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ 
+.buttonBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+ 
+.buttonProgram  {
+    padding: 50px;
+}
+
+.buttonProgram.active {
+    background-color: aqua;
+}
+ 
+.containerPopUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 10;
+ 
     background-color: bisque;
-    width: 350px;
+    height: 600px;
+    max-width: 600px;
+    overflow: scroll;
+ 
+    border-radius: 5px;
 }
 
+.containerPopUp.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+ 
 .barContainer {
-    padding-top: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
 }
-
-.imgHearth {
-    margin: auto;
-    grid-column: 3 / span 1 ;
+ 
+.imgCross, .imgHearth {
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
 }
-
-.imgCross {
-    margin: auto;
-}
-
+ 
 .infoBoxHeader {
     text-align: center;
-    margin-top: 20px;
+    margin-bottom: 30px;
 }
-
+ 
 .programInfoBox {
     margin: 0px 20px;
 }
-
+ 
 .info {
     margin: 10px;
 }
-
+ 
 span {
     margin-left: 20px;
     margin-right: 20px;
 }
-
+ 
 .commentContainer {
     padding: 0px 20px;
 }
-
-.commentDiv {
-    margin-top: 10px;
-}
-
+ 
 .commentContainer > div {
     padding: 10px;
 }
-
+ 
 .commentName {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+}
+ 
+.overLay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    pointer-events: none;
+}
+
+.overLay.active {
+    opacity: 1; 
+    pointer-events: all;
 }
