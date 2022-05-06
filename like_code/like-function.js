@@ -13,10 +13,11 @@ function likedPrograms (likedArray) {
       let likedItem = document.createElement('div')
       // lägg till resten av infon.
       likedItem.innerHTML = `${program.name}`
+      likedItem.addEventListener('click', removeLike)
       likeContainer.appendChild(likedItem)
     }
   } else {
-// div, med innerhtml, text. append to container.
+    // div, med innerhtml, text. append to container.
     console.log('finns inga liked programs')
   }
 }
@@ -31,6 +32,11 @@ function changeClassOnLikeContainer (element) {
   }
 }
 
-function findLikedProgram () {
-
+function removeLike (event, likedArray) {
+  event.preventDefault()
+  let name = event.target.innerHTML
+  // Detta är om array är baserad på id, om det är namn, skippa steget under med find.
+  let programId = DB.PROGRAMMES.find(program => program.name == name).id
+  let indexOfProgram = likedArray.findIndex(id => id == programId)
+  likedArray.splice(indexOfProgram, 1)
 }
