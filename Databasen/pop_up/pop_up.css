@@ -1,3 +1,10 @@
+:root{
+    --dark: #344450; 
+    --darkLowOpacity: hsl(206, 21%, 26%, 0.4); 
+    --lightGrey: #eaeaee;
+    --lightBeige: #EDE7DF;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -6,12 +13,28 @@
 .buttonBox {
     display: flex;
     flex-wrap: wrap;
+    cursor: pointer;
 }
  
 .buttonProgram  {
     padding: 50px;
 }
  
+.overLay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--darkLowOpacity);
+    pointer-events: none;
+}
+
+.overLay.active {
+    opacity: 1; 
+}
+
 .containerPopUp {
     position: fixed;
     top: 50%;
@@ -19,8 +42,10 @@
     transform: translate(-50%, -50%) scale(0);
     z-index: 10;
     
-    background-color: bisque;
-    height: 700px;
+    background-color: var(--dark);
+    color: var(--lightGrey);
+    height: 500px;
+    width: 320px;
     max-width: 600px;
     overflow: scroll;
     
@@ -31,33 +56,28 @@
     transform: translate(-50%, -50%) scale(1);
 }
 
-.overLay {
-    position: fixed;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .3);
-    pointer-events: none;
-}
-
-.overLay.active {
-    opacity: 1; 
-    pointer-events: all;
-}
 
 .barContainer {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 20px;
+    margin: 0px 20px;
 }
  
 .imgCross, .imgHearth {
+    color: black;
+    padding: 10px;
     cursor: pointer;
     font-size: 30px;
     font-weight: bold;
+}
+
+.imgHearth.active {
+
 }
  
 .infoBoxHeader {
@@ -80,6 +100,10 @@
 span {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.average {
+    margin: 0;
 }
 
 .commentContainer {

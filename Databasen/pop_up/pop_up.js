@@ -6,8 +6,7 @@ let createElement = (element) => document.createElement(element);
 
 let clearResults = (element) => selectElement(element).innerHTML = "";
 
-
-function testDontKeep () {
+function buttons () {
     let programs = DB.PROGRAMMES
     let buttonBox = createElement("div")
     buttonBox.classList.add("buttonBox")
@@ -31,7 +30,7 @@ function testDontKeep () {
 
 }
 
-testDontKeep()
+buttons()
 
 function popUpProgram (event) {
 
@@ -66,7 +65,15 @@ function interactWithPop () {
     let heartIconDiv = createElement("div")
     heartIconDiv.classList.add("imgHearth") 
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
-    heartIconDiv.addEventListener("click", function (){})
+    heartIconDiv.addEventListener("click", function (){
+        if (heartIconDiv.classList.contains("active")) {
+            heartIconDiv.classList.remove("active")
+            heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
+        } else {
+            heartIconDiv.classList.add("active")
+            heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
+        }
+    })
 
     barContainer.append(crossIconDiv, heartIconDiv)
 
@@ -78,28 +85,50 @@ function addInfoProgram (program) {
     let infoContainer = createElement("div")
     infoContainer.classList.add("infoContainer")
     infoContainer.innerHTML = `
-        <h3 class="infoBoxHeader">${program.name}</h3>
+    <h3 class="infoBoxHeader">${program.name}</h3>
     <div class="programInfoBox">
         <div class="info"> Land: ${getCountry(program)} <span> Stad: ${getCity(program)} </span> </div>
         <div class="info"> Universitet: ${getUniversity(program)}</div>
-        <div class="info"> Ämne: ${getFiled(program)}<span> Nivå: </span> Språk: ${findLangauge(program)} </div>
+        <div class="info"> Ämne: ${getFiled(program)}<span> Nivå: ${getLevel(program)}</span> Språk: ${findLangauge(program)} </div>
         <div class="info"> Medelvärde av Kursen: ${getAllAverage(program)} </div>
-        <div class="info"> Teachers: ${getAverageTeachers(program)} <span> Students: ${getAverageStudents(program)} </span> Courses: ${getAverageCourses(program)} </div>
+        <div class="info average"> Teachers: ${getAverageTeachers(program)} <span> Students: ${getAverageStudents(program)} </span> Courses: ${getAverageCourses(program)} </div>
         <div class="info"> Kommentarer från studenter </div>
-    </div> 
-    `
+    </div> `
+
     infoContainer.append(commentsProgram(program))
 
     return infoContainer
 }
 
 
-function findUniversity (id) {
-    return DB.UNIVERSITIES.find((universitie) => universitie.id == id.universityID)
-}   
+function commentsProgram (id) {
+    let commentContainer = createElement("div")
+    commentContainer.classList.add("commentContainer")
 
-function getUniversity (id) {
-    return findUniversity(id).name
+    let programID = DB.PROGRAMMES.find(program => program.id == id.id)
+    let comments = DB.COMMENTS_PROGRAMME.filter(comment => comment.programmeID == programID.id)
+
+    for (let comment of comments) {
+        let commentBox = createElement("div")
+        commentBox.innerHTML =  ` 
+        ${studentRatingProgram(comment)}
+        <div class="commentDiv"> ${comment.text} </div>
+        <div class="commentName"> ${comment.alias} </div> `
+        commentContainer.append(commentBox)
+    }
+
+    return commentContainer
+
+}
+
+////// Function under to find information about program 
+
+function findCountry (id) {
+    return DB.COUNTRIES.find((country) => country.id == findCity(id).countryID)
+}
+
+function getCountry (id) {
+    return findCountry(id).name
 }
 
 function findCity (id) {
@@ -110,12 +139,12 @@ function getCity (id) {
     return findCity(id).name
 }
 
-function findCountry (id) {
-    return DB.COUNTRIES.find((country) => country.id == findCity(id).countryID)
-}
+function findUniversity (id) {
+    return DB.UNIVERSITIES.find((universitie) => universitie.id == id.universityID)
+}   
 
-function getCountry (id) {
-    return findCountry(id).name
+function getUniversity (id) {
+    return findUniversity(id).name
 }
 
 function findFiled (id) {
@@ -126,23 +155,16 @@ function getFiled (id) {
     return findFiled(id).name
 }
 
+function getLevel (id) {
+    i = 0
+}
+
 function findLangauge (id) {
     return DB.LANGUAGES.find((language) => language.id == id.language).name
 }
 
 function getAverage (id) {
    return DB.COMMENTS_PROGRAMME.filter(program => program.programmeID == id.id).map(rating => rating.stars)
-}
-
-function getAverageTeachers (id) {
-    let sumOfAverage = 0
-    let ratingStudents = getAverage(id)
-
-    ratingStudents.forEach(rating => {
-        sumOfAverage += rating.teachers
-    });
-
-    return Math.round(sumOfAverage / ratingStudents.length)
 }
 
 function getAverageTeachers (id) {
@@ -180,39 +202,13 @@ function getAverageCourses (id) {
 }
 
 function getAllAverage (id) {
-    return Math.round(getAverageTeachers(id) + getAverageStudents(id) + getAverageCourses(id) / 3)
+    let sum = Math.round(getAverageTeachers(id) + getAverageStudents(id) + getAverageCourses(id) )
+    return Math.round(sum / 3)
 }
-
-
-function commentsProgram (id) {
-    let commentContainer = createElement("div")
-    commentContainer.classList.add("commentContainer")
-
-    let programID = DB.PROGRAMMES.find(program => program.id == id.id)
-    // console.log(programID)
-
-    let comments = DB.COMMENTS_PROGRAMME.filter(comment => comment.programmeID == programID.id)
-    // console.log(comments)
-
-    for (let comment of comments) {
-        let commentBox = createElement("div")
-        commentBox.innerHTML =  ` 
-        ${studentRatingProgram(comment)}
-        <div class="commentDiv"> ${comment.text} </div>
-        <div class="commentName"> ${comment.alias} </div>
-         `
-         commentContainer.append(commentBox)
-    }
-
-    return commentContainer
-
-}
-
 
 function studentRatingProgram (comments) {
     let sumOfRating = 0
-    
-    sumOfRating += comments.stars.teachers + comments.stars.students + comments.stars.courses 
-        
+    sumOfRating += comments.stars.teachers + comments.stars.students + comments.stars.courses    
     return Math.round(sumOfRating/3)
 }
+
