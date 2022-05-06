@@ -23,12 +23,52 @@ addCountryAndCity()
 function filter () {
   let activeArray = document.querySelectorAll('.active')
   let result = DB.PROGRAMMES
+  console.log(activeArray)
+  let allFilters = []
   for (let active of activeArray) {
+
     console.log(JSON.parse(active.dataset.data))
     let data = JSON.parse(active.dataset.data)
     let key = data.key
     let value = data.value
+    let filterObject = {key: key, value: value}
+    allFilters.push(filterObject)
+  }
+    for (let i = 0; )
+   
+    // Object = {key, value}
+    // Array.push(object)
+    // Array.sort()
+    // check array.key.length
+    // loop array i = 0
+    //     if key == previous key i-1 i=0
+    //     filter original DB
+    //     let newarray = concat filtered arrays
+
+    //     else if (key != i-1)
+    //     filter on newarray
+
+    //     let results = concat filterd arrays
+
+
+    // sort Array, if 0 is undefined don do that
+    // if (key != )
+    // base filter on result
+    // else
+    // base on new Array
+
+    // for (let i = 0; i < activeArray.length; i++)
+        // if ( i == 0){
+        //     result
+        // }
+        // else{
+        //     filter on next key
+        // }
+        // push to empty array
+
     result = result.filter(program => program[key] == value)
+    
+    console.log(result)
   }
 }
 
