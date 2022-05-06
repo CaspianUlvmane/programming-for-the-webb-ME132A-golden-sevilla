@@ -45,4 +45,13 @@ function setCountryBackground (id){
     countryImgDiv.style.backgroundImage = `url(../Databasen/Images/${country.name.toLowerCase()}_normal_1.jpg)`
 }
 
-buildCountry (4)
+function getCountryFromUrl(){
+    // https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams
+    // used searchParams to get countryID through URL
+    let url = new URL(window.location);
+        let params = url.searchParams;
+        return parseInt(params.get("country"))
+}
+
+let country = getCountryFromUrl()
+buildCountry(country)
