@@ -4,12 +4,12 @@
     --lightBeige: #EDE7DF;
 }
 
-.containerBar {
+.container {
     display: none;
     flex-wrap: wrap;
 }
 
-.containerBar.active {
+.container.active {
     display: inline;
 }
 

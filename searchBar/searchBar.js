@@ -9,16 +9,19 @@ let clearResults = (element) => selectElement(element).innerHTML = "";
 
 // to try with interact with navbar
 let search_icon = document.querySelector(".search-icon"); 
+
 // listener to display search bar 
 search_icon.addEventListener("click", function () {
-    if (search_icon.classList.contains("active")){
+    if ( search_icon.classList.contains("active") ) {
         search_icon.classList.remove("active")
-        selectElement(".containerBar").classList.remove("active")
+        selectElement(".container").classList.remove("active")
         clearResults(".search-result")
         selectElement("#searchInputBar").value = ""
-    } else {
-    search_icon.classList.add("active")
-    selectElement(".containerBar").classList.add("active")
+    } 
+    else 
+    {
+        search_icon.classList.add("active")
+        selectElement(".container").classList.add("active")
     }
 })
 
@@ -27,7 +30,7 @@ searchBar()
 // Creating the searchBar 
 function searchBar () {
     let searchBarContainer = createElement("div")
-    searchBarContainer.classList.add("containerBar")
+    searchBarContainer.classList.add("container")
     
     let searchBarBox = createElement("div")
     searchBarBox.classList.add("searchBar")
@@ -40,25 +43,25 @@ function searchBar () {
     </div>`
 
     searchBarContainer.append(searchBarBox)
+    searchBarContainer.append(searchResultBox())
     document.body.append(searchBarContainer)
-    searchResultBox()
     
     return searchBarContainer
 }
 
+// close filterBox 
 selectElement(".iconCross").addEventListener("click", function() {
     search_icon.classList.remove("active")
-    selectElement(".containerBar").classList.remove("active")
+    selectElement(".container").classList.remove("active")
     clearResults(".search-result")
     selectElement("#searchInputBar").value = ""
 })
-
 
 // create the resultBox of the search 
 function searchResultBox () {
     let resultBox = createElement("div")
     resultBox.classList.add("search-result")
-    document.body.append(resultBox)
+    return resultBox
 }
 
 // getting the search function
@@ -69,21 +72,18 @@ function searchingInSearch () {
     // Making a array of countrys, fields and cities
 	let All = DB.COUNTRIES.concat(DB.FIELDS, DB.CITIES)
 
-    // console.log(All)
     // Calling for the function to clean out resultBox before running again 
     clearResults(".search-result");
-    
     
     // if input value is more then 0
     if (valueOfSearchInput.length > 0) {
         // loop fro the array of all 
         for (let i = 0; i < All.length; i++) {
-
-            // if something from all.name(WILL BE CHANGE TO TEXT ?) is included in the search 
-            // And get that info  
+            // if something from all.name(WILL BE CHANGE TO TEXT ?) is included in the search And get that info  
             if (All[i].text.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
                 // select the searchresult box and place the info from the search in the box 
-                // Make function to go fro all links to get to right page
+
+                // !!!!! MAKE A FUNCTION TO GO FRO ALL LINKS TO GET TO RIGHT PAGE !!!!! 
                 selectElement(".search-result").innerHTML += `<a href=../country_code/country.html?country=${All[i].id}"> 
                 <div class="result-box"> 
                     <h4 class="title"> ${All[i].name} </h4> 
@@ -93,7 +93,6 @@ function searchingInSearch () {
         }
     }
 }
-
 
 // eventListneter of the input that listen to the keyup and calls the function searching 
 document.querySelector("#searchInputBar").addEventListener("keyup", searchingInSearch)
