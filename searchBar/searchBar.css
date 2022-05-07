@@ -17,11 +17,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .searchDiv {
+    display: flex;
+    justify-content: space-between;
     border: 2px solid black;
+    width: 70%;
     padding: 10px;
+    max-width: 700px;
+}
+
+.iconSearch {
+    font-size: 20px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.iconCross {
+    padding: 5px;
+    margin-right: 5px;
+    font-size: 25px;
 }
 
 #searchInputBar {
@@ -29,17 +46,15 @@
     border: none;
     outline: none;
     background: none;
+    width: 100%;
 }
 
-.iconSearch {
-    font-size: 20px;
-    margin-right: 5px;
-}
 
 .search-result {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
+    max-width: 800px;
     margin: auto;
 }
 
@@ -57,8 +72,4 @@
 
 .textInfo {
     margin-bottom: 5px;
-}
-
-.ThisIsNotToKeep {
-    background-color: aqua;
 }

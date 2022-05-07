@@ -34,8 +34,9 @@ function searchBar () {
     
     searchBarBox.innerHTML = `
     <div class="searchDiv">
-        <input type="search" id="searchInputBar" placeholder="Search...">
         <div class="fa-solid fa-magnifying-glass iconSearch"></div>
+        <input type="search" id="searchInputBar" placeholder="Search...">
+        <div class="fa-solid fa-xmark iconCross"></div>
     </div>`
 
     searchBarContainer.append(searchBarBox)
@@ -44,6 +45,14 @@ function searchBar () {
     
     return searchBarContainer
 }
+
+selectElement(".iconCross").addEventListener("click", function() {
+    search_icon.classList.remove("active")
+    selectElement(".containerBar").classList.remove("active")
+    clearResults(".search-result")
+    selectElement("#searchInputBar").value = ""
+})
+
 
 // create the resultBox of the search 
 function searchResultBox () {
@@ -64,17 +73,17 @@ function searchingInSearch () {
     // Calling for the function to clean out resultBox before running again 
     clearResults(".search-result");
     
+    
     // if input value is more then 0
     if (valueOfSearchInput.length > 0) {
         // loop fro the array of all 
         for (let i = 0; i < All.length; i++) {
-        
+
             // if something from all.name(WILL BE CHANGE TO TEXT ?) is included in the search 
             // And get that info  
             if (All[i].text.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
-                console.log(All)
                 // select the searchresult box and place the info from the search in the box 
-                // Make function to go fro all links to get to right page 
+                // Make function to go fro all links to get to right page
                 selectElement(".search-result").innerHTML += `<a href=../country_code/country.html?country=${All[i].id}"> 
                 <div class="result-box"> 
                     <h4 class="title"> ${All[i].name} </h4> 
