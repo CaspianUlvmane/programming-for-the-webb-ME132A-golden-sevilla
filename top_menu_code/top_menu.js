@@ -1,14 +1,9 @@
-add-light-heart
 // denna array ska sedan vara vår "likedArray".
 let array = ['hej']
 // parametern array, ska vara "likedArray" sedan.
 
-//denna array ska sedan vara vår "likedArray".
-let array = ['hej']
-// alltså ska parametern array, vara "likedArray" sedan.
-main
 document.querySelector('body').appendChild(buildTopMenu(array))
-document.querySelector("body").appendChild(createBurgerItems())
+document.querySelector('body').appendChild(createBurgerItems())
 
 function buildTopMenu (likedArray) {
   let topMenu = document.createElement('div')
@@ -34,11 +29,12 @@ function createBurger () {
   <span class="line"></span>
   `
   burgerDiv.addEventListener('click', function () {
-    document.querySelector(".burger-container").classList.toggle("burger-hidden")
+    document
+      .querySelector('.burger-container')
+      .classList.toggle('burger-hidden')
   })
   return burgerDiv
 }
-
 
 function createLogo () {
   let logoDiv = document.createElement('div')
@@ -73,7 +69,7 @@ function changeClass (element) {
 function createLightHeart () {
   let lightHeart = document.createElement('div')
   lightHeart.classList.add('my-likes')
-add-light-heart
+  add - light - heart
   lightHeart.innerHTML = '<i class="fa-thin fa-heart">'
   lightHeart.innerHTML = 'Icon'
   // byt till tomt hjärta här, icon innerHTML main
@@ -115,10 +111,10 @@ function createBurgerItems () {
     }
   ]
   let burgerContainer = document.createElement('div')
-  burgerContainer.classList.add("burger-container", "burger-hidden")
+  burgerContainer.classList.add('burger-container', 'burger-hidden')
   for (let item of burgerItems) {
     let burgerItem = document.createElement('div')
-    burgerItem.classList.add("burger-list")
+    burgerItem.classList.add('burger-list')
     burgerItem.innerHTML = `<a href = "${item.url}">${item.text}</a> `
     burgerContainer.appendChild(burgerItem)
   }
