@@ -56,7 +56,6 @@
     transform: translate(-50%, -50%) scale(1);
 }
 
-
 .barContainer {
     position: sticky;
     top: 0;
@@ -74,10 +73,6 @@
     cursor: pointer;
     font-size: 30px;
     font-weight: bold;
-}
-
-.imgHearth.active {
-
 }
  
 .infoBoxHeader {
