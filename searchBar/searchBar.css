@@ -21,9 +21,12 @@
 }
 
 .searchDiv {
+    background-color: var(--lightGrey);
     display: flex;
     justify-content: space-between;
-    border: 2px solid black;
+    border: 2px solid var(--dark);
+
+    border-radius: 3px;
     width: 70%;
     padding: 10px;
     max-width: 700px;
@@ -36,6 +39,7 @@
 }
 
 .iconCross {
+    cursor: pointer;
     padding: 5px;
     margin-right: 5px;
     font-size: 25px;
@@ -48,7 +52,6 @@
     background: none;
     width: 100%;
 }
-
 
 .search-result {
     display: flex;
@@ -63,7 +66,11 @@
     color: var(--lightGrey);
     padding: 10px 20px;
     margin: 5px 0px;
-    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.result-box:hover {
+    background-color: #40515e;
 }
 
 .title {
@@ -73,3 +80,4 @@
 .textInfo {
     margin-bottom: 5px;
 }
+
