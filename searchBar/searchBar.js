@@ -25,13 +25,12 @@ search_icon.addEventListener("click", function () {
     }
 })
 
-searchBar()
 
 // Creating the searchBar 
 function searchBar () {
     let searchBarContainer = createElement("div")
     searchBarContainer.classList.add("container")
-    
+
     let searchBarBox = createElement("div")
     searchBarBox.classList.add("searchBar")
     
@@ -49,13 +48,29 @@ function searchBar () {
     return searchBarContainer
 }
 
-// close filterBox 
-selectElement(".iconCross").addEventListener("click", function() {
-    search_icon.classList.remove("active")
-    selectElement(".container").classList.remove("active")
-    clearResults(".search-result")
-    selectElement("#searchInputBar").value = ""
-})
+searchBar()
+
+// close filterBox iconGlass press in search  
+function closeSearchInSearch () {
+    selectElement(".iconSearch").addEventListener("click", function() {
+        search_icon.classList.remove("active")
+        selectElement(".container").classList.remove("active")
+        clearResults(".search-result")
+        selectElement("#searchInputBar").value = ""
+    })
+}
+// cleans out by pressing x in search
+function cleanSearch () {
+    selectElement(".iconCross").addEventListener("click", function() {
+        selectElement("#searchInputBar").value = ""
+        clearResults(".search-result")
+    })
+} 
+
+closeSearchInSearch()
+cleanSearch()
+
+
 
 // create the resultBox of the search 
 function searchResultBox () {
