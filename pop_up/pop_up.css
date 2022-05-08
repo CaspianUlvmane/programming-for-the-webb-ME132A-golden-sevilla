@@ -1,0 +1,119 @@
+:root{
+    --dark: #344450; 
+    --darkLowOpacity: hsl(206, 21%, 26%, 0.4); 
+    --lightGrey: #eaeaee;
+    --lightBeige: #EDE7DF;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ 
+.buttonBox {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+ 
+.buttonProgram  {
+    padding: 50px;
+}
+ 
+.overLay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--darkLowOpacity);
+    pointer-events: none;
+}
+
+.overLay.active {
+    opacity: 1; 
+}
+
+.containerPopUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 10;
+    
+    background-color: var(--dark);
+    color: var(--lightGrey);
+    height: 500px;
+    width: 320px;
+    max-width: 600px;
+    overflow: scroll;
+    
+    border-radius: 5px;
+}
+
+.containerPopUp.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.barContainer {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+}
+ 
+.imgCross, .imgHearth {
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+}
+ 
+.infoBoxHeader {
+    text-align: center;
+    margin-bottom: 10px;
+}
+ 
+.programInfoBox {
+    box-sizing: border-box;
+    padding: 0px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+ 
+.info {
+    margin: 10px;
+}
+ 
+span {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.average {
+    margin: 0;
+}
+
+.commentContainer {
+    padding: 0px 20px;
+}
+ 
+.commentContainer > div {
+    padding: 10px;
+}
+
+.commentDiv {
+    margin-top: 5px;
+}
+
+.commentName {
+    margin-top: 10px;
+} 
+ 
