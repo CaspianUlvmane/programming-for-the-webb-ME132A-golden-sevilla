@@ -5,13 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="filterButton.css">
+    <link rel="stylesheet" href="renderResults.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/af88015189.js"crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <button id="filterToggle">Filter</button>
-    
+    <div id="wrapper">
+        <div id="topDiv"><button id="filterToggle">Filter</button></div>
+        <div id="results"></div>
+    </div>
     <script src="commentsProgramme.js"></script>
     <script src="database.js"></script>
+    <script src="renderResults.js"></script>
     <script src="filterButton.js"></script>
 </body>
 </html>

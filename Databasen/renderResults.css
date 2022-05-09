@@ -1,0 +1,45 @@
+body {
+    background-color: var(--beigeColor);
+}
+
+.container {
+    padding: 10px;
+    background-color: var(--lightColor);
+    border: solid var(--darkColor);
+    height: 60px;
+}
+.container > h3 {
+    margin: 5px;
+    font-family: "IBM Plex Sans Condensed";
+}
+
+.container > p {
+    margin: 0px;
+    margin-left: 5px;
+    font-family: 'Barlow Condensed';
+}
+
+.container > div {
+    position: relative;
+    left: 280px;
+    top: -50px;
+}
+
+#topDiv{
+    background-color: var(--beigeColor);
+    z-index: 1;
+    width: 100vw;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imgCross, .imgHearth {
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+}

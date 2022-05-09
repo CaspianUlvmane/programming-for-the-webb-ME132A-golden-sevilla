@@ -1,22 +1,59 @@
+:root {
+    --beigeColor: #EDE7DF;
+    --lightColor: #EAEAEA;
+    --darkColor: #425664;
+    --whiteColor: white;
+    --blackColor: black;
+  }
+
+body {
+    margin: 0px;
+}
+
+button {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
 .active {
-    background-image: linear-gradient(gray, darkgrey);
+    background-image: linear-gradient(var(--darkColor), darkgrey);
+    color: white;
+    border-radius: 4px;
+}
+
+.filterButtons > button.active {
+    background-image: linear-gradient(var(--darkColor), darkgrey);
     color: white;
     border-radius: 4px;
 }
 
 #allFilters {
-    display: none;
+    position: absolute;
+    transition: top 300ms;
+    top: -290px;
+    background-color: var(--beigeColor);
+    padding: 10px;
+    width: -webkit-fill-available;
+    border-bottom: #425664 solid;
+    border-radius: 0px 0px 15px 15px;
 }
 
 #allFilters.showFilters{
-    display: block;
+    top: 45px;
 }
 
 #filterToggle {
     width: 54px;
     border: 2px solid darkgray;
     border-radius: 4px;
-    margin-bottom: 30px;
+    margin: 10px;
+    background-image: linear-gradient(var(--lightColor), lightgray);
+    font-size: 16px;
+}
+
+#filterToggle:hover {
+    cursor: pointer;
+    background-image: none;
+    background-color: gainsboro;
 }
 
 
@@ -25,18 +62,25 @@
     flex-wrap: wrap;
 }
 
+.filterButtons > button {
+    border-radius: 4px;
+    background-image: linear-gradient(var(--lightColor), lightgray);
+    border: 2px solid darkgray;
+}
+
 .filterContainer {
     display: flex;
     flex-direction: column;
 }
 
 .filterContainer > div:nth-child(1){
-    background-image: linear-gradient(whitesmoke, lightgray);
+    background-image: linear-gradient(var(--lightColor), lightgray);
     border: 2px solid darkgray;
     width: 50px;
     display: flex;
     justify-content: center;
     border-radius: 4px;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
 .filterContainer > div:nth-child(1):hover{
