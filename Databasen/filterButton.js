@@ -45,6 +45,8 @@ function findProgrammes () {
   return filter(sortedFilters)
 }
 
+// skapa array - varje key - varje key innehyåller de valda filterena 
+
 function filter (array){
     let programmes = []
     let filteredProgrammes = []
