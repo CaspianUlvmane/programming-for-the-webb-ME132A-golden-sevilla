@@ -47,7 +47,7 @@
     border-radius: 5px;
 
     height: 600px;
-    min-width: 320px;
+    min-width: 300px;
     max-width: 800px;
     padding-bottom: 20px;
     overflow: scroll;
@@ -90,12 +90,7 @@
 }
  
 .info {
-    padding: 15px 10px;
-}
- 
-span {
-    margin-left: 50px;
-    margin-right: 50px;
+    padding: 10px 10px;
 }
 
 .average, .commentsOfstudents, .university {

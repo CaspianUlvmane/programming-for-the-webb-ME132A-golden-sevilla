@@ -92,11 +92,16 @@ function addInfoProgram (program) {
     infoContainer.innerHTML = `
     <h3 class="infoBoxHeader">${program.name}</h3>
     <div class="programInfoBox">
-        <div class="info"> Land: ${getCountry(program)} <span> Stad: ${getCity(program)} </span> </div>
+        <div class="info"> Land: ${getCountry(program)} </div>
+        <div class="info"> Stad: ${getCity(program)} </div>
         <div class="info university"> Universitet: ${getUniversity(program)} </div>
-        <div class="info"> Ämne: ${getFiled(program)} <span> Nivå: ${getLevel(program)}</span> Språk: ${findLangauge(program)} </div>
+        <div class="info"> Ämne: ${getFiled(program)} </div>
+        <div class="info"> Nivå: ${getLevel(program)} </div>
+        <div class="info"> Språk: ${findLangauge(program)} </div>
         <div class="info average"> Medelvärde av Kursen: ${getAllAverage(program)} </div>
-        <div class="info"> Teachers: ${getAverageTeachers(program)} <span> Students: ${getAverageStudents(program)} </span> Courses: ${getAverageCourses(program)} </div>
+        <div class="info"> Teacher rating: ${getAverageTeachers(program)} </div>
+        <div class="info"> Students rating: ${getAverageStudents(program)} </div>
+        <div class="info"> Courses rating: ${getAverageCourses(program)} </div>
         <div class="info commentsOfstudents"> Kommentarer från studenter </div>
     </div> `
 
