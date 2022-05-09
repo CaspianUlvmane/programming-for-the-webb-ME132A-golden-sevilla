@@ -93,11 +93,11 @@ function addInfoProgram (program) {
     <h3 class="infoBoxHeader">${program.name}</h3>
     <div class="programInfoBox">
         <div class="info"> Land: ${getCountry(program)} <span> Stad: ${getCity(program)} </span> </div>
-        <div class="info"> Universitet: ${getUniversity(program)}</div>
-        <div class="info"> Ämne: ${getFiled(program)}<span> Nivå: ${getLevel(program)}</span> Språk: ${findLangauge(program)} </div>
-        <div class="info"> Medelvärde av Kursen: ${getAllAverage(program)} </div>
-        <div class="info average"> Teachers: ${getAverageTeachers(program)} <span> Students: ${getAverageStudents(program)} </span> Courses: ${getAverageCourses(program)} </div>
-        <div class="info"> Kommentarer från studenter </div>
+        <div class="info university"> Universitet: ${getUniversity(program)} </div>
+        <div class="info"> Ämne: ${getFiled(program)} <span> Nivå: ${getLevel(program)}</span> Språk: ${findLangauge(program)} </div>
+        <div class="info average"> Medelvärde av Kursen: ${getAllAverage(program)} </div>
+        <div class="info"> Teachers: ${getAverageTeachers(program)} <span> Students: ${getAverageStudents(program)} </span> Courses: ${getAverageCourses(program)} </div>
+        <div class="info commentsOfstudents"> Kommentarer från studenter </div>
     </div> `
 
     infoContainer.append(commentsProgram(program))
@@ -119,7 +119,7 @@ function commentsProgram (id) {
         let commentBox = createElement("div")
         commentBox.innerHTML =  ` 
         ${studentRatingProgram(comment)}
-        <div class="commentDiv"> ${comment.text} </div>
+        <div class="commentText"> ${comment.text} </div>
         <div class="commentName"> ${comment.alias} </div> `
         commentContainer.append(commentBox)
     }
@@ -163,8 +163,16 @@ function getFiled (id) {
 return findFiled(id).name
 }
 
+/// !!! Working how to write in cleaner way ??? 
 function getLevel (id) {
-    i = 0
+    console.log(id)
+    if (id.level == 0) {
+        return DB.LEVELS.find((level) => level == "Bachelor")
+    } else if (id.level == 1) {
+        return DB.LEVELS.find((level) => level == "Master")
+    } else {
+        return DB.LEVELS.find((level) => level == "Doctorate")
+    }
 }
 
 // find the langauge that is equal to the program language
