@@ -1,4 +1,4 @@
-let array = [3, 2]
+let array = [2, 3]
 
 function likedPrograms (likedArray) {
   let likeContainer = document.createElement('div')
@@ -11,24 +11,12 @@ function likedPrograms (likedArray) {
       let program = DB.PROGRAMMES.find(program => program.id == liked)
       console.log(program)
       let likedItem = document.createElement('div')
-
       // lägg till resten av infon.
-
-      likedItem.innerHTML = `${program.name}`
-
       likedItem.innerHTML = `
       <p class="bold">${program.name}</p>
-      <p>Ämne: ${getSubject(program)}, Land: ${program}, Nivå: ${program}</p>
+      <p>Ämne: ${getSubject(program)}, Land: ${getCountry(program)}, Nivå: ${DB.LEVELS[program.level]}</p>
       `
-
       likedItem.addEventListener('click', removeLike)
-
-    //   likedItem.classList.add("liked-item")
-      likedItem.innerHTML = `${liked}`
-    //   likedItem.addEventListener("click", function () {
-    //     changeClassOnLikeContainer(likedItem)
-    //   })
-
       likeContainer.appendChild(likedItem)
     }
   } else {
@@ -46,7 +34,6 @@ function changeClassOnLikeContainer (element) {
     element.classList.add('container-show')
   }
 }
-
 // Har använt min globala array här, då jag inte kunde skicka med likedArray som parameter - event funkade ej då.
 // Måste kolla på detta!
 function removeLike (event) {
@@ -56,7 +43,7 @@ function removeLike (event) {
   let programId = DB.PROGRAMMES.find(program => program.name == name).id
   let indexOfProgram = array.findIndex(id => id == programId)
   array.splice(indexOfProgram, 1)
-  console.log(array)
+  // console.log(array)
 }
 
 function getSubject (program) {
@@ -64,7 +51,9 @@ function getSubject (program) {
   return subject
 }
 
-function getLevel (program) {}
-
-function getCountry (program) {}
-
+function getCountry (program) {
+let university = DB.UNIVERSITIES.find(uni => uni.id == program.universityID)
+let city = DB.CITIES.find(city => city.id == university.cityID)
+let country = DB.COUNTRIES.find(country => country.id == city.countryID).name
+return country
+}
