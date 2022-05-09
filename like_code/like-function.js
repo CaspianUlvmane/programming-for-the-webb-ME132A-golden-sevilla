@@ -11,10 +11,11 @@ function likedPrograms (likedArray) {
       let program = DB.PROGRAMMES.find(program => program.id == liked)
       console.log(program)
       let likedItem = document.createElement('div')
+      likedItem.classList.add("liked-item")
       // lägg till resten av infon.
       likedItem.innerHTML = `
       <p class="bold">${program.name}</p>
-      <p>Ämne: ${getSubject(program)}, Land: ${getCountry(program)}, Nivå: ${DB.LEVELS[program.level]}</p>
+      <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${DB.LEVELS[program.level]}</p>
       `
       likedItem.addEventListener('click', removeLike)
       likeContainer.appendChild(likedItem)
