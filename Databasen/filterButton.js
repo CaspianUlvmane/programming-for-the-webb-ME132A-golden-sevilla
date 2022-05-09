@@ -22,7 +22,6 @@ addCountryAndCity()
 
 function findProgrammes () {
   let activeArray = document.querySelectorAll('.active')
-  let result = []
   let allFilters = []
   for (let active of activeArray) {
     let data = JSON.parse(active.dataset.data)
@@ -48,67 +47,24 @@ function findProgrammes () {
 // skapa array - varje key - varje key innehyåller de valda filterena 
 
 function filter (array){
-    let programmes = []
-    let filteredProgrammes = []
-      for (let i = 0; i < array.length; i++){
-          if (i == 0){
-              programmes.push(DB.PROGRAMMES.filter((programme) => programme[array[i].key] == array[i].value))
-          }
-          else if ( i > 0 && array[i].key == array[i-1].key){
-              programmes.push(DB.PROGRAMMES.filter((programme) => programme[array[i].key] == array[i].value))
-              
-          }
-          else if (i > 0 && array[i].key != array[i-1].key){
-              console.log(programmes)
-              var merged = [].concat.apply([], programmes);
-              console.log(merged)
-              filteredProgrammes.push(merged.filter((program) => program[array[i].key] == array[i].value))
-          }
-      }
-      console.log(programmes)
-      console.log(filteredProgrammes)
-      if (filteredProgrammes[0] == undefined){
-          return [].concat.apply([], programmes)
-      }
-      else{
-          return [].concat.apply([], filteredProgrammes)
-      }
+  let keys = ["language", "subjectID", "level", "country", "city"]
+  let keysArray = {language: [],
+                    subjectID: [],
+                    level: [],
+                    country: [],
+                    city: []}
+
+    let programmes = DB.PROGRAMMES
+    for (let data of array){
+      keysArray[data.key].push(data.value)
+    }
+    for (let key of keys){
+      if (keysArray[key].length > 0)
+    programmes = programmes.filter((program) => keysArray[key].includes(program[key]))
+    }
+    let result = programmes
+    return result
 }
-
-//     // Object = {key, value}
-//     // Array.push(object)
-//     // Array.sort()
-//     // check array.key.length
-//     // loop array i = 0
-//     //     if key == previous key i-1 i=0
-//     //     filter original DB
-//     //     let newarray = concat filtered arrays
-
-//     //     else if (key != i-1)
-//     //     filter on newarray
-
-//     //     let results = concat filterd arrays
-
-
-//     // sort Array, if 0 is undefined don do that
-//     // if (key != )
-//     // base filter on result
-//     // else
-//     // base on new Array
-
-//     // for (let i = 0; i < activeArray.length; i++)
-//         // if ( i == 0){
-//         //     result
-//         // }
-//         // else{
-//         //     filter on next key
-//         // }
-//         // push to empty array
-
-//     result = result.filter(program => program[key] == value)
-
-//     console.log(result)
-//   }
 
 function buildFilterButton (text, key, value) {
   let button = document.createElement('button')
