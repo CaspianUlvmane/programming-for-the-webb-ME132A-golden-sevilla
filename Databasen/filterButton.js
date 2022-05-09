@@ -20,16 +20,50 @@ function addCountryAndCity () {
 
 addCountryAndCity()
 
-function filter () {
+function findProgrammes () {
   let activeArray = document.querySelectorAll('.active')
-  let result = DB.PROGRAMMES
+  let allFilters = []
   for (let active of activeArray) {
-    console.log(JSON.parse(active.dataset.data))
     let data = JSON.parse(active.dataset.data)
     let key = data.key
     let value = data.value
-    result = result.filter(program => program[key] == value)
+    let filterObject = {key: key, value: value}
+    allFilters.push(filterObject)
   }
+  let sortedFilters = allFilters.sort((a, b) =>{
+    if (a.key < b.key){
+          return -1
+      }
+    if (a.key > b.key){
+        return 1
+    }
+    else {
+        return 0
+    }
+  })
+  return filter(sortedFilters)
+}
+
+// skapa array - varje key - varje key innehyåller de valda filterena 
+
+function filter (array){
+  let keys = ["language", "subjectID", "level", "country", "city"]
+  let keysArray = {language: [],
+                    subjectID: [],
+                    level: [],
+                    country: [],
+                    city: []}
+
+    let programmes = DB.PROGRAMMES
+    for (let data of array){
+      keysArray[data.key].push(data.value)
+    }
+    for (let key of keys){
+      if (keysArray[key].length > 0)
+    programmes = programmes.filter((program) => keysArray[key].includes(program[key]))
+    }
+    let result = programmes
+    return result
 }
 
 function buildFilterButton (text, key, value) {
@@ -37,7 +71,7 @@ function buildFilterButton (text, key, value) {
   button.dataset.data = JSON.stringify({ key: key, value: value })
   button.textContent = text
   button.addEventListener('click', toggleActive)
-  button.addEventListener('click', filter)
+  button.addEventListener('click', findProgrammes)
   return button
 }
 
