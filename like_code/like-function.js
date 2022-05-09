@@ -1,4 +1,4 @@
-let array = [2, 3]
+let array = [2, 3, 4, 6, 7]
 
 function likedPrograms (likedArray) {
   let likeContainer = document.createElement('div')
@@ -14,11 +14,17 @@ function likedPrograms (likedArray) {
       likedItem.classList.add("liked-item")
       // lägg till resten av infon.
       likedItem.innerHTML = `
+      <div class="liked-div">
       <p class="bold">${program.name}</p>
       <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${DB.LEVELS[program.level]}</p>
+      </div>
       `
-      likedItem.addEventListener('click', removeLike)
+      let likedHeartDiv = document.createElement("div")
+      likedHeartDiv.classList.add("liked-heart-div")
+
+      likedHeartDiv.addEventListener('click', removeLike)
       likeContainer.appendChild(likedItem)
+      likedItem.appendChild(likedHeartDiv)
     }
   } else {
     // div, med innerhtml, text. append to container.
