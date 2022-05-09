@@ -11,17 +11,24 @@ function likedPrograms (likedArray) {
       let program = DB.PROGRAMMES.find(program => program.id == liked)
       console.log(program)
       let likedItem = document.createElement('div')
-<<<<<<< Updated upstream
+
       // lägg till resten av infon.
+
       likedItem.innerHTML = `${program.name}`
+
+      likedItem.innerHTML = `
+      <p class="bold">${program.name}</p>
+      <p>Ämne: ${getSubject(program)}, Land: ${program}, Nivå: ${program}</p>
+      `
+
       likedItem.addEventListener('click', removeLike)
-=======
+
     //   likedItem.classList.add("liked-item")
       likedItem.innerHTML = `${liked}`
     //   likedItem.addEventListener("click", function () {
     //     changeClassOnLikeContainer(likedItem)
     //   })
->>>>>>> Stashed changes
+
       likeContainer.appendChild(likedItem)
     }
   } else {
@@ -39,7 +46,7 @@ function changeClassOnLikeContainer (element) {
     element.classList.add('container-show')
   }
 }
-<<<<<<< Updated upstream
+
 // Har använt min globala array här, då jag inte kunde skicka med likedArray som parameter - event funkade ej då.
 // Måste kolla på detta!
 function removeLike (event) {
@@ -51,6 +58,13 @@ function removeLike (event) {
   array.splice(indexOfProgram, 1)
   console.log(array)
 }
-=======
 
->>>>>>> Stashed changes
+function getSubject (program) {
+  let subject = DB.FIELDS.find(subject => subject.id == program.subjectID).name
+  return subject
+}
+
+function getLevel (program) {}
+
+function getCountry (program) {}
+
