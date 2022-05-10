@@ -1,5 +1,6 @@
 let filterToggle = document.getElementById('filterToggle')
 
+//adds a country and city ID to every programme
 function addCountryAndCity () {
   for (let country of DB.COUNTRIES) {
     for (let city of DB.CITIES) {
@@ -20,6 +21,7 @@ function addCountryAndCity () {
 
 addCountryAndCity()
 
+//finds all filters and orders them
 function findProgrammes () {
   let activeArray = document.querySelectorAll('.active')
   let allFilters = []
@@ -40,7 +42,7 @@ function findProgrammes () {
       return 0
     }
   })
-  return filter(sortedFilters)
+  return filter(allFilters)
 }
 
 // skapa array - varje key - varje key innehyåller de valda filterena
