@@ -12,11 +12,7 @@
     box-sizing: border-box;
 }
 
-header {
-    padding-top: 20px;
-    background-color: rgb(216, 212, 212);
-    height: 640px;
-}
+
 
 #header-info {
     display: flex;
@@ -158,42 +154,3 @@ header {
     margin: 5px 0px;
 }
 
-footer {
-    background-color: rgb(216, 212, 212);
-    margin-top: 50px;
-    padding: 50px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-footer > h3 {
-    height: 5px;
-}
-
-footer > p {
-    max-width: 500px;
-    margin: 20px auto;
-}
-
-#links-footer {
-    margin-top: 10px;
-    list-style: none;
-}
-
-
-.footer-link {
-    padding: 5px;
-}
-
-.footer-link:nth-child(1) {
-    padding: 25px;
-}
-
-.footer-link a {
-    text-decoration: none;
-    color: black;
-}
