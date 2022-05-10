@@ -17,7 +17,7 @@ function createContinentList(){
             let countryDiv = document.createElement("div")
             countryDiv.classList.add("country-div")
             countryDiv.innerHTML = `
-            <a href="../country_code/country.html?country=${country.id}">${country.name}</a>`
+            <a href="../html_files/country.html?country=${country.id}">${country.name}</a>`
             // gave link country.id to reach it when calling for function thar create country.html info
             countryContainer.appendChild(countryDiv)
         }
@@ -91,3 +91,5 @@ function createContinentMap(){
 
 cotinentViewBar()
 createContinentList()
+
+document.querySelector("footer").appendChild(footer())
