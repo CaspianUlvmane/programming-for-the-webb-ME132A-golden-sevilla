@@ -14,4 +14,4 @@ function footer(){
     return footerDiv
 }
 
-document.querySelector("body").appendChild(footer())
+

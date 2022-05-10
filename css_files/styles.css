@@ -12,6 +12,7 @@ body {
 
 #nav {
   width: 100vw;
+  height: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,6 +75,36 @@ a {
   color:black;
 }
 
+/* burger style */
+
+.burger-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.burger-list {
+  cursor: pointer;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EDE7DF;
+}
+.burger-list:hover {
+  background-color: #e4ded7;
+}
+
+.burger-hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+
 /* .search {
   //färger - bara för att testa om (byt icon - funktionen funkar)
   background-color: palevioletred;
@@ -83,3 +114,33 @@ a {
     //färger - bara för att testa om (byt icon - funktionen funkar)
   background-color: darkgoldenrod;
 } */
+
+
+/* footer style */
+
+#footer-div{
+  background-color: #425664;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-title{
+  color: #EAEAEA;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 18pt;
+}
+
+.footer-item{
+  color: #EAEAEA;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+.footer-copyright{
+  color: #EAEAEA;
+  margin-top: 20px;
+  text-decoration: none;
+}

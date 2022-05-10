@@ -2,8 +2,8 @@
 let array = ['hej']
 // parametern array, ska vara "likedArray" sedan.
 
-document.querySelector('header').appendChild(buildTopMenu(array))
-document.querySelector('header').appendChild(createBurgerItems())
+// document.querySelector('header').appendChild(buildTopMenu(array))
+// document.querySelector('header').appendChild(createBurgerItems())
 
 function buildTopMenu (likedArray) {
   let topMenu = document.createElement('div')
@@ -85,29 +85,28 @@ function createDarkHeart () {
   return darkHeart
 }
 
-// OBS. uppdatera länkarna så de hittar vägen.
 
 function createBurgerItems () {
   let burgerItems = [
     {
       text: 'Utbyteslivet',
-      url: 'info.html'
+      url: 'html_files/info.html'
     },
     {
       text: 'Världsdelar och länder',
-      url: 'continets.html'
+      url: "html_files/continent.html"
     },
     {
       text: 'Ämnen',
-      url: 'fields.html'
+      url: 'html_files/fields.html'
     },
     {
       text: 'Program',
-      url: 'filter.html'
+      url: 'html_files/filter.html'
     },
     {
       text: 'Om oss',
-      url: 'about.html'
+      url: 'html_files/about.html'
     }
   ]
   let burgerContainer = document.createElement('div')
