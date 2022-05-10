@@ -2,8 +2,8 @@
 let array = ['hej']
 // parametern array, ska vara "likedArray" sedan.
 
-document.querySelector('body').appendChild(buildTopMenu(array))
-document.querySelector('body').appendChild(createBurgerItems())
+document.querySelector('header').appendChild(buildTopMenu(array))
+document.querySelector('header').appendChild(createBurgerItems())
 
 function buildTopMenu (likedArray) {
   let topMenu = document.createElement('div')
