@@ -138,7 +138,6 @@ function toggleActive () {
 
 function filterDivEvent () {
   let divs = document.querySelectorAll('.filterContainer div:nth-child(1)')
-  console.log(divs)
   for (let div of divs) div.addEventListener('click', showButtons)
 }
 
@@ -185,7 +184,17 @@ function toggleFilters () {
   div.classList.toggle('showFilters')
 }
 
+function removeShowbuttons (){
+  let buttons = document.querySelectorAll(".showButtons")
+  let buttonContainer = document.getElementById("allFilters")
+  console.log(buttons)
+  if (!buttonContainer.classList.contains("showFilters")){
+    buttons.forEach(element => element.classList.remove("showButtons"))
+  }
+}
+
 buildFilterButtons()
 renderPrograms ()
 
 filterToggle.addEventListener('click', toggleFilters)
+filterToggle.addEventListener('click', removeShowbuttons)

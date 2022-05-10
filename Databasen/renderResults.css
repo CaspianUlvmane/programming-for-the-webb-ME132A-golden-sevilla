@@ -6,7 +6,6 @@ body {
     padding: 10px;
     background-color: var(--lightColor);
     border: solid var(--darkColor);
-    height: 60px;
     display: flex;
     justify-content: space-between;
 }
