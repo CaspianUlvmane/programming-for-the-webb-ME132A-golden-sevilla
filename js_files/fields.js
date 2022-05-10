@@ -1,8 +1,11 @@
+document.querySelector('header').appendChild(buildTopMenu(array))
+document.querySelector('header').appendChild(createBurgerItems())
+
 function createFieldView () {
   let fieldContainer = document.createElement('div')
-  document.querySelector('body').appendChild(fieldContainer)
+  document.querySelector('main').appendChild(fieldContainer)
   fieldContainer.classList.add('fields-container')
-
+  
   for (let field of DB.FIELDS) {
     let fieldDiv = document.createElement('div')
     fieldDiv.classList.add('field-div')
@@ -10,11 +13,12 @@ function createFieldView () {
     // behöver även länka knapparna.
     fieldDiv.innerHTML = `
     <div class="field-img"></div>
-    <h3>${field.name}</h3>
-    <p>${field.text}</p>
+    <h3 class="field-name">${field.name}</h3>
+    <p class="field-text">${field.text}</p>
     <button class="field-button">${'Se alla program'}</button>`
     fieldContainer.appendChild(fieldDiv)
   }
 }
 
+document.querySelector("footer").appendChild(footer())
 createFieldView()
