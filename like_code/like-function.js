@@ -1,26 +1,30 @@
-let array = [2, 3, 4, 6, 7]
+let array = [2, 3, 4, 6, 7, 48]
 
 function likedPrograms (likedArray) {
+  let likeWrapper = document.querySelector('.like-wrapper')
+  likeWrapper.classList.add('container-hidden')
   let likeContainer = document.createElement('div')
-  likeContainer.classList.add('container-hidden')
-  document.querySelector('body').appendChild(likeContainer)
 
+  likeWrapper.innerHTML = ''
   if (likedArray.length > 0) {
     for (let liked of likedArray) {
       // om array består av namn, ändra från id till namn.
       let program = DB.PROGRAMMES.find(program => program.id == liked)
       console.log(program)
       let likedItem = document.createElement('div')
-      likedItem.classList.add("liked-item")
+      likedItem.classList.add('liked-item')
       // lägg till resten av infon.
       likedItem.innerHTML = `
       <div class="liked-div">
       <p class="bold">${program.name}</p>
-      <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${DB.LEVELS[program.level]}</p>
+      <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${
+        DB.LEVELS[program.level]
+      }</p>
       </div>
       `
-      let likedHeartDiv = document.createElement("div")
-      likedHeartDiv.classList.add("liked-heart-div")
+      let likedHeartDiv = document.createElement('div')
+      likedHeartDiv.classList.add('liked-heart-div')
+      likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'
 
       likedHeartDiv.addEventListener('click', removeLike)
       likeContainer.appendChild(likedItem)
@@ -30,6 +34,7 @@ function likedPrograms (likedArray) {
     // div, med innerhtml, text. append to container.
     console.log('finns inga liked programs')
   }
+  likeWrapper.appendChild(likeContainer)
 }
 
 likedPrograms(array)
@@ -45,12 +50,15 @@ function changeClassOnLikeContainer (element) {
 // Måste kolla på detta!
 function removeLike (event) {
   event.preventDefault()
-  let name = event.target.innerHTML
+  let name =
+    event.target.parentElement.parentElement.firstElementChild.firstElementChild
+      .firstChild.data
+  console.log(array)
   // Detta är om array är baserad på id, om det är namn, skippa steget under med find.
   let programId = DB.PROGRAMMES.find(program => program.name == name).id
   let indexOfProgram = array.findIndex(id => id == programId)
   array.splice(indexOfProgram, 1)
-  // console.log(array)
+  likedPrograms(array)
 }
 
 function getSubject (program) {
@@ -59,8 +67,8 @@ function getSubject (program) {
 }
 
 function getCountry (program) {
-let university = DB.UNIVERSITIES.find(uni => uni.id == program.universityID)
-let city = DB.CITIES.find(city => city.id == university.cityID)
-let country = DB.COUNTRIES.find(country => country.id == city.countryID).name
-return country
+  let university = DB.UNIVERSITIES.find(uni => uni.id == program.universityID)
+  let city = DB.CITIES.find(city => city.id == university.cityID)
+  let country = DB.COUNTRIES.find(country => country.id == city.countryID).name
+  return country
 }

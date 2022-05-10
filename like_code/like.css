@@ -22,7 +22,11 @@ display:none;
     flex-grow: 1;
 }
 
-.liked-heart-div {
-    background-color: coral;
-    flex-basis: 10vw;
+.dark-heart {
+    padding: 10px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
 }
+
+
