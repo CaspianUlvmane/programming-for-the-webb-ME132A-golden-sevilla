@@ -1,33 +1,41 @@
-let array = [3, 2]
+let array = [2, 3, 4, 6, 7, 48]
 
 function likedPrograms (likedArray) {
+  let likeWrapper = document.querySelector('.like-wrapper')
+  likeWrapper.classList.add('wrapper-hidden')
   let likeContainer = document.createElement('div')
-  likeContainer.classList.add('container-hidden')
-  document.querySelector('body').appendChild(likeContainer)
 
+  likeWrapper.innerHTML = ''
   if (likedArray.length > 0) {
     for (let liked of likedArray) {
       // om array består av namn, ändra från id till namn.
       let program = DB.PROGRAMMES.find(program => program.id == liked)
       console.log(program)
       let likedItem = document.createElement('div')
-<<<<<<< Updated upstream
-      // lägg till resten av infon.
-      likedItem.innerHTML = `${program.name}`
-      likedItem.addEventListener('click', removeLike)
-=======
-    //   likedItem.classList.add("liked-item")
-      likedItem.innerHTML = `${liked}`
-    //   likedItem.addEventListener("click", function () {
-    //     changeClassOnLikeContainer(likedItem)
-    //   })
->>>>>>> Stashed changes
+      likedItem.classList.add('liked-item')
+      likedItem.innerHTML = `
+      <div class="liked-div">
+      <p class="bold">${program.name}</p>
+      <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${
+        DB.LEVELS[program.level]
+      }</p>
+      </div>
+      `
+      let likedHeartDiv = document.createElement('div')
+      likedHeartDiv.classList.add('liked-heart-div')
+      likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'
+
+      likedHeartDiv.addEventListener('click', removeLike)
       likeContainer.appendChild(likedItem)
+      likedItem.appendChild(likedHeartDiv)
     }
   } else {
-    // div, med innerhtml, text. append to container.
-    console.log('finns inga liked programs')
+    let noLikes = document.createElement('div')
+    noLikes.classList.add('no-likes')
+    likeContainer.appendChild(noLikes)
+    noLikes.innerHTML = 'Hola Amigo, du har inte gillat något än!'
   }
+  likeWrapper.appendChild(likeContainer)
 }
 
 likedPrograms(array)
@@ -39,18 +47,28 @@ function changeClassOnLikeContainer (element) {
     element.classList.add('container-show')
   }
 }
-<<<<<<< Updated upstream
 // Har använt min globala array här, då jag inte kunde skicka med likedArray som parameter - event funkade ej då.
-// Måste kolla på detta!
 function removeLike (event) {
   event.preventDefault()
-  let name = event.target.innerHTML
+  let name =
+    event.target.parentElement.parentElement.firstElementChild.firstElementChild
+      .firstChild.data
+  console.log(array)
   // Detta är om array är baserad på id, om det är namn, skippa steget under med find.
   let programId = DB.PROGRAMMES.find(program => program.name == name).id
   let indexOfProgram = array.findIndex(id => id == programId)
   array.splice(indexOfProgram, 1)
-  console.log(array)
+  likedPrograms(array)
 }
-=======
 
->>>>>>> Stashed changes
+function getSubject (program) {
+  let subject = DB.FIELDS.find(subject => subject.id == program.subjectID).name
+  return subject
+}
+
+function getCountry (program) {
+  let university = DB.UNIVERSITIES.find(uni => uni.id == program.universityID)
+  let city = DB.CITIES.find(city => city.id == university.cityID)
+  let country = DB.COUNTRIES.find(country => country.id == city.countryID).name
+  return country
+}
