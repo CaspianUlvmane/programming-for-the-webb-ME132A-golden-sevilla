@@ -1,4 +1,4 @@
-/* .container-hidden {
+/* .wrapper-hidden {
 display:none;
 } */
 
@@ -19,14 +19,18 @@ display:none;
 }
 
 .liked-item > div:first-child {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .dark-heart {
-    padding: 10px;
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
+  padding: 10px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
 }
 
-
+.no-likes {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 5vh;
+}

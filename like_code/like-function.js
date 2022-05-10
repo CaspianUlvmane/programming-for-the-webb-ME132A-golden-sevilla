@@ -2,7 +2,7 @@ let array = [2, 3, 4, 6, 7, 48]
 
 function likedPrograms (likedArray) {
   let likeWrapper = document.querySelector('.like-wrapper')
-  likeWrapper.classList.add('container-hidden')
+  likeWrapper.classList.add('wrapper-hidden')
   let likeContainer = document.createElement('div')
 
   likeWrapper.innerHTML = ''
@@ -13,7 +13,6 @@ function likedPrograms (likedArray) {
       console.log(program)
       let likedItem = document.createElement('div')
       likedItem.classList.add('liked-item')
-      // lägg till resten av infon.
       likedItem.innerHTML = `
       <div class="liked-div">
       <p class="bold">${program.name}</p>
@@ -31,8 +30,10 @@ function likedPrograms (likedArray) {
       likedItem.appendChild(likedHeartDiv)
     }
   } else {
-    // div, med innerhtml, text. append to container.
-    console.log('finns inga liked programs')
+    let noLikes = document.createElement('div')
+    noLikes.classList.add('no-likes')
+    likeContainer.appendChild(noLikes)
+    noLikes.innerHTML = 'Hola Amigo, du har inte gillat något än!'
   }
   likeWrapper.appendChild(likeContainer)
 }
@@ -47,7 +48,6 @@ function changeClassOnLikeContainer (element) {
   }
 }
 // Har använt min globala array här, då jag inte kunde skicka med likedArray som parameter - event funkade ej då.
-// Måste kolla på detta!
 function removeLike (event) {
   event.preventDefault()
   let name =
