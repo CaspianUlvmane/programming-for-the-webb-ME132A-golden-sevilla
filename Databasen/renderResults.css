@@ -6,23 +6,18 @@ body {
     padding: 10px;
     background-color: var(--lightColor);
     border: solid var(--darkColor);
-    height: 60px;
+    display: flex;
+    justify-content: space-between;
 }
-.container > h3 {
+.container > div >h3 {
     margin: 5px;
     font-family: "IBM Plex Sans Condensed";
 }
 
-.container > p {
+.container > div > p {
     margin: 0px;
     margin-left: 5px;
     font-family: 'Barlow Condensed';
-}
-
-.container > div {
-    position: relative;
-    left: 280px;
-    top: -50px;
 }
 
 #topDiv{

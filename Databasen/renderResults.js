@@ -13,8 +13,8 @@ function renderPrograms (){
 function renderProgram (program){
     let div = document.createElement("div")
     div.classList.add("container")
-    div.innerHTML = `<h3>${program.name}</h3>
-                    <p>${programShortInfo(program)}</p>`
+    div.innerHTML = `<div class="programInfoContainer"><h3>${program.name}</h3>
+                    <p>${programShortInfo(program)}</p></div>`
     div.appendChild(heartIcon())
     return div
 }
@@ -24,11 +24,11 @@ function heartIcon (){
     heartIconDiv.classList.add("imgHearth") 
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
     heartIconDiv.addEventListener("click", function (){
-        if (heartIconDiv.classList.contains("active")) {
-            heartIconDiv.classList.remove("active")
+        if (heartIconDiv.classList.contains("activeLike")) {
+            heartIconDiv.classList.remove("activeLike")
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
         } else {
-            heartIconDiv.classList.add("active")
+            heartIconDiv.classList.add("activeLike")
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
         }
     })

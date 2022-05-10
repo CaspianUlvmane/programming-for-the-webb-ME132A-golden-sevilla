@@ -1,5 +1,6 @@
 let filterToggle = document.getElementById('filterToggle')
 
+//adds a country and city ID to every programme
 function addCountryAndCity () {
   for (let country of DB.COUNTRIES) {
     for (let city of DB.CITIES) {
@@ -20,6 +21,7 @@ function addCountryAndCity () {
 
 addCountryAndCity()
 
+//finds all filters and orders them
 function findProgrammes () {
   let activeArray = document.querySelectorAll('.active')
   let allFilters = []
@@ -40,7 +42,7 @@ function findProgrammes () {
       return 0
     }
   })
-  return filter(sortedFilters)
+  return filter(allFilters)
 }
 
 // skapa array - varje key - varje key innehyåller de valda filterena
@@ -136,7 +138,6 @@ function toggleActive () {
 
 function filterDivEvent () {
   let divs = document.querySelectorAll('.filterContainer div:nth-child(1)')
-  console.log(divs)
   for (let div of divs) div.addEventListener('click', showButtons)
 }
 
@@ -183,7 +184,17 @@ function toggleFilters () {
   div.classList.toggle('showFilters')
 }
 
+function removeShowbuttons (){
+  let buttons = document.querySelectorAll(".showButtons")
+  let buttonContainer = document.getElementById("allFilters")
+  console.log(buttons)
+  if (!buttonContainer.classList.contains("showFilters")){
+    buttons.forEach(element => element.classList.remove("showButtons"))
+  }
+}
+
 buildFilterButtons()
 renderPrograms ()
 
 filterToggle.addEventListener('click', toggleFilters)
+filterToggle.addEventListener('click', removeShowbuttons)
