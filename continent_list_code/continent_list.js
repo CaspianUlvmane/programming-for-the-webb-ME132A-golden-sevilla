@@ -78,7 +78,7 @@ function changeToMapView(listDiv, mapDiv){
 
     let mapContainer = document.getElementById("map-container")
     let listContainer = document.getElementById("list-container")
-    mapContainer.style.display = "flex"
+    mapContainer.style.display = "block"
     listContainer.style.display = "none"  
 }
 
@@ -91,4 +91,3 @@ function createContinentMap(){
 
 cotinentViewBar()
 createContinentList()
-createContinentMap()

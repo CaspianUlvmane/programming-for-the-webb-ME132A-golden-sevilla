@@ -1,0 +1,27 @@
+
+#info-div{
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 40px;
+    padding-bottom: 60px;
+}
+
+.button{
+    background-color: black;
+    height: 40px;
+    width: 40px;
+}
+
+#map-container{
+    height: 100VH;
+    display: none;
+}
+#map-div{
+    overflow: scroll;
+}
+
+#world-map{
+    width: 200%;
+    transition-duration: 2s;
+}
