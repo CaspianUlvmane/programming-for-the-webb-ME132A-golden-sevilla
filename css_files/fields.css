@@ -5,4 +5,14 @@
 
 .field-button {
   margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.field-text, .field-title, .field-info {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.field-name {
+  margin-left: 10px;
 }
