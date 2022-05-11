@@ -1,27 +1,57 @@
-// function createContinentMap(){
-//     let mapContainer = document.getElementById("world-map")
-//     mapContainer.addEventListener("click", changeImg)
-//     mapContainer.addEventListener("mousemove", logKey)
+function getClickedContinent(){
+    let world = document.getElementById("world")
+    world.addEventListener("click", changeImgToClickedImage)
+}
 
-//     return mapContainer
-// }
+getClickedContinent()
 
-// createContinentMap()
+function changeImgToClickedImage(event){
+    let world = document.getElementById("world")
+    let EU = document.getElementById("EU")
+    let NA = document.getElementById("NA")
+    let SA = document.getElementById("SA")
+    let AU = document.getElementById("AU")
+    let title = document.getElementById("info")
+    let backButton = document.getElementById("back-button")
+    let clickedId = event.target.parentElement.id
 
-// function logKey(e){
-//     let info = document.getElementById("position")
-//     info.innerHTML =`${e.offsetX}, ${e.offsetY}`
-// }
+    if (clickedId == "europe" ){
+        change (EU, world, title, backButton)
+        backButton.addEventListener("click", function (){
+            EU.style.display = "none"
+            world.style.display = "block"
+            title.innerHTML= `<div> Välj kontinent</div>`
+        })
+    } else if (clickedId == "NorthAmerica"){
+        change (NA, world, title, backButton) 
+        backButton.addEventListener("click", function (){
+            NA.style.display = "none"
+            world.style.display = "block"
+            title.innerHTML= `<div> Välj kontinent</div>`
+        })
+    } else if (clickedId == "southAmerica"){
+        change (SA, world, title, backButton)
+        backButton.addEventListener("click", function (){
+            SA.style.display = "none"
+            world.style.display = "block"
+            title.innerHTML= `<div> Välj kontinent</div>`
+        })
+    } else if (clickedId == "Australia"){
+        change (AU, world, title, backButton)
+        backButton.addEventListener("click", function (){
+            AU.style.display = "none"
+            world.style.display = "block"
+            title.innerHTML= `<div> Välj kontinent</div>`
+        })    
+    }
+}
+
+function change (element, world, title, button){
+    element.style.display = "block"
+    world.style.display = "none"
+    title.innerHTML = `<div>Välj land</div>`
+    button.style.display = "block"
+}
 
 
-// function changeImg (e){
 
-//     if (e.offsetX > 100 && e.offsetX <200 && e.offsetY > 65 && e.offsetY < 190){
-//         document.getElementById("world-map").src = "../Databasen/Nordamerika.copy.svg"
-//         document.getElementById("info-div").innerHTML = "Välj land"
-//     } else if (e.offsetX > 330 && e.offsetX <420 && e.offsetY > 48 && e.offsetY < 140){
-//         document.getElementById("world-map").src = "../Databasen/Europa-2.svg"
-//         document.getElementById("info-div").innerHTML = "Välj land"
-//         // if(e.offsetX >)
-//     }
-// }

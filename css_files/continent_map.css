@@ -5,11 +5,12 @@
 }
 
 #info-div{
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-size: 14pt;
     font-weight: bold;
-    padding: 40px;
-    padding-bottom: 60px;
+    padding-top: 40px;
 }
 
 .button{
@@ -19,35 +20,71 @@
 }
 
 #map-container{
-    height: 100VH;
     display: none;
 }
 #map-div{
     overflow: scroll;
 }
 
-/* #world-map{
-    width: 200%;
-    transition-duration: 2s;
-} */
-
-svg path{
-    fill: gray;
-}
-
-/* svg path:hover{
-    fill: #28343d;
-    cursor: pointer;
-} */
-
-
-#SE,#ES{
-    fill: var(--dark);
-}
-
-#SE:hover, #ES:hover{
-    fill: #27333c;
+body{
+    margin: 0px;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 
+svg {
+    overflow: scroll;
+    overflow-x: scroll;
+    width: 850px;
+}
 
+#world > g > path {
+    fill: blue;
+    stroke: darkblue;
+}
+
+#world > g > g >  path {
+    fill: darkgray;
+    stroke: grey;
+}
+
+#world > g:hover > path {
+    fill: aqua;
+    stroke: teal;
+}
+
+.continent > g > path {
+    fill: blue;
+    stroke: darkblue;
+}
+
+.continent > g:hover > path {
+    fill: aqua;
+    stroke: teal;
+}
+
+.grey > g > path {
+    fill: darkgray;
+    stroke: grey;
+}
+
+#EU{
+    display: none;
+}
+
+#SA{
+    display: none;
+}
+
+#NA{
+    display: none;
+}
+
+#AU{
+    display: none;
+}
+
+#back-button{
+    display: none;
+}
