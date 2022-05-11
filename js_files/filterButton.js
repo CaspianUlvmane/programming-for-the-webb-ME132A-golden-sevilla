@@ -75,8 +75,9 @@ function buildFilterButton (text, key, value) {
   let button = document.createElement('button')
   button.dataset.data = JSON.stringify({ key: key, value: value })
   button.textContent = text
-  button.addEventListener('click', toggleActive)
+  button.addEventListener('click', toggleActive) 
   button.addEventListener('click', renderPrograms)
+  button.addEventListener("click", activeFilters)
   if (key == "subjectID" && value == getSubjectFromUrl()){
     button.classList.add("active")
   } else if (key == "country" && value == findCountry()){
