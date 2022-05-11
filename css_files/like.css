@@ -1,6 +1,12 @@
-/* .wrapper-hidden {
-display:none;
-} */
+.container-hidden {
+  display:none;
+}
+
+#like-container {
+  position: absolute;
+  width: 100%;
+  background-color: white; 
+}
 
 .bold {
   font-weight: 600;
