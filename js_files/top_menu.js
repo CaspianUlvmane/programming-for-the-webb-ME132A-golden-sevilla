@@ -43,16 +43,31 @@ function createLogo () {
   return logoDiv
 }
 
+
 function createSearch () {
   let searchDiv = document.createElement('div')
   searchDiv.classList.add('search')
   // Har icon-länk just nu, men ska sedan vara bild i css, som ändras vid byte av class.
-  searchDiv.innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
   // behöver bygga searchBar(), innan dessa funkar.
   // add img to .search i css
-  // searchBar()
+  searchDiv.innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
+  
+  searchDiv.addEventListener("click", function () {
+    if ( searchDiv.classList.contains("active") ) {
+      searchDiv.innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
+      searchDiv.classList.remove("active")
+      selectElement(".searchBarcontainer").classList.remove("active")
+      clearResults(".search-result")
+      selectElement("#searchInputBar").value = ""
+    } else {
+      searchDiv.innerHTML = `<i class="fa-solid fa-xmark"> </i>` 
+      searchDiv.classList.add("active")
+      selectElement(".searchBarcontainer").classList.add("active")
+    }
+  })
+  
   // searchDiv.addEventListener('click', function () {
-  //   searchBar().classList.toggle('searchBar')
+  //   searchBar().classList.toggle('active')
   //   changeClass(searchDiv)
   // })
   return searchDiv
