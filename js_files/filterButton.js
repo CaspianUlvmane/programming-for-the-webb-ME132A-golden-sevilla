@@ -77,8 +77,18 @@ function buildFilterButton (text, key, value) {
   button.textContent = text
   button.addEventListener('click', toggleActive)
   button.addEventListener('click', renderPrograms)
+  if (key == "subjectID" && value == getSubjectFromUrl()){
+    button.classList.add("active")
+  } else if (key == "country" && value == findCountry()){
+    button.classList.add("active")
+  }
+  if (key == "city" && value == getCityFromUrl()){
+    button.classList.add("active")
+  }
+  
   return button
 }
+
 
 function languageButtons () {
   let languages = document.getElementById('languages')
@@ -177,6 +187,7 @@ function buildFilterButtons () {
   fieldButtons()
   countryButtons()
   filterDivEvent()
+  cityButtons()
 }
 
 function toggleFilters () {
@@ -192,6 +203,31 @@ function removeShowbuttons (){
     buttons.forEach(element => element.classList.remove("showButtons"))
   }
 }
+
+function getCityFromUrl(){
+  // https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams
+  // used searchParams to get countryID through URL
+  let url = new URL(window.location);
+  let params = url.searchParams;
+
+  return parseInt(params.get("city"))
+}
+
+function findCountry(){
+  let cityFromUrl = getCityFromUrl()
+  if (cityFromUrl >= 0 ){
+    return countryID = DB.CITIES.find(city => city.id == cityFromUrl).countryID
+  } 
+}
+
+
+function getSubjectFromUrl(){
+  let url = new URL(window.location);
+  let params = url.searchParams;
+  
+  return parseInt(params.get("field"))
+}
+
 
 buildFilterButtons()
 renderPrograms ()
