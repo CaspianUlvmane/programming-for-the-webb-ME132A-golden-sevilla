@@ -39,7 +39,7 @@ function createBurger () {
 function createLogo () {
   let logoDiv = document.createElement('div')
   logoDiv.classList.add('title-name')
-  logoDiv.innerHTML = `<a href = index.HTML><h2> STUDERIENCE </h2></a>`
+  logoDiv.innerHTML = `<a href ='../html_files/index.html'><h2> STUDERIENCE </h2></a>`
   return logoDiv
 }
 
@@ -85,28 +85,27 @@ function createDarkHeart () {
   return darkHeart
 }
 
-
 function createBurgerItems () {
   let burgerItems = [
     {
       text: 'Utbyteslivet',
-      url: 'html_files/info.html'
+      url: '../html_files/info.html'
     },
     {
       text: 'Världsdelar och länder',
-      url: "html_files/continent.html"
+      url: '../html_files/continent.html'
     },
     {
       text: 'Ämnen',
-      url: 'html_files/fields.html'
+      url: '../html_files/fields.html'
     },
     {
       text: 'Program',
-      url: 'html_files/filter.html'
+      url: '../html_files/filter.html'
     },
     {
       text: 'Om oss',
-      url: 'html_files/about.html'
+      url: '../html_files/about.html'
     }
   ]
   let burgerContainer = document.createElement('div')
