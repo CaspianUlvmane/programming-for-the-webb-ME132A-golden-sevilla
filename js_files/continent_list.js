@@ -56,7 +56,7 @@ function createDivMapView (){
 
 function createDivListView (){
     let listDiv = document.createElement("div")
-    listDiv.classList.add("list-view")
+    listDiv.classList.add("list-view", "active-view")
     listDiv.innerHTML = "Listvy"
     
     return listDiv
@@ -92,4 +92,4 @@ function createContinentMap(){
 cotinentViewBar()
 createContinentList()
 
-document.querySelector("footer").appendChild(footer())
+// document.querySelector("footer").appendChild(footer())

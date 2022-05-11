@@ -1,3 +1,8 @@
+:root{
+    --dark: #344450; 
+    --lightGrey: #eaeaee;
+    --lightBeige: #EDE7DF;
+}
 
 #info-div{
     text-align: center;
@@ -21,7 +26,28 @@
     overflow: scroll;
 }
 
-#world-map{
+/* #world-map{
     width: 200%;
     transition-duration: 2s;
+} */
+
+svg path{
+    fill: gray;
 }
+
+/* svg path:hover{
+    fill: #28343d;
+    cursor: pointer;
+} */
+
+
+#SE,#ES{
+    fill: var(--dark);
+}
+
+#SE:hover, #ES:hover{
+    fill: #27333c;
+}
+
+
+
