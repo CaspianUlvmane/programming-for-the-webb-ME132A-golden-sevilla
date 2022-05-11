@@ -94,7 +94,7 @@ function searchingInSearch () {
                 // select the searchresult box and place the info from the search in the box 
 
                 // !!!!! MAKE A FUNCTION TO GO FRO ALL LINKS TO GET TO RIGHT PAGE !!!!! 
-                selectElement(".search-result").innerHTML += `<a href=../country_code/country.html?country=${All[i].id}"> 
+                selectElement(".search-result").innerHTML += `<a href=../html_files/country.html?country=${All[i].id}"> 
                 <div class="result-box"> 
                     <h4 class="titleInfoSearch"> ${All[i].name} </h4> 
                     <div class="textInfoSearch">${All[i].text}</div>
