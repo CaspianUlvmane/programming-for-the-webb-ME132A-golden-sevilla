@@ -15,7 +15,7 @@ function createFieldView () {
     <div class="field-img"></div>
     <h3 class="field-name">${field.name}</h3>
     <p class="field-text">${field.text}</p>
-    <a href="../html_files/filter.html"><button class="field-button">${'Se alla program'}</button></a>`
+    <a href="../html_files/filter.html?field=${field.id}"><button class="field-button">${'Se alla program'}</button></a>`
     fieldContainer.appendChild(fieldDiv)
   }
 }
