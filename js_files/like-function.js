@@ -1,11 +1,11 @@
-let array = [2, 3, 4, 6, 7, 48]
+let array = [1, 3, 5, 7, 10]
 
 function likedPrograms (likedArray) {
-  let likeWrapper = document.querySelector('.like-wrapper')
-  likeWrapper.classList.add('wrapper-hidden')
   let likeContainer = document.createElement('div')
+  likeContainer.classList.add('container-hidden')
+  likeContainer.id = "like-container"
 
-  likeWrapper.innerHTML = ''
+  likeContainer.innerHTML = ''
   if (likedArray.length > 0) {
     for (let liked of likedArray) {
       // om array består av namn, ändra från id till namn.
@@ -35,16 +35,14 @@ function likedPrograms (likedArray) {
     likeContainer.appendChild(noLikes)
     noLikes.innerHTML = 'Hola Amigo, du har inte gillat något än!'
   }
-  likeWrapper.appendChild(likeContainer)
+  document.querySelector("header").append(likeContainer)
 }
 
-likedPrograms(array)
-
 function changeClassOnLikeContainer (element) {
-  if (element.classList.contains('container-show')) {
-    element.classList.remove('container-show')
+  if (element.classList.contains('container-hidden')) {
+    element.classList.remove('container-hidden')
   } else {
-    element.classList.add('container-show')
+    element.classList.add('container-hidden')
   }
 }
 // Har använt min globala array här, då jag inte kunde skicka med likedArray som parameter - event funkade ej då.

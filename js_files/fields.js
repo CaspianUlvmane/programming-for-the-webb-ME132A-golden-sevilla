@@ -22,3 +22,4 @@ function createFieldView () {
 
 document.querySelector("footer").appendChild(footer())
 createFieldView()
+likedPrograms(array)
