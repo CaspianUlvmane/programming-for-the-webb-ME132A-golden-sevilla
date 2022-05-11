@@ -1,4 +1,4 @@
-document.querySelector('header').appendChild(buildTopMenu(array))
+// document.querySelector('header').appendChild(buildTopMenu(array))
 
 function buildCountry (id){
     let country = DB.COUNTRIES.find(country=> country.id == id)
@@ -44,7 +44,7 @@ function createCityDiv (cityArray){
 function setCountryBackground (id){
     let country = DB.COUNTRIES.find(country => country.id == id)
     let countryImgDiv = document.getElementById("top-img")
-    countryImgDiv.style.backgroundImage = `url(..//${country.name.toLowerCase()}_normal_1.jpg)`
+    countryImgDiv.style.backgroundImage = `url(../Databasen/Images/${country.name.toLowerCase()}_normal_1.jpg)`
 }
 
 function getCountryFromUrl(){
@@ -58,4 +58,4 @@ function getCountryFromUrl(){
 let country = getCountryFromUrl()
 buildCountry(country)
 
-document.querySelector("footer").appendChild(footer())
+// document.querySelector("footer").appendChild(footer())
