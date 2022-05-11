@@ -22,6 +22,7 @@ body {
 
 #topDiv{
     background-color: var(--beigeColor);
+    display: flex;
     z-index: 1;
     width: 100vw;
 }
@@ -37,4 +38,9 @@ body {
     padding: 10px;
     cursor: pointer;
     font-size: 30px;
+}
+
+#activeFilter {
+    display: flex;
+    justify-content: space-around;
 }

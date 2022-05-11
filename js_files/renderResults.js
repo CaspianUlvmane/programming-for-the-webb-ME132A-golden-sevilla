@@ -56,3 +56,24 @@ function getLevel (program){
     if (program.level == i){
     return DB.LEVELS[i]}}
 }
+
+//// Render Acctive result 
+
+function activeFilters () {
+
+    let activeArray = document.querySelectorAll(".active")
+    let activeFilter = document.getElementById("activeFilter")
+
+    activeFilter.innerHTML = "" 
+
+    for (let active of activeArray) {
+        console.log(activeArray)
+        let activeButton = document.createElement("button")
+        activeButton.innerHTML = active.innerHTML
+        activeFilter.append(activeButton)
+    }
+
+    
+}
+
+activeFilters()
