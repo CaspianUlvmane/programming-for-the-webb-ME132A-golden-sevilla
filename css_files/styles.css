@@ -5,9 +5,18 @@
   --whiteColor: white;
   --blackColor: black;
 }
-
+/* *{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+} */
 body {
   margin: 0px;
+}
+
+.info-about-wrapper > p {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #nav {
@@ -93,9 +102,16 @@ a {
   display: none;
 }
 
-a {
-  text-decoration: none;
-  color:black;
+h3, h4{
+  /* font-family: 'Barlow Condensed'; */
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+h1, h2 {
+  font-family: 'Barlow Condensed';
+}
+
+a, p, div {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
 
