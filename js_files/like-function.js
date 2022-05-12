@@ -21,6 +21,9 @@ function likedPrograms (likedArray) {
       }</p>
       </div>
       `
+      likedItem.addEventListener("click", function () {
+          popUpProgram(program)
+      })
       let likedHeartDiv = document.createElement('div')
       likedHeartDiv.classList.add('liked-heart-div')
       likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'

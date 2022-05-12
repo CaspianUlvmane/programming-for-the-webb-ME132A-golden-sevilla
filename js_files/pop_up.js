@@ -1,10 +1,10 @@
 // Refers to a selected element 
-let selectElement = (select) => document.querySelector(select); 
+// let selectElement = (select) => document.querySelector(select); 
 
 // creates a element 
-let createElement = (element) => document.createElement(element);
+// let createElement = (element) => document.createElement(element);
 
-let clearResults = (element) => selectElement(element).innerHTML = "";
+// let clearResults = (element) => selectElement(element).innerHTML = "";
 
 
 /// keep  creating the popUp div container 
@@ -63,7 +63,6 @@ function heartPopUp () {
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
     heartIconDiv.addEventListener("click", function (){
         if (heartIconDiv.classList.contains("active")) {
-            console.log(this.parentElement)
             let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id
             let indexOfProgram = array.findIndex(id => id == programId)
             array.splice(indexOfProgram, 1)
@@ -71,7 +70,6 @@ function heartPopUp () {
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
             likedPrograms(array)
         } else {
-            console.log(this.parentElement)
             heartIconDiv.classList.add("active")
             array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
