@@ -10,7 +10,7 @@ function likedPrograms (likedArray) {
     for (let liked of likedArray) {
       // om array består av namn, ändra från id till namn.
       let program = DB.PROGRAMMES.find(program => program.id == liked)
-      console.log(program)
+      // console.log(program)
       let likedItem = document.createElement('div')
       likedItem.classList.add('liked-item')
       likedItem.innerHTML = `

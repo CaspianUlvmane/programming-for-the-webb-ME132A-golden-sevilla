@@ -16,7 +16,6 @@ document.body.append(programPopUpContainer)
 let overLayDiv = createElement("div")
 overLayDiv.classList.add("overLay")
 document.body.append(overLayDiv)
-// buttons()
 
 // function called when pressing button to get more info 
 function popUpProgram (program) {
@@ -30,19 +29,20 @@ function popUpProgram (program) {
     programPopUpContainer.classList.add("active")
     selectElement(".overLay").classList.add("active")
     clearResults(".containerPopUp")
-
+    
     document.body.append(programPopUpContainer)
-    programPopUpContainer.append(interactWithPop())
+    programPopUpContainer.append(interactWithPop(programsFound))
     programPopUpContainer.append(addInfoProgram(programsFound))
-
+    
     return programPopUpContainer
 }
 
 // Function to create the close and heart bar of the popUp
-function interactWithPop () {
+function interactWithPop (program) {
     let barContainer = createElement("div")
     barContainer.classList.add("barContainer")
-
+    barContainer.id = program.name
+    
     // creating closeIcon For popUp with listner to close 
     let crossIconDiv = createElement("div")
     crossIconDiv.classList.add("imgCross") // closeButton
@@ -50,23 +50,35 @@ function interactWithPop () {
     crossIconDiv.addEventListener("click", function (){
         selectElement(".overLay").classList.remove("active")
         selectElement(".containerPopUp").classList.remove("active")
+        clearResults(".containerPopUp")
     })
 
-    // creating hearthIcon to fill and unfil hearth in popUp
+    barContainer.append(crossIconDiv, heartPopUp())
+    return barContainer
+}
+
+function heartPopUp () {
     let heartIconDiv = createElement("div")
     heartIconDiv.classList.add("imgHearth") 
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
     heartIconDiv.addEventListener("click", function (){
         if (heartIconDiv.classList.contains("active")) {
+            console.log(this.parentElement)
+            let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id
+            let indexOfProgram = array.findIndex(id => id == programId)
+            array.splice(indexOfProgram, 1)
             heartIconDiv.classList.remove("active")
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
+            likedPrograms(array)
         } else {
+            console.log(this.parentElement)
             heartIconDiv.classList.add("active")
+            array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
+            likedPrograms(array)
         }
     })
-    barContainer.append(crossIconDiv, heartIconDiv)
-    return barContainer
+    return heartIconDiv
 }
 
 // function to add inforomation about the program that is clicked 
