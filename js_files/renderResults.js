@@ -62,6 +62,7 @@ function getLevel (program){
 function activeFilters () {
 
     let activeArray = document.querySelectorAll(".active")
+    console.log(activeArray)
     let activeFilter = document.getElementById("activeFilter")
 
     activeFilter.innerHTML = "" 
@@ -76,4 +77,4 @@ function activeFilters () {
     
 }
 
-activeFilters()
+window.addEventListener("load",activeFilters)
