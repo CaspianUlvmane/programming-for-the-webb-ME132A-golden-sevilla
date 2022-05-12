@@ -36,6 +36,7 @@ function heartIcon (){
             array.splice(indexOfProgram, 1)
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
             likedPrograms(array)
+            console.log(likedPrograms())
         } else {
             console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
