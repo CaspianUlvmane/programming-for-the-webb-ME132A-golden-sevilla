@@ -1,4 +1,4 @@
-let array = [1, 3, 5, 7, 10]
+let array = []
 
 function likedPrograms (likedArray) {
   let likeContainer = document.createElement('div')
