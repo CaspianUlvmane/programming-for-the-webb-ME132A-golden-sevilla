@@ -12,36 +12,36 @@
     box-sizing: border-box;
 } */
 
-
-
 #header-info {
+    background-image: url(../Databasen/frontpage.jpg);
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80%;
+    padding-bottom: 150px;
 }
 
 #header-text {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     width: 70%;
-    min-width: 150px;
+    min-width: 200px;
     max-width: 500px;
-    border: 2px solid black;
     margin-bottom: 30px;
     margin-top: 30px;
     font-family: 'IBM Plex Sans Condensed', sans-serif;
+    background-color: #ffffff82;
 }
 
 .all-about-button, .down-button, .slide-button, .img-slide-button {
     display: inline-block;
-    color: #fff;
-    background-color: rgb(83, 81, 81);
-    text-decoration: none;
-    padding: 20px 40px;
-    border: 3px solid #bcc0ca;
-    border-radius: 10px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 15px 40px;
+    border: 1px solid rgb(198, 198, 198);
+    border-radius: 6px;
     margin-bottom: 10px;
     cursor: pointer;
 }
@@ -53,29 +53,26 @@
 }
 
 .down-button {
-    padding: 10px;
-    font-size: 15px;
-    width: 50px;
+    border: 0;
+    font-size: 20px;
     height: 50px;
 }
 
 #img-slide-box {
     display: flex;
     justify-content: center;
-    margin: 50px 10px;
+    margin: 20px 10px;
 }
 
 #img-box {
     display: flex;
-    justify-content: center;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .img-slide {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-
     margin: 10px;
     height: 250px;
     width: 50vw;
@@ -85,13 +82,32 @@
     background-color: rgb(216, 212, 212);
 }
 
+.sweden{
+    background-image: url(../Databasen/Images/sweden_normal_2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.spain{
+    background-image: url(../Databasen/Images/spain_normal_2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.france{
+    background-image: url(../Databasen/Images/france_normal_2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.australien{
+    background-image: url(../Databasen/Images/australia_normal_1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
 .img-slide-button {
-    box-sizing: border-box;
-    padding: 5px;
-    margin-bottom: 10px;
-    min-width: 80px;
-    width: 40%;
-    height: 50px;
+    padding: 10px 15px;
 }
 
 #slide-show {
@@ -123,7 +139,7 @@
 }
 
 #text-info {
-    border: 2px solid gray;
+    text-align: center;
     width: 80%;
     padding: 10px;
     max-width: 1000px;
@@ -134,25 +150,45 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
     width: 100%;
     margin-bottom: 50px;
 }
 
 .comment-box {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: flex-start;
-
     max-width: 1000px;
-    width: 80%;
-    border: 2px solid black;
+    width: 90%;
+    border: 1px solid black;
     padding: 10px;
     margin: 5px 0px;
+    font-size: 11pt;
 }
 
-.comment-box > p {
-    margin: 5px 0px;
+.comment > h4{
+    margin: 0px;
 }
 
+
+#img-field-box{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.math{
+    background-image: url("../Databasen/Images/field pictures/matematik.jpg");
+    background-size: cover;
+}
+
+.med{
+    background-image: url("../Databasen/Images/field pictures/medicin.jpg");
+    background-size: cover;
+}
+.tec{
+    background-image: url("../Databasen/Images/field pictures/teknik.jpg");
+    background-size: cover;
+}
+
+.law{
+    background-image: url("../Databasen/Images/field pictures/juridik.jpg");
+    background-size: cover;
+}
