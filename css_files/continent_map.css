@@ -5,13 +5,15 @@
 }
 
 #info-div{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     text-align: center;
     font-size: 14pt;
     font-weight: bold;
     padding-top: 40px;
+    margin: 5px;
 }
+
 
 .button{
     background-color: black;
@@ -36,12 +38,12 @@ body{
 svg {
     overflow: scroll;
     overflow-x: scroll;
-    width: 850px;
+    width: 100vw;
 }
 
 #world > g > path {
-    fill: blue;
-    stroke: darkblue;
+    fill: #768A95;
+    stroke: #EBE8E2;
 }
 
 #world > g > g >  path {
@@ -50,18 +52,18 @@ svg {
 }
 
 #world > g:hover > path {
-    fill: aqua;
-    stroke: teal;
+    fill: #4d5a62;
+    stroke: #EBE8E2;
 }
 
-.continent > g > path {
-    fill: blue;
-    stroke: darkblue;
+.continent > g > a >path{
+   fill: #768A95;
+    stroke: #EBE8E2;
 }
 
-.continent > g:hover > path {
-    fill: aqua;
-    stroke: teal;
+.continent > g:hover > a > path {
+    fill: #4d5a62;
+    stroke: #EBE8E2;
 }
 
 .grey > g > path {

@@ -20,6 +20,7 @@ function changeImgToClickedImage(event){
         backButton.addEventListener("click", function (){
             EU.style.display = "none"
             world.style.display = "block"
+            backButton.style.display = "none"
             title.innerHTML= `<div> Välj kontinent</div>`
         })
     } else if (clickedId == "NorthAmerica"){
@@ -27,6 +28,7 @@ function changeImgToClickedImage(event){
         backButton.addEventListener("click", function (){
             NA.style.display = "none"
             world.style.display = "block"
+            backButton.style.display = "none"
             title.innerHTML= `<div> Välj kontinent</div>`
         })
     } else if (clickedId == "southAmerica"){
@@ -34,6 +36,7 @@ function changeImgToClickedImage(event){
         backButton.addEventListener("click", function (){
             SA.style.display = "none"
             world.style.display = "block"
+            backButton.style.display = "none"
             title.innerHTML= `<div> Välj kontinent</div>`
         })
     } else if (clickedId == "Australia"){
@@ -41,6 +44,7 @@ function changeImgToClickedImage(event){
         backButton.addEventListener("click", function (){
             AU.style.display = "none"
             world.style.display = "block"
+            backButton.style.display = "none"
             title.innerHTML= `<div> Välj kontinent</div>`
         })    
     }
@@ -52,6 +56,4 @@ function change (element, world, title, button){
     title.innerHTML = `<div>Välj land</div>`
     button.style.display = "block"
 }
-
-
 
