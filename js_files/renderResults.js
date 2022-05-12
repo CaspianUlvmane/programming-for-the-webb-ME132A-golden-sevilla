@@ -1,4 +1,4 @@
-let createElement = (element) => document.createElement(element);
+// let createElement = (element) => document.createElement(element);
 
 function renderPrograms (){
     let resultDiv = document.getElementById("results")
@@ -6,6 +6,10 @@ function renderPrograms (){
     let programmes = findProgrammes()
     for (let program of programmes){
         let programDiv = renderProgram(program)
+        programDiv.id = program.name 
+        programDiv.addEventListener("click", function () {
+            popUpProgram(program)
+        })
         resultDiv.appendChild(programDiv)
     }
 }
@@ -14,7 +18,7 @@ function renderProgram (program){
     let div = document.createElement("div")
     div.classList.add("container")
     div.innerHTML = `<div class="programInfoContainer"><h3>${program.name}</h3>
-                    <p>${programShortInfo(program)}</p></div>`
+    <p>${programShortInfo(program)}</p></div>`
     div.appendChild(heartIcon())
     return div
 }

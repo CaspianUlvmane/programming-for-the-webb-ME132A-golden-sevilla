@@ -14,7 +14,7 @@ button {
     font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
-.active {
+.button.active {
     background-image: linear-gradient(var(--darkColor), darkgrey);
     color: white;
     border-radius: 4px;
