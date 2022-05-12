@@ -6,38 +6,23 @@ let createElement = (element) => document.createElement(element);
 
 let clearResults = (element) => selectElement(element).innerHTML = "";
 
-// Try function creatting buttons some parts to keep 
-function buttons () {
-    let programs = DB.PROGRAMMES
-    let buttonBox = createElement("div")
-    buttonBox.classList.add("buttonBox")
-    document.body.append(buttonBox)
-   
-    programs.forEach(program => {
-        let button = createElement("div")
-        button.classList.add("buttonProgram")
-        button.innerHTML = program.name
-        button.addEventListener("click", popUpProgram)
-        buttonBox.append(button)
-    });
 
-    /// keep  creating the popUp div container 
-    let programPopUpContainer = createElement("div");
-    programPopUpContainer.classList.add("containerPopUp")
-    document.body.append(programPopUpContainer)
+/// keep  creating the popUp div container 
+let programPopUpContainer = createElement("div");
+programPopUpContainer.classList.add("containerPopUp")
+document.body.append(programPopUpContainer)
 
-    // keep if we want an overlay bg 
-    let overLayDiv = createElement("div")
-    overLayDiv.classList.add("overLay")
-    document.body.append(overLayDiv)
-}
-
-buttons()
+// keep if we want an overlay bg 
+let overLayDiv = createElement("div")
+overLayDiv.classList.add("overLay")
+document.body.append(overLayDiv)
+// buttons()
 
 // function called when pressing button to get more info 
-function popUpProgram (event) {
+function popUpProgram (program) {
     // get the innerHTML of the target clicked
-    let programName = event.target.innerHTML
+    let programName = program.name
+
     // find program from DB that matches the target Clicked
     let programsFound = DB.PROGRAMMES.find(program => program.name == programName)
     
