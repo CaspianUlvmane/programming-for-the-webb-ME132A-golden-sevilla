@@ -4,6 +4,7 @@ body {
 
 .container {
     padding: 10px;
+    margin: 8px;
     background-color: var(--lightColor);
     border: solid var(--darkColor);
     display: flex;
@@ -18,6 +19,10 @@ body {
     margin: 0px;
     margin-left: 5px;
     font-family: 'Barlow Condensed';
+}
+
+#result{
+    height: 100vh;
 }
 
 #topDiv{
