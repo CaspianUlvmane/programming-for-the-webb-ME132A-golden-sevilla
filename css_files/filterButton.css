@@ -58,7 +58,9 @@ button {
     margin: 10px;
     background-image: linear-gradient(var(--lightColor), lightgray);
     font-size: 16px;
-    max-height: 27.6px;
+    max-height: 23.6px;
+    display: flex;
+    align-items: center;
 }
 
 #activeFilter.hideFilters > button {

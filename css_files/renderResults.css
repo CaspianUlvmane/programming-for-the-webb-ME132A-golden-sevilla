@@ -48,9 +48,13 @@ body {
 #activeFilter {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 #activeFilter > button {
     opacity: 1;
     transition: opacity 300ms 150ms;
+    border-radius: 4px;
+    background-image: linear-gradient(var(--lightColor), lightgray);
+    border: 2px solid darkgray;
 }
