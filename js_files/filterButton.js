@@ -86,10 +86,8 @@ function buildFilterButton (text, key, value) {
   if (key == "city" && value == getCityFromUrl()){
     button.classList.add("active")
   }
-  
   return button
 }
-
 
 function languageButtons () {
   let languages = document.getElementById('languages')
@@ -159,7 +157,7 @@ function showButtons () {
 }
 
 function buildFilterButtons () {
-  let body = document.querySelector('body')
+  let filterWrapper = document.getElementById('allFilterWrapper')
   let div = document.createElement('div')
   div.id = 'allFilters'
   div.innerHTML = `<div class="filterContainer">
@@ -182,7 +180,7 @@ function buildFilterButtons () {
           <div>Städer</div>
           <div id="cities" class="filterButtons"></div>
           </div>`
-  body.appendChild(div)
+  filterWrapper.appendChild(div)
   languageButtons()
   levelButtons()
   fieldButtons()
@@ -206,7 +204,6 @@ function removeShowbuttons (){
 }
 
 function getCityFromUrl(){
-  // https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams
   // used searchParams to get countryID through URL
   let url = new URL(window.location);
   let params = url.searchParams;
@@ -220,7 +217,6 @@ function findCountry(){
     return countryID = DB.CITIES.find(city => city.id == cityFromUrl).countryID
   } 
 }
-
 
 function getSubjectFromUrl(){
   let url = new URL(window.location);

@@ -1,6 +1,5 @@
-.field-img {
-  background-color: #eaeaee;
-  height: 30vh;
+.field-img >img {
+  width: 100vw;
 }
 
 .field-button {

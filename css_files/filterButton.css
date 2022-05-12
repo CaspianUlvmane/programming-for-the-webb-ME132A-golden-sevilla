@@ -26,11 +26,15 @@ button {
     border-radius: 4px;
 }
 
+#allFilterWrapper{
+    position: relative;
+}
+
 #allFilters {
     position: absolute;
     transition: top 300ms;
     top: -460px;
-    background-color: var(--beigeColor);
+    background-color: white;
     padding: 10px;
     width: calc(100% - 20px);
     border-bottom: #425664 solid;
@@ -38,8 +42,13 @@ button {
 }
 
 #allFilters.showFilters{
-    top: 45px;
+    top:0px
 }
+
+#activeFilter > button{
+    margin:10px
+}
+
 
 #filterToggle {
     width: 54px;
@@ -104,3 +113,4 @@ button {
 .filterContainer{
     margin-bottom: 20px;
 }
+

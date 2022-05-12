@@ -57,23 +57,18 @@ function getLevel (program){
     return DB.LEVELS[i]}}
 }
 
-//// Render Acctive result 
-
+//// Render AcctiveFilters result 
 function activeFilters () {
-
     let activeArray = document.querySelectorAll(".active")
     let activeFilter = document.getElementById("activeFilter")
 
     activeFilter.innerHTML = "" 
-
     for (let active of activeArray) {
-        console.log(activeArray)
         let activeButton = document.createElement("button")
-        activeButton.innerHTML = active.innerHTML
+        activeButton.innerHTML = `X ${active.innerHTML}`
+        // X här ska vara en div med icon sen, även addera eventListner till det krysset
         activeFilter.append(activeButton)
-    }
-
-    
+    }  
 }
 
-activeFilters()
+window.addEventListener("load",activeFilters)
