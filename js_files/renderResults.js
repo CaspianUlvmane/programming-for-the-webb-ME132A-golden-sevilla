@@ -29,11 +29,19 @@ function heartIcon (){
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
     heartIconDiv.addEventListener("click", function (){
         if (heartIconDiv.classList.contains("activeLike")) {
+            console.log(this.parentElement)
             heartIconDiv.classList.remove("activeLike")
+            let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id
+            let indexOfProgram = array.findIndex(id => id == programId)
+            array.splice(indexOfProgram, 1)
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
+            likedPrograms(array)
         } else {
+            console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
+            array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
+            likedPrograms(array)
         }
     })
     return heartIconDiv
