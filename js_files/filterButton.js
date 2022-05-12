@@ -190,8 +190,10 @@ function buildFilterButtons () {
 }
 
 function toggleFilters () {
-  let div = document.getElementById('allFilters')
-  div.classList.toggle('showFilters')
+  let allFilters = document.getElementById('allFilters')
+  let activeFilters = document.getElementById("activeFilter")
+  activeFilters.classList.toggle("hideFilters")
+  allFilters.classList.toggle('showFilters')
 }
 
 function removeShowbuttons (){

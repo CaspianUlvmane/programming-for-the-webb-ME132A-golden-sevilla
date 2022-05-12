@@ -47,5 +47,10 @@ body {
 
 #activeFilter {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#activeFilter > button {
+    opacity: 1;
+    transition: opacity 300ms 150ms;
 }

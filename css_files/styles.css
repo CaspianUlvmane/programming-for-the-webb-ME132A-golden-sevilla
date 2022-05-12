@@ -15,6 +15,11 @@ body {
   margin: 0px;
 }
 
+header {
+  z-index: 1;
+  position: relative;
+}
+
 .info-about-wrapper > p {
   margin-left: 10px;
   margin-right: 10px;
@@ -27,6 +32,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: var(--whiteColor);
 }
 
 .hamburger {
