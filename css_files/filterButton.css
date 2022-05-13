@@ -61,6 +61,7 @@ button {
     max-height: 23.6px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 #activeFilter.hideFilters > button {
@@ -81,6 +82,14 @@ button {
 
 .filterButtons > button {
     border-radius: 4px;
+    padding: 3px;
+    background-image: linear-gradient(var(--lightColor), lightgray);
+    border: 2px solid darkgray;
+}
+
+.activeButton {
+    border-radius: 4px;
+    padding: 3px;
     background-image: linear-gradient(var(--lightColor), lightgray);
     border: 2px solid darkgray;
 }

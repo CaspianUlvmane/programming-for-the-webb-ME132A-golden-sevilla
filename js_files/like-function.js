@@ -14,17 +14,19 @@ function likedPrograms () {
       let likedItem = document.createElement('div')
       likedItem.classList.add('liked-item')
       likedItem.id = program.name
-      likedItem.innerHTML = `
-      <div class="liked-div">
+      let likedDiv = document.createElement("div")
+      likedItem.append(likedDiv)
+      likedDiv.classList.add("liked-div")
+      likedDiv.innerHTML = `
       <p class="bold">${program.name}</p>
       <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${
         DB.LEVELS[program.level]
       }</p>
-      </div>
       `
-      // likedItem.addEventListener("click", function () {
-      //     popUpProgram(program)
-      // })
+      likedDiv.addEventListener("click", function () {
+          popUpProgram(program)
+      })
+      
       let likedHeartDiv = document.createElement('div')
       likedHeartDiv.classList.add('liked-heart-div')
       likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'
@@ -73,6 +75,7 @@ function removeLike(){
  
   buildTopMenu()
   likedPrograms()
+  searchBar()
 }
 
 

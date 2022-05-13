@@ -10,7 +10,8 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.container > div >h3 {
+
+.container > div > h3 {
     margin: 5px;
     font-family: "IBM Plex Sans Condensed";
 }
@@ -36,6 +37,10 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.programInfoContainer {
+    flex-grow: 1;
 }
 
 .imgCross, .imgHearth {
