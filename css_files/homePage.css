@@ -31,6 +31,7 @@
     max-width: 500px;
     margin-bottom: 30px;
     margin-top: 30px;
+    border-radius: 3px;
     font-family: 'IBM Plex Sans Condensed', sans-serif;
     background-color: #ffffff82;
 }
@@ -145,27 +146,6 @@
     max-width: 1000px;
 }
 
-#ressencioner-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 50px;
-}
-
-.comment-box {
-    max-width: 1000px;
-    width: 90%;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 5px 0px;
-    font-size: 11pt;
-}
-
-.comment > h4{
-    margin: 0px;
-}
 
 
 #img-field-box{
@@ -188,7 +168,62 @@
     background-size: cover;
 }
 
+
 .law{
     background-image: url("../Databasen/Images/field pictures/juridik.jpg");
     background-size: cover;
+}
+
+#ressencioner-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.comment-box {
+    display: flex;
+    max-width: 1000px;
+    width: 80%;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 11pt;
+}
+
+.infoStudentBox {
+    display: flex;
+}
+
+.infoStudentBox > div {
+    display: block;
+    justify-content: space-around;
+}
+
+.imgStudent {
+    margin-right: 20px;
+    background-color: black;
+    height: 90px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.student01 {
+    background-image: url(../Databasen/Images/student_pictures/student01.jpg);
+    background-size: 80%;
+    background-position: top;
+}
+
+.student02 {
+    background-image: url(../Databasen/Images/student_pictures/student02.jpg);
+    background-position: 90%;
+    background-size: cover;
+}
+
+.student03 {
+    background-image: url(../Databasen/Images/student_pictures/student03.jpg);
+    background-size: 90%;
+    background-position: center;
 }
