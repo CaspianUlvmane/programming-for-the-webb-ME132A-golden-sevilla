@@ -1,5 +1,5 @@
 // let createElement = (element) => document.createElement(element);
-
+// buildTopMenu ()
 function renderPrograms (){
     let resultDiv = document.getElementById("results")
     resultDiv.innerHTML = ""
@@ -7,9 +7,6 @@ function renderPrograms (){
     for (let program of programmes){
         let programDiv = renderProgram(program)
         programDiv.id = program.name 
-        programDiv.addEventListener("click", function () {
-            popUpProgram(program)
-        })
         resultDiv.appendChild(programDiv)
     }
 }
@@ -17,11 +14,19 @@ function renderPrograms (){
 function renderProgram (program){
     let div = document.createElement("div")
     div.classList.add("container")
-    div.innerHTML = `<div class="programInfoContainer"><h3>${program.name}</h3>
-    <p>${programShortInfo(program)}</p></div>`
+    let programInfo = document.createElement("div")
+    programInfo.classList.add("programInfoContainer")
+    programInfo.innerHTML=`<h3>${program.name}</h3>
+    <p>${programShortInfo(program)}</p>`
+    div.appendChild(programInfo)
     div.appendChild(heartIcon())
+
+    programInfo.addEventListener("click", function () {
+        popUpProgram(program)
+    })
     return div
 }
+
 
 function heartIcon (){
     let heartIconDiv = createElement("div")
@@ -35,18 +40,21 @@ function heartIcon (){
             let indexOfProgram = array.findIndex(id => id == programId)
             array.splice(indexOfProgram, 1)
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
-            likedPrograms(array)
             console.log(likedPrograms())
+            buildTopMenu()
+            likedPrograms()
         } else {
             console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
             array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
-            likedPrograms(array)
+            buildTopMenu()
+            likedPrograms()
         }
     })
     return heartIconDiv
 }
+
 
 function programShortInfo(program){
     return (`${getSubject(program)}, ${getCountry(program)}, ${getLevel(program)}`)

@@ -1,6 +1,3 @@
-document.querySelector('header').appendChild(buildTopMenu(array))
-document.querySelector('header').appendChild(createBurgerItems())
-
 function createFieldView () {
   let fieldContainer = document.createElement('div')
   document.querySelector('main').appendChild(fieldContainer)
@@ -22,4 +19,4 @@ function createFieldView () {
 
 document.querySelector("footer").appendChild(footer())
 createFieldView()
-likedPrograms(array)
+likedPrograms()

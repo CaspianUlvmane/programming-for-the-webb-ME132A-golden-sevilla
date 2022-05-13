@@ -1,18 +1,19 @@
 let array = []
 
-function likedPrograms (likedArray) {
+function likedPrograms () {
   let likeContainer = document.createElement('div')
   likeContainer.classList.add('container-hidden')
   likeContainer.id = "like-container"
 
   likeContainer.innerHTML = ''
-  if (likedArray.length > 0) {
-    for (let liked of likedArray) {
+  if (array.length > 0) {
+    for (let liked of array) {
       // om array består av namn, ändra från id till namn.
       let program = DB.PROGRAMMES.find(program => program.id == liked)
       // console.log(program)
       let likedItem = document.createElement('div')
       likedItem.classList.add('liked-item')
+      likedItem.id = program.name
       likedItem.innerHTML = `
       <div class="liked-div">
       <p class="bold">${program.name}</p>
@@ -21,9 +22,9 @@ function likedPrograms (likedArray) {
       }</p>
       </div>
       `
-      likedItem.addEventListener("click", function () {
-          popUpProgram(program)
-      })
+      // likedItem.addEventListener("click", function () {
+      //     popUpProgram(program)
+      // })
       let likedHeartDiv = document.createElement('div')
       likedHeartDiv.classList.add('liked-heart-div')
       likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'
@@ -41,6 +42,7 @@ function likedPrograms (likedArray) {
   document.querySelector("header").append(likeContainer)
 }
 
+
 function changeClassOnLikeContainer (element) {
   if (element.classList.contains('container-hidden')) {
     element.classList.remove('container-hidden')
@@ -49,18 +51,30 @@ function changeClassOnLikeContainer (element) {
   }
 }
 // Har använt min globala array här, då jag inte kunde skicka med likedArray som parameter - event funkade ej då.
-function removeLike (event) {
-  event.preventDefault()
-  let name =
-    event.target.parentElement.parentElement.firstElementChild.firstElementChild
-      .firstChild.data
-  console.log(array)
-  // Detta är om array är baserad på id, om det är namn, skippa steget under med find.
-  let programId = DB.PROGRAMMES.find(program => program.name == name).id
+// function removeLike (event) {
+//   event.preventDefault()
+//   console.log(event.target)
+//   let name =
+//     event.target.parentElement.parentElement.firstElementChild.firstElementChild
+//       .firstChild.data
+//   console.log(array)
+//   // Detta är om array är baserad på id, om det är namn, skippa steget under med find.
+//   let programId = DB.PROGRAMMES.find(program => program.name == name).id
+//   let indexOfProgram = array.findIndex(id => id == programId)
+//   array.splice(indexOfProgram, 1)
+//   likedPrograms()
+// }
+
+function removeLike(){
+  console.log(this.parentElement)
+  let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id
   let indexOfProgram = array.findIndex(id => id == programId)
   array.splice(indexOfProgram, 1)
-  likedPrograms(array)
+ 
+  buildTopMenu()
+  likedPrograms()
 }
+
 
 function getSubject (program) {
   let subject = DB.FIELDS.find(subject => subject.id == program.subjectID).name
