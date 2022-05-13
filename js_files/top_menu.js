@@ -2,21 +2,26 @@
 // let array = []
 // parametern array, ska vara "likedArray" sedan.
 
-function buildTopMenu (likedArray) {
+function buildTopMenu () {
+  let header = document.querySelector("header")
+  header.innerHTML = ""
   let topMenu = document.createElement('div')
   topMenu.id = 'nav'
   topMenu.appendChild(createBurger())
   topMenu.appendChild(createLogo())
   topMenu.appendChild(createSearch())
   
-  if (likedArray.length > 0) {
+  if (array.length > 0) {
     topMenu.appendChild(createDarkHeart())
   } else {
     topMenu.appendChild(createLightHeart())
   }
-
-  return topMenu
+  
+  createBurgerItems ()
+  header.appendChild(topMenu)
+  // return topMenu
 }
+buildTopMenu ()
 
 function createBurger () {
   let burgerDiv = document.createElement('div')
@@ -94,6 +99,7 @@ function createDarkHeart () {
   return darkHeart
 }
 
+
 function createBurgerItems () {
   let burgerItems = [
     {
@@ -125,6 +131,6 @@ function createBurgerItems () {
     burgerItem.innerHTML = `<a href = "${item.url}">${item.text}</a> `
     burgerContainer.appendChild(burgerItem)
   }
-  document.querySelector('body').appendChild(burgerContainer)
+  document.querySelector('header').appendChild(burgerContainer)
   return burgerContainer
 }
