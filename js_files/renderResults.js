@@ -19,7 +19,7 @@ function renderProgram (program){
     programInfo.innerHTML=`<h3>${program.name}</h3>
     <p>${programShortInfo(program)}</p>`
     div.appendChild(programInfo)
-    div.appendChild(heartIcon())
+    div.appendChild(heartIcon(program))
 
     programInfo.addEventListener("click", function () {
         popUpProgram(program)
@@ -28,25 +28,33 @@ function renderProgram (program){
 }
 
 
-function heartIcon (){
+function heartIcon (program){
     let heartIconDiv = createElement("div")
     heartIconDiv.classList.add("imgHearth") 
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
+    
+    for (let likedArray of array) {
+        if (likedArray.name == program.name) {
+            heartIconDiv.classList.add("activeLike")
+            heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
+        }
+    }
+
     heartIconDiv.addEventListener("click", function (){
         if (heartIconDiv.classList.contains("activeLike")) {
-            console.log(this.parentElement)
+            // console.log(this.parentElement)
             heartIconDiv.classList.remove("activeLike")
-            let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id
+            let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
             let indexOfProgram = array.findIndex(id => id == programId)
             array.splice(indexOfProgram, 1)
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
-            console.log(likedPrograms())
+            // console.log(likedPrograms())
             buildTopMenu()
             likedPrograms()
         } else {
-            console.log(this.parentElement)
+            // console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
-            array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id)
+            array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id))
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             buildTopMenu()
             likedPrograms()

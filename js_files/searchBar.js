@@ -19,11 +19,11 @@ function searchBar () {
     searchBarBox.classList.add("searchBar")
     
     searchBarBox.innerHTML = `
-    <div class="searchfieldBox">
+    <form autocomplete="off" class="searchfieldBox">
         <div class="fa-solid fa-magnifying-glass iconSearch"></div>
         <input type="search" id="searchInputBar" placeholder="Search...">
         <div class="fa-solid fa-xmark iconCross"></div>
-    </div>`
+    </form>`
 
     searchBarContainer.append(searchBarBox)
     searchBarContainer.append(searchResultBox())
@@ -104,9 +104,9 @@ function searchingInSearch () {
     }
 }
 
-searchBar()
-closeSearchInSearch()
-cleanSearch()
+// searchBar()
+// closeSearchInSearch()
+// cleanSearch()
 
 // eventListneter of the input that listen to the keyup and calls the function searching 
-selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
+// selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)

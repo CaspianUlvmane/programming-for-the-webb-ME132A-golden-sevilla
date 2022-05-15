@@ -53,27 +53,44 @@ function interactWithPop (program) {
         clearResults(".containerPopUp")
     })
 
-    barContainer.append(crossIconDiv, heartPopUp())
+    barContainer.append(crossIconDiv, heartPopUp(program))
     return barContainer
 }
 
-function heartPopUp () {
+function heartPopUp (program) {
+    console.log(program)
     let heartIconDiv = createElement("div")
     heartIconDiv.classList.add("imgHearth") 
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
+
+    for (let likedArray of array) {
+        if (likedArray.id == program.id) {
+            heartIconDiv.classList.add("active")
+            heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
+        }
+    }
+    
     heartIconDiv.addEventListener("click", function (){
         if (heartIconDiv.classList.contains("active")) {
-            let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id
+            let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
+            console.log(programId)
             let indexOfProgram = array.findIndex(id => id == programId)
+            // console.log(indexOfProgram)
+            // console.log(array.splice(indexOfProgram, 1))
             array.splice(indexOfProgram, 1)
             heartIconDiv.classList.remove("active")
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
-            likedPrograms(array)
+            buildTopMenu()
+            likedPrograms()
+            // renderPrograms()
         } else {
             heartIconDiv.classList.add("active")
-            array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id)
+            array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id))
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
-            likedPrograms(array)
+            // console.log(array)
+            buildTopMenu()  
+            likedPrograms()
+            // renderPrograms()
         }
     })
     return heartIconDiv

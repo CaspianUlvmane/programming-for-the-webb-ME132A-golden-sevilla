@@ -1,6 +1,7 @@
 let array = []
 
 function likedPrograms () {
+
   let likeContainer = document.createElement('div')
   likeContainer.classList.add('container-hidden')
   likeContainer.id = "like-container"
@@ -9,7 +10,7 @@ function likedPrograms () {
   if (array.length > 0) {
     for (let liked of array) {
       // om array består av namn, ändra från id till namn.
-      let program = DB.PROGRAMMES.find(program => program.id == liked)
+      let program = DB.PROGRAMMES.find(program => program == liked)
       // console.log(program)
       let likedItem = document.createElement('div')
       likedItem.classList.add('liked-item')
@@ -44,7 +45,6 @@ function likedPrograms () {
   document.querySelector("header").append(likeContainer)
 }
 
-
 function changeClassOnLikeContainer (element) {
   if (element.classList.contains('container-hidden')) {
     element.classList.remove('container-hidden')
@@ -52,6 +52,7 @@ function changeClassOnLikeContainer (element) {
     element.classList.add('container-hidden')
   }
 }
+
 // Har använt min globala array här, då jag inte kunde skicka med likedArray som parameter - event funkade ej då.
 // function removeLike (event) {
 //   event.preventDefault()
@@ -68,16 +69,19 @@ function changeClassOnLikeContainer (element) {
 // }
 
 function removeLike(){
-  console.log(this.parentElement)
-  let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id
+  
+  let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
   let indexOfProgram = array.findIndex(id => id == programId)
   array.splice(indexOfProgram, 1)
- 
-  buildTopMenu()
-  likedPrograms()
+  this.parentElement.remove()
+  renderPrograms()
+  
+  if (array.length == 0) {
+    buildTopMenu()
+  }
   searchBar()
+  likedPrograms()
 }
-
 
 function getSubject (program) {
   let subject = DB.FIELDS.find(subject => subject.id == program.subjectID).name

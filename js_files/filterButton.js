@@ -228,8 +228,8 @@ function getSubjectFromUrl(){
 }
 
 
-buildFilterButtons()
-renderPrograms ()
+// buildFilterButtons()
+// renderPrograms ()
 
 filterToggle.addEventListener('click', toggleFilters)
 filterToggle.addEventListener('click', removeShowbuttons)
