@@ -60,7 +60,7 @@ function interactWithPop (program) {
 function heartPopUp () {
     let heartIconDiv = createElement("div")
     heartIconDiv.classList.add("imgHearth") 
-    heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
+
     heartIconDiv.addEventListener("click", function (){
         if (heartIconDiv.classList.contains("active")) {
             let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id
@@ -68,12 +68,14 @@ function heartPopUp () {
             array.splice(indexOfProgram, 1)
             heartIconDiv.classList.remove("active")
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
-            likedPrograms(array)
+            buildTopMenu()
+            likedPrograms()
         } else {
             heartIconDiv.classList.add("active")
             array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id).id)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
-            likedPrograms(array)
+            buildTopMenu()
+            likedPrograms()
         }
     })
     return heartIconDiv
