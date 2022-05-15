@@ -29,7 +29,6 @@ body {
 #topDiv{
     background-color: var(--beigeColor);
     display: flex;
-    z-index: 1;
     width: 100vw;
 }
 
@@ -58,7 +57,7 @@ body {
 
 #activeFilter > button {
     opacity: 1;
-    transition: opacity 300ms 150ms;
+    transition: opacity 150ms;
     border-radius: 4px;
     background-image: linear-gradient(var(--lightColor), lightgray);
     border: 2px solid darkgray;
