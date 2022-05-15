@@ -61,6 +61,7 @@ function heartPopUp (program) {
     console.log(program)
     let heartIconDiv = createElement("div")
     heartIconDiv.classList.add("imgHearth") 
+
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
 
     for (let likedArray of array) {
@@ -70,6 +71,7 @@ function heartPopUp (program) {
         }
     }
     
+
     heartIconDiv.addEventListener("click", function (){
         if (heartIconDiv.classList.contains("active")) {
             let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
@@ -82,15 +84,21 @@ function heartPopUp (program) {
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
             buildTopMenu()
             likedPrograms()
+
             // renderPrograms()
+
         } else {
             heartIconDiv.classList.add("active")
             array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id))
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
+
             // console.log(array)
             buildTopMenu()  
             likedPrograms()
             // renderPrograms()
+            buildTopMenu()
+            likedPrograms()
+
         }
     })
     return heartIconDiv

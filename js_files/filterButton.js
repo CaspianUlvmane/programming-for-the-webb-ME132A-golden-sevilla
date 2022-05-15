@@ -32,16 +32,6 @@ function findProgrammes () {
     let filterObject = { key: key, value: value }
     allFilters.push(filterObject)
   }
-  let sortedFilters = allFilters.sort((a, b) => {
-    if (a.key < b.key) {
-      return -1
-    }
-    if (a.key > b.key) {
-      return 1
-    } else {
-      return 0
-    }
-  })
   return filter(allFilters)
 }
 

@@ -9,7 +9,7 @@ function createFieldView () {
     // div class field-img, ska sedan vara en bild. Vet ej vilken.
     // behöver även länka knapparna.
     fieldDiv.innerHTML = `
-    <div class="field-img"><img src="../Databasen/Images/field pictures/${field.name}.jpg"></div>
+    <div class="field-img"><img src="../Databasen/Images/field_pictures/${field.name}.jpg"></div>
     <h3 class="field-name">${field.name}</h3>
     <p class="field-text">${field.text}</p>
     <a href="../html_files/filter.html?field=${field.id}"><button class="field-button">${'Se alla program'}</button></a>`

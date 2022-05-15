@@ -59,15 +59,17 @@
     height: 50px;
 }
 
-#img-slide-box {
+#img-slide-box, #img-slideFields-box {
     display: flex;
     justify-content: center;
     margin: 20px 10px;
 }
 
-#img-box {
+#img-box, #imgFields-box {
     display: flex;
     overflow: scroll;
+    overflow-y: hidden;
+    max-width: 1000px;
 }
 
 .img-slide {
@@ -79,6 +81,7 @@
     width: 50vw;
     max-width: 250px;
     min-width: 160px;
+    border-radius: 5px;
 
     background-size: cover;
     background-position: center;
@@ -148,8 +151,6 @@
     max-width: 1000px;
 }
 
-
-
 #img-field-box{
     margin-top: 40px;
     margin-bottom: 40px;
@@ -178,35 +179,42 @@
 
 #ressencioner-box {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
     width: 100%;
     margin-bottom: 50px;
 }
 
 .comment-box {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 1000px;
     width: 80%;
     border: 1px solid black;
     padding: 10px;
-    margin-top: 10px;
-    font-size: 11pt;
+    margin-bottom: 10px;
 }
 
-.infoStudentBox {
+.comment-box > p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.comment-box > h4 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.comment-text {
     display: flex;
-}
-
-.infoStudentBox > div {
-    display: block;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
 }
 
 .imgStudent {
-    margin-right: 20px;
-    background-color: black;
     height: 90px;
     width: 100px;
     border-radius: 50%;

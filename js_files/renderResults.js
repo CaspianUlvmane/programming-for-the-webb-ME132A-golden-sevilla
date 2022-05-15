@@ -96,6 +96,11 @@ function activeFilters () {
         let activeButton = document.createElement("button")
         activeButton.classList.add("activeButton")
         activeButton.innerHTML = `X ${active.innerHTML}`
+        activeButton.addEventListener("click", function (){
+            active.classList.toggle("active")
+            renderPrograms()
+            activeFilters()
+        })
         // X här ska vara en div med icon sen, även addera eventListner till det krysset
         activeFilter.append(activeButton)
     }  
