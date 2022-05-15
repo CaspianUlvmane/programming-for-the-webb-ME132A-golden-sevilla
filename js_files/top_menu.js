@@ -21,7 +21,8 @@ function buildTopMenu () {
   header.appendChild(topMenu)
   // return topMenu
 }
-buildTopMenu ()
+
+// buildTopMenu ()
 
 function createBurger () {
   let burgerDiv = document.createElement('div')
