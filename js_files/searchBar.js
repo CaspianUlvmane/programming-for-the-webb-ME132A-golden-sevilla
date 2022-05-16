@@ -1,11 +1,11 @@
-// Refers to a selected element 
-let selectElement = (select) => document.querySelector(select); 
+// // Refers to a selected element 
+// let selectElement = (select) => document.querySelector(select); 
 
-// creates a element 
-let createElement = (element) => document.createElement(element);
+// // creates a element 
+// let createElement = (element) => document.createElement(element);
 
-// cleans out the filter 
-let clearResults = (element) => selectElement(element).innerHTML = "";
+// // cleans out the filter 
+// let clearResults = (element) => selectElement(element).innerHTML = "";
 
 // to try with interact with navbar
 let search_icon = selectElement(".search"); 
@@ -104,9 +104,9 @@ function searchingInSearch () {
     }
 }
 
-// searchBar()
-// closeSearchInSearch()
-// cleanSearch()
+searchBar()
+closeSearchInSearch()
+cleanSearch()
 
 // eventListneter of the input that listen to the keyup and calls the function searching 
-// selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
+selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
