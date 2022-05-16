@@ -211,6 +211,14 @@ font-size: 15px;
     margin-bottom: 10px;
 }
 
+.rating {
+    margin-top: 5px;
+}
+
+.starStudent {
+    color: rgb(248, 215, 95);
+}
+
 .comment-box > p {
     margin-top: 5px;
     margin-bottom: 0px;

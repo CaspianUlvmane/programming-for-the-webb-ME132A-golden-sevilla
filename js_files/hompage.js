@@ -7,10 +7,10 @@ buildTopMenu()
 
 likedPrograms()
 
-searchBar()
-closeSearchInSearch()
-cleanSearch()
-selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
+// searchBar()
+// closeSearchInSearch()
+// cleanSearch()
+// selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
 
 // buildFilterButtons()
 // renderPrograms ()
