@@ -39,11 +39,12 @@
     z-index: 1;
     
     background-color: var(--dark);
-    color: var(--lightGrey);
-    border-radius: 5px;
+    color: white;
+    /* border-radius: 5px; */
 
-    height: 650px;
-    width: 95%;
+    /* height: 650px; */
+    width: 97%;
+    height: 95%;
     /* padding-bottom: 20px; */
     /* overflow: scroll; */
     overflow-x: hidden;
@@ -64,37 +65,44 @@
     padding: 0px 20px;
 }
  
-.imgCross, .imgHearth {
+.imgCross {
     color: black;
     padding: 10px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 25px;
 }
  
 .infoBoxHeader {
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
  
 .programInfoBox {
     box-sizing: border-box;
-    padding: 0px 20px;
-    max-width: 600px;
-    display: flex;
-    flex-wrap: wrap;
 }
  
 .info {
-    padding: 5px 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+.commentsOfstudents {
+    border-top: 2px solid white;
+    padding: 10px 0px;
 }
 
 .average, .commentsOfstudents, .university {
     margin: 0;
     width: 100%;
+    margin-top: 15px;
+}
+
+.commentsOfstudents {
+    text-align: center;
+    width: 100%;
 }
 
 .commentContainer {
-    padding: 0px 30px;
+    padding: 0px 10px;
     overflow: scroll;
     overflow-x: hidden;
     height: 300px;
@@ -103,7 +111,7 @@
 .commentContainer > div {
     margin-bottom: 10px;
     padding: 10px;
-    border: 2px solid beige;
+    border: 1px solid white;
 }
 
 .commentText {
