@@ -187,11 +187,12 @@ function toggleFilters () {
 }
 
 function removeShowbuttons (){
-  let buttons = document.querySelectorAll(".showButtons")
+  let buttons = document.querySelectorAll(".filterButtons > button")
   let buttonContainer = document.getElementById("allFilters")
-  console.log(buttons)
   if (!buttonContainer.classList.contains("showFilters")){
-    buttons.forEach(element => element.classList.remove("showButtons"))
+    buttons.forEach(element => element.classList.add("hide"))
+  }else{
+    buttons.forEach(element => element.classList.remove("hide"))
   }
 }
 
@@ -220,6 +221,6 @@ function getSubjectFromUrl(){
 
 buildFilterButtons()
 renderPrograms ()
-
+removeShowbuttons()
 filterToggle.addEventListener('click', toggleFilters)
 filterToggle.addEventListener('click', removeShowbuttons)

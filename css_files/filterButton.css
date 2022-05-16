@@ -19,6 +19,10 @@ button {
     color: white;
 }
 
+button.hide {
+    display: none;
+}
+
 .filterButtons > button.active {
     background-color: var(--darkColor);
     color: white;
@@ -31,10 +35,10 @@ button {
 #allFilters {
     position: absolute;
     transition: top 300ms;
-    top: -500px;
+    top: -270px;
     background-color: white;
     padding: 5px;
-    /* width: calc(100% - 20px); */
+    width: calc(100% - 10px);
     border-bottom: 1px solid black;
     border-radius: 0px;
 }
