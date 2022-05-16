@@ -41,8 +41,6 @@ body{
 .country-info{
     padding: 20px;
     border-bottom: 8px solid var(--lightBeige);
-    background-color: var(--dark);
-    color: white;
     text-align: center;
 }
 

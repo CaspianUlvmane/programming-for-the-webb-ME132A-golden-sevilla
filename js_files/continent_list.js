@@ -1,12 +1,16 @@
 
 function createContinentList(){
     let listContainer = document.getElementById("list-container")
+    listContainer.appendChild(createInfoDiv())
 
     for (let continent of DB.CONTINENTS){
         let continetContainer = document.createElement("div")
         let continentDiv = document.createElement("div")
         continentDiv.classList.add("continent-div")
-        continentDiv.innerHTML = continent.name.toUpperCase()
+        continentDiv.innerHTML = `<div>${continent.name}</div>`
+        let iconDiv = document.createElement("div")
+        iconDiv.innerHTML = `<i class="fa-solid fa-angle-down"></i>`
+        continentDiv.appendChild(iconDiv)
         continetContainer.appendChild(continentDiv)
 
         let countrysInContinent = DB.COUNTRIES.filter(country => country.continentID == continent.id)
@@ -24,6 +28,12 @@ function createContinentList(){
         
         continentDiv.addEventListener("click", function(){
             countryContainer.classList.toggle("unactive")
+
+            if (iconDiv.innerHTML == `<i class="fa-solid fa-angle-down"></i>`){
+                iconDiv.innerHTML = `<i class="fa-solid fa-angle-up"></i>`
+            } else {
+                iconDiv.innerHTML= `<i class="fa-solid fa-angle-down"></i>`
+            }
         })
 
         continetContainer.appendChild(countryContainer)
@@ -87,6 +97,17 @@ function createContinentMap(){
     mapContainer.innerHTML = "MAP"
     
     return mapContainer
+}
+
+function createInfoDiv(){
+    let infoContainer = document.createElement("div")
+    infoContainer.id = "continent-info"
+    infoContainer.innerHTML=`
+    <h2>Vart i världen vill du studera?</h2>
+    <p>Hos oss kan du kombinera studierna tillsamans med ditt drömresmål!</p>
+    <p> Vi har resmål till USA, Australien och massa fler! Du hittar alla våra resmål nedan, antingen genom vår listvy eller kartvy.</p>`
+
+    return infoContainer
 }
 
 cotinentViewBar()

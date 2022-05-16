@@ -102,30 +102,6 @@ font-size: 15px;
     background-color: rgb(216, 212, 212);
 }
 
-.sweden{
-    background-image: url(../Databasen/Images/sweden_normal_2.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.spain{
-    background-image: url(../Databasen/Images/spain_normal_2.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.france{
-    background-image: url(../Databasen/Images/france_normal_2.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.australien{
-    background-image: url(../Databasen/Images/australia_normal_1.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
 .img-slide-button {
     padding: 10px 15px;
 }
@@ -171,25 +147,6 @@ font-size: 15px;
     text-align: center;
 }
 
-.math{
-    background-image: url("../Databasen/Images/field pictures/matematik.jpg");
-    background-size: cover;
-}
-
-.med{
-    background-image: url("../Databasen/Images/field pictures/medicin.jpg");
-    background-size: cover;
-}
-.tec{
-    background-image: url("../Databasen/Images/field pictures/teknik.jpg");
-    background-size: cover;
-}
-
-
-.law{
-    background-image: url("../Databasen/Images/field pictures/juridik.jpg");
-    background-size: cover;
-}
 
 #ressencioner-box {
     display: flex;

@@ -12,6 +12,7 @@ function renderPrograms (){
     resultDiv.innerHTML = ""
     let programmes = findProgrammes()
     let infoDiv = document.createElement("div")
+    infoDiv.classList.add("info-text")
     
     // to only view 20 of all programmes
     if (programmes.length > 20){
@@ -23,8 +24,10 @@ function renderPrograms (){
         }
         // add infoDiv on how many program is shown
         resultDiv.appendChild(infoDiv)
-        let viewMore = document.createElement("button")
-        viewMore.innerHTML=`Se alla ${programmes.length} program`
+        let viewMore = document.createElement("div")
+        viewMore.classList.add("view-more")
+        viewMore.innerHTML=`Se alla ${programmes.length} program
+        <i class="fa-solid fa-angle-down"></i>`
         resultDiv.appendChild(viewMore)
         viewMore.addEventListener("click", function(){
             for(let i = 10; i<programmes.length; i++){

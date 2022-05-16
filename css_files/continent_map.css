@@ -5,15 +5,19 @@
 }
 
 #info-div{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
     text-align: center;
     font-size: 14pt;
     font-weight: bold;
     padding-top: 40px;
     margin: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
+#info{
+    flex-grow: 1;
+}
 
 .button{
     background-color: black;
@@ -54,6 +58,7 @@ svg {
 #world > g:hover > path {
     fill: #4d5a62;
     stroke: #EBE8E2;
+    cursor: pointer;
 }
 
 #world, .continent {
@@ -92,6 +97,7 @@ font-weight: 900;
 .continent > g:hover > a > path {
     fill: #4d5a62;
     stroke: #EBE8E2;
+    cursor: pointer;
 }
 
 .grey > g > path {
@@ -117,4 +123,8 @@ font-weight: 900;
 
 #back-button{
     display: none;
+}
+
+#back-button:hover{
+    cursor: pointer;
 }

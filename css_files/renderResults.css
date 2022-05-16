@@ -41,7 +41,7 @@ body {
 }
 
 .imgHearth {
-  color: black;
+  /* color: black; */
   padding: 10px;
   cursor: pointer;
   font-size: 25px;
@@ -63,4 +63,19 @@ body {
   border: 1px solid var(--darkColor);
   border-radius: 50px;
   padding: 3px 10px;
+}
+
+.info-text{
+  text-align: center;
+  font-size: 10pt;
+}
+
+.view-more{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.view-more:hover{
+  cursor: pointer;
 }

@@ -10,8 +10,7 @@
 }
 
 .field-text, .field-title, .field-info {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px;
 }
 .field-title {
 text-align: center;
@@ -26,4 +25,8 @@ text-align: center;
   border: 1px solid black;
   cursor: pointer;
   margin-bottom: 20px;
+}
+
+.field-div > h3{
+  margin-top: 10px;
 }

@@ -38,14 +38,14 @@
     transform: translate(-50%, -50%) scale(0);
     z-index: 1;
     
-    background-color: var(--dark);
-    color: white;
+    background-color: var(--dark);;
+    color: var(--lightGrey);
     /* border-radius: 5px; */
 
     /* height: 650px; */
-    width: 97%;
-    height: 95%;
-    /* padding-bottom: 20px; */
+    width: 90%;
+    height: 80%;
+    padding-bottom: 20px;
     /* overflow: scroll; */
     overflow-x: hidden;
 }
@@ -58,18 +58,26 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--dark);
     display: flex;
     justify-content: space-between;
+    background-color: var(--dark);
     align-items: center;
     padding: 0px 20px;
 }
+
+.barContainer > div > h3{
+    text-align: center;
+}
  
 .imgCross {
-    color: black;
+    color: var(--lightGrey);
     padding: 10px;
     cursor: pointer;
     font-size: 25px;
+}
+
+.imgHeart > i{
+    color: var(--lightGrey);
 }
  
 .infoBoxHeader {
@@ -78,6 +86,7 @@
 }
  
 .programInfoBox {
+    font-size: 11pt;
     box-sizing: border-box;
 }
  
@@ -86,7 +95,7 @@
 }
 
 .commentsOfstudents {
-    border-top: 2px solid white;
+    border-top: 1px solid white;
     padding: 10px 0px;
 }
 
@@ -102,6 +111,7 @@
 }
 
 .commentContainer {
+    font-size: 11pt;
     padding: 0px 10px;
     overflow: scroll;
     overflow-x: hidden;
