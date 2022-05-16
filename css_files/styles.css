@@ -50,6 +50,19 @@ header {
   background-color: rgb(83, 81, 81);
   margin: 5px;
   border-radius: 4px;
+  transition: transform .5s, opacity .2s;
+}
+
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(9px) rotate(50deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-9px) rotate(-50deg);
 }
 
 .title-name {
@@ -62,6 +75,7 @@ header {
 
 .search, .my-likes {
   font-size: 20px;
+  width: 15px;
   margin-right: 20px;
   cursor: pointer;
 }
