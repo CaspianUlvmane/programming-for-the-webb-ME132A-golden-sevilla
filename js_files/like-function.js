@@ -1,13 +1,15 @@
 let array = []
 
 function likedPrograms () {
+  let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
   let likeContainer = document.createElement('div')
   likeContainer.classList.add('container-hidden')
   likeContainer.id = "like-container"
   
   likeContainer.innerHTML = ''
-  if (array.length > 0) {
-    for (let program of array) {
+  if (storedLikedArray != null){
+  if (storedLikedArray.length > 0) {
+    for (let program of storedLikedArray) {
       let likedDiv = createLikeDiv(program) 
       let likedHeartDiv = createLikeHeartDiv(program)
       likedDiv.appendChild(likedHeartDiv)
@@ -19,7 +21,7 @@ function likedPrograms () {
     noLikes.classList.add('no-likes')
     likeContainer.appendChild(noLikes)
     noLikes.innerHTML = 'Hola Amigo, du har inte gillat något än!'
-  }
+  }}
   document.querySelector("header").append(likeContainer)
 }
 
@@ -62,10 +64,9 @@ function changeClassOnLikeContainer (element) {
 
 
 function removeLike(program){
-  console.log(array)
   let indexOfProgram = array.findIndex(element => element.id == program.id)
   array.splice(indexOfProgram,1)
-  console.log(array)
+  localStorage.setItem("likedArray", JSON.stringify(array))
 
   buildTopMenu()
   likedPrograms()
