@@ -113,9 +113,9 @@ a {
   font-family: 'Barlow Condensed';
 }
 
-.burger-list:hover {
-  background-color: #e4ded7;
-}
+/* .burger-list:hover {
+border: 1px solid black;
+} */
 
 .burger-hidden {
   display: none;
