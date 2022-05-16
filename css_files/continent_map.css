@@ -56,9 +56,37 @@ svg {
     stroke: #EBE8E2;
 }
 
+#world, .continent {
+    min-height: 400px;
+    width: auto;
+}
+
 .continent > g > a >path{
+    display: block;
+    margin: auto;
    fill: #768A95;
     stroke: #EBE8E2;
+    
+}
+
+.continent > g > a > circle{
+   fill: #768A95;
+    stroke: #EBE8E2;
+}
+
+.continent > g > a > rect{
+   fill: #768A95;
+    stroke: #EBE8E2;
+}
+
+text {
+fill: var(--lightBeige);
+stroke: var(--dark);
+stroke-width: 2;
+stroke-miterlimit:100;
+font-family:'IBM Plex Sans Condensed';
+font-size: 8rem;
+font-weight: 900;
 }
 
 .continent > g:hover > a > path {
