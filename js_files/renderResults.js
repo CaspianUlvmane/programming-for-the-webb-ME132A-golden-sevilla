@@ -106,4 +106,5 @@ function activeFilters () {
     }  
 }
 
+
 window.addEventListener("load",activeFilters)

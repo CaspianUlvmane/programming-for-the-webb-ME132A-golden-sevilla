@@ -12,5 +12,5 @@ closeSearchInSearch()
 cleanSearch()
 selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
 
-buildFilterButtons()
-renderPrograms ()
+// buildFilterButtons()
+// renderPrograms ()
