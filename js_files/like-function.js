@@ -27,17 +27,17 @@ function likedPrograms () {
 function createLikeDiv (program){
   let likedItem = document.createElement('div')
   likedItem.classList.add('liked-item')
-  likedItem.innerHTML = `
-  <div class="liked-div">
+  let likedInfo = document.createElement("div")
+  likedInfo.innerHTML = `
   <p class="bold">${program.name}</p>
   <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${
     DB.LEVELS[program.level]
   }</p>
-  </div>
   `
-  // likedItem.addEventListener("click", function(){
-  //   popUpProgram(program)
-  // })
+  likedItem.appendChild(likedInfo)
+  likedInfo.addEventListener("click", function(){
+    popUpProgram(program)
+  })
   return likedItem
 }
 

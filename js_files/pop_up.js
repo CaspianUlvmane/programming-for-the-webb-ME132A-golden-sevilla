@@ -93,35 +93,7 @@ function heartPopUp (program) {
             console.log(array)
         }
     })
-    // heartIconDiv.addEventListener("click", function (){
-    //     if (heartIconDiv.classList.contains("active")) {
-    //         let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
-    //         console.log(programId)
-    //         let indexOfProgram = array.findIndex(id => id == programId)
-    //         // console.log(indexOfProgram)
-    //         // console.log(array.splice(indexOfProgram, 1))
-    //         array.splice(indexOfProgram, 1)
-    //         heartIconDiv.classList.remove("active")
-    //         heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
-    //         buildTopMenu()
-    //         likedPrograms()
-
-    //         // renderPrograms()
-
-    //     } else {
-    //         heartIconDiv.classList.add("active")
-    //         array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id))
-    //         heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
-
-    //         // console.log(array)
-    //         buildTopMenu()  
-    //         likedPrograms()
-    //         // renderPrograms()
-    //         buildTopMenu()
-    //         likedPrograms()
-
-    //     }
-    // })
+  
     return heartIconDiv
 }
 
