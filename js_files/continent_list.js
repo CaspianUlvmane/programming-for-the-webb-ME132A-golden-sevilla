@@ -7,7 +7,7 @@ function createContinentList(){
         let continetContainer = document.createElement("div")
         let continentDiv = document.createElement("div")
         continentDiv.classList.add("continent-div")
-        continentDiv.innerHTML = `<div>${continent.name.toUpperCase()}</div>`
+        continentDiv.innerHTML = `<div>${continent.name}</div>`
         let iconDiv = document.createElement("div")
         iconDiv.innerHTML = `<i class="fa-solid fa-angle-down"></i>`
         continentDiv.appendChild(iconDiv)

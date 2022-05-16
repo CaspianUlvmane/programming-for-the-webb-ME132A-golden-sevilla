@@ -54,8 +54,15 @@ function interactWithPop (program) {
         renderPrograms()
     })
 
-    barContainer.append(crossIconDiv, heartPopUp(program))
+    barContainer.append(crossIconDiv, headTitle(program),heartPopUp(program))
     return barContainer
+}
+
+function headTitle (program){
+    let div = document.createElement("div")
+    div.innerHTML = `<h3>${program.name}</h3>`
+
+    return div
 }
 
 function heartPopUp (program) {
@@ -99,8 +106,8 @@ function addInfoProgram (program) {
     // creating the informationDivBox for the information of the program that is clicked
     let infoContainer = createElement("div")
     infoContainer.classList.add("infoContainer")
+    // <h3 class="infoBoxHeader">${program.name}</h3> moved this to create title to have in header of popup
     infoContainer.innerHTML = `
-    <h3 class="infoBoxHeader">${program.name}</h3>
     <div class="programInfoBox">
         <div class="info"> Land: ${getCountry(program)} </div>
         <div class="info"> Stad: ${getCity(program)} </div>

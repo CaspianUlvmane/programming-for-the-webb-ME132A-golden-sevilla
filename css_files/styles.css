@@ -148,11 +148,16 @@ p, div {
 /* footer style */
 
 #footer-div{
-  background-color: #425664;
-  padding: 20px;
+  background-color: #28343d;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#footer-div > p{
+  margin-top: 20px;
+  color: white;
 }
 
 .footer-title{
@@ -164,12 +169,7 @@ p, div {
 
 .footer-item{
   color: #EAEAEA;
-  margin-top: 5px;
-  text-decoration: none;
-}
-
-.footer-copyright{
-  color: #EAEAEA;
-  margin-top: 20px;
+  margin-top: 2px;
+  font-size: 11pt;
   text-decoration: none;
 }
