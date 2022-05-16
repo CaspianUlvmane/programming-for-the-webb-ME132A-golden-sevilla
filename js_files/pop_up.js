@@ -20,10 +20,14 @@ document.body.append(overLayDiv)
 // function called when pressing button to get more info 
 function popUpProgram (program) {
     // get the innerHTML of the target clicked
-    let programName = program.name
+    // let programName = program.name
+    let programFound = program
+
 
     // find program from DB that matches the target Clicked
-    let programsFound = DB.PROGRAMMES.find(program => program.name == programName)
+
+    // we dont need this, all info is alreay in above "program"
+    // let programsFound = DB.PROGRAMMES.find(program => program.name == programName)
     
     let programPopUpContainer = selectElement(".containerPopUp");
     programPopUpContainer.classList.add("active")
@@ -31,8 +35,8 @@ function popUpProgram (program) {
     clearResults(".containerPopUp")
     
     document.body.append(programPopUpContainer)
-    programPopUpContainer.append(interactWithPop(programsFound))
-    programPopUpContainer.append(addInfoProgram(programsFound))
+    programPopUpContainer.append(interactWithPop(programFound))
+    programPopUpContainer.append(addInfoProgram(programFound))
     
     return programPopUpContainer
 }
@@ -41,7 +45,8 @@ function popUpProgram (program) {
 function interactWithPop (program) {
     let barContainer = createElement("div")
     barContainer.classList.add("barContainer")
-    barContainer.id = program.name
+    // removed id
+    // barContainer.id = program.name
     
     // creating closeIcon For popUp with listner to close 
     let crossIconDiv = createElement("div")
@@ -51,6 +56,7 @@ function interactWithPop (program) {
         selectElement(".overLay").classList.remove("active")
         selectElement(".containerPopUp").classList.remove("active")
         clearResults(".containerPopUp")
+        renderPrograms()
     })
 
     barContainer.append(crossIconDiv, heartPopUp(program))
@@ -70,37 +76,52 @@ function heartPopUp (program) {
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
         }
     }
-    
 
-    heartIconDiv.addEventListener("click", function (){
-        if (heartIconDiv.classList.contains("active")) {
-            let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
-            console.log(programId)
-            let indexOfProgram = array.findIndex(id => id == programId)
-            // console.log(indexOfProgram)
-            // console.log(array.splice(indexOfProgram, 1))
-            array.splice(indexOfProgram, 1)
+    heartIconDiv.addEventListener("click", function(){
+        console.log(array)
+        if (heartIconDiv.classList.contains("active")){
+            console.log(program)
             heartIconDiv.classList.remove("active")
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
-            buildTopMenu()
-            likedPrograms()
-
-            // renderPrograms()
-
-        } else {
-            heartIconDiv.classList.add("active")
-            array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id))
+            let indexOfLikedArray = array.findIndex(element => program.id == element.id )
+            array.splice(indexOfLikedArray,1)
+            console.log(array)
+        } else{
+            heartIconDiv.classList.add(`active`)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
-
-            // console.log(array)
-            buildTopMenu()  
-            likedPrograms()
-            // renderPrograms()
-            buildTopMenu()
-            likedPrograms()
-
+            array.push(program)
+            console.log(array)
         }
     })
+    // heartIconDiv.addEventListener("click", function (){
+    //     if (heartIconDiv.classList.contains("active")) {
+    //         let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
+    //         console.log(programId)
+    //         let indexOfProgram = array.findIndex(id => id == programId)
+    //         // console.log(indexOfProgram)
+    //         // console.log(array.splice(indexOfProgram, 1))
+    //         array.splice(indexOfProgram, 1)
+    //         heartIconDiv.classList.remove("active")
+    //         heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
+    //         buildTopMenu()
+    //         likedPrograms()
+
+    //         // renderPrograms()
+
+    //     } else {
+    //         heartIconDiv.classList.add("active")
+    //         array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id))
+    //         heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
+
+    //         // console.log(array)
+    //         buildTopMenu()  
+    //         likedPrograms()
+    //         // renderPrograms()
+    //         buildTopMenu()
+    //         likedPrograms()
+
+    //     }
+    // })
     return heartIconDiv
 }
 

@@ -34,7 +34,7 @@ function heartIcon (program){
     heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
     
     for (let likedArray of array) {
-        if (likedArray.name == program.name) {
+        if (likedArray.id == program.id) {
             heartIconDiv.classList.add("activeLike")
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
         }
