@@ -4,12 +4,41 @@ function renderPrograms (){
     let resultDiv = document.getElementById("results")
     resultDiv.innerHTML = ""
     let programmes = findProgrammes()
-    for (let program of programmes){
-        let programDiv = renderProgram(program)
-        programDiv.id = program.name 
-        resultDiv.appendChild(programDiv)
+    let infoDiv = document.createElement("div")
+    
+    // to only view 20 of all programmes
+    if (programmes.length > 20){
+        for (let i = 0; i < 20; i++){
+            console.log(i)
+            let programDiv = renderProgram(programmes[i]) 
+            resultDiv.appendChild(programDiv)
+            infoDiv.innerHTML = `Visar ${i + 1} / ${programmes.length}`
+        }
+        // add infoDiv on how many program is shown
+        resultDiv.appendChild(infoDiv)
+        let viewMore = document.createElement("button")
+        viewMore.innerHTML=`Se alla ${programmes.length} program`
+        resultDiv.appendChild(viewMore)
+        viewMore.addEventListener("click", function(){
+            for(let i = 10; i<programmes.length; i++){
+                console.log(i)
+                let programDiv = renderProgram(programmes[i]) 
+                resultDiv.appendChild(programDiv)
+                viewMore.style.display = "none"
+                infoDiv.style.display = "none"
+            }
+        }) 
+    } else{
+        for (let i = 0; i < programmes.length; i++){
+            let programDiv = renderProgram(programmes[i])
+            infoDiv.innerHTML = `Visar ${i+1} av ${programmes.length}`
+            resultDiv.appendChild(programDiv)
+            resultDiv.appendChild(infoDiv)
+        }
     }
-}
+    }
+
+
 
 function renderProgram (program){
     let div = document.createElement("div")
@@ -54,7 +83,7 @@ function heartIcon (program){
         } else {
             // console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
-            array.push(DB.PROGRAMMES.find(program => program.name == this.parentElement.id))
+            array.push(program)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             buildTopMenu()
             likedPrograms()

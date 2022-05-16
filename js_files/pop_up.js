@@ -19,15 +19,8 @@ document.body.append(overLayDiv)
 
 // function called when pressing button to get more info 
 function popUpProgram (program) {
-    // get the innerHTML of the target clicked
-    // let programName = program.name
+    // get clicked program object
     let programFound = program
-
-
-    // find program from DB that matches the target Clicked
-
-    // we dont need this, all info is alreay in above "program"
-    // let programsFound = DB.PROGRAMMES.find(program => program.name == programName)
     
     let programPopUpContainer = selectElement(".containerPopUp");
     programPopUpContainer.classList.add("active")
