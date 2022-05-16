@@ -24,27 +24,41 @@
 }
 
 #header-text {
-    padding: 20px;
+    padding: 25px;
     text-align: center;
-    width: 70%;
-    min-width: 200px;
-    max-width: 500px;
+    width: 60%;
     margin-bottom: 30px;
-    margin-top: 30px;
-    border-radius: 3px;
+    margin-top: 10vh;
     font-family: 'IBM Plex Sans Condensed', sans-serif;
-    background-color: #ffffff82;
+    background-color: #e0e0e09c;
 }
-
-.all-about-button, .down-button, .slide-button, .img-slide-button {
-    display: inline-block;
+.down-button, .slide-button, .img-slide-button {
+    /* display: inline-block;
     color: black;
     background-color: rgba(255, 255, 255, 0.65);
     padding: 15px 40px;
     border: 1px solid rgb(198, 198, 198);
     border-radius: 6px;
     margin-bottom: 10px;
-    cursor: pointer;
+    cursor: pointer; */
+    
+display: inline-block;
+color: black;
+background-color: rgba(255, 255, 255, 0.65);
+border: 0px;
+margin-bottom: 10px;
+cursor: pointer;
+width: 100%;
+/* font-family: 'IBM Plex Sans Condensed', sans-serif; */
+font-family: 'Barlow Condensed';
+font-size: 15px;
+}
+
+.all-about-button {
+    padding: 3px 20px;
+    background-color: rgba(255, 255, 255, 0.719);
+    border: 0px;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
 #scroll-down {

@@ -15,15 +15,13 @@ button {
 }
 
 .button.active {
-    background-image: linear-gradient(var(--darkColor), darkgrey);
+    background-color: var(--darkColor);
     color: white;
-    border-radius: 4px;
 }
 
 .filterButtons > button.active {
-    background-image: linear-gradient(var(--darkColor), darkgrey);
+    background-color: var(--darkColor);
     color: white;
-    border-radius: 4px;
 }
 
 #allFilterWrapper{
@@ -33,12 +31,12 @@ button {
 #allFilters {
     position: absolute;
     transition: top 300ms;
-    top: -460px;
+    top: -500px;
     background-color: white;
-    padding: 10px;
-    width: calc(100% - 20px);
-    border-bottom: #425664 solid;
-    border-radius: 0px 0px 15px 15px;
+    padding: 5px;
+    /* width: calc(100% - 20px); */
+    border-bottom: 1px solid black;
+    border-radius: 0px;
 }
 
 #allFilters.showFilters{
@@ -47,51 +45,36 @@ button {
 
 #activeFilter > button{
     margin: 5px;
-    max-height: 27.6px;
 }
 
 
 #filterToggle {
-    width: 54px;
-    border: 2px solid darkgray;
-    border-radius: 4px;
+    padding: 3px 10px;
+    border: 1px solid var(--darkColor);
+    border-radius: 50px;
     margin: 10px;
-    background-image: linear-gradient(var(--lightColor), lightgray);
-    font-size: 16px;
-    max-height: 23.6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: white;
 }
 
 #activeFilter.hideFilters > button {
     opacity: 0;
 }
 
-#filterToggle:hover {
-    cursor: pointer;
-    background-image: none;
-    background-color: gainsboro;
-}
-
-
 .filterButtons {
-    display: none;
     flex-wrap: wrap;
 }
 
 .filterButtons > button {
-    border-radius: 4px;
-    padding: 3px;
-    background-image: linear-gradient(var(--lightColor), lightgray);
-    border: 2px solid darkgray;
+    border-radius: 50px;
+    padding: 3px 10px;
+    border: 1px solid var(--darkColor);
+    background-color: white;
 }
 
 .activeButton {
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 3px;
-    background-image: linear-gradient(var(--lightColor), lightgray);
-    border: 2px solid darkgray;
+    border: 1px solid var(--darkColor);
 }
 
 .filterContainer {
@@ -100,20 +83,19 @@ button {
 }
 
 .filterContainer > div:nth-child(1){
-    background-image: linear-gradient(var(--lightColor), lightgray);
-    border: 2px solid darkgray;
+    margin-left: 3px;
     width: 50px;
     display: flex;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 0px;
     font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
-.filterContainer > div:nth-child(1):hover{
+/* .filterContainer > div:nth-child(1):hover{
     cursor: pointer;
     background-image: none;
     background-color: gainsboro;
-}
+} */
 
 .showButtons + .filterButtons{
     display: flex;
