@@ -16,16 +16,6 @@ body{
     padding-bottom: 80px;
 }
 
-
-/* .continent-div{ */
-    /* border-bottom: 1px solid #dad4cd; */
-    /* background-color: var(--lightBeige); */
-/* } */
-
-.continent-div:hover{
-    cursor: pointer;
-}
-
 .country-div, .continent-div{
     cursor: pointer;
     height: 8vh;
@@ -33,14 +23,20 @@ body{
     justify-content: start;
     align-items: center;
     background-color: white;
-    padding-left: 15px;
+    padding-left: 20px;
     font-size: 20px;
     font-family: 'Barlow Condensed';
+}
+.country-div:last-child{
+padding-bottom: 15px;
+}
+.country-div {
+    height: 6vh;
 }
 
 .country-div > a{
     text-decoration: none;
-    color: #ae8181;
+    color: black;
 }
 
 .unactive{
@@ -49,6 +45,7 @@ body{
 
 .country-container{
     background-color: #e4ded7;
+    border-bottom: 1px solid #dad4cd;
 }
 
 #view-bar{

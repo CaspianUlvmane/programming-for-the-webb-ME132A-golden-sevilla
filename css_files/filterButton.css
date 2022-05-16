@@ -31,11 +31,11 @@ button {
 #allFilters {
     position: absolute;
     transition: top 300ms;
-    top: -460px;
+    top: -500px;
     background-color: white;
     padding: 5px;
-    width: calc(100% - 20px);
-    border-bottom: #425664 solid;
+    /* width: calc(100% - 20px); */
+    border-bottom: 1px solid black;
     border-radius: 0px;
 }
 
@@ -53,6 +53,7 @@ button {
     border: 1px solid var(--darkColor);
     border-radius: 50px;
     margin: 10px;
+    background-color: white;
 }
 
 #activeFilter.hideFilters > button {
@@ -67,6 +68,7 @@ button {
     border-radius: 50px;
     padding: 3px 10px;
     border: 1px solid var(--darkColor);
+    background-color: white;
 }
 
 .activeButton {
