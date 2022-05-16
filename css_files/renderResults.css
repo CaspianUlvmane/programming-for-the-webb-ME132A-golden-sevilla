@@ -58,7 +58,10 @@ body {
 #activeFilter > button {
     opacity: 1;
     transition: opacity 150ms;
-    border-radius: 4px;
-    background-image: linear-gradient(var(--lightColor), lightgray);
-    border: 2px solid darkgray;
+    background-color: var(--darkColor);
+    color: white;
+    /* background-image: linear-gradient(var(--lightColor), lightgray); */
+    border: 1px solid var(--darkColor);
+    border-radius: 50px;
+    padding: 3px 10px;
 }
