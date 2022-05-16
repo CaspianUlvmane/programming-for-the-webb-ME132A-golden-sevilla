@@ -80,11 +80,13 @@ function heartPopUp (program) {
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
             let indexOfLikedArray = array.findIndex(element => program.id == element.id )
             array.splice(indexOfLikedArray,1)
+            localStorage.setItem("likedArray", JSON.stringify(array))
             console.log(array)
         } else{
             heartIconDiv.classList.add(`active`)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             array.push(program)
+            localStorage.setItem("likedArray", JSON.stringify(array))
             console.log(array)
         }
     })

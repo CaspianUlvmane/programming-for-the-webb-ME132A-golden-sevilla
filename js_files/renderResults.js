@@ -1,6 +1,12 @@
 // let createElement = (element) => document.createElement(element);
 // buildTopMenu ()
 function renderPrograms (){
+    let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
+    console.log(storedLikedArray)
+    if (storedLikedArray != null){
+        array = array.concat(storedLikedArray)
+    }
+    console.log(array)
     let resultDiv = document.getElementById("results")
     resultDiv.innerHTML = ""
     let programmes = findProgrammes()
@@ -76,6 +82,7 @@ function heartIcon (program){
             let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
             let indexOfProgram = array.findIndex(id => id == programId)
             array.splice(indexOfProgram, 1)
+            localStorage.setItem("likedArray", JSON.stringify(array))
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
             // console.log(likedPrograms())
             buildTopMenu()
@@ -84,6 +91,7 @@ function heartIcon (program){
             // console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
             array.push(program)
+            localStorage.setItem("likedArray", JSON.stringify(array))
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             buildTopMenu()
             likedPrograms()
