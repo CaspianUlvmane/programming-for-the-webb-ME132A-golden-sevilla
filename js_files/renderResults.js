@@ -4,6 +4,7 @@ function renderPrograms (){
     let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
     console.log(storedLikedArray)
     if (storedLikedArray != null){
+        array = []
         array = array.concat(storedLikedArray)
     }
     console.log(array)
