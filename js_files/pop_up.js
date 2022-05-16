@@ -49,6 +49,8 @@ function interactWithPop (program) {
         selectElement(".overLay").classList.remove("active")
         selectElement(".containerPopUp").classList.remove("active")
         clearResults(".containerPopUp")
+        buildTopMenu()
+        likedPrograms()
         renderPrograms()
     })
 
