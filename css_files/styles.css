@@ -19,11 +19,15 @@ header {
   z-index: 1;
   position: relative;
 }
-
-.info-about-wrapper > p {
-  margin-left: 10px;
-  margin-right: 10px;
+.info-about-wrapper {
+  padding-bottom: 20px;
 }
+.info-about-wrapper > p {
+margin: 10px;
+}
+.info-about-wrapper > h2 {
+  margin: 10px;
+  }
 
 
 #nav {
@@ -69,12 +73,12 @@ header {
 .wrapper {
   width: 100vw;
 }
-h1 {
+h2 {
   text-align: center;
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .top-img {

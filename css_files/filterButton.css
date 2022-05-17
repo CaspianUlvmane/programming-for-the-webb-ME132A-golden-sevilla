@@ -95,11 +95,9 @@ button.hide {
     font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
-/* .filterContainer > div:nth-child(1):hover{
-    cursor: pointer;
-    background-image: none;
-    background-color: gainsboro;
-} */
+.filterContainer > div{
+    font-weight: 400;
+}
 
 .showButtons + .filterButtons{
     display: flex;
