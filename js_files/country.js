@@ -34,11 +34,17 @@ function createCityDiv (cityArray){
         <p> ${city.text}</p>
         <a href="../html_files/filter.html?city=${city.id}"><button class="cityButton"> Studera i ${city.name}</button></a>
         </div>`
-    
-        cityDiv.style.backgroundImage = `url(../Databasen/Images/${city.name.toLowerCase()}_normal_1.jpg)`
+        console.log(`url(../Databasen/Images/${cityURL(city)}_normal_1.jpg)`)
+        cityDiv.style.backgroundImage = `url(../Databasen/Images/${cityURL(city)}_normal_1.jpg)`
         cityContainer.appendChild(cityDiv)
     }
     return cityContainer
+}
+
+function cityURL (city){
+    let name = city.name
+    console.log(name.split(" ").join("_").toLowerCase())
+    return name.split(" ").join("_").toLowerCase()
 }
 
 function setCountryBackground (id){
