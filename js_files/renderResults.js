@@ -1,5 +1,3 @@
-// let createElement = (element) => document.createElement(element);
-// buildTopMenu ()
 function renderPrograms (){
     let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
     console.log(storedLikedArray)
@@ -24,7 +22,7 @@ function renderPrograms (){
         }
         // add infoDiv on how many program is shown
         resultDiv.appendChild(infoDiv)
-        let viewMore = document.createElement("div")
+        let viewMore = createElement("div")
         viewMore.classList.add("view-more")
         viewMore.innerHTML=`Se alla ${programmes.length} program
         <i class="fa-solid fa-angle-down"></i>`
@@ -51,9 +49,9 @@ function renderPrograms (){
 
 
 function renderProgram (program){
-    let div = document.createElement("div")
+    let div = createElement("div")
     div.classList.add("container")
-    let programInfo = document.createElement("div")
+    let programInfo = createElement("div")
     programInfo.classList.add("programInfoContainer")
     programInfo.innerHTML=`<h3>${program.name}</h3>
     <p>${programShortInfo(program)}</p>`

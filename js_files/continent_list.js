@@ -1,24 +1,23 @@
-
 function createContinentList(){
     let listContainer = document.getElementById("list-container")
     listContainer.appendChild(createInfoDiv())
 
     for (let continent of DB.CONTINENTS){
-        let continetContainer = document.createElement("div")
-        let continentDiv = document.createElement("div")
+        let continetContainer = createElement("div")
+        let continentDiv = createElement("div")
         continentDiv.classList.add("continent-div")
         continentDiv.innerHTML = `<div>${continent.name}</div>`
-        let iconDiv = document.createElement("div")
+        let iconDiv = createElement("div")
         iconDiv.innerHTML = `<i class="fa-solid fa-angle-down"></i>`
         continentDiv.appendChild(iconDiv)
         continetContainer.appendChild(continentDiv)
 
         let countrysInContinent = DB.COUNTRIES.filter(country => country.continentID == continent.id)
-        let countryContainer = document.createElement("div")
+        let countryContainer = createElement("div")
         countryContainer.classList.add("country-container", "unactive")
         
         for (let country of countrysInContinent){
-            let countryDiv = document.createElement("div")
+            let countryDiv = createElement("div")
             countryDiv.classList.add("country-div")
             countryDiv.innerHTML = `
             <a href="../html_files/country.html?country=${country.id}">${country.name}</a>`
@@ -57,7 +56,7 @@ function cotinentViewBar (){
 }
 
 function createDivMapView (){
-    let mapDiv = document.createElement("div")
+    let mapDiv = createElement("div")
     mapDiv.classList.add("map-view")
     mapDiv.innerHTML = "Kartvy"
     
@@ -65,7 +64,7 @@ function createDivMapView (){
 }
 
 function createDivListView (){
-    let listDiv = document.createElement("div")
+    let listDiv = createElement("div")
     listDiv.classList.add("list-view", "active-view")
     listDiv.innerHTML = "Listvy"
     
@@ -100,7 +99,7 @@ function createContinentMap(){
 }
 
 function createInfoDiv(){
-    let infoContainer = document.createElement("div")
+    let infoContainer = createElement("div")
     infoContainer.id = "continent-info"
     infoContainer.innerHTML=`
     <h2>Vart i världen vill du studera?</h2>
@@ -112,5 +111,3 @@ function createInfoDiv(){
 
 cotinentViewBar()
 createContinentList()
-
-// document.querySelector("footer").appendChild(footer())

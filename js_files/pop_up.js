@@ -1,11 +1,10 @@
-// Refers to a selected element 
-let selectElement = (select) => document.querySelector(select); 
+// // Refers to a selected element 
+// let selectElement = (select) => document.querySelector(select); 
 
-// creates a element 
-let createElement = (element) => document.createElement(element);
+// // creates a element 
+// let createElement = (element) => document.createElement(element);
 
 let clearResults = (element) => selectElement(element).innerHTML = "";
-
 
 /// keep  creating the popUp div container 
 let programPopUpContainer = createElement("div");

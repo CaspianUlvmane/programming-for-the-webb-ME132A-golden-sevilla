@@ -1,9 +1,7 @@
-// document.querySelector('header').appendChild(buildTopMenu(array))
-
 function buildCountry (id){
     let country = DB.COUNTRIES.find(country=> country.id == id)
     let container = document.getElementById("container")
-    let countryInfo = document.createElement("div")
+    let countryInfo = createElement("div")
     countryInfo.classList.add("country-info")
     container.innerHTML=``
     
@@ -24,10 +22,10 @@ function findCities (id){
 }
 
 function createCityDiv (cityArray){
-    let cityContainer = document.createElement("div")
+    let cityContainer = createElement("div")
     cityContainer.classList.add("city-container")
     for(let city of cityArray){
-        let cityDiv = document.createElement("div")
+        let cityDiv = createElement("div")
         cityDiv.classList.add("city-div")
         cityDiv.innerHTML = `<div class="city-info">
         <h3> ${city.name}</h3>
@@ -64,4 +62,3 @@ function getCountryFromUrl(){
 let country = getCountryFromUrl()
 buildCountry(country)
 
-// document.querySelector("footer").appendChild(footer())

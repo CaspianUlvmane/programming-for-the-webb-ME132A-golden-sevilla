@@ -1,8 +1,10 @@
 let array = []
 
+// Refers to a selected element 
+
 function likedPrograms () {
   let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
-  let likeContainer = document.createElement('div')
+  let likeContainer = createElement('div')
   likeContainer.classList.add('container-hidden')
   likeContainer.id = "like-container"
   
@@ -17,19 +19,19 @@ function likedPrograms () {
       likeContainer.appendChild(likedDiv)
     }
   } else {
-    let noLikes = document.createElement('div')
+    let noLikes = createElement('div')
     noLikes.classList.add('no-likes')
     likeContainer.appendChild(noLikes)
     noLikes.innerHTML = 'Hola Amigo, du har inte gillat något än!'
   }}
-  document.querySelector("header").append(likeContainer)
+  selectElement("header").append(likeContainer)
 }
 
 
 function createLikeDiv (program){
-  let likedItem = document.createElement('div')
+  let likedItem = createElement('div')
   likedItem.classList.add('liked-item')
-  let likedInfo = document.createElement("div")
+  let likedInfo = createElement("div")
   likedInfo.innerHTML = `
   <p class="bold">${program.name}</p>
   <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${
@@ -44,7 +46,7 @@ function createLikeDiv (program){
 }
 
 function createLikeHeartDiv(program, element){
-  let likedHeartDiv = document.createElement('div')
+  let likedHeartDiv = createElement('div')
   likedHeartDiv.classList.add('liked-heart-div')
   likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'
   likedHeartDiv.addEventListener('click', function(){
