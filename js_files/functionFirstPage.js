@@ -14,7 +14,7 @@ function buildImgCountryCard (){
     }   
     
     function getCountry (id) {
-        return findCountry(id).name
+        return findCountry(id).name.split(" ").join("_")
     }
 
     for (let i = 0; i < DB.COUNTRIES.length; i++) {
