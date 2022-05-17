@@ -1,9 +1,9 @@
 :root {
   --beigeColor: #EDE7DF
-  --lightColor: #EAEAEA
-  --darkColor: #425664;
-  --whiteColor: white;
   --blackColor: black;
+  --whiteColor: white;
+  --lightColor: #eaeaea;
+  --darkColor: #425664;
 }
 /* *{
   padding: 0px;
@@ -90,6 +90,7 @@ margin: 10px;
 .wrapper {
   width: 100vw;
 }
+
 h2 {
   text-align: center;
 }
@@ -132,6 +133,7 @@ a {
   font-family: 'Barlow Condensed';
 }
 
+
 /* .burger-list:hover {
 border: 1px solid black;
 } */
@@ -145,6 +147,7 @@ h3, h4{
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-weight: 500;
 }
+
 h1, h2 {
   font-family: 'Barlow Condensed';
 }
