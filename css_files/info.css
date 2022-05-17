@@ -1,11 +1,12 @@
 .imgTop {
-    background-image: url(../Databasen/Images/info/info.jpg);
+    background-image: url(../Databasen/Images/studyAbroad2.jpeg);
     background-size: cover;
     background-position: center;
 }
 
 .imgMid {
-    background-image: url(../Databasen/Images/info/midinfo.jpg);
+    margin: 10px;
+    background-image: url(../Databasen/Images/studyAbroad.jpeg);
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
 }

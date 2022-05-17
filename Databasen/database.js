@@ -162,7 +162,7 @@ const COUNTRIES = [
     },
     {
         "id": 3,
-        "name": "United Kingdom",
+        "name": "England",
         "continentID": 0,
         "visa": false,
         "languageID": 1,
@@ -687,7 +687,7 @@ const CITIES = [
     },
     {
         "id": 26,
-        "name": "San Francisco",
+        "name": "SanFrancisco",
         "countryID": 6,
         "sun": 160,
         "text": "San Francisco officiellt City and County of San Francisco \u00e4r en stad i norra Kalifornien i USA. Staden ligger p\u00e5 \u00e4nden av en halv\u00f6 mellan Stilla havet och San Franciscobukten. Det egentliga San Francisco har omkring en miljon inv\u00e5nare, men staden fungerar som nav f\u00f6r omr\u00e5det runt bukten (vilket \u00e4ven innefattar st\u00e4der som San Jose och Oakland) och i omr\u00e5det bor det cirka 8,4 miljoner m\u00e4nniskor.",
@@ -715,7 +715,7 @@ const CITIES = [
     },
     {
         "id": 28,
-        "name": "New York",
+        "name": "NewYork",
         "countryID": 6,
         "sun": 135,
         "text": "New York \u00e4r ansedd som en v\u00e4rldsstad med ett starkt globalt inflytande inom ekonomi, massmedia, politik, utbildning, underh\u00e5llning och mode. Det \u00e4r v\u00e4rldens ledande finansiella centrum och huserar \u00e4ven FN:s h\u00f6gkvarter i stadsdelen Manhattan. Inv\u00e5narna kallas \"New Yorkers\". New Yorks mest k\u00e4nda smeknamn \u00e4r The Big Apple och har \u00e4ven kallats \"staden som aldrig sover\".",
@@ -757,7 +757,7 @@ const CITIES = [
     },
     {
         "id": 31,
-        "name": "Buenos Aires",
+        "name": "BuenosAires",
         "countryID": 7,
         "sun": 205,
         "text": "Buenos Aires \u00e4r sedan 1880 huvudstad i republiken Argentina. Staden \u00e4r bel\u00e4gen vid R\u00edo de la Platas s\u00f6dra strand och har cirka 2,9 miljoner inv\u00e5nare samt 12,8 miljoner inv\u00e5nare i storstadsomr\u00e5det. Stadens centrum utg\u00f6rs av ett eget federalt distrikt (egentligen autonom stad, ciudad aut\u00f3noma) som omges av provinsen Buenos Aires, vars huvudort La Plata ligger s\u00f6der om Buenos Aires. Buenos Aires betyder ungef\u00e4r \"Den goda luften\" eller \"De goda vindarna\".",
