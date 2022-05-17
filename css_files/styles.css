@@ -124,6 +124,7 @@ border: 1px solid black;
 h3, h4{
   /* font-family: 'Barlow Condensed'; */
   font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-weight: 500;
 }
 h1, h2 {
   font-family: 'Barlow Condensed';
@@ -132,6 +133,10 @@ h1, h2 {
 p, div {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-weight: 300;
+}
+
+.bolder {
+  font-weight: 500;
 }
 
 
