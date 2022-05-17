@@ -53,6 +53,9 @@ function interactWithPop (program) {
         likedPrograms()
         renderPrograms()
         searchBar()
+        closeSearchInSearch()
+        cleanSearch()
+        selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
     })
 
     barContainer.append(crossIconDiv, headTitle(program),heartPopUp(program))
@@ -301,7 +304,7 @@ function starRatingStudent (comments) {
         return `
         <i class="fa-regular fa-star starStudent"></i>
         <i class="fa-regular fa-star starStudent"></i>
-        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>  
         <i class="fa-regular fa-star starStudent"></i>
         <i class="fa-regular fa-star starStudent"></i>
         `

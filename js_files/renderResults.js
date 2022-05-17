@@ -92,6 +92,9 @@ function heartIcon (program){
             buildTopMenu()
             likedPrograms()
             searchBar()
+            closeSearchInSearch()
+            cleanSearch()
+            selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
         } else {
             // console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
@@ -101,6 +104,9 @@ function heartIcon (program){
             buildTopMenu()
             likedPrograms()
             searchBar()
+            closeSearchInSearch()
+            cleanSearch()
+            selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
         }
     })
     return heartIconDiv

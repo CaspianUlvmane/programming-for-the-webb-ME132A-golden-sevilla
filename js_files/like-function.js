@@ -11,7 +11,7 @@ function likedPrograms () {
   if (storedLikedArray.length > 0) {
     for (let program of storedLikedArray) {
       let likedDiv = createLikeDiv(program) 
-      let likedHeartDiv = createLikeHeartDiv(program)
+      let likedHeartDiv = createLikeHeartDiv(program, likedDiv)
       likedDiv.appendChild(likedHeartDiv)
 
       likeContainer.appendChild(likedDiv)
@@ -43,12 +43,12 @@ function createLikeDiv (program){
   return likedItem
 }
 
-function createLikeHeartDiv(program){
+function createLikeHeartDiv(program, element){
   let likedHeartDiv = document.createElement('div')
   likedHeartDiv.classList.add('liked-heart-div')
   likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'
   likedHeartDiv.addEventListener('click', function(){
-    removeLike(program)
+    removeLike(program, element)
   })
 
   return likedHeartDiv
@@ -63,15 +63,22 @@ function changeClassOnLikeContainer (element) {
 }
 
 
-function removeLike(program){
+function removeLike(program, element){
   let indexOfProgram = array.findIndex(element => element.id == program.id)
   array.splice(indexOfProgram,1)
   localStorage.setItem("likedArray", JSON.stringify(array))
+  element.remove()
 
-  buildTopMenu()
+  if (array.length == 0) {
+    buildTopMenu()
+  }
+  
   likedPrograms()
   renderPrograms()
   searchBar()
+  closeSearchInSearch()
+  cleanSearch()
+  selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
 }
 
 
