@@ -71,6 +71,7 @@ function removeLike(program){
   buildTopMenu()
   likedPrograms()
   renderPrograms()
+  searchBar()
 }
 
 

@@ -1,3 +1,10 @@
+:root {
+  --beigeColor: #ede7df;
+  --lightColor: #eaeaea;
+  --darkColor: #425664;
+  --whiteColor: white;
+  --blackColor: black;
+}
 
 .field-div {
   display: flex;
@@ -12,19 +19,28 @@
 .field-text, .field-title, .field-info {
   margin: 10px;
 }
+
 .field-title {
 text-align: center;
 }
+
 .field-name {
   margin-bottom: 0px;
 }
 
 .field-button {
-  background-color: white;
-  padding: 5px 10px;
-  border: 1px solid black;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  background-color: var(--lightColor);
+  border: 0px;
+  padding: 5px 20px;
   cursor: pointer;
   margin-bottom: 20px;
+  transition: background-color 300ms;
+}
+
+.field-button:hover {
+  background-color: var(--darkColor);
+  color: var(--lightColor);
 }
 
 .field-div > h3{

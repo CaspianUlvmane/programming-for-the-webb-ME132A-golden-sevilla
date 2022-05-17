@@ -52,6 +52,7 @@ function interactWithPop (program) {
         buildTopMenu()
         likedPrograms()
         renderPrograms()
+        searchBar()
     })
 
     barContainer.append(crossIconDiv, headTitle(program),heartPopUp(program))

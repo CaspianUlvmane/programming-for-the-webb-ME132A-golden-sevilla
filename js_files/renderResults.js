@@ -91,6 +91,7 @@ function heartIcon (program){
             // console.log(likedPrograms())
             buildTopMenu()
             likedPrograms()
+            searchBar()
         } else {
             // console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
@@ -99,6 +100,7 @@ function heartIcon (program){
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             buildTopMenu()
             likedPrograms()
+            searchBar()
         }
     })
     return heartIconDiv
