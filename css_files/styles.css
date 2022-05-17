@@ -19,16 +19,18 @@ header {
   z-index: 1;
   position: relative;
 }
+
 .info-about-wrapper {
   padding-bottom: 20px;
 }
+
 .info-about-wrapper > p {
 margin: 10px;
 }
+
 .info-about-wrapper > h2 {
   margin: 10px;
   }
-
 
 #nav {
   width: 100vw;
@@ -54,6 +56,20 @@ margin: 10px;
   background-color: rgb(83, 81, 81);
   margin: 5px;
   border-radius: 4px;
+  transition: transform 300ms, opacity .2s;
+
+}
+
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(50deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-10px) rotate(-50deg);
 }
 
 .title-name {
@@ -67,6 +83,7 @@ margin: 10px;
 .search, .my-likes {
   font-size: 20px;
   margin-right: 20px;
+  width: 20px;
   cursor: pointer;
 }
 
@@ -99,8 +116,6 @@ a {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  padding-bottom: 30px;
-  padding-top: 10px;
   background-color: white;
   border-bottom: 1px solid black;
 }

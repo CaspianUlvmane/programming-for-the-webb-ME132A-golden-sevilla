@@ -34,9 +34,8 @@ function createBurger () {
   <span class="line"></span>
   `
   burgerDiv.addEventListener('click', function () {
-    document
-      .querySelector('.burger-container')
-      .classList.toggle('burger-hidden')
+    document.querySelector('.burger-container').classList.toggle('burger-hidden')
+    burgerDiv.classList.toggle(`active`)
   })
   return burgerDiv
 }

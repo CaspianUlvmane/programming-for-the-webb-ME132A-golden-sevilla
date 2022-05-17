@@ -32,7 +32,7 @@ function createCityDiv (cityArray){
         cityDiv.innerHTML = `<div class="city-info">
         <h3> ${city.name}</h3>
         <p> ${city.text}</p>
-        <a href="../html_files/filter.html?city=${city.id}"><button> Studera i ${city.name}</button></a>
+        <a href="../html_files/filter.html?city=${city.id}"><button class="cityButton"> Studera i ${city.name}</button></a>
         </div>`
     
         cityDiv.style.backgroundImage = `url(../Databasen/Images/${city.name.toLowerCase()}_normal_1.jpg)`
