@@ -53,6 +53,9 @@ function interactWithPop (program) {
         likedPrograms()
         renderPrograms()
         searchBar()
+        closeSearchInSearch()
+        cleanSearch()
+        selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
     })
 
     barContainer.append(crossIconDiv, headTitle(program),heartPopUp(program))
@@ -89,13 +92,13 @@ function heartPopUp (program) {
             let indexOfLikedArray = array.findIndex(element => program.id == element.id )
             array.splice(indexOfLikedArray,1)
             localStorage.setItem("likedArray", JSON.stringify(array))
-            console.log(array)
+            // console.log(array)
         } else{
             heartIconDiv.classList.add(`active`)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             array.push(program)
             localStorage.setItem("likedArray", JSON.stringify(array))
-            console.log(array)
+            // console.log(array)
         }
     })
   
@@ -141,7 +144,7 @@ function commentsProgram (id) {
     for (let comment of comments) {
         let commentBox = createElement("div")
         commentBox.innerHTML =  ` 
-        ${studentRatingProgram(comment)}
+        ${starRatingStudent(comment)}
         <div class="commentText"> ${comment.text} </div>
         <div class="commentName"> ${comment.alias} </div> `
         commentContainer.append(commentBox)
@@ -188,14 +191,7 @@ return findFiled(id).name
 
 /// !!! Working how to write in cleaner way ??? 
 function getLevel (id) {
-    console.log(id)
-    if (id.level == 0) {
-        return DB.LEVELS.find((level) => level == "Bachelor")
-    } else if (id.level == 1) {
-        return DB.LEVELS.find((level) => level == "Master")
-    } else {
-        return DB.LEVELS.find((level) => level == "Doctorate")
-    }
+        return DB.LEVELS[id]
 }
 
 // find the langauge that is equal to the program language
@@ -258,3 +254,59 @@ function studentRatingProgram (comments) {
     return Math.round(sumOfRating/3)
 }
 
+function starRatingStudent (comments) {
+    
+    if (studentRatingProgram(comments) == 5) {
+        return `            
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>`
+    }
+    else if (studentRatingProgram(comments) == 4) {
+        return `            
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        `
+    }
+    else if (studentRatingProgram(comments) == 3) {
+        return `            
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        `
+    }
+    else if (studentRatingProgram(comments) == 2) {
+        return `            
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        `
+    }
+    else if (studentRatingProgram(comments) == 1) {
+        return `            
+        <i class="fa-solid fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        `
+    } 
+    else {
+        return `
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>  
+        <i class="fa-regular fa-star starStudent"></i>
+        <i class="fa-regular fa-star starStudent"></i>
+        `
+    }
+}

@@ -68,6 +68,7 @@ body {
 .info-text{
   text-align: center;
   font-size: 10pt;
+  margin: 20px 0px;
 }
 
 .view-more{

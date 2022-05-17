@@ -58,6 +58,12 @@ button.hide {
     border-radius: 50px;
     margin: 10px;
     background-color: white;
+    cursor: pointer;
+}
+
+#filterToggle:hover {
+    background-color: var(--darkColor);
+    color: var(--lightColor);
 }
 
 #activeFilter.hideFilters > button {
@@ -68,11 +74,18 @@ button.hide {
     flex-wrap: wrap;
 }
 
+
 .filterButtons > button {
     border-radius: 50px;
     padding: 3px 10px;
     border: 1px solid var(--darkColor);
     background-color: white;
+    transition: background-color 300ms;
+}
+
+.filterButtons > button:hover {
+    background-color: var(--darkColor);
+    color: var(--lightColor);
 }
 
 .activeButton {
