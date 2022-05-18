@@ -1,12 +1,12 @@
-let downButton = document.querySelector("#scroll-down");
+let downButton = selectElement("#scroll-down");
 
 downButton.addEventListener("click", function () {
-    document.querySelector("#img-slide-box").scrollIntoView({behavior: "smooth"})
+    selectElement("#img-slide-box").scrollIntoView({behavior: "smooth"})
 })
 
 function buildImgCountryCard (){
-    let imgBox = document.createElement("div");
-    document.querySelector("#img-slide-box").appendChild(imgBox)
+    let imgBox = createElement("div");
+    selectElement("#img-slide-box").appendChild(imgBox)
     imgBox.id = "img-box";
     
     function findCountry (id) {
@@ -18,12 +18,12 @@ function buildImgCountryCard (){
     }
 
     for (let i = 0; i < DB.COUNTRIES.length; i++) {
-        let img = document.createElement("div");
+        let img = createElement("div");
         imgBox.appendChild(img)
         img.classList.add("img-slide");
         img.style.backgroundImage = `url(../Databasen/Images/${getCountry(i)}_normal_2.jpg)`
 
-        let imgButton = document.createElement("button")
+        let imgButton = createElement("button")
         img.appendChild(imgButton)
         imgButton.classList.add("img-slide-button")
 
@@ -32,8 +32,8 @@ function buildImgCountryCard (){
 }
 
 function buildImgFiledCard (){
-    let imgBox = document.createElement("div");
-    document.querySelector("#img-slideFields-box").appendChild(imgBox)
+    let imgBox = createElement("div");
+    selectElement("#img-slideFields-box").appendChild(imgBox)
     imgBox.id = "imgFields-box";
     
     function findFiled (id) {
@@ -46,12 +46,12 @@ function buildImgFiledCard (){
     }
 
     for (let i = 0; i < DB.FIELDS.length; i++) {
-        let img = document.createElement("div");
+        let img = createElement("div");
         imgBox.appendChild(img)
         img.classList.add("img-slide");
         img.style.backgroundImage = `url(../Databasen/Images/field_pictures/${getFiled(i)}.jpg)`
 
-        let imgButton = document.createElement("button")
+        let imgButton = createElement("button")
         img.appendChild(imgButton)
         imgButton.classList.add("img-slide-button")
 

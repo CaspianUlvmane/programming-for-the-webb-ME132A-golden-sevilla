@@ -1,13 +1,12 @@
 function createFieldView () {
-  let fieldContainer = document.createElement('div')
-  document.querySelector('main').appendChild(fieldContainer)
+  let fieldContainer = createElement('div')
+  selectElement('main').appendChild(fieldContainer)
   fieldContainer.classList.add('fields-container')
   
   for (let field of DB.FIELDS) {
-    let fieldDiv = document.createElement('div')
+    let fieldDiv = createElement('div')
     fieldDiv.classList.add('field-div')
-    // div class field-img, ska sedan vara en bild. Vet ej vilken.
-    // behöver även länka knapparna.
+
     fieldDiv.innerHTML = `
     <div class="field-img"><img src="../Databasen/Images/field_pictures/${field.name}.jpg"></div>
     <h3 class="field-name">${field.name}</h3>
@@ -16,7 +15,6 @@ function createFieldView () {
     fieldContainer.appendChild(fieldDiv)
   }
 }
-
 
 createFieldView()
 likedPrograms()

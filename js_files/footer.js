@@ -1,5 +1,5 @@
 function footer(){
-    let footerDiv = document.createElement("div")
+    let footerDiv = createElement("div")
     footerDiv.id = "footer-div"
 
     footerDiv.innerHTML = `
@@ -10,7 +10,7 @@ function footer(){
         <a class ="footer-item" href = fields.html> Ämnen </a>
         <a class ="footer-item" href = about.html> Om oss </a>
         <p class ="footer-copyright"> Copyright</p>`
-        // bild istället för p här?
+        
     return footerDiv
 }
 
