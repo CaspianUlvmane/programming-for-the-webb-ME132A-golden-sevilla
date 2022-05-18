@@ -46,12 +46,14 @@ function interactWithPop (program) {
     crossIconDiv.classList.add("imgCross") // closeButton
     crossIconDiv.innerHTML = `<i class="fa-solid fa-xmark"></i>`
     crossIconDiv.addEventListener("click", function (){
+        console.log(JSON.parse(sessionStorage.getItem("likedArray")))
         selectElement(".overLay").classList.remove("active")
         selectElement(".containerPopUp").classList.remove("active")
         clearResults(".containerPopUp")
         buildTopMenu()
         likedPrograms()
-        renderPrograms()
+        if (window.location.href == `http://127.0.0.1:5500/html_files/filter.html`){
+        renderPrograms()}
         searchBar()
         closeSearchInSearch()
         cleanSearch()
@@ -71,6 +73,12 @@ function headTitle (program){
 
 function heartPopUp (program) {
     console.log(program)
+    let storedLikedArray = JSON.parse(sessionStorage.getItem("likedArray"))
+    console.log(storedLikedArray)
+    if (storedLikedArray != null){
+        array = []
+        array = array.concat(storedLikedArray)
+    }
     let heartIconDiv = createElement("div")
     heartIconDiv.classList.add("imgHearth") 
 
@@ -91,13 +99,13 @@ function heartPopUp (program) {
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
             let indexOfLikedArray = array.findIndex(element => program.id == element.id )
             array.splice(indexOfLikedArray,1)
-            localStorage.setItem("likedArray", JSON.stringify(array))
+            sessionStorage.setItem("likedArray", JSON.stringify(array))
             // console.log(array)
         } else{
             heartIconDiv.classList.add(`active`)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             array.push(program)
-            localStorage.setItem("likedArray", JSON.stringify(array))
+            sessionStorage.setItem("likedArray", JSON.stringify(array))
             // console.log(array)
         }
     })

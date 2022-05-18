@@ -3,7 +3,7 @@
 // parametern array, ska vara "likedArray" sedan.
 
 function buildTopMenu () {
-  let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
+  let storedLikedArray = JSON.parse(sessionStorage.getItem("likedArray"))
   let header = document.querySelector("header")
   header.innerHTML = ""
   let topMenu = document.createElement('div')
@@ -11,8 +11,11 @@ function buildTopMenu () {
   topMenu.appendChild(createBurger())
   topMenu.appendChild(createLogo())
   topMenu.appendChild(createSearch())
-  
-  if (storedLikedArray == null || storedLikedArray.length > 0) {
+  if (storedLikedArray == null){
+    storedLikedArray = []
+  }
+
+  if (storedLikedArray.length > 0) {
     topMenu.appendChild(createDarkHeart())
   } else {
     topMenu.appendChild(createLightHeart())
