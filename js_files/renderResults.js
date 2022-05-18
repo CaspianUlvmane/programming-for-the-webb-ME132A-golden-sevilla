@@ -1,8 +1,7 @@
 // let createElement = (element) => document.createElement(element);
 // buildTopMenu ()
 function renderPrograms (){
-    let storedLikedArray = JSON.parse(sessionStorage.getItem("likedArray"))
-    console.log(storedLikedArray)
+    let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
     if (storedLikedArray != null){
         array = []
         array = array.concat(storedLikedArray)
@@ -17,7 +16,6 @@ function renderPrograms (){
     // to only view 20 of all programmes
     if (programmes.length > 20){
         for (let i = 0; i < 20; i++){
-            console.log(i)
             let programDiv = renderProgram(programmes[i]) 
             resultDiv.appendChild(programDiv)
             infoDiv.innerHTML = `Visar ${i + 1} / ${programmes.length}`
@@ -31,7 +29,6 @@ function renderPrograms (){
         resultDiv.appendChild(viewMore)
         viewMore.addEventListener("click", function(){
             for(let i = 10; i<programmes.length; i++){
-                console.log(i)
                 let programDiv = renderProgram(programmes[i]) 
                 resultDiv.appendChild(programDiv)
                 viewMore.style.display = "none"
@@ -86,7 +83,7 @@ function heartIcon (program){
             let programId = DB.PROGRAMMES.find(program => program.name == this.parentElement.id)
             let indexOfProgram = array.findIndex(id => id == programId)
             array.splice(indexOfProgram, 1)
-            sessionStorage.setItem("likedArray", JSON.stringify(array))
+            localStorage.setItem("likedArray", JSON.stringify(array))
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
             // console.log(likedPrograms())
             buildTopMenu()
@@ -99,7 +96,7 @@ function heartIcon (program){
             // console.log(this.parentElement)
             heartIconDiv.classList.add("activeLike")
             array.push(program)
-            sessionStorage.setItem("likedArray", JSON.stringify(array))
+            localStorage.setItem("likedArray", JSON.stringify(array))
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             buildTopMenu()
             likedPrograms()

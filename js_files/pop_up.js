@@ -46,7 +46,7 @@ function interactWithPop (program) {
     crossIconDiv.classList.add("imgCross") // closeButton
     crossIconDiv.innerHTML = `<i class="fa-solid fa-xmark"></i>`
     crossIconDiv.addEventListener("click", function (){
-        console.log(JSON.parse(sessionStorage.getItem("likedArray")))
+        console.log(JSON.parse(localStorage.getItem("likedArray")))
         selectElement(".overLay").classList.remove("active")
         selectElement(".containerPopUp").classList.remove("active")
         clearResults(".containerPopUp")
@@ -73,7 +73,7 @@ function headTitle (program){
 
 function heartPopUp (program) {
     console.log(program)
-    let storedLikedArray = JSON.parse(sessionStorage.getItem("likedArray"))
+    let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
     console.log(storedLikedArray)
     if (storedLikedArray != null){
         array = []
@@ -99,13 +99,13 @@ function heartPopUp (program) {
             heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
             let indexOfLikedArray = array.findIndex(element => program.id == element.id )
             array.splice(indexOfLikedArray,1)
-            sessionStorage.setItem("likedArray", JSON.stringify(array))
+            localStorage.setItem("likedArray", JSON.stringify(array))
             // console.log(array)
         } else{
             heartIconDiv.classList.add(`active`)
             heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
             array.push(program)
-            sessionStorage.setItem("likedArray", JSON.stringify(array))
+            localStorage.setItem("likedArray", JSON.stringify(array))
             // console.log(array)
         }
     })

@@ -28,10 +28,6 @@ button.hide {
     color: white;
 }
 
-#allFilterWrapper{
-    position: relative;
-}
-
 #allFilters {
     position: absolute;
     transition: top 300ms;
