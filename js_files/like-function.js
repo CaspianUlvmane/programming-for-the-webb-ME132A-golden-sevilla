@@ -10,7 +10,9 @@ function likedPrograms () {
   likeContainer.id = "like-container"
   
   likeContainer.innerHTML = ''
-  if (storedLikedArray != null){
+  if (storedLikedArray == null){
+    storedLikedArray = []
+  }
   if (storedLikedArray.length > 0) {
     for (let program of storedLikedArray) {
       let likedDiv = createLikeDiv(program) 
@@ -24,7 +26,7 @@ function likedPrograms () {
     noLikes.classList.add('no-likes')
     likeContainer.appendChild(noLikes)
     noLikes.innerHTML = 'Hola Amigo, du har inte gillat något än!'
-  }}
+  }
   selectElement("header").append(likeContainer)
 }
 
@@ -67,18 +69,25 @@ function changeClassOnLikeContainer (element) {
 
 
 function removeLike(program, element){
+  let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
+  console.log(storedLikedArray)
+  if (storedLikedArray != null){
+      array = []
+      array = array.concat(storedLikedArray)
+  }
+  console.log(array)
   let indexOfProgram = array.findIndex(element => element.id == program.id)
   array.splice(indexOfProgram,1)
-  sessionStorage.setItem("likedArray", JSON.stringify(array))
   element.remove()
+  localStorage.setItem("likedArray", JSON.stringify(array))
 
   if (array.length == 0) {
     buildTopMenu()
   }
   
   likedPrograms()
-  if (window.location.href == `http://127.0.0.1:5500/html_files/filter.html`){
-    renderPrograms()}
+        if (window.location.href == 'file:///C:/Users/TurtleKun/Documents/GitHub/programming-for-the-webb-ME132A-golden-sevilla/html_files/filter.html'){
+        renderPrograms()}
   searchBar()
   closeSearchInSearch()
   cleanSearch()
