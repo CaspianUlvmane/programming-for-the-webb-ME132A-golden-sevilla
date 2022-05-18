@@ -2,11 +2,19 @@
 // let array = []
 // parametern array, ska vara "likedArray" sedan.
 
+// select element
+let selectElement = (select) => document.querySelector(select); 
+
+// creates a element 
+let createElement = (element) => document.createElement(element);
+
 function buildTopMenu () {
-  let storedLikedArray = JSON.parse(sessionStorage.getItem("likedArray"))
-  let header = document.querySelector("header")
+
+  let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
+  let header = selectElement("header")
+
   header.innerHTML = ""
-  let topMenu = document.createElement('div')
+  let topMenu = createElement('div')
   topMenu.id = 'nav'
   topMenu.appendChild(createBurger())
   topMenu.appendChild(createLogo())
@@ -29,7 +37,7 @@ function buildTopMenu () {
 // buildTopMenu ()
 
 function createBurger () {
-  let burgerDiv = document.createElement('div')
+  let burgerDiv = createElement('div')
   burgerDiv.classList.add('hamburger')
   burgerDiv.innerHTML = `
   <span class="line"></span>
@@ -37,14 +45,14 @@ function createBurger () {
   <span class="line"></span>
   `
   burgerDiv.addEventListener('click', function () {
-    document.querySelector('.burger-container').classList.toggle('burger-hidden')
+    selectElement('.burger-container').classList.toggle('burger-hidden')
     burgerDiv.classList.toggle(`active`)
   })
   return burgerDiv
 }
 
 function createLogo () {
-  let logoDiv = document.createElement('div')
+  let logoDiv = createElement('div')
   logoDiv.classList.add('title-name')
   logoDiv.innerHTML = `<a href ='../html_files/index.html'><h2> STUDERIENCE </h2></a>`
   return logoDiv
@@ -52,7 +60,7 @@ function createLogo () {
 
 
 function createSearch () {
-  let searchDiv = document.createElement('div')
+  let searchDiv = createElement('div')
   searchDiv.classList.add('search')
 
   searchDiv.innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
@@ -83,7 +91,7 @@ function changeClass (element) {
 }
 
 function createLightHeart () {
-  let lightHeart = document.createElement('div')
+  let lightHeart = createElement('div')
   lightHeart.classList.add('my-likes')
   lightHeart.innerHTML = '<i class="fa-regular fa-heart"></i>'
   lightHeart.addEventListener("click", function () {
@@ -93,7 +101,7 @@ function createLightHeart () {
 }
 
 function createDarkHeart () {
-  let darkHeart = document.createElement('div')
+  let darkHeart = createElement('div')
   darkHeart.classList.add('my-likes')
   darkHeart.innerHTML = '<i class="fa-solid fa-heart"> </i>'
   darkHeart.addEventListener("click", function () {
@@ -127,14 +135,14 @@ function createBurgerItems () {
       url: '../html_files/about.html'
     }
   ]
-  let burgerContainer = document.createElement('div')
+  let burgerContainer = createElement('div')
   burgerContainer.classList.add('burger-container', 'burger-hidden')
   for (let item of burgerItems) {
-    let burgerItem = document.createElement('div')
+    let burgerItem = createElement('div')
     burgerItem.classList.add('burger-list')
     burgerItem.innerHTML = `<a href = "${item.url}">${item.text}</a> `
     burgerContainer.appendChild(burgerItem)
   }
-  document.querySelector('header').appendChild(burgerContainer)
+  selectElement('header').appendChild(burgerContainer)
   return burgerContainer
 }

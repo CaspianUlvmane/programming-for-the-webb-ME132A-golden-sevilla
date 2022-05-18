@@ -1,13 +1,3 @@
-// // Refers to a selected element 
-// let selectElement = (select) => document.querySelector(select); 
-
-// // creates a element 
-// let createElement = (element) => document.createElement(element);
-
-// // cleans out the filter 
-// let clearResults = (element) => selectElement(element).innerHTML = "";
-
-// to try with interact with navbar
 let search_icon = selectElement(".search"); 
 
 // Creating the searchBar 

@@ -1,6 +1,5 @@
 let filterToggle = document.getElementById('filterToggle')
 
-
 //adds a country and city ID to every programme
 function addCountryAndCity () {
   for (let country of DB.COUNTRIES) {
@@ -149,7 +148,7 @@ function showButtons () {
 
 function buildFilterButtons () {
   let filterWrapper = document.getElementById('allFilterWrapper')
-  let div = document.createElement('div')
+  let div = createElement('div')
   div.id = 'allFilters'
 
   div.innerHTML = `<div class="filterContainer">
