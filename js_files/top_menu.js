@@ -9,16 +9,21 @@ let selectElement = (select) => document.querySelector(select);
 let createElement = (element) => document.createElement(element);
 
 function buildTopMenu () {
+
   let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
   let header = selectElement("header")
+
   header.innerHTML = ""
   let topMenu = createElement('div')
   topMenu.id = 'nav'
   topMenu.appendChild(createBurger())
   topMenu.appendChild(createLogo())
   topMenu.appendChild(createSearch())
-  
-  if (storedLikedArray == null || storedLikedArray.length > 0) {
+  if (storedLikedArray == null){
+    storedLikedArray = []
+  }
+
+  if (storedLikedArray.length > 0) {
     topMenu.appendChild(createDarkHeart())
   } else {
     topMenu.appendChild(createLightHeart())

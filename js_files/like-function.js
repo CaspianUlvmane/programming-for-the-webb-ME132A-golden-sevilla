@@ -5,6 +5,7 @@ let array = []
 function likedPrograms () {
   let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
   let likeContainer = createElement('div')
+
   likeContainer.classList.add('container-hidden')
   likeContainer.id = "like-container"
   
@@ -68,7 +69,7 @@ function changeClassOnLikeContainer (element) {
 function removeLike(program, element){
   let indexOfProgram = array.findIndex(element => element.id == program.id)
   array.splice(indexOfProgram,1)
-  localStorage.setItem("likedArray", JSON.stringify(array))
+  sessionStorage.setItem("likedArray", JSON.stringify(array))
   element.remove()
 
   if (array.length == 0) {
@@ -76,7 +77,8 @@ function removeLike(program, element){
   }
   
   likedPrograms()
-  renderPrograms()
+  if (window.location.href == `http://127.0.0.1:5500/html_files/filter.html`){
+    renderPrograms()}
   searchBar()
   closeSearchInSearch()
   cleanSearch()
