@@ -47,10 +47,15 @@ function cityURL (city){
     return name.split(" ").join("_").toLowerCase()
 }
 
+function countryURL (country){
+    let name = country.name
+    return name.split(" ").join("_").toLowerCase()
+}
+
 function setCountryBackground (id){
     let country = DB.COUNTRIES.find(country => country.id == id)
     let countryImgDiv = document.getElementById("top-img")
-    countryImgDiv.style.backgroundImage = `url(../Databasen/Images/${country.name.toLowerCase()}_normal_1.jpg)`
+    countryImgDiv.style.backgroundImage = `url(../Databasen/Images/${countryURL(country)}_normal_1.jpg)`
 }
 
 function getCountryFromUrl(){
