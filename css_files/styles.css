@@ -118,7 +118,10 @@ a {
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-bottom: 1px solid black;
+  opacity: 0.95;
+  /* border-bottom: 1px solid black; */
+  height: 100vh;
+  transition: opacity 300ms;
 }
 
 .burger-list {
@@ -133,13 +136,18 @@ a {
   font-family: 'Barlow Condensed';
 }
 
+.burger-list:hover {
+  background-color: var(--darkColor);
+}
 
-/* .burger-list:hover {
-border: 1px solid black;
-} */
+.burger-list:hover > a {
+  color: var(--lightColor);
+}
 
 .burger-hidden {
-  display: none;
+  /* display: none; */
+  opacity: 0;
+  transition: opacity 300ms;
 }
 
 h3, h4{
