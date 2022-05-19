@@ -1,21 +1,21 @@
 let array = []
 
-// Refers to a selected element 
+// Refers to a selected element
 
 function likedPrograms () {
-  let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
+  let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
   let likeContainer = createElement('div')
 
   likeContainer.classList.add('container-hidden')
-  likeContainer.id = "like-container"
-  
+  likeContainer.id = 'like-container'
+
   likeContainer.innerHTML = ''
-  if (storedLikedArray == null){
+  if (storedLikedArray == null) {
     storedLikedArray = []
   }
   if (storedLikedArray.length > 0) {
     for (let program of storedLikedArray) {
-      let likedDiv = createLikeDiv(program) 
+      let likedDiv = createLikeDiv(program)
       let likedHeartDiv = createLikeHeartDiv(program, likedDiv)
       likedDiv.appendChild(likedHeartDiv)
 
@@ -27,14 +27,13 @@ function likedPrograms () {
     likeContainer.appendChild(noLikes)
     noLikes.innerHTML = 'Hola Amigo, du har inte gillat något än!'
   }
-  selectElement("header").append(likeContainer)
+  selectElement('header').append(likeContainer)
 }
 
-
-function createLikeDiv (program){
+function createLikeDiv (program) {
   let likedItem = createElement('div')
   likedItem.classList.add('liked-item')
-  let likedInfo = createElement("div")
+  let likedInfo = createElement('div')
   likedInfo.innerHTML = `
   <p class="bold">${program.name}</p>
   <p class="liked-info">${getSubject(program)}, ${getCountry(program)}, ${
@@ -42,17 +41,17 @@ function createLikeDiv (program){
   }</p>
   `
   likedItem.appendChild(likedInfo)
-  likedInfo.addEventListener("click", function(){
+  likedInfo.addEventListener('click', function () {
     popUpProgram(program)
   })
   return likedItem
 }
 
-function createLikeHeartDiv(program, element){
+function createLikeHeartDiv (program, element) {
   let likedHeartDiv = createElement('div')
   likedHeartDiv.classList.add('liked-heart-div')
   likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'
-  likedHeartDiv.addEventListener('click', function(){
+  likedHeartDiv.addEventListener('click', function () {
     removeLike(program, element)
   })
 
@@ -67,34 +66,32 @@ function changeClassOnLikeContainer (element) {
   }
 }
 
-
-function removeLike(program, element){
-  let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
-  let path = window.location.pathname;
-  let page = path.split("/").pop();
-  if (storedLikedArray != null){
-      array = []
-      array = array.concat(storedLikedArray)
+function removeLike (program, element) {
+  let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
+  let path = window.location.pathname
+  let page = path.split('/').pop()
+  if (storedLikedArray != null) {
+    array = []
+    array = array.concat(storedLikedArray)
   }
-  console.log(array)
   let indexOfProgram = array.findIndex(element => element.id == program.id)
-  array.splice(indexOfProgram,1)
+  array.splice(indexOfProgram, 1)
   element.remove()
-  localStorage.setItem("likedArray", JSON.stringify(array))
+  localStorage.setItem('likedArray', JSON.stringify(array))
 
   if (array.length == 0) {
     buildTopMenu()
   }
-  
+
   likedPrograms()
-        if (page == "filter.html"){
-        renderPrograms()}
+  if (page == 'filter.html') {
+    renderPrograms()
+  }
   searchBar()
   closeSearchInSearch()
   cleanSearch()
-  selectElement("#searchInputBar").addEventListener("keyup", searchingInSearch)
+  selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
 }
-
 
 function getSubject (program) {
   let subject = DB.FIELDS.find(subject => subject.id == program.subjectID).name

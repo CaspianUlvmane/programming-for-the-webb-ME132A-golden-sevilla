@@ -65,16 +65,16 @@ function buildFilterButton (text, key, value) {
   let button = document.createElement('button')
   button.dataset.data = JSON.stringify({ key: key, value: value })
   button.textContent = text
-  button.addEventListener('click', toggleActive) 
+  button.addEventListener('click', toggleActive)
   button.addEventListener('click', renderPrograms)
-  button.addEventListener("click", activeFilters)
-  if (key == "subjectID" && value == getSubjectFromUrl()){
-    button.classList.add("active")
-  } else if (key == "country" && value == findCountry()){
-    button.classList.add("active")
+  button.addEventListener('click', activeFilters)
+  if (key == 'subjectID' && value == getSubjectFromUrl()) {
+    button.classList.add('active')
+  } else if (key == 'country' && value == findCountry()) {
+    button.classList.add('active')
   }
-  if (key == "city" && value == getCityFromUrl()){
-    button.classList.add("active")
+  if (key == 'city' && value == getCityFromUrl()) {
+    button.classList.add('active')
   }
   return button
 }
@@ -182,46 +182,46 @@ function buildFilterButtons () {
 
 function toggleFilters () {
   let allFilters = document.getElementById('allFilters')
-  let activeFilters = document.getElementById("activeFilter")
-  activeFilters.classList.toggle("hideFilters")
+  let activeFilters = document.getElementById('activeFilter')
+  activeFilters.classList.toggle('hideFilters')
   allFilters.classList.toggle('showFilters')
 }
 
-function removeShowbuttons (){
-  let buttons = document.querySelectorAll(".filterButtons > button")
-  let buttonContainer = document.getElementById("allFilters")
-  if (!buttonContainer.classList.contains("showFilters")){
-    buttons.forEach(element => element.classList.add("hide"))
-  }else{
-    buttons.forEach(element => element.classList.remove("hide"))
+function removeShowbuttons () {
+  let buttons = document.querySelectorAll('.filterButtons > button')
+  let buttonContainer = document.getElementById('allFilters')
+  if (!buttonContainer.classList.contains('showFilters')) {
+    buttons.forEach(element => element.classList.add('hide'))
+  } else {
+    buttons.forEach(element => element.classList.remove('hide'))
   }
 }
 
-function getCityFromUrl(){
+function getCityFromUrl () {
   // used searchParams to get countryID through URL
-  let url = new URL(window.location);
-  let params = url.searchParams;
+  let url = new URL(window.location)
+  let params = url.searchParams
 
-  return parseInt(params.get("city"))
+  return parseInt(params.get('city'))
 }
 
-function findCountry(){
+function findCountry () {
   let cityFromUrl = getCityFromUrl()
-  if (cityFromUrl >= 0 ){
-    return countryID = DB.CITIES.find(city => city.id == cityFromUrl).countryID
-  } 
+  if (cityFromUrl >= 0) {
+    return (countryID = DB.CITIES.find(city => city.id == cityFromUrl)
+      .countryID)
+  }
 }
 
-function getSubjectFromUrl(){
-  let url = new URL(window.location);
-  let params = url.searchParams;
-  
-  return parseInt(params.get("field"))
-}
+function getSubjectFromUrl () {
+  let url = new URL(window.location)
+  let params = url.searchParams
 
+  return parseInt(params.get('field'))
+}
 
 buildFilterButtons()
-renderPrograms ()
+renderPrograms()
 removeShowbuttons()
 filterToggle.addEventListener('click', toggleFilters)
 filterToggle.addEventListener('click', removeShowbuttons)

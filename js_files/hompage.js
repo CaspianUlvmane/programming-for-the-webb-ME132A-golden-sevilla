@@ -1,4 +1,4 @@
-selectElement("footer").appendChild(footer())
+selectElement('footer').appendChild(footer())
 buildTopMenu()
 
 // document.querySelector('header').appendChild(buildTopMenu(array))
