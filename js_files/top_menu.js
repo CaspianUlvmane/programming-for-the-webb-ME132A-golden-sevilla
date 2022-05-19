@@ -3,23 +3,22 @@
 // parametern array, ska vara "likedArray" sedan.
 
 // select element
-let selectElement = (select) => document.querySelector(select); 
+let selectElement = select => document.querySelector(select)
 
-// creates a element 
-let createElement = (element) => document.createElement(element);
+// creates a element
+let createElement = element => document.createElement(element)
 
 function buildTopMenu () {
+  let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
+  let header = selectElement('header')
 
-  let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
-  let header = selectElement("header")
-
-  header.innerHTML = ""
+  header.innerHTML = ''
   let topMenu = createElement('div')
   topMenu.id = 'nav'
   topMenu.appendChild(createBurger())
   topMenu.appendChild(createLogo())
   topMenu.appendChild(createSearch())
-  if (storedLikedArray == null){
+  if (storedLikedArray == null) {
     storedLikedArray = []
   }
 
@@ -28,8 +27,8 @@ function buildTopMenu () {
   } else {
     topMenu.appendChild(createLightHeart())
   }
-  
-  createBurgerItems ()
+
+  createBurgerItems()
   header.appendChild(topMenu)
   // return topMenu
 }
@@ -58,27 +57,26 @@ function createLogo () {
   return logoDiv
 }
 
-
 function createSearch () {
   let searchDiv = createElement('div')
   searchDiv.classList.add('search')
 
   searchDiv.innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
-  
-  searchDiv.addEventListener("click", function () {
-    if ( searchDiv.classList.contains("active") ) {
+
+  searchDiv.addEventListener('click', function () {
+    if (searchDiv.classList.contains('active')) {
       searchDiv.innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
-      searchDiv.classList.remove("active")
-      selectElement(".searchBarcontainer").classList.remove("active")
-      clearResults(".search-result")
-      selectElement("#searchInputBar").value = ""
+      searchDiv.classList.remove('active')
+      selectElement('.searchBarcontainer').classList.remove('active')
+      clearResults('.search-result')
+      selectElement('#searchInputBar').value = ''
     } else {
-      searchDiv.innerHTML = `<i class="fa-solid fa-xmark"> </i>` 
-      searchDiv.classList.add("active")
-      selectElement(".searchBarcontainer").classList.add("active")
+      searchDiv.innerHTML = `<i class="fa-solid fa-xmark"> </i>`
+      searchDiv.classList.add('active')
+      selectElement('.searchBarcontainer').classList.add('active')
     }
   })
-  
+
   return searchDiv
 }
 
@@ -94,8 +92,8 @@ function createLightHeart () {
   let lightHeart = createElement('div')
   lightHeart.classList.add('my-likes')
   lightHeart.innerHTML = '<i class="fa-regular fa-heart"></i>'
-  lightHeart.addEventListener("click", function () {
-    changeClassOnLikeContainer(document.getElementById("like-container"))
+  lightHeart.addEventListener('click', function () {
+    changeClassOnLikeContainer(document.getElementById('like-container'))
   })
   return lightHeart
 }
@@ -104,13 +102,12 @@ function createDarkHeart () {
   let darkHeart = createElement('div')
   darkHeart.classList.add('my-likes')
   darkHeart.innerHTML = '<i class="fa-solid fa-heart"> </i>'
-  darkHeart.addEventListener("click", function () {
-    changeClassOnLikeContainer(document.getElementById("like-container"))
+  darkHeart.addEventListener('click', function () {
+    changeClassOnLikeContainer(document.getElementById('like-container'))
   })
-  
+
   return darkHeart
 }
-
 
 function createBurgerItems () {
   let burgerItems = [
