@@ -70,7 +70,8 @@ function changeClassOnLikeContainer (element) {
 
 function removeLike(program, element){
   let storedLikedArray = JSON.parse(localStorage.getItem("likedArray"))
-  console.log(storedLikedArray)
+  let path = window.location.pathname;
+  let page = path.split("/").pop();
   if (storedLikedArray != null){
       array = []
       array = array.concat(storedLikedArray)
@@ -86,7 +87,7 @@ function removeLike(program, element){
   }
   
   likedPrograms()
-        if (window.location.href == 'file:///C:/Users/TurtleKun/Documents/GitHub/programming-for-the-webb-ME132A-golden-sevilla/html_files/filter.html'){
+        if (page == "filter.html"){
         renderPrograms()}
   searchBar()
   closeSearchInSearch()
