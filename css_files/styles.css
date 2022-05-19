@@ -145,7 +145,7 @@ a {
 }
 
 .burger-hidden {
-  /* display: none; */
+  display: none;
   opacity: 0;
   transition: opacity 300ms;
 }
