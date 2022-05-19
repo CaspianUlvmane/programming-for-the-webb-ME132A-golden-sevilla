@@ -35,6 +35,8 @@ function popUpProgram (program) {
 
 // Function to create the close and heart bar of the popUp
 function interactWithPop (program) {
+    let path = window.location.pathname;
+    let page = path.split("/").pop();
     let barContainer = createElement("div")
     barContainer.classList.add("barContainer")
     // removed id
@@ -51,7 +53,8 @@ function interactWithPop (program) {
         clearResults(".containerPopUp")
         buildTopMenu()
         likedPrograms()
-        if (window.location.href == `http://127.0.0.1:5500/html_files/filter.html`){
+
+        if (page == "filter.html"){
         renderPrograms()}
         searchBar()
         closeSearchInSearch()
