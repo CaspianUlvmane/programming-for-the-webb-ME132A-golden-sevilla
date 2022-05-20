@@ -3,6 +3,8 @@ let array = []
 // Refers to a selected element
 
 function likedPrograms () {
+  // stores array of liked items in variable
+  // JSON.parse turns stringified information in to objects
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
   let likeContainer = createElement('div')
 
@@ -10,9 +12,11 @@ function likedPrograms () {
   likeContainer.id = 'like-container'
 
   likeContainer.innerHTML = ''
+  // makes sure that the stored array is an array
   if (storedLikedArray == null) {
     storedLikedArray = []
   }
+  // if there are liked items creates the liked items
   if (storedLikedArray.length > 0) {
     for (let program of storedLikedArray) {
       let likedDiv = createLikeDiv(program)
@@ -69,6 +73,8 @@ function changeClassOnLikeContainer (element) {
 }
 
 function removeLike (program, element) {
+  // stores liked items in variable
+  // concats array with stored items
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
   let path = window.location.pathname
   let page = path.split('/').pop()
@@ -79,6 +85,8 @@ function removeLike (program, element) {
   let indexOfProgram = array.findIndex(element => element.id == program.id)
   array.splice(indexOfProgram, 1)
   element.remove()
+  // when an item is removed from the array store the other liked items
+  // in local storage
   localStorage.setItem('likedArray', JSON.stringify(array))
 
   if (array.length == 0) {

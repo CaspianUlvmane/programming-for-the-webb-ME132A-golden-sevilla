@@ -1,4 +1,6 @@
 function renderPrograms () {
+  // stores liked items in variable
+  // concats array with stored items
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
   if (storedLikedArray != null) {
     array = []
@@ -78,6 +80,8 @@ function heartIcon (program) {
       )
       let indexOfProgram = array.findIndex(id => id == programId)
       array.splice(indexOfProgram, 1)
+      // when an item is removed from the array store the other liked items
+      // in local storage
       localStorage.setItem('likedArray', JSON.stringify(array))
       heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
 
@@ -93,6 +97,8 @@ function heartIcon (program) {
     } else {
       heartIconDiv.classList.add('activeLike')
       array.push(program)
+      // when an item is added to the array store the liked items
+      // in local storage
       localStorage.setItem('likedArray', JSON.stringify(array))
       heartIconDiv.innerHTML = `<i class="fa-solid fa-heart"> </i>`
       buildTopMenu()

@@ -9,6 +9,8 @@ let selectElement = select => document.querySelector(select)
 let createElement = element => document.createElement(element)
 
 function buildTopMenu () {
+  // stores liked items in variable
+  // concats array with stored items
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
   let header = selectElement('header')
 
@@ -21,7 +23,7 @@ function buildTopMenu () {
   if (storedLikedArray == null) {
     storedLikedArray = []
   }
-
+  // sets heart to correct color based on liked items
   if (storedLikedArray.length > 0) {
     topMenu.appendChild(createDarkHeart())
   } else {
