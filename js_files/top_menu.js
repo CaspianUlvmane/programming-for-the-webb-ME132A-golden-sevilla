@@ -8,6 +8,8 @@ let selectElement = select => document.querySelector(select)
 // creates a element
 let createElement = element => document.createElement(element)
 
+//delete element
+
 function buildTopMenu () {
   // stores liked items in variable
   // concats array with stored items
@@ -49,11 +51,11 @@ function createBurger () {
     selectElement('.burger-container').classList.toggle('burger-hidden')
     burgerDiv.classList.toggle(`active`)
     if (burgerDiv.classList.contains(`active`)) {
-      document.querySelector("main").style.opacity = "0.3"
+      selectElement("main").style.opacity = "0.3"
+      
     } else {
-      document.querySelector("main").style.opacity = "1"
+      selectElement("main").style.opacity = "1"
     }
-    
   })
   return burgerDiv
 }
@@ -78,11 +80,11 @@ function createSearch () {
       selectElement('.searchBarcontainer').classList.remove('active')
       clearResults('.search-result')
       selectElement('#searchInputBar').value = ''
-      document.querySelector("main").style.opacity = "1"
+      selectElement("main").style.opacity = "1"
     } else {
       searchDiv.classList.add('active')
       selectElement('.searchBarcontainer').classList.add('active')
-      document.querySelector("main").style.opacity = "0.3"
+      selectElement("main").style.opacity = "0.3"
     }
   })
 
