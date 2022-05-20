@@ -61,8 +61,10 @@ function createLikeHeartDiv (program, element) {
 function changeClassOnLikeContainer (element) {
   if (element.classList.contains('container-hidden')) {
     element.classList.remove('container-hidden')
+    document.querySelector("main").style.opacity = "0.3"
   } else {
     element.classList.add('container-hidden')
+    document.querySelector("main").style.opacity = "1"
   }
 }
 

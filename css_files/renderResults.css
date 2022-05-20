@@ -80,3 +80,7 @@ body {
 .view-more:hover{
   cursor: pointer;
 }
+
+.programInfoContainer > h3{
+  color:#344450;;
+}

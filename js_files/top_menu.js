@@ -70,10 +70,12 @@ function createSearch () {
       selectElement('.searchBarcontainer').classList.remove('active')
       clearResults('.search-result')
       selectElement('#searchInputBar').value = ''
+      document.querySelector("main").style.opacity = "1"
     } else {
       searchDiv.innerHTML = `<i class="fa-solid fa-xmark"> </i>`
       searchDiv.classList.add('active')
       selectElement('.searchBarcontainer').classList.add('active')
+      document.querySelector("main").style.opacity = "0.3"
     }
   })
 
