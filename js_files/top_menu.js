@@ -48,6 +48,12 @@ function createBurger () {
   burgerDiv.addEventListener('click', function () {
     selectElement('.burger-container').classList.toggle('burger-hidden')
     burgerDiv.classList.toggle(`active`)
+    if (burgerDiv.classList.contains(`active`)) {
+      document.querySelector("main").style.opacity = "0.3"
+    } else {
+      document.querySelector("main").style.opacity = "1"
+    }
+    
   })
   return burgerDiv
 }
