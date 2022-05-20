@@ -1,9 +1,3 @@
-// // Refers to a selected element
-// let selectElement = (select) => document.querySelector(select);
-
-// // creates a element
-// let createElement = (element) => document.createElement(element);
-
 let clearResults = element => (selectElement(element).innerHTML = '')
 
 /// keep  creating the popUp div container
@@ -58,11 +52,7 @@ function interactWithPop (program) {
     }
     searchBar()
     closeSearchInSearch()
-    cleanSearch()
-    selectElement('#searchInputBar').addEventListener(
-      'keyup',
-      searchingInSearch
-    )
+    selectElement('#searchInputBar').addEventListener('keyup',searchingInSearch)
   })
 
   barContainer.append(crossIconDiv, headTitle(program), heartPopUp(program))

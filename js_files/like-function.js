@@ -91,6 +91,7 @@ function removeLike (program, element) {
 
   if (array.length == 0) {
     buildTopMenu()
+    document.querySelector("main").style.opacity = "1"
   }
 
   likedPrograms()
@@ -99,7 +100,6 @@ function removeLike (program, element) {
   }
   searchBar()
   closeSearchInSearch()
-  cleanSearch()
   selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
 }
 

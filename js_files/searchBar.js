@@ -24,7 +24,7 @@ function searchBar () {
 
 // close filterBox iconGlass press in search
 function closeSearchInSearch () {
-  selectElement('.iconSearch').addEventListener('click', function () {
+  selectElement('.iconCross').addEventListener('click', function () {
     search_icon.classList.remove('active')
     selectElement(
       '.search'
@@ -32,13 +32,7 @@ function closeSearchInSearch () {
     selectElement('.searchBarcontainer').classList.remove('active')
     clearResults('.search-result')
     selectElement('#searchInputBar').value = ''
-  })
-}
-// cleans out by pressing x in search
-function cleanSearch () {
-  selectElement('.iconCross').addEventListener('click', function () {
-    selectElement('#searchInputBar').value = ''
-    clearResults('.search-result')
+    document.querySelector("main").style.opacity = "1"
   })
 }
 
@@ -67,11 +61,7 @@ function searchingInSearch () {
   if (valueOfSearchInput.length > 0) {
     //     // loop fro the array of all
     for (let conutry of countrys) {
-      if (
-        conutry.text
-          .toLocaleLowerCase()
-          .includes(valueOfSearchInput.toLocaleLowerCase())
-      ) {
+      if (conutry.name.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
         selectElement(
           '.search-result'
         ).innerHTML += `<a href=../html_files/country.html?country=${conutry.id}"> 
@@ -83,7 +73,7 @@ function searchingInSearch () {
     }
     for (let field of fields) {
       if (
-        field.text
+        field.name
           .toLocaleLowerCase()
           .includes(valueOfSearchInput.toLocaleLowerCase())
       ) {
@@ -98,7 +88,7 @@ function searchingInSearch () {
     }
     for (let city of cityies) {
       if (
-        city.text
+        city.name
           .toLocaleLowerCase()
           .includes(valueOfSearchInput.toLocaleLowerCase())
       ) {
@@ -116,7 +106,6 @@ function searchingInSearch () {
 
 searchBar()
 closeSearchInSearch()
-cleanSearch()
 
 // eventListneter of the input that listen to the keyup and calls the function searching
 selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
