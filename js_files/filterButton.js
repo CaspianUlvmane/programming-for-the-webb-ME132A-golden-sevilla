@@ -21,11 +21,13 @@ function addCountryAndCity () {
 
 addCountryAndCity()
 
-//finds all filters and orders them
+// Finds all filter buttons with class active and turns data
+// in to objects for filtering 
 function findProgrammes () {
   let activeArray = document.querySelectorAll('.active')
   let allFilters = []
   for (let active of activeArray) {
+    // parse turns data string in to object
     let data = JSON.parse(active.dataset.data)
     let key = data.key
     let value = data.value
@@ -35,8 +37,8 @@ function findProgrammes () {
   return filter(allFilters)
 }
 
-// skapa array - varje key - varje key innehyåller de valda filterena
-
+// Filters programmes based on the active filters
+// uses the keys upon which we filter
 function filter (array) {
   let keys = ['language', 'subjectID', 'level', 'country', 'city']
   let keysArray = {
@@ -48,11 +50,19 @@ function filter (array) {
   }
 
   let programmes = DB.PROGRAMMES
+  // For every filter push its value in to the array of keys
+  // example keysArray[language].push(0)
   for (let data of array) {
     keysArray[data.key].push(data.value)
   }
+  // For every key check if there is a filter based on that key
   for (let key of keys) {
     if (keysArray[key].length > 0)
+    // Filters programmes if there is a filter on a key
+    // and returns all programmes that fulfill the value that
+    // exists within keysArray[key]
+    // example keysArray[language].includes[0, 1] will return
+    // all programmes in Spanish and English
       programmes = programmes.filter(program =>
         keysArray[key].includes(program[key])
       )
@@ -60,6 +70,11 @@ function filter (array) {
   let result = programmes
   return result
 }
+
+// Creates a filter button
+// creates data for the button using JSON.stringify
+// the string contains an object with a key and avalue
+// example {key: language, value; 0}
 
 function buildFilterButton (text, key, value) {
   let button = document.createElement('button')
@@ -79,6 +94,8 @@ function buildFilterButton (text, key, value) {
   return button
 }
 
+// Creats filter buttons with keys and values
+// Level buttons have to use a counter because the programmes uses numbers not strings to filter
 function languageButtons () {
   let languages = document.getElementById('languages')
   for (let language of DB.LANGUAGES) {
@@ -115,6 +132,8 @@ function countryButtons () {
   }
 }
 
+
+// only renders city buttons based on the active country buttons
 function cityButtons () {
   let citiesDiv = document.getElementById('cities')
   citiesDiv.innerHTML = ' '
@@ -135,6 +154,8 @@ function toggleActive () {
   } else this.classList.add('active')
 }
 
+// looks at the filter keys within filter overlay
+// when clicking on the key opens up available filters
 function filterDivEvent () {
   let divs = document.querySelectorAll('.filterContainer div:nth-child(1)')
   for (let div of divs) div.addEventListener('click', showButtons)
@@ -146,6 +167,7 @@ function showButtons () {
   } else this.classList.add('showButtons')
 }
 
+// creates divs and appends buttons in filteroverlay
 function buildFilterButtons () {
   let filterWrapper = document.getElementById('allFilterWrapper')
   let div = createElement('div')
