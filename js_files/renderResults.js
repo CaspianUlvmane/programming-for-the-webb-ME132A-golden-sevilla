@@ -138,7 +138,7 @@ function activeFilters () {
   for (let active of activeArray) {
     let activeButton = document.createElement('button')
     activeButton.classList.add('activeButton')
-    activeButton.innerHTML = `X ${active.innerHTML}`
+    activeButton.innerHTML = `<span>X </span> ${active.innerHTML}`
     activeButton.addEventListener('click', function () {
       active.classList.toggle('active')
       renderPrograms()
