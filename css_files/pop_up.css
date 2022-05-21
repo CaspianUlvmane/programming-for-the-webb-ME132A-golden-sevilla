@@ -1,129 +1,128 @@
-:root{
-    --dark: #344450; 
-    --darkLowOpacity: hsl(206, 21%, 26%, 0.3); 
-    --lightGrey: #eaeaee;
-    --lightBeige: #EDE7DF;
+:root {
+  --dark: #344450;
+  --darkLowOpacity: hsl(206, 21%, 26%, 0.3);
+  --lightGrey: #eaeaee;
+  --lightBeige: #ede7df;
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
- 
+
 .buttonBox {
-    display: flex;
-    flex-wrap: wrap;
-    cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
 }
- 
+
 .overLay {
-    position: fixed;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--darkLowOpacity);
-    pointer-events: none;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--darkLowOpacity);
+  pointer-events: none;
 }
 
 .overLay.active {
-    opacity: 1; 
+  opacity: 1;
 }
 
 .containerPopUp {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    z-index: 1;
-    
-    background-color: var(--dark);;
-    color: var(--lightGrey);
-    /* border-radius: 5px; */
-
-    /* height: 650px; */
-    width: 90%;
-    height: 80%;
-    padding-bottom: 20px;
-    /* overflow: scroll; */
-    overflow-x: hidden;
+  transform: translate(-50%, -50%) scale(0);
+  position: fixed;
+  top: 52%;
+  left: 50%;
+  z-index: 1;
+  background-color: var(--dark);
+  color: var(--lightGrey);
+  width: 90%;
+  height: 90%;
+  overflow-x: hidden;
 }
 
 .containerPopUp.active {
-    transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .barContainer {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--dark);
-    align-items: center;
-    padding: 0px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--dark);
+  align-items: center;
+  padding: 0px 20px;
+  margin-top: 15px;
 }
 
-.barContainer > div > h3{
-    text-align: center;
+.barContainer > div > h3 {
+  text-align: center;
 }
- 
+
 .imgCross {
-    color: var(--lightGrey);
-    padding: 10px;
-    cursor: pointer;
-    font-size: 25px;
+  color: var(--lightGrey);
+  padding: 10px;
+  cursor: pointer;
+  font-size: 25px;
 }
 
-.imgHeart > i{
-    color: var(--lightGrey);
+.imgHeart > i {
+  color: var(--lightGrey);
 }
- 
+
 .infoBoxHeader {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
- 
+
 .programInfoBox {
-    font-size: 11pt;
-    box-sizing: border-box;
+  font-size: 11pt;
+  box-sizing: border-box;
+  padding-top: 5px;
 }
- 
+
 .info {
-    padding: 5px 20px 5px 20px;
+  padding: 5px 20px 5px 20px;
 }
 
 .commentsOfstudents {
-    border-top: 1px solid white;
-    padding: 10px 0px;
+  border-top: 1px solid white;
+  padding: 10px 0px;
 }
 
-.average, .commentsOfstudents, .university {
-    margin: 0;
-    width: 100%;
-    margin-top: 15px;
+.average,
+.commentsOfstudents,
+.university {
+  margin: 0;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .commentsOfstudents {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
 }
 
 .commentContainer {
-    font-size: 11pt;
-    padding: 0px 10px;
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 300px;
+  font-size: 11pt;
+  padding: 0px 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 300px;
 }
- 
+
 .commentContainer > div {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid white;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid white;
 }
 
 .commentText {
-    margin: 5px 0px;
+  margin: 5px 0px;
 }

@@ -51,10 +51,9 @@ function createBurger () {
     selectElement('.burger-container').classList.toggle('burger-hidden')
     burgerDiv.classList.toggle(`active`)
     if (burgerDiv.classList.contains(`active`)) {
-      selectElement("main").style.opacity = "0.3"
-      
+      selectElement('main').style.opacity = '0.3'
     } else {
-      selectElement("main").style.opacity = "1"
+      selectElement('main').style.opacity = '1'
     }
   })
   return burgerDiv
@@ -80,11 +79,11 @@ function createSearch () {
       selectElement('.searchBarcontainer').classList.remove('active')
       clearResults('.search-result')
       selectElement('#searchInputBar').value = ''
-      selectElement("main").style.opacity = "1"
+      selectElement('main').style.opacity = '1'
     } else {
       searchDiv.classList.add('active')
       selectElement('.searchBarcontainer').classList.add('active')
-      selectElement("main").style.opacity = "0.3"
+      selectElement('main').style.opacity = '0.3'
     }
   })
 

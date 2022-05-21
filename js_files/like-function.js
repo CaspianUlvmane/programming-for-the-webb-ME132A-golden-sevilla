@@ -12,24 +12,31 @@ function likedPrograms () {
   likeContainer.id = 'like-container'
 
   likeContainer.innerHTML = ''
+
+  let likedItemBox = createElement('div')
+  likedItemBox.classList.add('liked-item-box')
   // makes sure that the stored array is an array
   if (storedLikedArray == null) {
     storedLikedArray = []
   }
   // if there are liked items creates the liked items
   if (storedLikedArray.length > 0) {
+    likeContainer.innerHTML = '<h2>MINA FAVORITER</h2>'
+
     for (let program of storedLikedArray) {
+      
       let likedDiv = createLikeDiv(program)
       let likedHeartDiv = createLikeHeartDiv(program, likedDiv)
       likedDiv.appendChild(likedHeartDiv)
 
-      likeContainer.appendChild(likedDiv)
+      likedItemBox.appendChild(likedDiv)
+      likeContainer.appendChild(likedItemBox)
     }
   } else {
     let noLikes = createElement('div')
     noLikes.classList.add('no-likes')
     likeContainer.appendChild(noLikes)
-    noLikes.innerHTML = 'Hola Amigo, du har inte gillat något än!'
+    noLikes.innerHTML = '<h2>MINA FAVORITER</h2> <br> <p>Du har inte lagt till några favoriter ännu!</p>'
   }
   selectElement('header').append(likeContainer)
 }
@@ -65,10 +72,10 @@ function createLikeHeartDiv (program, element) {
 function changeClassOnLikeContainer (element) {
   if (element.classList.contains('container-hidden')) {
     element.classList.remove('container-hidden')
-    document.querySelector("main").style.opacity = "0.3"
+    document.querySelector('main').style.opacity = '0.1'
   } else {
     element.classList.add('container-hidden')
-    document.querySelector("main").style.opacity = "1"
+    document.querySelector('main').style.opacity = '1'
   }
 }
 
@@ -91,7 +98,7 @@ function removeLike (program, element) {
 
   if (array.length == 0) {
     buildTopMenu()
-    document.querySelector("main").style.opacity = "1"
+    document.querySelector('main').style.opacity = '1'
   }
 
   likedPrograms()
