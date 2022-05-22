@@ -20,5 +20,7 @@ function createFieldView () {
   }
 }
 
+document.querySelector('footer').appendChild(advertisement())
+
 createFieldView()
 likedPrograms()

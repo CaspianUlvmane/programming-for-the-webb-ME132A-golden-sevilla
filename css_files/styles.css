@@ -205,3 +205,62 @@ input {
   font-size: 11pt;
   text-decoration: none;
 }
+
+.ad-container{
+  background-color: rgba(237, 237, 237, 0.791);
+  text-align: center;
+  font-size: 10pt;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+}
+
+.ad-info{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 3px;
+}
+
+.adCross{
+  margin-top: 3px;
+  position: absolute;
+  right: 4px;
+}
+
+
+.ad-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../Databasen/Images/adImg3.jpg);
+  background-size: cover;
+  background-position: bottom;
+  height: 33vw;
+  padding: 5px;
+  color: white;
+}
+
+.ad-box > h5{
+  margin: 5px;
+}
+
+.ad-box > p{
+  font-size: 10pt;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.ad-box > a{
+  margin-top: 5px;
+  padding: 2px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.848);
+}
+
+.ad-box > img{
+  height: 40px;
+}
