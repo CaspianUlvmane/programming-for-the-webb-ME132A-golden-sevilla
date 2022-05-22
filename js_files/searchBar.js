@@ -11,7 +11,7 @@ function searchBar () {
   searchBarBox.innerHTML = `
     <form autocomplete="off" class="searchfieldBox">
         <div class="fa-solid fa-magnifying-glass iconSearch"></div>
-        <input type="search" id="searchInputBar" placeholder="Search...">
+        <input type="search" id="searchInputBar" placeholder="Ämne, stad eller land...">
         <div class="fa-solid fa-xmark iconCross"></div>
     </form>`
 

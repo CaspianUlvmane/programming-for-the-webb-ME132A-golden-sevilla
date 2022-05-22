@@ -1,12 +1,12 @@
 .imgTop {
-    background-image: url(../Databasen/Images/studyAbroad1.webp);
-    background-size: cover;
-    background-position: center;
+  background-image: url(../Databasen/Images/studyAbroad1.webp);
+  background-size: cover;
+  background-position: center;
 }
 
 .imgMid {
-    background-image: url(../Databasen/Images/studyAbroad2.jpeg);
-    background-size: cover;
-    background-position: center;
-    margin: 10px;
+  background-image: url(../Databasen/Images/studyAbroad2.jpeg);
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
 }

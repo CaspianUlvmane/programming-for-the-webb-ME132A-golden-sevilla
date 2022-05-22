@@ -1,15 +1,15 @@
 :root {
-  --beigeColor: #EDE7DF
+  --beigeColor: #ede7df;
   --blackColor: black;
   --whiteColor: white;
   --lightColor: #eaeaea;
   --darkColor: #425664;
+  --burgerLineColor: rgb(83, 81, 81);
+  --darkDarkColor: #28343d;
+  --almostWhiteColor: #eaeaea;
+  --starColor: rgb(216, 194, 112);
+  --darkLowOpacity: rgba(52, 52, 78, 0.3);
 }
-/* *{
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-} */
 
 body {
   margin: 0px;
@@ -25,12 +25,12 @@ header {
 }
 
 .info-about-wrapper > p {
-margin: 10px;
+  margin: 10px;
 }
 
 .info-about-wrapper > h2 {
   margin: 10px;
-  }
+}
 
 #nav {
   width: 100vw;
@@ -53,11 +53,10 @@ margin: 10px;
   display: block;
   width: 30px;
   height: 4px;
-  background-color: rgb(83, 81, 81);
+  background-color: var(--burgerLineColor);
   margin: 5px;
   border-radius: 4px;
-  transition: transform 300ms, opacity .2s;
-
+  transition: transform 300ms, opacity 0.2s;
 }
 
 .hamburger.active .line:nth-child(1) {
@@ -80,7 +79,8 @@ margin: 10px;
   font-family: 'Barlow Condensed', sans-serif;
 }
 
-.search, .my-likes {
+.search,
+.my-likes {
   font-size: 20px;
   margin-right: 20px;
   width: 20px;
@@ -101,12 +101,11 @@ h2 {
 
 .top-img {
   height: 50vw;
-  background-color: grey;
 }
 
 a {
   text-decoration: none;
-  color:black;
+  color: var(--blackColor);
 }
 
 /* burger style */
@@ -118,9 +117,9 @@ a {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--whiteColor);
   opacity: 0.95;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--blackColor);
   height: 100vh;
 }
 
@@ -130,7 +129,7 @@ a {
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color: white;
+  background-color: var(--whiteColor);
   padding-left: 15px;
   font-size: 20px;
   font-family: 'Barlow Condensed';
@@ -155,17 +154,20 @@ a {
   display: none;
 }
 
-h3, h4{
-  /* font-family: 'Barlow Condensed'; */
+h3,
+h4 {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-weight: 400;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Barlow Condensed';
 }
 
-p, div {
+p,
+div,
+input {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-weight: 300;
 }
@@ -174,43 +176,31 @@ p, div {
   font-weight: 500;
 }
 
-
-/* .search {
-  //färger - bara för att testa om (byt icon - funktionen funkar)
-  background-color: palevioletred;
-}
-
-.close {
-    //färger - bara för att testa om (byt icon - funktionen funkar)
-  background-color: darkgoldenrod;
-} */
-
-
 /* footer style */
 
-#footer-div{
-  background-color: #28343d;
+#footer-div {
+  background-color: var(--darkDarkColor);
   padding: 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#footer-div > p{
+#footer-div > p {
   margin-top: 20px;
-  color: white;
+  color: var(--whiteColor);
 }
 
-.footer-title{
-  color: #EAEAEA;
+.footer-title {
+  color: var(--almostWhiteColor);
   margin-top: 10px;
   text-decoration: none;
   font-size: 18pt;
   font-weight: 400;
 }
 
-.footer-item{
-  color: #EAEAEA;
+.footer-item {
+  color: var(--almostWhiteColor);
   margin-top: 2px;
   font-size: 11pt;
   text-decoration: none;

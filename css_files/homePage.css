@@ -1,9 +1,7 @@
 :root {
-  --beigeColor: #ede7df;
-  --lightColor: #eaeaea;
-  --darkColor: #425664;
-  --whiteColor: white;
-  --blackColor: black;
+  --whiteLowOpacity: rgba(255, 255, 255, 0.65);
+  --whiteLowLowOpacity: rgba(255, 255, 255, 0.34);
+  --blueLowOpacity: #425664b7;
 }
 
 #header-info {
@@ -23,14 +21,14 @@
   margin-bottom: 30px;
   margin-top: 10vh;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  background-color: #e0e0e09c;
+  background-color: var(--whiteLowLowOpacity);
 }
 .down-button,
 .slide-button,
 .img-slide-button {
   display: inline-block;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.65);
+  color: var(--blackColor);
+  background-color: var(--whiteLowOpacity);
   border: 0px;
   cursor: pointer;
   width: 100%;
@@ -40,7 +38,7 @@
 
 .all-about-button {
   padding: 5px 20px;
-  background-color: rgba(255, 255, 255, 0.719);
+  background-color: var(--whiteLowOpacity);
   border: 0px;
   cursor: pointer;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
@@ -92,8 +90,8 @@
 }
 
 .img-slide:hover > .img-slide-button {
-  background-color: #425664b7;
-  }
+  background-color: var(--blueLowOpacity);
+}
 
 .img-slide:hover > .img-slide-button > a {
   color: var(--lightColor);
@@ -133,14 +131,14 @@
 }
 
 #text-info {
-    text-align: center;
-    padding: 20px;
-    max-width: 1000px;
-    font-weight: 300;
+  text-align: center;
+  padding: 20px;
+  max-width: 1000px;
+  font-weight: 300;
 }
 
 #text-info:first-child p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #img-field-box {
@@ -185,7 +183,7 @@
 }
 
 .starStudent {
-  color: rgb(248, 215, 95);
+  color: var(--starColor);
 }
 
 .comment-box > p {

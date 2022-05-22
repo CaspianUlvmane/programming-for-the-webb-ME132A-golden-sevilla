@@ -1,58 +1,58 @@
-:root{
-    --dark: #344450; 
-    --lightGrey: #eaeaee;
-    --lightBeige: #EDE7DF;
+:root {
+  --darkColor: #425664;
+  --cityDark: #344450d4;
+  --lightColor: #eaeaea;
+  --almostWhiteColor: #eaeaea;
 }
 
-
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
-#top-img{
-    height: 40vh;
-    background-size: cover;
-    background-position: center;
+#top-img {
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
 }
 
-.city-div{
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
+.city-div {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
-.city-info{
-    text-align: center;
-    background-color: #344450d4;
-    color: var(--lightGrey);
-    padding: 15px;
-    margin: 30px;
+.city-info {
+  text-align: center;
+  background-color: var(--cityDark);
+  color: var(--almostWhiteColor);
+  padding: 15px;
+  margin: 30px;
 }
 
-.cityButton{
-    background-color: var(--lightBeige);
-    color: var(--dark);
-    margin-top: 10px;
-    padding: 5px 20px;
-    border: none;
-    cursor: pointer;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
-    transition: background-color 300ms;
+.cityButton {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+  margin-top: 10px;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  transition: background-color 300ms;
 }
 
 .cityButton:hover {
-    background-color: var(--dark);
-    color: var(--lightBeige);
+  background-color: var(--darkColor);
+  color: var(--lightColor);
 }
 
-.country-info{
-    padding: 20px;
-    margin-bottom: 8px;
-    text-align: center;
+.country-info {
+  padding: 20px;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
-.country-info > h2{
-    text-align: center;
+.country-info > h2 {
+  text-align: center;
 }

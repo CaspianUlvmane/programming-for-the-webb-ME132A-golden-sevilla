@@ -1,11 +1,7 @@
-body {
-  background-color: var(--beigeColor);
-}
-
 .container {
   padding: 10px;
   margin: 8px;
-  background-color: white;
+  background-color: var(--whiteColor);
   border: 1px solid var(--darkColor);
   display: flex;
   justify-content: space-between;
@@ -16,16 +12,12 @@ body {
   font-family: 'IBM Plex Sans Condensed';
 }
 
-.container > div > p {
-  font-family: 'Barlow Condensed';
-}
-
 #result {
   height: 100vh;
 }
 
 #topDiv {
-  background-color: var(--beigeColor);
+  background-color: var(--whiteColor);
   display: flex;
   width: 100vw;
 }
@@ -41,7 +33,6 @@ body {
 }
 
 .imgHearth {
-  /* color: black; */
   padding: 10px;
   cursor: pointer;
   font-size: 25px;
@@ -58,31 +49,30 @@ body {
   opacity: 1;
   transition: opacity 150ms;
   background-color: var(--darkColor);
-  color: white;
-  /* background-image: linear-gradient(var(--lightColor), lightgray); */
+  color: var(--whiteColor);
   border: 1px solid var(--darkColor);
   border-radius: 50px;
   padding: 3px 10px;
 }
 
-.info-text{
+.info-text {
   text-align: center;
   font-size: 10pt;
   margin: 20px 0px;
 }
 
-.view-more{
+.view-more {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-.view-more:hover{
+.view-more:hover {
   cursor: pointer;
 }
 
-.programInfoContainer > h3{
-  color:#344450;;
+.programInfoContainer > h3 {
+  color: var(--darkColor);
 }
 
 span {
