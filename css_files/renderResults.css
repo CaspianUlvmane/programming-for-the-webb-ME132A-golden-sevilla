@@ -17,7 +17,7 @@
 }
 
 #topDiv {
-  background-color: var(--beigeColor);
+  background-color: var(--whiteColor);
   display: flex;
   width: 100vw;
 }
