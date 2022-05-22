@@ -165,7 +165,7 @@ h1, h2 {
   font-family: 'Barlow Condensed';
 }
 
-p, div {
+p, div, input {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-weight: 300;
 }
