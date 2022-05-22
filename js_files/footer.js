@@ -17,12 +17,20 @@ function footer () {
 function advertisement () {
   let adContainer = document.createElement('div')
   adContainer.classList.add('ad-container')
+
+  let cross = document.createElement("div")
+  cross.innerHTML= `<i class="fa-solid fa-xmark adCross"></i>`
+  cross.addEventListener("click", function(){
+    adContainer.style.display = "none"
+  })
+
+
   let adContainerText = document.createElement('div')
   adContainerText.classList.add('ad-info')
   adContainerText.innerHTML = `
   <div></div>
-  <p>Annons</p>
-  <div class="fa-solid fa-xmark adCross"></div>`
+  <p>Annons</p>`
+  adContainer.append(cross)
   adContainer.append(adContainerText)
 
   let adBox = document.createElement('div')
@@ -39,4 +47,37 @@ function advertisement () {
 
 // document.querySelector('footer').appendChild(advertisement())
 
+function adverstisement2(){
+  let adContainer = document.createElement("div")
+  adContainer.classList.add("sas-ad")
+  
+  let cross = document.createElement("div")
+  cross.innerHTML= `<i class="fa-solid fa-xmark adCross"></i>`
+  cross.addEventListener("click", function(){
+    adContainer.style.display = "none"
+  })
 
+  adContainer.innerHTML=`
+  <p> Sponsrad av sas</p>`
+  adContainer.appendChild(cross)
+
+  return adContainer
+}
+
+
+function adverstisement3(){
+  let adContainer = document.createElement("div")
+  adContainer.classList.add("doktor-ad")
+  
+  let cross = document.createElement("div")
+  cross.innerHTML= `<i class="fa-solid fa-xmark adCross"></i>`
+  cross.addEventListener("click", function(){
+    adContainer.style.display = "none"
+  })
+
+  adContainer.innerHTML=`
+  <p> Sponsrad av Min Doktor</p>`
+  adContainer.appendChild(cross)
+
+  return adContainer
+}

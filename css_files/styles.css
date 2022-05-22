@@ -219,8 +219,6 @@ input {
 
 .ad-info{
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 3px;
 }
 
@@ -263,4 +261,39 @@ input {
 
 .ad-box > img{
   height: 40px;
+}
+
+.sas-ad{
+  background-image: url(../Databasen/Images/adSas.jpeg);
+  background-size: cover;
+  background-position: bottom;
+  margin: 8px;
+  height: 40vw;
+  position: relative;
+}
+
+.sas-ad > p{
+  margin-left: 5px;
+  position: absolute;
+  bottom: 0px;
+  color: white;
+  font-size: 10pt;
+}
+
+.doktor-ad{
+  background-image: url(../Databasen/Images/adDoktor.jpg);
+  background-size: cover;
+  background-position: bottom;
+  margin: 8px;
+  height: 40vw;
+  position: relative;
+  border: 1px solid #e3e3e3;
+}
+
+.doktor-ad > p{
+  margin-left: 5px;
+  position: absolute;
+  bottom: 0px;
+  color: black;
+  font-size: 10pt;
 }

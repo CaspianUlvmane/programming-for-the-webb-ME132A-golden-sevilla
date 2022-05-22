@@ -18,6 +18,14 @@ function renderPrograms () {
       let programDiv = renderProgram(programmes[i])
       resultDiv.appendChild(programDiv)
       infoDiv.innerHTML = `Visar ${i + 1} / ${programmes.length}`
+
+      if (i == 6){
+        resultDiv.appendChild(adverstisement2())
+      }
+
+      if (i==16){
+        resultDiv.appendChild(adverstisement3())
+      }
     }
     // add infoDiv on how many program is shown
     resultDiv.appendChild(infoDiv)
@@ -150,5 +158,3 @@ function activeFilters () {
 }
 
 window.addEventListener('load', activeFilters)
-
-document.querySelector('footer').appendChild(advertisement())

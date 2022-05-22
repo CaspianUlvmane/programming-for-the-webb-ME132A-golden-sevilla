@@ -47,6 +47,7 @@
 }
 
 .search-result {
+  font-size: 11pt;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -58,7 +59,7 @@
 }
 
 .result-box {
-  background-color: var(--darkDarkColor);
+  background-color: #294255;
   color: var(--almostWhiteColor);
   padding: 10px;
   margin: 0px 8px 8px 8px;
