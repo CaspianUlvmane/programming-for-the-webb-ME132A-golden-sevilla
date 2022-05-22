@@ -1,127 +1,116 @@
-:root {
-    --beigeColor: #EDE7DF;
-    --lightColor: #EAEAEA;
-    --darkColor: #425664;
-    --whiteColor: white;
-    --blackColor: black;
-  }
-
 body {
-    margin: 0px;
+  margin: 0px;
 }
 
 button {
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
 .button.active {
-    background-color: var(--darkColor);
-    color: white;
+  background-color: var(--darkColor);
+  color: var(--whiteColor);
 }
 
 button.hide {
-    display: none;
+  display: none;
 }
 
 .filterButtons > button.active {
-    background-color: var(--darkColor);
-    color: white;
+  background-color: var(--darkColor);
+  color: var(--whiteColor);
 }
 
 #allFilters {
-    position: absolute;
-    transition: top 300ms;
-    top: -270px;
-    background-color: white;
-    padding: 5px;
-    width: calc(100% - 10px);
-    border-bottom: 1px solid black;
-    border-radius: 0px;
+  position: absolute;
+  transition: top 300ms;
+  top: -270px;
+  background-color: var(--whiteColor);
+  padding: 5px;
+  width: calc(100% - 10px);
+  border-bottom: 1px solid var(--blackColor);
+  border-radius: 0px;
 }
 
-#allFilters.showFilters{
-    top: 120px;
+#allFilters.showFilters {
+  top: 120px;
 }
 
-#activeFilter > button{
-    margin: 5px;
+#activeFilter > button {
+  margin: 5px;
 }
-
 
 #filterToggle {
-    padding: 3px 10px;
-    border: 1px solid var(--darkColor);
-    border-radius: 50px;
-    margin: 10px;
-    background-color: white;
-    cursor: pointer;
-    max-height: 27.5px;
+  padding: 3px 10px;
+  border: 1px solid var(--darkColor);
+  border-radius: 50px;
+  margin: 10px;
+  background-color: var(--whiteColor);
+  cursor: pointer;
+  max-height: 27.5px;
 }
 
 #filterToggle:hover {
-    background-color: var(--darkColor);
-    color: var(--lightColor);
+  background-color: var(--darkColor);
+  color: var(--lightColor);
 }
 
 #activeFilter.hideFilters > button {
-    opacity: 0;
+  opacity: 0;
 }
 
 .filterButtons {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-
 .filterButtons > button {
-    border-radius: 50px;
-    padding: 3px 10px;
-    border: 1px solid var(--darkColor);
-    background-color: white;
-    transition: background-color 300ms;
+  border-radius: 50px;
+  padding: 3px 10px;
+  border: 1px solid var(--darkColor);
+  background-color: var(--whiteColor);
+  transition: background-color 300ms;
 }
 
 .filterButtons > button:hover {
-    background-color: var(--darkColor);
-    color: var(--lightColor);
+  background-color: var(--darkColor);
+  color: var(--lightColor);
 }
 
 .activeButton {
-    border-radius: 0px;
-    padding: 3px;
-    border: 1px solid var(--darkColor);
+  border-radius: 0px;
+  padding: 3px;
+  border: 1px solid var(--darkColor);
 }
 
 .filterContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.filterContainer > div:nth-child(1){
-    margin-left: 3px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    border-radius: 0px;
-    font-family: "IBM Plex Sans Condensed", sans-serif;
+.filterContainer > div:nth-child(1) {
+  margin-left: 3px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  border-radius: 0px;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
-.filterContainer > div{
-    font-weight: 400;
+.filterContainer > div {
+  font-weight: 400;
 }
 
-.showButtons + .filterButtons{
-    display: flex;
+.showButtons + .filterButtons {
+  display: flex;
 }
 
 .filterButtons {
-    flex-shrink: 1;
+  flex-shrink: 1;
 }
 
 .filterButtons > button {
-    margin: 5px;
+  margin: 5px;
 }
 
-.filterContainer{
-    margin-bottom: 20px;
+.filterContainer {
+  margin-bottom: 20px;
 }
-

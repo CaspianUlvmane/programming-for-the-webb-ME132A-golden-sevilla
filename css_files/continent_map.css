@@ -1,130 +1,134 @@
-:root{
-    --dark: #344450; 
-    --lightGrey: #eaeaee;
-    --lightBeige: #EDE7DF;
+:root {
+  --darkColor: #425664;
+  --lightColor: #eaeaea;
+  --darkContinentColor: #768a95;
+  --blueContinentColor: #4d5a62;
+  --lightContinentColor: #ebe8e2;
+  --blackColor: black;
+  --darkGrey: darkgrey;
+  --grey: grey;
 }
 
-#info-div{
-    display: flex;
-    text-align: center;
-    font-size: 14pt;
-    font-weight: bold;
-    padding-top: 40px;
-    margin: 5px;
-    margin-left: 40px;
-    margin-right: 40px;
+#info-div {
+  display: flex;
+  text-align: center;
+  font-size: 14pt;
+  font-weight: bold;
+  padding-top: 40px;
+  margin: 5px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
-#info{
-    flex-grow: 1;
+#info {
+  flex-grow: 1;
 }
 
-.button{
-    background-color: black;
-    height: 40px;
-    width: 40px;
+.button {
+  background-color: var(--blackColor);
+  height: 40px;
+  width: 40px;
 }
 
-#map-container{
-    display: none;
+#map-container {
+  display: none;
 }
-#map-div{
-    overflow: scroll;
-}
-
-body{
-    margin: 0px;
-    overflow-x: scroll;
-    overflow-y: scroll;
+#map-div {
+  overflow: scroll;
 }
 
+body {
+  margin: 0px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
 
 svg {
-    overflow: scroll;
-    overflow-x: scroll;
-    width: 100vw;
+  overflow: scroll;
+  overflow-x: scroll;
+  width: 100vw;
 }
 
 #world > g > path {
-    fill: #768A95;
-    stroke: #EBE8E2;
+  fill: var(--darkContinentColor);
+  stroke: var(--lightContinentColor);
 }
 
-#world > g > g >  path {
-    fill: darkgray;
-    stroke: grey;
+#world > g > g > path {
+  fill: var(--darkGrey);
+  stroke: var(--grey);
 }
 
 #world > g:hover > path {
-    fill: #4d5a62;
-    stroke: #EBE8E2;
-    cursor: pointer;
+  fill: var(--blueContinentColor);
+  stroke: var(--lightContinentColor);
+  cursor: pointer;
 }
 
-#world, .continent {
-    min-height: 400px;
-    width: auto;
+#world,
+.continent {
+  min-height: 400px;
+  width: auto;
 }
 
-.continent > g > a >path{
-    display: block;
-    margin: auto;
-   fill: #768A95;
-    stroke: #EBE8E2;
-    
+.continent > g > a > path {
+  display: block;
+  margin: auto;
+  fill: var(--darkContinentColor);
+  stroke: var(--lightContinentColor);
 }
 
-.continent > g > a > circle{
-   fill: #768A95;
-    stroke: #EBE8E2;
+.continent > g > a > circle {
+  fill: var(--darkContinentColor);
+  stroke: var(--lightContinentColor);
 }
 
-.continent > g > a > rect{
-   fill: #768A95;
-    stroke: #EBE8E2;
+.continent > g > a > rect {
+  fill: var(--darkContinentColor);
+  stroke: var(--lightContinentColor);
 }
 
 text {
-fill: var(--lightBeige);
-stroke: var(--dark);
-stroke-width: 2;
-stroke-miterlimit:100;
-font-family:'IBM Plex Sans Condensed';
-font-size: 8rem;
-font-weight: 900;
+  fill: var(--lightColor);
+  stroke: var(--blueContinentColor);
+  stroke-width: 1;
+  stroke-miterlimit: 100;
+  font-family: 'IBM Plex Sans Condensed';
+  font-size: 6rem;
+  font-weight: 900;
 }
 
 .continent > g:hover > a > path {
-    fill: #4d5a62;
-    stroke: #EBE8E2;
-    cursor: pointer;
+  fill: var(--blueContinentColor);
+  stroke: var(--lightContinentColor);
+  cursor: pointer;
 }
 
 .grey > g > path {
-    fill: darkgray;
-    stroke: grey;
+  fill: var(--darkGrey);
+  stroke: var(--grey);
 }
 
-#EU{
-    display: none;
+#EU {
+  display: none;
 }
 
-#SA{
-    display: none;
+#SA {
+  display: none;
 }
 
-#NA{
-    display: none;
+#NA {
+  display: none;
 }
 
-#AU{
-    display: none;
+#AU {
+  display: none;
 }
 
-#back-button{
-    display: none;
+#back-button {
+  display: none;
 }
 
-#back-button:hover{
-    cursor: pointer;
+#back-button:hover {
+  cursor: pointer;
 }

@@ -1,24 +1,24 @@
-.info-about-wrapper > h4{
-    margin: 10px;
+.info-about-wrapper > h4 {
+  margin: 10px;
 }
 
-#img-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+#img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
 
-.profile-img{
-    margin: 10px;
+.profile-img {
+  margin: 10px;
 }
 
-.profile-img > img{
-    height: 250px;
-    border-radius: 100%;
+.profile-img > img {
+  height: 250px;
+  border-radius: 100%;
 }
 
-.profile-img > p{
-    text-align: center;
+.profile-img > p {
+  text-align: center;
 }

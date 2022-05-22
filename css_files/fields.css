@@ -1,27 +1,21 @@
-:root {
-  --beigeColor: #ede7df;
-  --lightColor: #eaeaea;
-  --darkColor: #425664;
-  --whiteColor: white;
-  --blackColor: black;
-}
-
 .field-div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.field-img >img {
+.field-img > img {
   width: 100vw;
 }
 
-.field-text, .field-title, .field-info {
+.field-text,
+.field-title,
+.field-info {
   margin: 15px;
 }
 
 .field-title {
-text-align: center;
+  text-align: center;
 }
 
 .field-name {
@@ -43,6 +37,6 @@ text-align: center;
   color: var(--lightColor);
 }
 
-.field-div > h3{
+.field-div > h3 {
   margin-top: 10px;
 }

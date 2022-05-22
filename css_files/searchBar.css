@@ -1,88 +1,81 @@
-:root{
-    --dark: #344450; 
-    --lightGrey: #eaeaee;
-    --lightBeige: #EDE7DF;
-}
-
 .searchBarcontainer {
-    position: absolute;
-    display: none;
+  position: absolute;
+  display: none;
 }
 
 .searchBarcontainer.active {
-    display: inline;
+  display: inline;
 }
 
 .searchBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin-bottom: 5px; */
-    width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
 .searchfieldBox {
-    background-color: var(--lightColor);
-    display: flex;
-    width: 100%;
-    max-width: 900px;
-    border: 1px solid;
-    margin: 8px;
+  background-color: var(--lightColor);
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid;
+  margin: 8px;
 }
 
 .iconSearch {
-    font-size: 20px;
-    margin-right: 5px;
-    margin-left: 3px;
-    padding: 8px;
-    cursor: pointer;
+  font-size: 20px;
+  margin-right: 5px;
+  margin-left: 3px;
+  padding: 8px;
+  cursor: pointer;
 }
 
 .iconCross {
-    cursor: pointer;
-    padding: 5px;
-    margin-right: 5px;
-    font-size: 25px;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 5px;
+  font-size: 25px;
 }
 
 #searchInputBar {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    background: none;
-    width: 100%;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
 }
 
 .search-result {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 80vh;
-    overflow: scroll;
-    overflow-x: hidden;
-    max-width: 920px;
-    margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 80vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  max-width: 920px;
+  margin: auto;
 }
 
 .result-box {
-    background-color: var(--dark);
-    color: var(--lightGrey);
-    padding: 10px;
-    margin: 0px 8px 8px 8px;
+  background-color: var(--darkDarkColor);
+  color: var(--almostWhiteColor);
+  padding: 10px;
+  margin: 0px 8px 8px 8px;
 }
 
 .result-box:hover {
-    background-color: #40515e;
+  background-color: var(--darkColor);
 }
 
 .titleInfoSearch {
-    margin: 5px 0px;
+  margin: 5px 0px;
 }
 
 .textInfoSearch {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .starStudent {
-  color: rgb(248, 215, 95);
+  color: var(--starColor);
 }
