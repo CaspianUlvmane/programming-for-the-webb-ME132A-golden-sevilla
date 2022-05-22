@@ -18,6 +18,18 @@
   text-align: center;
 }
 
+.field-info {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 1000px;
+  max-height: 450px;
+}
+
 .field-name {
   margin-bottom: 0px;
 }
@@ -39,4 +51,9 @@
 
 .field-div > h3 {
   margin-top: 10px;
+}
+
+.field-text {
+  max-width: 1000px;
+  padding: 0px 10px;
 }

@@ -1,12 +1,17 @@
-.imgTop {
-  background-image: url(../Databasen/Images/studyAbroad1.webp);
-  background-size: cover;
-  background-position: center;
+.info-about-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.imgMid {
-  background-image: url(../Databasen/Images/studyAbroad2.jpeg);
-  background-size: cover;
-  background-position: center;
-  margin: 10px;
+.info-about-wrapper > p {
+  padding: 0px 10px;
+  max-width: 1000px;
+}
+
+img {
+  width: 100vw;
+  max-width: 1000px;
+  max-height: 450px;
 }
