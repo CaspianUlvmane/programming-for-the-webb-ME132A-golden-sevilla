@@ -53,7 +53,7 @@ function createLikeDiv (program) {
   `
   likedItem.appendChild(likedInfo)
   likedInfo.addEventListener('click', function () {
-    popUpProgram(program)
+    popUpProgram(program, likedItem)
   })
   return likedItem
 }
