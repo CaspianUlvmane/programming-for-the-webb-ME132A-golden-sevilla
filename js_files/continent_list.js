@@ -113,3 +113,4 @@ function createInfoDiv () {
 
 cotinentViewBar()
 createContinentList()
+document.querySelector("footer").appendChild(adverstisement2())
