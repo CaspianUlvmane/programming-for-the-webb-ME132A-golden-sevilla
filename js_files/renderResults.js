@@ -55,7 +55,7 @@ function renderProgram (program) {
   div.appendChild(heartIcon(program))
 
   programInfo.addEventListener('click', function () {
-    popUpProgram(program)
+    popUpProgram(program, "")
   })
   return div
 }
