@@ -74,3 +74,4 @@ function getCountryFromUrl () {
 
 let country = getCountryFromUrl()
 buildCountry(country)
+document.querySelector('footer').appendChild(advertisement())

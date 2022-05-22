@@ -150,3 +150,5 @@ function activeFilters () {
 }
 
 window.addEventListener('load', activeFilters)
+
+document.querySelector('footer').appendChild(advertisement())

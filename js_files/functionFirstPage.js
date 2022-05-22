@@ -70,3 +70,5 @@ function buildImgFiledCard () {
 
 buildImgCountryCard()
 buildImgFiledCard()
+
+document.querySelector('footer').appendChild(advertisement())
