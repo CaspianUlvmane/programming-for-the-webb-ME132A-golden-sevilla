@@ -87,6 +87,7 @@ function removeLike (program, element) {
   // stores liked items in variable
   // concats array with stored items
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
+  // takes url path, and stores what html file you're on
   let path = window.location.pathname
   let page = path.split('/').pop()
   if (storedLikedArray != null) {
@@ -106,6 +107,7 @@ function removeLike (program, element) {
   }
 
   likedPrograms()
+  // if you are on the filter.html run renderPrograms
   if (page == 'filter.html') {
     renderPrograms()
   }
