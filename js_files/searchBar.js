@@ -104,8 +104,10 @@ function searchingInSearch () {
   }
 }
 
+
 searchBar()
 closeSearchInSearch()
 
 // eventListneter of the input that listen to the keyup and calls the function searching
 selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
+

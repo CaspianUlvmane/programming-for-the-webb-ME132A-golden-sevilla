@@ -1,11 +1,13 @@
-selectElement('footer').appendChild(footer())
-buildTopMenu()
+
+window.onload = function (){
+    selectElement('footer').appendChild(footer())
+    buildTopMenu()
+    likedPrograms()
+}
 
 // document.querySelector('header').appendChild(buildTopMenu(array))
 // document.querySelector('header').appendChild(buildTopMenu())
 // document.querySelector('header').appendChild(createBurgerItems())
-
-likedPrograms()
 
 // searchBar()
 // closeSearchInSearch()
