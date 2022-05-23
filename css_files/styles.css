@@ -206,6 +206,7 @@ input {
   text-decoration: none;
 }
 
+/* advertisement style  */
 .ad-container{
   background-color: rgba(237, 237, 237, 0.791);
   text-align: center;
@@ -294,6 +295,22 @@ input {
   margin-left: 5px;
   position: absolute;
   bottom: 0px;
+  color: black;
+  font-size: 10pt;
+}
+
+.hotels-ad{
+  background-image: url(../Databasen/Images/adHotels.jpeg);
+  background-size: cover;
+  background-position: bottom;
+  margin: 8px;
+  height: 40vw;
+  position: relative;
+}
+
+.hotels-ad > p{
+  margin-left: 5px;
+  position: absolute;
   color: black;
   font-size: 10pt;
 }

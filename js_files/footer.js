@@ -14,17 +14,20 @@ function footer () {
   return footerDiv
 }
 
+// down below is all functions for advertising 
+
 function advertisement () {
+  // adverstise for våningen och villan
   let adContainer = document.createElement('div')
   adContainer.classList.add('ad-container')
 
   let cross = document.createElement("div")
   cross.innerHTML= `<i class="fa-solid fa-xmark adCross"></i>`
+  // advertising div dissapears when click on cross
   cross.addEventListener("click", function(){
     adContainer.style.display = "none"
   })
-
-
+  
   let adContainerText = document.createElement('div')
   adContainerText.classList.add('ad-info')
   adContainerText.innerHTML = `
@@ -45,8 +48,7 @@ function advertisement () {
   return adContainer
 }
 
-// document.querySelector('footer').appendChild(advertisement())
-
+// advertise for sas
 function adverstisement2(){
   let adContainer = document.createElement("div")
   adContainer.classList.add("sas-ad")
@@ -64,7 +66,7 @@ function adverstisement2(){
   return adContainer
 }
 
-
+// advertise for Min Doktor
 function adverstisement3(){
   let adContainer = document.createElement("div")
   adContainer.classList.add("doktor-ad")
@@ -77,6 +79,24 @@ function adverstisement3(){
 
   adContainer.innerHTML=`
   <p> Sponsrad av Min Doktor</p>`
+  adContainer.appendChild(cross)
+
+  return adContainer
+}
+
+// advertising for hotels.com
+function adverstisement4(){
+  let adContainer = document.createElement("div")
+  adContainer.classList.add("hotels-ad")
+  
+  let cross = document.createElement("div")
+  cross.innerHTML= `<i class="fa-solid fa-xmark adCross"></i>`
+  cross.addEventListener("click", function(){
+    adContainer.style.display = "none"
+  })
+
+  adContainer.innerHTML=`
+  <p> Sponsrad av Hotels.com</p>`
   adContainer.appendChild(cross)
 
   return adContainer
