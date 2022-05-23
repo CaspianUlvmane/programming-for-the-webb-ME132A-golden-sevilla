@@ -1,3 +1,4 @@
+// builds country depending on which country you clicked on in contient.html
 function buildCountry (id) {
   let country = DB.COUNTRIES.find(country => country.id == id)
   let container = document.getElementById('container')
@@ -16,11 +17,12 @@ function buildCountry (id) {
   return buildCountry
 }
 
+// filter which cities is in choosen country
 function findCities (id) {
   let cityArray = DB.CITIES.filter(city => city.countryID == id)
   return createCityDiv(cityArray)
 }
-
+// created divs with all citys
 function createCityDiv (cityArray) {
   let cityContainer = createElement('div')
   cityContainer.classList.add('city-container')
@@ -65,13 +67,14 @@ function setCountryBackground (id) {
 }
 
 function getCountryFromUrl () {
-  // https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams
-  // used searchParams to get countryID through URL
+  // get url info
   let url = new URL(window.location)
   let params = url.searchParams
+  // return which id is after country and makes it to a number
   return parseInt(params.get('country'))
 }
 
 let country = getCountryFromUrl()
 buildCountry(country)
 document.querySelector('footer').appendChild(advertisement())
+document.querySelector('footer').appendChild(adverstisement4())
