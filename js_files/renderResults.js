@@ -1,9 +1,11 @@
+let array = []
+
 function renderPrograms () {
   // stores liked items in variable
   // concats array with stored items
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
   if (storedLikedArray != null) {
-    array = []
+    let array = []
     array = array.concat(storedLikedArray)
   }
   let resultDiv = document.getElementById('results')
@@ -69,6 +71,17 @@ function renderProgram (program) {
 }
 
 function heartIcon (program) {
+    // stores liked items in variable
+  // concats array with stored items
+  let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
+  if (storedLikedArray == null) {
+    storedLikedArray = []
+  }
+  if (storedLikedArray != null) {
+    array = []
+    array = array.concat(storedLikedArray)
+  }
+
   let heartIconDiv = createElement('div')
   heartIconDiv.classList.add('imgHearth')
   heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
