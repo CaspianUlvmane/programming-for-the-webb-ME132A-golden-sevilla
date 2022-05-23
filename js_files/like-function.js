@@ -1,30 +1,27 @@
-let array = []
-
-// Refers to a selected element
-
 function likedPrograms () {
   // stores array of liked items in variable
   // JSON.parse turns stringified information in to objects
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
+  // creates likeContainer
   let likeContainer = createElement('div')
-
   likeContainer.classList.add('container-hidden')
   likeContainer.id = 'like-container'
 
   likeContainer.innerHTML = ''
-
+  // creates likeItemBox which is there to make it possible to flex the children
+  // (the likeContainer has a display none)
   let likedItemBox = createElement('div')
   likedItemBox.classList.add('liked-item-box')
+
   // makes sure that the stored array is an array
   if (storedLikedArray == null) {
     storedLikedArray = []
   }
-  // if there are liked items creates the liked items
+  // if there is liked items in the array - create the liked items
   if (storedLikedArray.length > 0) {
     likeContainer.innerHTML = '<h2>MINA FAVORITER</h2>'
-
+    // loops through array, calls for createLikeDiv and createLikeHeartDiv and append them
     for (let program of storedLikedArray) {
-      
       let likedDiv = createLikeDiv(program)
       let likedHeartDiv = createLikeHeartDiv(program, likedDiv)
       likedDiv.appendChild(likedHeartDiv)
@@ -33,14 +30,17 @@ function likedPrograms () {
       likeContainer.appendChild(likedItemBox)
     }
   } else {
+    // if array is empty, create div with innerHTML - "nothing here"
     let noLikes = createElement('div')
     noLikes.classList.add('no-likes')
     likeContainer.appendChild(noLikes)
-    noLikes.innerHTML = '<h2>MINA FAVORITER</h2> <br> <p>Du har inte lagt till några favoriter ännu!</p>'
+    noLikes.innerHTML =
+      '<h2>MINA FAVORITER</h2> <br> <p>Du har inte lagt till några favoriter ännu!</p>'
   }
   selectElement('header').append(likeContainer)
 }
 
+// function that creates the divs for all liked programs
 function createLikeDiv (program) {
   let likedItem = createElement('div')
   likedItem.classList.add('liked-item')
@@ -52,23 +52,27 @@ function createLikeDiv (program) {
   }</p>
   `
   likedItem.appendChild(likedInfo)
+  // when click, call for pop up - shows more info about program
   likedInfo.addEventListener('click', function () {
     popUpProgram(program, likedItem)
   })
   return likedItem
 }
-
+// function that creates the div with heart symbol, that is in the likedDiv
 function createLikeHeartDiv (program, element) {
   let likedHeartDiv = createElement('div')
   likedHeartDiv.classList.add('liked-heart-div')
   likedHeartDiv.innerHTML = '<i class="fa-solid fa-heart dark-heart"></i>'
+  // when click, remove program from array
   likedHeartDiv.addEventListener('click', function () {
     removeLike(program, element)
   })
 
   return likedHeartDiv
 }
-
+// function that we call for in top_menu, when we click on the heart
+// if container hidden, remove (and turn down opacity on main)
+// if not hidden, add hidden (and turn up the opacity on main to 100%)
 function changeClassOnLikeContainer (element) {
   if (element.classList.contains('container-hidden')) {
     element.classList.remove('container-hidden')
@@ -78,7 +82,7 @@ function changeClassOnLikeContainer (element) {
     document.querySelector('main').style.opacity = '1'
   }
 }
-
+// Vill du lägga till lite extra förklaring här, ifall man får hjärnsläpp under presentation.
 function removeLike (program, element) {
   // stores liked items in variable
   // concats array with stored items

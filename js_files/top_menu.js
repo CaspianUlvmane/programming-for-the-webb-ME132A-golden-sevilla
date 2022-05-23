@@ -22,7 +22,7 @@ function buildTopMenu () {
   topMenu.appendChild(createLogo())
   topMenu.appendChild(createSearch())
 
-  // checks if there is anything in the array
+  // makes sure that the stored array is an array
   if (storedLikedArray == null) {
     storedLikedArray = []
   }
@@ -32,7 +32,7 @@ function buildTopMenu () {
   } else {
     topMenu.appendChild(createLightHeart())
   }
-  // Calls for the burger dropdown that has display none
+  // calls for the burger dropdown that has display none
   createBurgerItems()
   header.appendChild(topMenu)
 }
