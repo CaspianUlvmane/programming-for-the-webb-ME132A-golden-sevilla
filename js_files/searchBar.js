@@ -1,30 +1,30 @@
-let search_icon = selectElement('.search')
-
 // Creating the searchBar
 function searchBar () {
   let searchBarContainer = createElement('div')
   searchBarContainer.classList.add('searchBarcontainer')
-
+  
   let searchBarBox = createElement('div')
   searchBarBox.classList.add('searchBar')
-
+  
   searchBarBox.innerHTML = `
-    <form autocomplete="off" class="searchfieldBox">
-        <div class="fa-solid fa-magnifying-glass iconSearch"></div>
-        <input type="search" id="searchInputBar" placeholder="Ämne, stad eller land...">
-        <div class="fa-solid fa-xmark iconCross"></div>
-    </form>`
-
+  <form autocomplete="off" class="searchfieldBox">
+  <div class="fa-solid fa-magnifying-glass iconSearch"></div>
+  <input type="search" id="searchInputBar" placeholder="Ämne, stad eller land...">
+  <div class="fa-solid fa-xmark iconCross"></div>
+  </form>`
+  
   searchBarContainer.append(searchBarBox)
   searchBarContainer.append(searchResultBox())
   selectElement('header').append(searchBarContainer)
-
+  
   return searchBarContainer
 }
 
 // close filterBox iconGlass press in search
 function closeSearchInSearch () {
   selectElement('.iconCross').addEventListener('click', function () {
+    let search_icon = selectElement('.search')
+   
     search_icon.classList.remove('active')
     selectElement(
       '.search'
@@ -32,7 +32,7 @@ function closeSearchInSearch () {
     selectElement('.searchBarcontainer').classList.remove('active')
     clearResults('.search-result')
     selectElement('#searchInputBar').value = ''
-    document.querySelector("main").style.opacity = "1"
+    selectElement("main").style.opacity = "1"
   })
 }
 
@@ -105,9 +105,4 @@ function searchingInSearch () {
 }
 
 
-searchBar()
-closeSearchInSearch()
-
-// eventListneter of the input that listen to the keyup and calls the function searching
-selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
 
