@@ -22,15 +22,21 @@ function searchBar () {
 
 // close filterBox iconGlass press in search
 function closeSearchInSearch () {
+  // listener on close in search 
   selectElement('.iconCross').addEventListener('click', function () {
+    // reach the search in navBar
     let search_icon = selectElement('.search')
    
+    // remove acive in navBar
     search_icon.classList.remove('active')
     selectElement(
       '.search'
     ).innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
+    // remove active container search 
     selectElement('.searchBarcontainer').classList.remove('active')
+    // refresh the search input result 
     clearResults('.search-result')
+    // empety input value 
     selectElement('#searchInputBar').value = ''
     selectElement("main").style.opacity = "1"
   })
@@ -59,7 +65,7 @@ function searchingInSearch () {
 
   // if input value is more then 0
   if (valueOfSearchInput.length > 0) {
-    //     // loop fro the array of all
+    // loop fro the array of countrys 
     for (let conutry of countrys) {
       if (conutry.name.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
         selectElement(
@@ -71,6 +77,7 @@ function searchingInSearch () {
                 </div></a>`
       }
     }
+    // loop fro the array of fileds 
     for (let field of fields) {
       if (
         field.name
@@ -86,6 +93,7 @@ function searchingInSearch () {
                 </div></a>`
       }
     }
+    // loop fro the array of  itys 
     for (let city of cityies) {
       if (
         city.name

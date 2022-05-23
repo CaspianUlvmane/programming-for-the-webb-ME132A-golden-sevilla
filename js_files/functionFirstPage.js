@@ -1,9 +1,9 @@
-let downButton = selectElement('#scroll-down')
-
-downButton.addEventListener('click', function () {
+// down button scroll down 
+selectElement('#scroll-down').addEventListener('click', function () {
   selectElement('#img-slide-box').scrollIntoView({ behavior: 'smooth' })
 })
 
+// makes the country slide
 function buildImgCountryCard () {
   let imgBox = createElement('div')
   selectElement('#img-slide-box').appendChild(imgBox)
@@ -37,6 +37,7 @@ function buildImgCountryCard () {
   }
 }
 
+// makes the filed slide
 function buildImgFiledCard () {
   let imgBox = createElement('div')
   selectElement('#img-slideFields-box').appendChild(imgBox)
