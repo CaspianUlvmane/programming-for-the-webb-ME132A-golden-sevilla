@@ -11,7 +11,7 @@ overLayDiv.classList.add('overLay')
 document.body.append(overLayDiv)
 
 // function called when pressing button to get more info
-function popUpProgram (program, removeElement) {
+function popUpProgram (program) {
   // get clicked program object
   let programFound = program
 
@@ -21,14 +21,14 @@ function popUpProgram (program, removeElement) {
   clearResults('.containerPopUp')
 
   document.body.append(programPopUpContainer)
-  programPopUpContainer.append(interactWithPop(programFound, removeElement))
+  programPopUpContainer.append(interactWithPop(programFound))
   programPopUpContainer.append(addInfoProgram(programFound))
 
   return programPopUpContainer
 }
 
 // Function to create the close and heart bar of the popUp
-function interactWithPop (program, removeElement) {
+function interactWithPop (program) {
   let path = window.location.pathname
   let page = path.split('/').pop()
   let barContainer = createElement('div')
@@ -44,10 +44,10 @@ function interactWithPop (program, removeElement) {
     selectElement('.overLay').classList.remove('active')
     selectElement('.containerPopUp').classList.remove('active')
     clearResults('.containerPopUp')
-    if (array.length == 0) {
-      buildTopMenu()
-    }
-    
+
+    buildTopMenu()
+    document.querySelector('main').style.opacity = '1'
+
     if (page == 'filter.html') {
       renderPrograms()
     }
@@ -58,7 +58,7 @@ function interactWithPop (program, removeElement) {
     selectElement('#searchInputBar').addEventListener('keyup',searchingInSearch)
   })
 
-  barContainer.append(crossIconDiv, headTitle(program), heartPopUp(program, removeElement))
+  barContainer.append(crossIconDiv, headTitle(program), heartPopUp(program))
   return barContainer
 }
 
@@ -69,7 +69,7 @@ function headTitle (program) {
   return div
 }
 
-function heartPopUp (program, removeElement) {
+function heartPopUp (program) {
     // stores liked items in variable
   // concats array with stored items
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
@@ -95,7 +95,6 @@ function heartPopUp (program, removeElement) {
     if (heartIconDiv.classList.contains('active')) {
       heartIconDiv.classList.remove('active')
       heartIconDiv.innerHTML = `<i class="fa-regular fa-heart"></i>`
-      removeElement.remove()
       let indexOfLikedArray = array.findIndex(
         element => program.id == element.id
       )

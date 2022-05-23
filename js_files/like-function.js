@@ -54,7 +54,7 @@ function createLikeDiv (program) {
   likedItem.appendChild(likedInfo)
   // when click, call for pop up - shows more info about program
   likedInfo.addEventListener('click', function () {
-    popUpProgram(program, likedItem)
+    popUpProgram(program)
   })
   return likedItem
 }
