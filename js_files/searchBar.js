@@ -2,43 +2,43 @@
 function searchBar () {
   let searchBarContainer = createElement('div')
   searchBarContainer.classList.add('searchBarcontainer')
-  
+
   let searchBarBox = createElement('div')
   searchBarBox.classList.add('searchBar')
-  
+
   searchBarBox.innerHTML = `
   <form autocomplete="off" class="searchfieldBox">
   <div class="fa-solid fa-magnifying-glass iconSearch"></div>
   <input type="search" id="searchInputBar" placeholder="Ämne, stad eller land...">
   <div class="fa-solid fa-xmark iconCross"></div>
   </form>`
-  
+
   searchBarContainer.append(searchBarBox)
   searchBarContainer.append(searchResultBox())
   selectElement('header').append(searchBarContainer)
-  
+
   return searchBarContainer
 }
 
 // close filterBox iconGlass press in search
 function closeSearchInSearch () {
-  // listener on close in search 
+  // listener on close in search
   selectElement('.iconCross').addEventListener('click', function () {
     // reach the search in navBar
     let search_icon = selectElement('.search')
-   
+
     // remove acive in navBar
     search_icon.classList.remove('active')
     selectElement(
       '.search'
     ).innerHTML = `<i class="fa-solid fa-magnifying-glass"> </i>`
-    // remove active container search 
+    // remove active container search
     selectElement('.searchBarcontainer').classList.remove('active')
-    // refresh the search input result 
+    // refresh the search input result
     clearResults('.search-result')
-    // empety input value 
+    // empety input value
     selectElement('#searchInputBar').value = ''
-    selectElement("main").style.opacity = "1"
+    selectElement('main').style.opacity = '1'
   })
 }
 
@@ -65,9 +65,13 @@ function searchingInSearch () {
 
   // if input value is more then 0
   if (valueOfSearchInput.length > 0) {
-    // loop fro the array of countrys 
+    // loop fro the array of countrys
     for (let conutry of countrys) {
-      if (conutry.name.toLocaleLowerCase().includes(valueOfSearchInput.toLocaleLowerCase())) {
+      if (
+        conutry.name
+          .toLocaleLowerCase()
+          .includes(valueOfSearchInput.toLocaleLowerCase())
+      ) {
         selectElement(
           '.search-result'
         ).innerHTML += `<a href=../html_files/country.html?country=${conutry.id}"> 
@@ -77,7 +81,7 @@ function searchingInSearch () {
                 </div></a>`
       }
     }
-    // loop fro the array of fileds 
+    // loop fro the array of fileds
     for (let field of fields) {
       if (
         field.name
@@ -93,7 +97,7 @@ function searchingInSearch () {
                 </div></a>`
       }
     }
-    // loop fro the array of  itys 
+    // loop fro the array of  itys
     for (let city of cityies) {
       if (
         city.name
@@ -111,6 +115,3 @@ function searchingInSearch () {
     }
   }
 }
-
-
-

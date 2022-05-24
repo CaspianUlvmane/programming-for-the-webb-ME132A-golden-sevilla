@@ -22,7 +22,7 @@ function changeImgToClickedImage (event) {
   // change to map depending on which one is clicked
   if (clickedId == 'europe') {
     change(EU, world, title, backButton)
-    // ads eventlistner to backbutton 
+    // ads eventlistner to backbutton
     backButton.addEventListener('click', function () {
       EU.style.display = 'none'
       world.style.display = 'block'

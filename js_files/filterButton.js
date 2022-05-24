@@ -22,7 +22,7 @@ function addCountryAndCity () {
 addCountryAndCity()
 
 // Finds all filter buttons with class active and turns data
-// in to objects for filtering 
+// in to objects for filtering
 function findProgrammes () {
   let activeArray = document.querySelectorAll('.active')
   let allFilters = []
@@ -58,11 +58,11 @@ function filter (array) {
   // For every key check if there is a filter based on that key
   for (let key of keys) {
     if (keysArray[key].length > 0)
-    // Filters programmes if there is a filter on a key
-    // and returns all programmes that fulfill the value that
-    // exists within keysArray[key]
-    // example keysArray[language].includes[0, 1] will return
-    // all programmes in Spanish and English
+      // Filters programmes if there is a filter on a key
+      // and returns all programmes that fulfill the value that
+      // exists within keysArray[key]
+      // example keysArray[language].includes[0, 1] will return
+      // all programmes in Spanish and English
       programmes = programmes.filter(program =>
         keysArray[key].includes(program[key])
       )
@@ -131,7 +131,6 @@ function countryButtons () {
     countries.appendChild(countryButton)
   }
 }
-
 
 // only renders city buttons based on the active country buttons
 function cityButtons () {

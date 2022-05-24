@@ -1,4 +1,4 @@
-// refresh result 
+// refresh result
 let clearResults = element => (selectElement(element).innerHTML = '')
 
 // creating the popUp div container
@@ -6,7 +6,7 @@ let programPopUpContainer = createElement('div')
 programPopUpContainer.classList.add('containerPopUp')
 document.body.append(programPopUpContainer)
 
-// overlay bg for pop 
+// overlay bg for pop
 let overLayDiv = createElement('div')
 overLayDiv.classList.add('overLay')
 document.body.append(overLayDiv)
@@ -50,15 +50,18 @@ function interactWithPop (program) {
     buildTopMenu()
     document.querySelector('main').style.opacity = '1'
 
-    // only run when on filter page 
+    // only run when on filter page
     if (page == 'filter.html') {
       renderPrograms()
     }
-    
+
     likedPrograms()
     searchBar()
     closeSearchInSearch()
-    selectElement('#searchInputBar').addEventListener('keyup',searchingInSearch)
+    selectElement('#searchInputBar').addEventListener(
+      'keyup',
+      searchingInSearch
+    )
   })
 
   barContainer.append(crossIconDiv, headTitle(program), heartPopUp(program))
@@ -75,7 +78,7 @@ function headTitle (program) {
 
 // like function for pop up
 function heartPopUp (program) {
-    // stores liked items in variable
+  // stores liked items in variable
   // concats array with stored items
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
   if (storedLikedArray != null) {
@@ -96,7 +99,7 @@ function heartPopUp (program) {
     }
   }
 
-  // listener to save and remove course 
+  // listener to save and remove course
   heartIconDiv.addEventListener('click', function () {
     if (heartIconDiv.classList.contains('active')) {
       heartIconDiv.classList.remove('active')
@@ -140,11 +143,15 @@ function addInfoProgram (program) {
         <div class="info average"> Medelvärde av Kursen: ${getAllAverage(
           program
         )}/5 </div>
-        <div class="info"> Teacher rating: ${getAverageTeachers(program)}/5 </div>
+        <div class="info"> Teacher rating: ${getAverageTeachers(
+          program
+        )}/5 </div>
         <div class="info"> Students rating: ${getAverageStudents(
           program
         )}/5 </div>
-        <div class="info"> Courses rating: ${getAverageCourses(program)}/5 </div>
+        <div class="info"> Courses rating: ${getAverageCourses(
+          program
+        )}/5 </div>
         <div class="info commentsOfstudents"> Kommentarer från studenter </div>
     </div> `
 

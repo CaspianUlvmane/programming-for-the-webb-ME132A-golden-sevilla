@@ -1,13 +1,12 @@
-window.onload = function (){
-    selectElement('footer').appendChild(footer())
-    buildTopMenu()
-    likedPrograms()
+window.onload = function () {
+  selectElement('footer').appendChild(footer())
+  buildTopMenu()
+  likedPrograms()
 
-    searchBar()
-    closeSearchInSearch()
-    // eventListneter of the input that listen to the keyup and calls the function searching
-    selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
-  
+  searchBar()
+  closeSearchInSearch()
+  // eventListneter of the input that listen to the keyup and calls the function searching
+  selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
 }
 
 // document.querySelector('header').appendChild(buildTopMenu(array))
