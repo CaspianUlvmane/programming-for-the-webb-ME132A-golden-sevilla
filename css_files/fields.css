@@ -21,7 +21,7 @@
 .field-info {
   max-width: 1000px;
   margin: auto;
-  padding: 0px 10px;
+  padding: 0px 15px;
   margin-bottom: 10px;
 }
 
@@ -55,5 +55,5 @@ img {
 
 .field-text {
   max-width: 1000px;
-  padding: 0px 10px;
+  padding: 0px 5px;
 }
