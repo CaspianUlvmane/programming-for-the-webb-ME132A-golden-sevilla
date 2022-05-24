@@ -1,11 +1,12 @@
+// refresh result 
 let clearResults = element => (selectElement(element).innerHTML = '')
 
-/// keep  creating the popUp div container
+// creating the popUp div container
 let programPopUpContainer = createElement('div')
 programPopUpContainer.classList.add('containerPopUp')
 document.body.append(programPopUpContainer)
 
-// keep if we want an overlay bg
+// overlay bg for pop 
 let overLayDiv = createElement('div')
 overLayDiv.classList.add('overLay')
 document.body.append(overLayDiv)
@@ -29,17 +30,18 @@ function popUpProgram (program) {
 
 // Function to create the close and heart bar of the popUp
 function interactWithPop (program) {
+  // takes url path, and stores what html file you're on
   let path = window.location.pathname
   let page = path.split('/').pop()
+
   let barContainer = createElement('div')
   barContainer.classList.add('barContainer')
-  // removed id
-  // barContainer.id = program.name
 
   // creating closeIcon For popUp with listner to close
   let crossIconDiv = createElement('div')
-  crossIconDiv.classList.add('imgCross') // closeButton
+  crossIconDiv.classList.add('imgCross')
   crossIconDiv.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+  // close popUp listener
   crossIconDiv.addEventListener('click', function () {
     selectElement('.overLay').classList.remove('active')
     selectElement('.containerPopUp').classList.remove('active')
@@ -48,6 +50,7 @@ function interactWithPop (program) {
     buildTopMenu()
     document.querySelector('main').style.opacity = '1'
 
+    // only run when on filter page 
     if (page == 'filter.html') {
       renderPrograms()
     }
@@ -62,6 +65,7 @@ function interactWithPop (program) {
   return barContainer
 }
 
+// Title Course popUp
 function headTitle (program) {
   let div = document.createElement('div')
   div.innerHTML = `<h3>${program.name}</h3>`
@@ -69,6 +73,7 @@ function headTitle (program) {
   return div
 }
 
+// like function for pop up
 function heartPopUp (program) {
     // stores liked items in variable
   // concats array with stored items
@@ -91,6 +96,7 @@ function heartPopUp (program) {
     }
   }
 
+  // listener to save and remove course 
   heartIconDiv.addEventListener('click', function () {
     if (heartIconDiv.classList.contains('active')) {
       heartIconDiv.classList.remove('active')
@@ -170,7 +176,6 @@ function commentsProgram (id) {
   return commentContainer
 }
 
-////// Function under to find information about program
 // find the country iD that is equal to the citys.country id
 function findCountry (id) {
   return DB.COUNTRIES.find(country => country.id == findCity(id).countryID)
