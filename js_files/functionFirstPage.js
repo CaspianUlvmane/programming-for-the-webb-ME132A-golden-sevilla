@@ -1,4 +1,4 @@
-// down button scroll down 
+// down button scroll down
 selectElement('#scroll-down').addEventListener('click', function () {
   selectElement('#img-slide-box').scrollIntoView({ behavior: 'smooth' })
 })

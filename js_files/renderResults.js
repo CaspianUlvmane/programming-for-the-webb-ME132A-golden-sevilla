@@ -21,11 +21,11 @@ function renderPrograms () {
       resultDiv.appendChild(programDiv)
       infoDiv.innerHTML = `Visar ${i + 1} / ${programmes.length}`
 
-      if (i == 6){
+      if (i == 6) {
         resultDiv.appendChild(adverstisement2())
       }
 
-      if (i==16){
+      if (i == 16) {
         resultDiv.appendChild(adverstisement3())
       }
     }
@@ -71,7 +71,7 @@ function renderProgram (program) {
 }
 
 function heartIcon (program) {
-    // stores liked items in variable
+  // stores liked items in variable
   // concats array with stored items
   let storedLikedArray = JSON.parse(localStorage.getItem('likedArray'))
   if (storedLikedArray == null) {
@@ -110,7 +110,10 @@ function heartIcon (program) {
       likedPrograms()
       searchBar()
       closeSearchInSearch()
-      selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
+      selectElement('#searchInputBar').addEventListener(
+        'keyup',
+        searchingInSearch
+      )
     } else {
       heartIconDiv.classList.add('activeLike')
       array.push(program)
@@ -122,7 +125,10 @@ function heartIcon (program) {
       likedPrograms()
       searchBar()
       closeSearchInSearch()
-      selectElement('#searchInputBar').addEventListener('keyup', searchingInSearch)
+      selectElement('#searchInputBar').addEventListener(
+        'keyup',
+        searchingInSearch
+      )
     }
   })
   return heartIconDiv

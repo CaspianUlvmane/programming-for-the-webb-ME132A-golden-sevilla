@@ -17,12 +17,12 @@ function createContinentList () {
     let countrysInContinent = DB.COUNTRIES.filter(
       country => country.continentID == continent.id
     )
-    
-    // create a country container 
+
+    // create a country container
     let countryContainer = createElement('div')
     // adds class unactive to be hidden, class is later toggled when click on continentDiv
     countryContainer.classList.add('country-container', 'unactive')
-    
+
     // go through filterd countrys and created divs
     for (let country of countrysInContinent) {
       let countryDiv = createElement('div')
@@ -83,13 +83,13 @@ function createDivListView () {
   return listDiv
 }
 
-// this function is adding to the eventListener on listDiv 
+// this function is adding to the eventListener on listDiv
 function changeToListView (listDiv, mapDiv) {
   // add class to listDiv and remove class on mapDiv to see which one is active in viewBar
   listDiv.classList.add('active-view')
   mapDiv.classList.remove('active-view')
 
-  // change display so listContainer is the display that are viewed 
+  // change display so listContainer is the display that are viewed
   let mapContainer = document.getElementById('map-container')
   let listContainer = document.getElementById('list-container')
   mapContainer.style.display = 'none'
