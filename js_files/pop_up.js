@@ -139,12 +139,12 @@ function addInfoProgram (program) {
         <div class="info"> Språk: ${findLangauge(program)} </div>
         <div class="info average"> Medelvärde av Kursen: ${getAllAverage(
           program
-        )} </div>
-        <div class="info"> Teacher rating: ${getAverageTeachers(program)} </div>
+        )}/5 </div>
+        <div class="info"> Teacher rating: ${getAverageTeachers(program)}/5 </div>
         <div class="info"> Students rating: ${getAverageStudents(
           program
-        )} </div>
-        <div class="info"> Courses rating: ${getAverageCourses(program)} </div>
+        )}/5 </div>
+        <div class="info"> Courses rating: ${getAverageCourses(program)}/5 </div>
         <div class="info commentsOfstudents"> Kommentarer från studenter </div>
     </div> `
 
