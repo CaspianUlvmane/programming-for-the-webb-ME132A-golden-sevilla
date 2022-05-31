@@ -22,11 +22,10 @@ function buildImgCountryCard () {
 
   for (let i = 0; i < DB.COUNTRIES.length; i++) {
     let img = createElement('div')
+    console.log(getCountry(i).toLowerCase())
     imgBox.appendChild(img)
     img.classList.add('img-slide')
-    img.style.backgroundImage = `url(../Databasen/Images/${getCountry(
-      i
-    )}_normal_2.jpg)`
+    img.style.backgroundImage = `url(../Databasen/Images/${getCountry(i).toLowerCase()}_normal_2.jpg)`
 
     let imgButton = createElement('button')
     img.appendChild(imgButton)
@@ -54,6 +53,7 @@ function buildImgFiledCard () {
 
   for (let i = 0; i < DB.FIELDS.length; i++) {
     let img = createElement('div')
+    console.log(getFiled(i).toLowerCase())
     imgBox.appendChild(img)
     img.classList.add('img-slide')
     img.style.backgroundImage = `url(../Databasen/Images/field_pictures/${getFiled(i).toLowerCase()}.jpg)`
