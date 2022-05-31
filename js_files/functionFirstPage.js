@@ -49,16 +49,14 @@ function buildImgFiledCard () {
   }
 
   function getFiled (id) {
-    return findFiled(id).name.toLowerCase()
+    return findFiled(id).name
   }
 
   for (let i = 0; i < DB.FIELDS.length; i++) {
     let img = createElement('div')
     imgBox.appendChild(img)
     img.classList.add('img-slide')
-    img.style.backgroundImage = `url(../Databasen/Images/field_pictures/${getFiled(
-      i
-    )}.jpg)`
+    img.style.backgroundImage = `url(../Databasen/Images/field_pictures/${getFiled(i).toLowerCase()}.jpg)`
 
     let imgButton = createElement('button')
     img.appendChild(imgButton)
