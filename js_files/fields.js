@@ -9,7 +9,7 @@ function createFieldView () {
 
     fieldDiv.innerHTML = `
     <div class="field-img"><img src="../Databasen/Images/field_pictures/${
-      field.name
+      field.name.toLowerCase()
     }.jpg"></div>
     <h3 class="field-name">${field.name}</h3>
     <p class="field-text">${field.text}</p>
