@@ -17,6 +17,7 @@ function buildImgCountryCard () {
     return findCountry(id)
       .name.split(' ')
       .join('_')
+      .toLowerCase()
   }
 
   for (let i = 0; i < DB.COUNTRIES.length; i++) {
@@ -48,7 +49,7 @@ function buildImgFiledCard () {
   }
 
   function getFiled (id) {
-    return findFiled(id).name
+    return findFiled(id).name.toLowerCase()
   }
 
   for (let i = 0; i < DB.FIELDS.length; i++) {
